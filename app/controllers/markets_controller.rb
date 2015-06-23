@@ -1,5 +1,5 @@
 class MarketsController < ApplicationController
-  before_action :set_market, only: [:show]
+  before_action :set_market, only: [:show, :edit, :update]
 
   def index
     @markets = Market.all
@@ -15,10 +15,16 @@ class MarketsController < ApplicationController
   end
 
   def update
+    @market.update(market_params)
+    redirect_to @market
   end
 
   private
     def set_market
       @market = Market.find(params[:id])
+    end
+
+    def market_params
+      params.permit(market: [:name, :address, :city, :county, :state, :zip] )[:market]
     end
 end
