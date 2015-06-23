@@ -9,12 +9,12 @@ Before you start writing _any_ code:
   - (done, but will iterate) Organize your tasks/stories into iterations (a.k.a waves)
     - Wave 1 (pairing) :
       - (done) gemset, news rails app
-      - seed the db
+      - (done) seed the db
       - plan and execute routes
         - (done) markets
         - vendors
         - sales & products?
-      - generate models
+      - (done) generate models
       - generate controllers
         - (done) markets
         - vendors
