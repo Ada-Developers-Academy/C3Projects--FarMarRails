@@ -3,7 +3,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
+
+
+  resources :markets, except:[:destroy] do
+    resources :vendors
+  end
+
+  resources :vendors, only:[:index] do
+    resources :products
+    resources :sales, except:[:destroy]
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
