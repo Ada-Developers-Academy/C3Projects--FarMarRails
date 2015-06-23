@@ -1,1 +1,5 @@
-<h1> testy testy</h1>
+<h1>Markets</h1>
+
+<% @markets.each do |market| %>
+  <%= link_to "#{market.name}", "market_path(#{market.id})" %>
+<% end %>

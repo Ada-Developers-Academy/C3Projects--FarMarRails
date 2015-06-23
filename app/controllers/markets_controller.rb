@@ -1,6 +1,6 @@
 class MarketsController < ApplicationController
   def index
-
+    @markets = Market.all
   end
 
   def create
@@ -23,6 +23,6 @@ class MarketsController < ApplicationController
 
   end
 
-            
+
 
 end
