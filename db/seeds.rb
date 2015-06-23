@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# require 'csv'
+
+# csv_text = File.read('./seed_csvs/markets.csv')
+# csv = CSV.parse(csv_text)
+# csv.each do |row|
+#   Market.create!(row.to_hash)
+# end
