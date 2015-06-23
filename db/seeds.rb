@@ -6,10 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# require 'csv'
+require 'csv'
 
-# csv_text = File.read('./seed_csvs/markets.csv')
-# csv = CSV.parse(csv_text)
-# csv.each do |row|
-#   Market.create!(row.to_hash)
-# end
+CSV.foreach('./seed_csvs/markets.csv', :headers => false) do |row|
+  Market.find_or_create_by(Hash[:row])
+end
+
