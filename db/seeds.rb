@@ -11,8 +11,29 @@ CSV.foreach("db/seed_csvs/markets.csv") do |row|
     })
   end
 
+CSV.foreach("db/seed_csvs/vendors.csv") do |row|
+  Vendor.create!({
+    :name => row[1],
+    :no_of_employees => row[2],
+    :market_id => row[3]
+    })
+  end
 
+  CSV.foreach("db/seed_csvs/products.csv") do |row|
+    Product.create!({
+      :name => row[1],
+      :vendor_id => row[2]
+      })
+    end
 
+  CSV.foreach("db/seed_csvs/sales.csv") do |row|
+    Sale.create!({
+      :amount => row[1],
+      :purchase_time => row[2],
+      :vendor_id => row[3],
+      :product_id => row[4]
+      })
+    end
 
 
 
