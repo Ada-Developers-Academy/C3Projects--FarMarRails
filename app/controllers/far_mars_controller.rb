@@ -1,0 +1,2 @@
+class FarMarsController < ApplicationController
+end

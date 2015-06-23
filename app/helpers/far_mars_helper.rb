@@ -1,0 +1,2 @@
+module FarMarsHelper
+end
