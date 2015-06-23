@@ -6,13 +6,19 @@ Before you start writing _any_ code:
   - (done) Organize your tasks/stories
   - Discuss who will do which tasks and when you will target completion
     - What things should be done together as pairs vs individually?
-  - Organize your tasks/stories into iterations (a.k.a waves)
+  - (done, but will iterate) Organize your tasks/stories into iterations (a.k.a waves)
     - Wave 1 (pairing) :
-      - gemset, news rails app
+      - (done) gemset, news rails app
       - seed the db
       - plan and execute routes
+        - (done) markets
+        - vendors
+        - sales & products?
       - generate models
       - generate controllers
+        - (done) markets
+        - vendors
+        - sales & products?
     -Wave 2:
       - start with Overall, revisit then
     -Wave 3:

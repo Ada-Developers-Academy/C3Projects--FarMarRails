@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
+headers = [:id, :name, :address, :city, :county, :state, :zip]
+
+CSV.foreach("db/csv/markets.csv", { encoding: "UTF-8", write_headers: true, headers: headers, converters: :all}) do |row|
+  Market.create(row.to_hash)
+end
