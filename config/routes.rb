@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+
+
+  root 'users#index'
+  resources :markets  # individual markets
+  resources :vendors
+  resources :users, only: [:index] do
+    collection do
+      get 'markets'
+      get 'market/:id', action: "by_market", as: "by_market"
+    end
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
