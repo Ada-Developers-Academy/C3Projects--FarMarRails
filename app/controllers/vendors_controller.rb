@@ -1,2 +1,3 @@
 class VendorsController < ApplicationController
+  
 end
