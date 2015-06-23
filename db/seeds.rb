@@ -8,7 +8,7 @@ require 'csv'
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 CSV.foreach("db/markets.csv") do |row|
-  Market.create (
+  Market.create(
     name: row[1],
     address: row[2],
     city: row[3],
@@ -19,7 +19,7 @@ CSV.foreach("db/markets.csv") do |row|
 end
 
 CSV.foreach("db/vendors.csv") do |row|
-  Vendor.create = (
+  Vendor.create(
     name: row[1],
     no_of_employees: row[2],
     market_id: row[3]
@@ -27,14 +27,14 @@ CSV.foreach("db/vendors.csv") do |row|
 end
 
 CSV.foreach("db/products.csv") do |row|
-  Product.create = (
+  Product.create(
     name: row[1],
     vendor_id: row[2]
   )
 end
 
 CSV.foreach("db/sales.csv") do |row|
-  Sale.create = (
+  Sale.create(
     amount: row[1],
     purchase_time: row[2],
     vendor_id: row[3],
