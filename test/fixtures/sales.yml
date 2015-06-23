@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: MyString
+  purchase_time: 2015-06-23 15:35:58
+  vendor_id: 1
+  product_id: 1
+
+two:
+  amount: MyString
+  purchase_time: 2015-06-23 15:35:58
+  vendor_id: 1
+  product_id: 1
