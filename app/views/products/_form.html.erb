@@ -1,0 +1,9 @@
+<%= form_for @product, url: url ||= '' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.hidden_field(:vendor_id)%>
+  <%= hidden_field_tag 'selected', 'none' %>
+
+  <%= f.submit submit %>
+<% end %>

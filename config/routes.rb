@@ -15,10 +15,13 @@ Rails.application.routes.draw do
   get "/vendors/:id/sales" => "sales#index"
   get "/vendors/:id/sales/current" => "sales#current_month"
 
+  get "/vendors/:vendor_id/products" => "products#index"
+  get "/vendors/:vendor_id/products/new" => "products#new"
+  post "/vendors/:vendor_id/products/new" => "products#create"
+
 
 
   resources :markets, except: [:destroy]
-
   resources :vendors
 
 
