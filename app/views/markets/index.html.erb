@@ -1,0 +1,13 @@
+<table border = "0">
+  <tr>
+    <th>Market Name</th>
+    <th>Details</th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+  </tr>
+<% end %>
+
+</table>

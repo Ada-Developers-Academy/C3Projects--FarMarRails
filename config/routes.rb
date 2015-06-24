@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :markets, except: [:destroy] do
-    resources :vendors 
+    resources :vendors
+  end
+
+  resources :vendors, only: [:index] do
+    resources :sales
+    resources :products
   end
 
   # Example of regular route:

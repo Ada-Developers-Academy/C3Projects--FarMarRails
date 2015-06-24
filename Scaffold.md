@@ -15,10 +15,10 @@ Before you start writing _any_ code:
         - vendors
         - sales & products?
       - (done) generate models
-      - generate controllers
+      - (done)generate controllers
         - (done) markets
-        - vendors
-        - sales & products?
+        - (done) vendors
+        - (done) sales & products?
     -Wave 2:
       - start with Overall, revisit then
     -Wave 3:
@@ -32,7 +32,7 @@ Before you start writing _any_ code:
 Once the above is complete, this project:
 
 - (done) requires a shared repo with your partner as a collaborator
-- will need to be isolated into a gemset called 'FarMarRails'
-  - create the necessary files for RVM to recognize a gemset
-- requires you to create a Rails 4.2.2 application
+- (done )will need to be isolated into a gemset called 'FarMarRails'
+  - (done) create the necessary files for RVM to recognize a gemset
+- (done) requires you to create a Rails 4.2.2 application
   - conform to Rails conventions on naming and inflection
