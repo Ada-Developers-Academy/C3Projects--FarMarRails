@@ -1,1 +1,4 @@
-<%= @markets.limit(10).to_a %>
+<% @markets.limit(10).to_a.each do |market| %>
+<%= link_to "#{market.name}", market_vendors_path(market.id), method: :get %>
+<% end %>
+

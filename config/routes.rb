@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'homes#index'
 
+  get 'markets/:market_id/vendors' => 'markets#by_market', as: 'by_market'
+
   resources :markets do
-    resources :vendors
+    resources :vendors, except: [:index]
   end
 
   resources :vendors do
