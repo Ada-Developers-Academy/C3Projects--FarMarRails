@@ -15,4 +15,20 @@ class MarketsController < ApplicationController
     render :vendors
   end
 
+  def new
+    @market = Market.new
+    render :new
+  end
+
+  def create
+    @market = Market.create(form_params[:market])
+    redirect_to markets_path
+  end
+
+  private
+
+  def form_params
+    params.permit(market: [:name, :address, :city, :county, :state, :zip])
+  end
+
 end
