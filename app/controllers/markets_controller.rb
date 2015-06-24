@@ -5,9 +5,13 @@ class MarketsController < ApplicationController
   end
 
   def create
+    @market = Market.create(create_params[:market])
+
+    redirect_to market_portal_path
   end
 
   def new
+    @market = Market.new
   end
 
   def edit

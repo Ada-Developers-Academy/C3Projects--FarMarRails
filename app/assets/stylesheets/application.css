@@ -40,16 +40,17 @@ h1{
   color: #ffffff;
 }
 
-h2{
+h2, legend{
   font-size: 300%;
   color: #ffffff;
 }
 
-table{
+table, form{
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.7);
   margin: auto;
 }
+
 
 th{
   font-size: 150%;
@@ -103,3 +104,9 @@ th{
 	position:relative;
 	top:1px;
 }
+
+input, textarea, select {
+  display: block;
+}
+
+
