@@ -1,7 +1,8 @@
 <h1>Vendors at <%= @market.name %></h1>
 
-<% if current_page?(controller: 'markets', action: 'vendors') %>
+<% if current_page?(controller: 'markets', action: 'vendors_index') %>
 <!-- CREATE VENDOR BUTTON -->
+<p class="center">(create vendor button)</p>
 <% end %>
 <table>
 <tr>
@@ -14,7 +15,7 @@
   <th>
     Employees
   </th>
-  <% if current_page?(controller: 'markets', action: 'vendors')%>
+  <% if current_page?(controller: 'markets', action: 'vendors_index')%>
   <th class="center">
     Edit
   </th>
@@ -32,9 +33,9 @@
     <td>
       <%= vendor.num_employees %>
     </td>
-    <% if current_page?(controller: 'markets', action: 'vendors')%>
+    <% if current_page?(controller: 'markets', action: 'vendors_index')%>
       <td class="center">
-        <!-- EDIT VENDOR BUTTON -->
+        <%= link_to "Edit", edit_vendor_market_path %>
       </td>
     <% end %>
   </tr>
