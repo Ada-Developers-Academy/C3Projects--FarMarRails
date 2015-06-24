@@ -1,0 +1,29 @@
+<h1><%= "#{@vendor.name}'s Products" %></h1>
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Details
+  </th>
+</tr>
+<tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.id %>
+      </td>
+      <td>
+        <%= product.name %>
+      </td>
+      <td>
+        <%= link_to "Details", product_vendor_path(product.id) %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

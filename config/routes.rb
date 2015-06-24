@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :vendors, only: [:index, :show] do
     member do
       get 'sales', action: 'sales', as: 'sales'
+      get 'products', action: 'products', as: 'products'
+      get 'products/:id', action: 'show_product', as: 'product'
     end
 
   end

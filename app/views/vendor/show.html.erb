@@ -32,7 +32,7 @@
       <%= link_to "#{@vendor.name}'s sales", sales_vendor_path(@vendor.id) %>
     </td>
     <td class="center">
-      link to products
+      <%= link_to "#{@vendor.name}'s products", products_vendor_path(@vendor.id) %>
     </td>
   </tr>
 </tbody>
