@@ -1,10 +1,6 @@
 <h1>Ima Vendor!</h1>
 
-<ul>
-  <li>Name: <%= @vendor.name %></li>
-  <li>Number of Employees: <%= @vendor.num_employees %></li>
-  <li>Sells at: <%= @vendor.market.name %></li>
-</ul>
+<%= render 'vendor_attributes' %>
 
 <h3>Products</h3>
 

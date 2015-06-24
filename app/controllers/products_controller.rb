@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :edit]
+  before_action :set_product, only: [:show, :edit, :update]
   before_action :set_vendor, only: [:show, :new, :create, :edit, :update]
 
   def new
