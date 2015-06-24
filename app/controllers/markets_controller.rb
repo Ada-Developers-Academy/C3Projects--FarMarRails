@@ -22,6 +22,7 @@ class MarketsController < ApplicationController
     @market = Market.find(@market_id)
 
     render :market_show
+  end
 
   def new
     @market = Market.new(market_params[:market])
