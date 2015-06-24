@@ -24,6 +24,8 @@
   </li>
 </ul>
 
+<%= button_to "Edit This Market", edit_market_path, method: :get %>
+
 <h2>List of Vendors</h2>
 
 <table border "1">
@@ -41,6 +43,9 @@
     <th>
       Market ID
     </th>
+
+    <th>Edit?
+    </th>
   </tr>
 
 <% @vendors.each do |vendor| %>
@@ -57,8 +62,14 @@
     <td>
       <%= vendor.market_id %>
     </td>
+    <td>
+      <%= button_to "Edit This Vendor", edit_vendor_path(vendor), method: :get %>
+    </td>
+
   </tr>
   <% end %>
 </table>
 <br>
-<%= button_to "Edit This Market", edit_market_path, method: :get %>
+
+
+
