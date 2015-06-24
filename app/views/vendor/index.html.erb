@@ -1,0 +1,36 @@
+<h1>All Vendors</h1>
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Employees
+  </th>
+  <th>
+    Details
+  </th>
+</tr>
+<tbody>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td>
+      <%= vendor.id %>
+    </td>
+    <td>
+      <%= vendor.name %>
+    </td>
+    <td>
+      <%= vendor.num_employees %>
+    </td>
+    <td>
+      <%= link_to "Details", vendor_path(vendor.id) %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
