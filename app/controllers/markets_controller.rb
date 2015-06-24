@@ -8,6 +8,10 @@ class MarketsController < ApplicationController
   def show
   end
 
+  def new
+    @market = Market.new
+  end
+
   def create
   end
 
