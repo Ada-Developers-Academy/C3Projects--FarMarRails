@@ -14,6 +14,13 @@ class VendorsController < ApplicationController
     # for @vendor was to be able to print it on the page
     @vendor = Vendor.find(params[:id])
     @sales = Sale.where(vendor_id: params[:id])
+
+
+    @total_amount = 0
+    @sales.each do |sale|
+      @total_amount += sale.amount
+    end
+
     render 'vendor/sales'
   end
 
