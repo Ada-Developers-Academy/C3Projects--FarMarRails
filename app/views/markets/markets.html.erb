@@ -17,16 +17,13 @@
       <th>
         Edit Market
       </th>
-      <th>
-        Delete Market
-      </th>
     </tr>
   </thead>
   <tbody>
     <% Market.all.each do |market|%>
       <tr>
         <td>
-          <%= market.name %>
+          <a href = <%= "/markets/#{market.id}" %>><%= market.name %></a>
         </td>
         <td>
           <%= market.city%>
@@ -35,10 +32,7 @@
           <%= market.state %>
         </td>
         <td>
-          Edit
-        </td>
-        <td>
-          Delete
+          <a href ="">Edit</a>
         </td>
       </tr>
       <% end %>

@@ -10,4 +10,12 @@ class UsersController < ApplicationController
 
     render :all_markets
   end
+
+  def market_details
+    @title = " information"
+    @market_id =params[:id]
+    @market = Market.find(@market_id)
+
+    render :market_show
+  end
 end
