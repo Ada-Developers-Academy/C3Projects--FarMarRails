@@ -39,8 +39,8 @@ class VendorsController < ApplicationController
 
   def search
     # I wasn't sure how else to handle this.
-    if (params.permit(:q)[:q].to_i <= Vendor.last.id)
-      @q = params.permit(:q)[:q]
+    if (params.permit(:query)[:query].to_i <= Vendor.last.id)
+      @query = params.permit(:query)[:query]
     end
   end
 

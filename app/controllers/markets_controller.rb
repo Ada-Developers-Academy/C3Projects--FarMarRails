@@ -5,8 +5,8 @@ class MarketsController < ApplicationController
 
   def search
     # I wasn't sure how else to handle this.
-    if (params.permit(:q)[:q].to_i <= Market.last.id)
-      @query = params.permit(:q)[:q]
+    if (params.permit(:query)[:query].to_i <= Market.last.id)
+      @query = params.permit(:query)[:query]
     end
   end
 
