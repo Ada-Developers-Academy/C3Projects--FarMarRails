@@ -1,7 +1,7 @@
 <section class="form">
   <fieldset class="add_market_form">
     <legend>Add a Market</legend>
-    <%= render partial: "form", locals:{ item: @market,
+    <%= render partial: "shared/form", locals:{ item: @market,
                                          first_label: :name,
                                          first_desc: "Market Name",
                                          first_placeholder: "Bob's Farmer's Market",
@@ -25,7 +25,7 @@
                                          sixth_label: :zip,
                                          sixth_desc: "Zip Code",
                                          sixth_placeholder: "45459",
-                                         sixth_value: nil 
+                                         sixth_value: nil ,
                                          submit_button: "add market"}
     %>
   </fieldset>
