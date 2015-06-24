@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :markets, only: [:index, :show, :new, :create, :update] do
+  resources :markets, only: [:index, :show, :new, :create, :edit, :update] do
     member do
       get 'vendors', action: 'vendors', as: 'vendors'
     end

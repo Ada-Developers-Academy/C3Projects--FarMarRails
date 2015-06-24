@@ -15,6 +15,17 @@ class MarketsController < ApplicationController
     render :vendors
   end
 
+  def edit
+    @market = Market.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @market = Market.find(params[:id])
+    @market.update(form_params[:market])
+    redirect_to market_path
+  end
+
   def new
     @market = Market.new
     render :new
