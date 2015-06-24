@@ -1,6 +1,10 @@
-<h1>Are you a...</h1>
-<div class="buttons">
-  <span class="market_button"><%= button_to "Market", "" %></span>
-  <span class="vendor_button"><%= button_to "Vendor", "" %></span>
-</div>
-<h3>Or would you like to <%= link_to "view all markets", "" %>?</h3>
+<section class="homepage">
+  <div>
+    <h1>Farmer's Market Interactive</h1>
+    <h2>put a brief description here of what the app does and who can use it or maybe something else I dunno</h2>
+    <h3>are you a...</h3>
+      <%= button_to "MARKET", "", class: "button" %>
+      <%= button_to "VENDOR", "", class: "button" %>
+    <h3>or would you like to <%= link_to "view all markets", "" %>?</h3>
+  </div>
+</section>
