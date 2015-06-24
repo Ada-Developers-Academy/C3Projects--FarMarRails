@@ -18,7 +18,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = @vendor.products.find(params[:id])
+  end
 
+  def update
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = @vendor.products.find(params[:id])
+    @product.update(create_params[:product])
+
+    redirect_to vendor_products_path
   end
 
   def destroy

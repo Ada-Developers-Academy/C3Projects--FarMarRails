@@ -12,7 +12,7 @@
   <% @products.each do |product| %>
     <tr>
     <td><%= product.name %></td>
-    <td><%= button_to "Edit", '/vendors/:vendor_id/products/:id/edit', method: :get, class: "button" %> </td>
+    <td><%= button_to "Edit", "/vendors/#{@vendor[:id]}/products/#{product[:id]}/edit", method: :get, class: "button" %> </td>
     <td><%= button_to "Delete", '/vendors/:vendor_id/products/:id', method: :destroy, class: "button" %> </td>
     <td><%= button_to "Add Sale", class: "button" %> </td>
     </tr>
