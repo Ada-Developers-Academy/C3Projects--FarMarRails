@@ -21,7 +21,11 @@
   <% @display_products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
+    <td></td>
+
   </tr>
   <% end %>
 
 </table>
+
+<%= button_to "New product", new_vendor_product_path(@vendor.id), method: "get" %>
