@@ -3,6 +3,8 @@ class SalesController < ApplicationController
   def new
 
     @sale = Sale.new
+    @vendor = Vendor.find(params[:vendor_id])
+    @products = @vendor.products
 
   end
 
@@ -16,7 +18,7 @@ class SalesController < ApplicationController
   private
 
   def create_params
-    params.permit(sale: [:amount, :purchase_time, :vendor_id, :id])
+    params.permit(sale: [:amount, :purchase_time, :vendor_id, :product_id, :id])
 
   end
 
