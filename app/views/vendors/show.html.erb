@@ -18,6 +18,9 @@
 
 <h2>Product List</h2>
 
+<%= button_to "Add a Product to This Vendor", new_product_path, {method: :get, params: {:vendor_id => @vendor.id}} %>
+
+
 <table border "1">
 
   <tr>
