@@ -8,6 +8,8 @@
 
 <h3>Products</h3>
 
+<%= link_to 'Create a new product for this vendor', new_vendor_product_path(@vendor) %>
+
 <ul>
   <% @vendor.products.each do |product| %>
     <li><%= link_to product.name, vendor_product_path(@vendor, product) %></li>
