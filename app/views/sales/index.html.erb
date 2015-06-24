@@ -1,0 +1,19 @@
+<h1> <%= "#{@vendor.name}"%> </h1>
+<h2>Sales</h2>
+
+
+<table>
+  <th>Sale Amount</th>
+  <th>Purchase Time</th>
+  <th>Product</th>
+
+    <% @vendor_sales.each do |sale| %>
+  <tr>
+    <td> <%= sale.amount %> </td>
+    <td> <%= sale.purchase_time %> </td>
+    <td> <%= sale.product.name %> </td>
+  </tr>
+    <% end %>
+</table>
+
+<%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
