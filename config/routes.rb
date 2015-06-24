@@ -3,13 +3,22 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'users#welcome'
 
-  resources :markets, only: [:index, :show] do
+  resources :users, only: [:index, :show] do
     member do
       get 'vendors', action: 'vendors', as: 'vendors'
     end
   end
+
+    resources :markets, only: [:index, :show] do
+
+    end
+
+  resources :vendors, only: [:index, :show] do
+
+  end
+
 
     # EXAMPLE
     # collection do
@@ -19,7 +28,6 @@ Rails.application.routes.draw do
     # <%= link_to "Albums for the year #{@year}", by_year_albums_path(@year) %>
 
 
-  resources :vendors, only: [:index, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

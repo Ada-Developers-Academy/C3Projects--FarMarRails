@@ -1,12 +1,1 @@
-<h1>Welcome!</h1>
-<h2>Who are you?</h2>
-
-<!-- later, links will need to be setting user role... -->
-<div class="button_block">
-  <div class="center_inline_block">
-    <%= link_to 'Market', controller: 'markets', action: 'index' %>
-  </div>
-  <div class="center_inline_block">
-    <%= link_to 'Vendor', controller: 'vendors', action: 'index' %>
-  </div>
-</div>
+<%= render "shared/all_markets_table" %>
