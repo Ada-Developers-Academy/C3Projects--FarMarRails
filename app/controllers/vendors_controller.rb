@@ -1,7 +1,6 @@
 class VendorsController < ApplicationController
 
   def new
-
     @vendor = Vendor.new
   end
 
@@ -10,6 +9,15 @@ class VendorsController < ApplicationController
     @vendor = Vendor.create(create_params[:vendor])
 
     redirect_to market_path(@vendor.market_id)
+  end
+
+  def edit
+    @vendor = Vendor.find(params[:id])
+
+  end
+
+  def update
+
   end
 
   private

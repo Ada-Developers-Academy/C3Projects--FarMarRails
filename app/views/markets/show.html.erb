@@ -30,6 +30,7 @@
   <% @display_vendors.each do |vendor| %>
   <tr>
     <td><%= vendor.name %></td>
+    <td><%= button_to "Edit vendor", edit_market_vendor_path(@market.id, vendor.id), method: "get" %></td>
   </tr>
   <% end %>
 
