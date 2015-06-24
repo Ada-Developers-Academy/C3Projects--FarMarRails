@@ -1,3 +1,5 @@
+<%= button_to "Create a New Market", new_market_path, method: :get %>
+
 <table>
   <tr>
     <th>Market</th>
@@ -9,7 +11,7 @@
   </tr>
   <% @markets.to_a.each do |market| %>
   <tr>
-    <td><%= link_to "#{market.name}", market_vendors_path(market.id), method: :get %></td>
+    <td><%= link_to "#{market.name}", by_market_path(market.id), method: :get %></td>
     <td><%= market.address %></td>
     <td><%= market.city %></td>
     <td><%= market.state %></td>

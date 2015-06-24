@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number of Employees</th>
+  </tr>
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%=vendor.name%></td>
+    <td><%=vendor.num_of_employees%></td>
+  </tr>
+  <% end %>
+</table>

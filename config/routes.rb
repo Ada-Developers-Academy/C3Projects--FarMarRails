@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'markets/:market_id/vendors' => 'markets#by_market', as: 'by_market'
 
   resources :markets do
-    resources :vendors, except: [:index]
+    resources :vendors
   end
 
   resources :vendors do
