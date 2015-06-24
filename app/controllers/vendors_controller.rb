@@ -6,6 +6,7 @@ class VendorsController < ApplicationController
 
 	def new
 		@vendor = Vendor.new
+		@url = market_vendors_path
 	end
 
 	def create
@@ -15,13 +16,14 @@ class VendorsController < ApplicationController
 
 	def edit
 		find_vendor
+		@url = market_vendor_path
 	end
 
 	def update
 		find_vendor
 		@vendor.update(create_params[:vendor])
 
-		redirect_to "market_path(#{@vendor.market_id})"
+		redirect_to market_path(@vendor.market_id)
 	end
 
 ##################### PRIVATE METHODS #####################

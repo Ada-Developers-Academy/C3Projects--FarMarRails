@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :vendors, only: [:new, :create, :update]
   end
 
-  get "/markets/:market_id/vendors/:id/edit" => "vendor#edit"
+  get "/markets/:market_id/vendors/:id/edit" => "vendors#edit"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
