@@ -8,10 +8,19 @@ def index
 end
 
 def create
+  @vendor = Vendor.find(params[:vendor_id])
+  @product = Product.new(create_params[:product])
+  @product.save
+
+  redirect_to "/vendors/#{@vendor.id}/products"
 end
 
 def new
-  
+  @product = Product.new
+  @vendor = Vendor.find(params[:vendor_id])
+  @url = "/vendors/#{@vendor.id}/products"
+
+  render :new
 end
 
 def edit
