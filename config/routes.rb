@@ -11,6 +11,10 @@ resources :markets do
     resources :products
   end
 end
+
+# Market index page sorts
+post "/market/name_sort"       => "markets#name_sort"
+post "/market/city_sort"       => "markets#state_sort"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

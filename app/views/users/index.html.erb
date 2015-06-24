@@ -5,6 +5,6 @@
     <p>are you a...</p>
       <%= button_to "MARKET", "", class: "button" %>
       <%= button_to "VENDOR", "", class: "button" %>
-    <p>or would you like to <%= link_to "view all markets", "" %>?</p>
+    <p>or would you like to <%= link_to "view all markets", controller: "markets", action: "index" %>?</p>
   </div>
 </section>

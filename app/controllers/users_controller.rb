@@ -4,4 +4,5 @@ class UsersController < ApplicationController
 
     render :index
   end
+
 end

@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>
-        Name
+        Name <%= button_to "&#8595".html_safe, "/markets/name_sort"%>
       </th>
       <th>
         Address
@@ -16,7 +16,7 @@
         County
       </th>
       <th>
-        State
+        State <%= button_to "&#8595".html_safe, "/markets/state_sort"%>
       </th>
       <th>
         Zip Code
@@ -27,7 +27,7 @@
     <% Market.all.each do |market|%>
       <tr>
         <td>
-          <%= market.name.split.map(&:capitalize).join(' ') %>
+          <a href=<%="/markets/#{market.id}"%>><%= market.name.split.map(&:capitalize).join(' ') %></a>
         </td>
         <td>
           <%= market.address%>
