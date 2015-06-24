@@ -1,0 +1,22 @@
+<h1>Welcome Market!</h1>
+<h2>Click on a Market Name to View a Specific Market</h2>
+
+<link_to "Create Market", "/markets/new">
+
+<table>
+  <thead>
+    Market List
+  </thead>
+  <th> ID </th>
+  <th> Name </th>
+  <th> Edit </th>
+  <% @all_markets.each do |market| %>
+  <tr>
+    <td> <%= market.id  %></td>
+    <td> <%= market.name %></td>
+    <td> <%= link_to "Details", "/market/#{market.id}/show" %> </td>
+  </tr>
+
+  <% end %>
+
+</table>
