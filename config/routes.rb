@@ -9,15 +9,13 @@ Rails.application.routes.draw do
     collection do
       get 'markets', action: 'index', as: 'markets'
       get 'markets/:id', action: 'show', as: 'market'
-    end
-    member do
-      get 'vendors', action: 'vendors', as: 'vendors'
+      get 'markets/:id/vendors', action: 'vendors', as: 'vendors'
     end
   end
 
-    resources :markets, only: [:index, :show] do
+  resources :markets, only: [:index, :show] do
 
-    end
+  end
 
   resources :vendors, only: [:index, :show] do
 
