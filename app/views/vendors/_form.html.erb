@@ -1,0 +1,9 @@
+<%= form_for @vendor do |f| %>
+  <%= f.label :name, "Vendor name:" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :num_employees, "Number of employees:" %>
+  <%= f.text_field :num_employees %>
+
+  <%= f.submit %>
+<% end %>

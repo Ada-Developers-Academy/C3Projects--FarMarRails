@@ -5,6 +5,15 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
   end
 
+  def new
+    @vendor = Vendor.new
+  end
+
+  # def create
+  #   vendor = Vendor.create(vendor_params)
+  #   redirect_to vendor
+  # end
+
   private
     def set_vendor
       @vendor = Vendor.find(params[:id])

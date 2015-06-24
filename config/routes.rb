@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   get '/welcome/markets' => 'welcome#index_markets'
   get '/welcome/markets/:id' => 'welcome#show_market', as: 'show_market'
 
-  resources :markets
-  resources :vendors
+  resources :markets do
+    resources :vendors
+  end
+
+  resources :vendors do
+    resources :products
+    resources :sales
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
