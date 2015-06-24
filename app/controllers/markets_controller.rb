@@ -10,10 +10,26 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new
+    @url = markets_path
+    @method = :post
   end
 
   def create
     @market = Market.create(market_params)
+    @market.save
+    redirect_to markets_path
+  end
+
+  def edit
+    @market = Market.find(params[:id])
+    @url = market_path
+    @method = :patch
+
+  end
+
+  def update
+    @market = Market.find(params[:id])
+    @market.update(market_params)
     @market.save
     redirect_to markets_path
   end

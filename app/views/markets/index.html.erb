@@ -8,6 +8,7 @@
     <th>State</th>
     <th>County</th>
     <th>Zip</th>
+    <th></th>
   </tr>
   <% @markets.to_a.each do |market| %>
   <tr>
@@ -17,6 +18,7 @@
     <td><%= market.state %></td>
     <td><%= market.county %></td>
     <td><%= market.zip %></td>
+    <td><%= button_to "Edit Market", edit_market_path(market.id), method: :get %></td>
   </tr>
   <% end %>
 </table>
