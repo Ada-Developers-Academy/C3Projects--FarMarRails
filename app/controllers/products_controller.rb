@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
-  before_action :set_vendor, only: [:new, :create]
+  before_action :set_product, only: [:show, :update, :edit]
+  before_action :set_vendor, only: [:show, :new, :create, :edit, :update]
 
   def new
     @product = Product.new
@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
   def create
     product = Product.create(product_params)
     redirect_to vendor_product_path(@vendor, product)
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to vendor_product_path(@vendor, @product)
   end
 
   private
