@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root "users#index"
 
-  resources :markets, except: [:destroy]
-  resources :vendors
-
   # Jeri's routes
   get "/market_dashboard" => "users#market"
   get "/vendor_dashboard" => "users#vendor"
@@ -13,14 +10,10 @@ Rails.application.routes.draw do
   post "/market/search" => "markets#search"
   post "/vendor/search" => "vendors#search"
 
-  # get '/vendors' => 'vendors#index'
 
-  # get '/vendors/new' => 'vendors#new'
-  # post '/vendors/new' => 'vendors#create'
+  resources :markets, except: [:destroy]
+  resources :vendors
 
-  # get '/vendors/:vendor_id/edit' => 'vendors#edit'
-  # patch '/vendors/:vendor_id/edit' => 'vendors#update'
-  # post '/delete/:vendor_id' => 'vendors#delete'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
