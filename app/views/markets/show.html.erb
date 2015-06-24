@@ -7,7 +7,7 @@
   <%=@market.county  %>,
   <%=@market.state  %>.
   <%=@market.zip  %></p>
-<%= link_to "Edit market", edit_market_path %>
+<%= link_to "Edit market", edit_market_path("#{@market.id}") %>
 
 
 <p>"<%= "#{@market.name}" %>" has these vendors: </p>
