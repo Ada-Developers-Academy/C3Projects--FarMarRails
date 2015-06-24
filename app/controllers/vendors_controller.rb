@@ -36,8 +36,8 @@ class VendorsController < ApplicationController
 
   def update
     @vendor = vendor.find(params[:id])
-    @name = vendor_params[:market][:name]
-    @no_of_employees = vendor_params[:market][:no_of_employees]
+    @name = vendor_params[:vendor][:name]
+    @no_of_employees = vendor_params[:vendor][:no_of_employees]
 
     @vendor.update(name: @name)
     @vendor.update(no_of_employees: @no_of_employees)
