@@ -49,6 +49,12 @@ class VendorsController < ApplicationController
     @sales = all_sales.slice(0, 5)
   end
 
+  def sales
+    @vendor = Vendor.find(params.permit(:id)[:id])
+    @sales = @vendor.sales
+    raise
+  end
+
   private
 
   def create_params

@@ -53,8 +53,8 @@ sales.each do |sale_row|
   sale = {}
   sale[:amount] = sale_row[1]
   sale[:purchase_time] = sale_row[2]
-  sale[:vendor_id] = sale_row[1]
-  sale[:product_id] = sale_row[1]
+  sale[:vendor_id] = sale_row[3]
+  sale[:product_id] = sale_row[4]
 
   Sale.create(sale)
 end

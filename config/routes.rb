@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root "users#index"
 
-  # Jeri's routes
+  # Jeri's routes to grab dashboard selector (maybe rename to login page?)
   get "/market_dashboard" => "users#market"
   get "/vendor_dashboard" => "users#vendor"
 
+  # Jeri's routes to display actual dashbaord (maybe rename to dashboard?)
   post "/market/search" => "markets#search"
   post "/vendor/search" => "vendors#search"
+
+  # Jeri's routes to display sales lists
+  get "/vendor/:id/sales" => "vendors#sales"
+
 
 
   resources :markets, except: [:destroy]
