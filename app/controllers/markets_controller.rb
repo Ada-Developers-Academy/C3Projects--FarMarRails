@@ -15,7 +15,16 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    @market = Market.find(params[:id])
+    @market = Market.find(params[:market_id])
+  end
+
+  def update
+    market = Market.find(params[:market_id])
+    edited_market = params[:market]
+
+    task.update_all(edited_market)
+
+    redirect_to "/markets/#{market.id}/"
   end
 
   private

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   post 'markets' => 'markets#create'
 
   get 'markets/:market_id/edit' => 'markets#edit'
+  post 'markets/:market_id/edit' => 'markets#edit'
+  # patch 'markets/:market_id/edit' => 'markets#update'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
