@@ -44,8 +44,7 @@
   <tr>
     <td> <%= vendor.name %> </td>
     <td> <%= link_to "Edit", "/markets/#{@market.id}/vendors/#{vendor.id}/edit" %></td>
-    <!-- above not working, routing! -->
-    <td>  </td>
+    <td> <%= link_to "X", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{vendor.name}?"} %> </td>
   </tr>
   <% end %>
 </table>

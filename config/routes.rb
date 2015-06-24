@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/view_markets/:id" => "markets#view"
 
   resources :markets do
-    resources :vendors, only: [:new, :create, :update]
+    resources :vendors, only: [:new, :create, :update, :destroy]
   end
 
   get "/markets/:market_id/vendors/:id/edit" => "vendors#edit"

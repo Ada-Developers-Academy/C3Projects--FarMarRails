@@ -27,6 +27,13 @@ class VendorsController < ApplicationController
 		redirect_to market_path(@vendor.market_id)
 	end
 
+	def destroy
+		find_vendor
+		@vendor.destroy
+
+		redirect_to market_path(@vendor.market_id)
+	end
+
 ##################### PRIVATE METHODS #####################
   private
 
