@@ -1,7 +1,9 @@
 <h3> <%= "#{@vendor.name}'s " %>Products</h3>
   <ul>
     <% @vendor_products.each do |product| %>
-      <li> <%= product.name %> <%= link_to "delete", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure?" } %> </li>
+      <li> <%= product.name %> <%= link_to "delete", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "edit", edit_vendor_product_path(@vendor.id, product.id) %>
+      </li>
     <% end %>
   </ul>
 

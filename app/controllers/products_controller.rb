@@ -24,12 +24,25 @@ def new
 end
 
 def edit
+  @product = Product.find(params[:id])
+  @vendor = Vendor.find(params[:vendor_id])
+  @url = "/vendors/#{@vendor.id}/products/#{@product.id}"
+
+  render :edit
 end
 
 def show
 end
 
 def update
+  @vendor = Vendor.find(params[:vendor_id])
+
+  @product = Product.find(params[:id])
+  product_params = create_params[:product]
+  @product.update(product_params)
+
+
+  redirect_to "/vendors/#{@vendor.id}/products"
 end
 
 def destroy
