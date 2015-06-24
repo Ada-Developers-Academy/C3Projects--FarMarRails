@@ -6,4 +6,14 @@ class MarketsController < ApplicationController
 
     render :index
   end
+
+  def show
+
+    @market = Market.find(params[:id])
+    @display_vendors = @market.vendors
+    render :show
+
+
+
+  end
 end

@@ -1,0 +1,32 @@
+<h1>Market Details</h1>
+
+<table>
+  <th>Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>County</th>
+  <th>State</th>
+  <th>Zip</th>
+
+  <tr>
+    <td><%= @market.name %></td>
+    <td><%= @market.address %></td>
+    <td><%= @market.city %></td>
+    <td><%= @market.county %></td>
+    <td><%= @market.state %></td>
+    <td><%= @market.zip %></td>
+  </tr>
+
+</table>
+
+<h2>The Vendors for This Market</h2>
+
+<table>
+
+  <% @display_vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+  </tr>
+  <% end %>
+
+</table>

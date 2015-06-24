@@ -3,14 +3,10 @@
 <table>
 
   <th>Name</th>
-  <th>City</th>
-  <th>State</th>
 
   <% @markets.each do |market| %>
   <tr>
-    <td><%= market.name %></td>
-    <td><%= market.city %></td>
-    <td><%= market.state %></td>
+    <td><%= link_to "#{market.name}", market_path(market.id) %></td>
   </tr>
 
   <% end %>
