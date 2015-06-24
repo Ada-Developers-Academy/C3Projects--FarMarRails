@@ -1,6 +1,12 @@
 class VendorsController < ApplicationController
 
   def index
+    @title = "Vendors for "
+    @vendor_id =params[:id]
+    @vendor = Vendor.find(@vendor_id)
+    @market = @vendor.market
+
+    render :index
   end
 
   def show
@@ -8,7 +14,7 @@ class VendorsController < ApplicationController
     @vendor_id =params[:id]
     @vendor = Vendor.find(@vendor_id)
 
-    render :market_show
+    render :vendor_show
   end
 
   def new
@@ -18,7 +24,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params[:vendor])
     @vendor.save
-    redirect_to :market_show
+    redirect_to :index
   end
 
   def vendor_params

@@ -1,1 +1,37 @@
 <h1> <%=@vendor.name%> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>
+        Market Id
+      </td>
+      <td>
+        Number of Employees
+      </td>
+      <td>
+        Edit Vendor
+      </td>
+      <td>
+        Delete Vendor
+      </td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%= @vendor.market_id %>
+      </td>
+      <td>
+        <%= @vendor.no_of_employees %>
+      </td>
+      <td>
+        edit
+      </td>
+      <td>
+        delete
+      </td>
+    </tr>
+  </tbody>
+</table>

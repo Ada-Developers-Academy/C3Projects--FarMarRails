@@ -1,0 +1,35 @@
+<h1>All Vendors associated with <%= @market.name %> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Id
+      </th>
+      <th>
+        Market Id
+      </th>
+      <th>
+        Number of Employees
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Vendor.all.each do |vendor|%>
+      <tr>
+        <td>
+          <%= vendor.name %></a>
+        </td>
+        <td>
+          <%= vendor.id%>
+        </td>
+        <td>
+          <%= vendor.market_id%>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
