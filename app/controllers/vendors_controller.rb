@@ -10,8 +10,7 @@ class VendorsController < ApplicationController
 
 	def create
 		@vendor = Vendor.create(create_params[:vendor])
-
-    redirect_to '/markets/#{@market.id}'
+    redirect_to "/markets/#{@vendor.market_id}"
 	end
 
 ##################### PRIVATE METHODS #####################
