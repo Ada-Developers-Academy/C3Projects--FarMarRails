@@ -1,2 +1,3 @@
 class SalesController < ApplicationController
+
 end
