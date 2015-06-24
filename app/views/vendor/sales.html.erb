@@ -1,3 +1,35 @@
-<% @sales.each do |sale| %>
-  <%= sale %>
-<% end %>
+<h1><%= "#{@vendor.name}'s sales" %></h1>
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Amount
+  </th>
+  <th>
+    Purchase Time
+  </th>
+  <th>
+    Product ID
+  </th>
+</tr>
+<tbody>
+  <% @sales.each do |sale| %>
+    <tr>
+      <td>
+        <%= sale.id %>
+      </td>
+      <td>
+        <%= "$#{sale.amount}" %>
+      </td>
+      <td>
+        <%= sale.purchase_time %>
+      </td>
+      <td>
+        <%= sale.product_id %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

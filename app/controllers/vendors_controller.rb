@@ -10,6 +10,7 @@ class VendorsController < ApplicationController
   end
 
   def sales
+    @vendor = Vendor.find(params[:id])
     @sales = Sale.where(vendor_id: params[:id])
     render 'vendor/sales'
   end
