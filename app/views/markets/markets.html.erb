@@ -1,0 +1,50 @@
+<h1>test</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        City
+      </th>
+      <th>
+        County
+      </th>
+      <th>
+        State
+      </th>
+      <th>
+        Zip Code
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Market.all.each do |market|%>
+      <tr>
+        <td>
+          <%= market.name %>
+        </td>
+        <td>
+          <%= market.address%>
+        </td>
+        <td>
+          <%= market.city %>
+        </td>
+        <td>
+          <%= market.county %>
+        </td>
+        <td>
+          <%= market.state %>
+        </td>
+        <td>
+          <%= market.zip %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
