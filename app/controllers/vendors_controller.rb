@@ -43,6 +43,13 @@ class VendorsController < ApplicationController
     redirect_to(market_path(market_of_vendor))
   end
 
+def destroy
+  @vendor = Vendor.find(params[:id]).destroy
+
+  redirect_to(market_path(market_of_vendor))
+end
+
+
 private
 
   def permit_params
