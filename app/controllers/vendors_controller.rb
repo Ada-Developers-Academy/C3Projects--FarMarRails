@@ -8,6 +8,7 @@ class VendorsController < ApplicationController
     render :index
   end
 
+
   def show
     @title = " information"
     @vendor_id =params[:id]
@@ -24,7 +25,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params[:vendor])
     @vendor.save
-    redirect_to :index
+    redirect_to market_vendors_path
   end
 
   # Edit an existing vendor
