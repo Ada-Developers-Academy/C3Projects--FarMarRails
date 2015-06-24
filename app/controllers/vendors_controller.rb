@@ -4,14 +4,22 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
   end
 
-  def create
-    @vendor = Vendor.create(create_params[:vendor])
+  def new
+    @market = Market.find(params[:market_id])
+    @vendor = Vendor.new
+    @legend = "Add vendor information below:"
+    @url = "/markets/#{@market.id}/vendors"
 
-    redirect_to market_portal_path
   end
 
-  def new
-    @vendor = Vendor.new
+  def create
+    @id = :market_id
+    @market = Market.find(params[:market_id])
+    @vendor = Vendor.create(create_params[:vendor])
+    @value = @market.id
+
+
+    redirect_to market_portal_path
   end
 
   def show
@@ -20,10 +28,17 @@ class VendorsController < ApplicationController
 
   def edit
     show
+    @market = Market.find(params[:market_id])
+    @legend = "Add vendor information below:"
+    @id = :id
+    @url = "/markets/#{@market.id}/vendors/#{@vendor.id}"
+    @value = @vendor.id
+
   end
 
   def update
     show
+    @market = Market.find(params[:market_id])
     @vendor.update(create_params[:vendor])
 
     redirect_to market_portal_path

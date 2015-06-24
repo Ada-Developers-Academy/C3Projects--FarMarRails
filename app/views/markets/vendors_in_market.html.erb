@@ -1,4 +1,5 @@
 <h2><%= @market.name %>'s Vendors</h2>
+<td><%= button_to "Create a New Vendor", new_market_vendor_path, method: :get, class: "button" %></td>
 
 <div class="market_vendors">
   <table>
@@ -11,8 +12,12 @@
       <tr>
         <td><%= vendor.name %></td>
         <td><%= vendor.num_employees %></td>
+        <td><%= button_to "Edit Vendor", "/markets/#{@market[:id]}/vendors/#{vendor[:id]}/edit", method: :get, class: "button" %></td>
+
       </tr>
     <% end %>
+
+
 
   </table>
 </div>
