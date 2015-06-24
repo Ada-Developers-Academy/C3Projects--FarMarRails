@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get "/vendor_login" => "users#vendor_login"
 
   # routes to dashboards (maybe keep as post only to simulate logged in environment. we can link_to with post methods.)
-  post "/market/dashboard" => "markets#dashboard"
-  post "/vendor/dashboard" => "vendors#dashboard"
+  post "/markets/dashboard" => "markets#dashboard"
+  post "/vendors/dashboard" => "vendors#dashboard"
 
   # Jeri's routes to display sales lists
   get "/vendor/:id/sales" => "vendors#sales"

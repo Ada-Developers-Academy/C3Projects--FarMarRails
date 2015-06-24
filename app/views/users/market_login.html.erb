@@ -1,6 +1,6 @@
 <h1 class="center">welcome to the market dashboard</h1>
 <%= form_tag(controller: "markets", action: "dashboard") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
