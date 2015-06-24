@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get 'markets/:market_id/vendors' => 'markets#by_market', as: 'by_market'
-
+  get 'vendors/:vendor_id/sales_of_month' => 'sales#sales_of_month', as: 'sales_of_month'
   resources :markets do
     resources :vendors
   end

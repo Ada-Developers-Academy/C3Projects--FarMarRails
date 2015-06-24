@@ -1,0 +1,21 @@
+    <h1><%= Time.now.strftime("%B") %> Sales </h1>
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Purchase Time</th>
+  </tr>
+<% sales_array = [] %>
+<% @sales.each do |sale| %>
+  <% if sale.purchase_time.month == Time.now.month %>
+    <% sales_array.push(sale) %>
+  <tr>
+    <td><%= sale.amount %></th>
+    <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
+  </tr>
+  <% end %>
+<% end %>
+<% if sales_array.length == 0 %>
+  <%= puts "There are no sales for this month" %>
+  <% end %>
+  <%= raise %>
+</table>

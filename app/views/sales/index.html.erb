@@ -7,11 +7,13 @@
   <% total_sales = 0 %>
   <% @sales.each do |sale| %>
   <tr>
-    <td>$<%= (sale.amount)/100.to_f %></td>
+    <td>$<%= cents_to_dollars(sale.amount) %></td>
     <% total_sales += sale.amount %>
-    <td><%= sale.purchase_time %></td>
+    <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
     <td><%= sale.product_id %></td>
   </tr>
   <% end %>
 </table>
-<p>Total sales: $<%= total_sales/100.to_f %></p>
+<p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
+
+<%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get %>
