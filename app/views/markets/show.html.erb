@@ -1,3 +1,5 @@
-<%= @market %>
+<h1>This is a regular market view</h1>
+
+<%= render 'shared/show_market', { market: @market } %>
 
 <%= link_to "Edit this market", edit_market_path %>

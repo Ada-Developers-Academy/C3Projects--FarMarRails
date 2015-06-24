@@ -6,5 +6,6 @@ class WelcomeController < ApplicationController
 
   def show_market
     @market = Market.find(params[:id])
+    @vendors = @market.vendors
   end
 end
