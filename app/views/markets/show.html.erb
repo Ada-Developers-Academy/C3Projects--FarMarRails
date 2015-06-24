@@ -31,6 +31,8 @@
   <tr>
     <td><%= vendor.name %></td>
     <td><%= button_to "Edit vendor", edit_market_vendor_path(@market.id, vendor.id), method: "get" %></td>
+
+    <td><%= button_to "Delete vendor", "/markets/#{@market.id}/vendors/#{vendor.id}", method: "delete", data: { confirm: "Are you sure you want to delete this vendor?"} %></td>
   </tr>
   <% end %>
 

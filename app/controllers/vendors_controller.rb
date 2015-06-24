@@ -23,6 +23,13 @@ class VendorsController < ApplicationController
     redirect_to market_path(@vendor.market_id)
   end
 
+  def destroy
+    @vendor = Vendor.destroy(params[:id])
+
+    redirect_to market_path(@vendor.market_id)
+
+  end
+
   private
 
   def create_params
