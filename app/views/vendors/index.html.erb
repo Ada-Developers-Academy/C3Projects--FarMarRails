@@ -7,7 +7,7 @@
 </form> -->
 
 <%= form_tag "/vendors/:id", method: "get" do %>
-  <%= label_tag "vendor[id]", "Vendor ID #" %>
-  <%= text_field_tag "vendor[id]" %>
+  <%= label_tag "vendor[:id]", "Vendor ID #" %>
+  <%= text_field_tag "vendor[:id]" %>
   <%= submit_tag "Find" %>
 <% end %>
