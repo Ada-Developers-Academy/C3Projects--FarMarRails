@@ -5,4 +5,9 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def show
+    @title = "Welcome Market"
+
+    render :all_markets
+  end
 end

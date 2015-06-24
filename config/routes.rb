@@ -12,6 +12,7 @@ resources :markets do
   end
 end
 
+get "/all_markets"              => "users#show"
 # Market index page sorts
 post "/market/name_sort"       => "markets#name_sort"
 post "/market/city_sort"       => "markets#state_sort"
