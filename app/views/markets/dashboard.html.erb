@@ -1,50 +1,6 @@
-<h1 class="center">welcome to the vendor dashboard</h1>
-
 <!-- SEARCH -->
-<%= form_tag(controller: "vendors", action: "search") do %>
+<%= form_tag(controller: "vendors", action: "dashboard") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 <% end %>
-
-<main>
-  <section class="vendor-money">
-    <div class="money">
-      <h3 class="section-header">Revenue</h3>
-
-      <h2>$200.01</h2>
-      <h4>This Month</h4>
-
-      <h2>$1000.00</h2>
-      <h4>Total</h4>
-    </div>
-
-    <div class="sales">
-      <h3 class="section-header">Sales</h3>
-
-      <ul>
-        <% @sales.each do |sale| %>
-        <li>
-          #<%= sale.id %>
-          $<%= sale.amount %>
-          <%= sale.purchase_time.strftime("%m.%d.%y") %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-
-    <!-- button for new sales -->
-  </section>
-
-  <section class="vendor-products">
-    <h3 class="section-header">Products</h3>
-
-    <div>
-      <ul>
-        <li>
-
-        </li>
-      </ul>
-    </div>
-  </section>
-</main>

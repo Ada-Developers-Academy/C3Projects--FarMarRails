@@ -45,8 +45,9 @@ class VendorsController < ApplicationController
 
     vendor = Vendor.find(params[:q].to_i)
     sales = Sale.all
-    all_sales = sales.where(vendor_id: vendor.id)
+    all_sales = vendor.sales
     @sales = all_sales.slice(0, 5)
+    total_sales = total_sales(vendor)
   end
 
   def sales
@@ -75,6 +76,11 @@ class VendorsController < ApplicationController
 
   def create_params
     params.permit(vendor: [:name, :number_of_employees])
+  end
+
+  def total_sales(vendor)
+    all_sales = vendor.sales
+
   end
 
 end # class
