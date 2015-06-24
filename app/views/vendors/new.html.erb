@@ -1,0 +1,32 @@
+<section class="form">
+  <fieldset class="add_vendor_form">
+    <legend>Add a Market</legend>
+    <%= render partial: "shared/form", locals:{ item: @market,
+                                         first_label: :name,
+                                         first_desc: "Market Name",
+                                         first_placeholder: "Bob's Farmer's Market",
+                                         first_value: nil,
+                                         second_label: :address,
+                                         second_desc: "Address",
+                                         second_placeholder: "123 Main Street",
+                                         second_value: nil,
+                                         third_label: :city,
+                                         third_desc: "City",
+                                         third_placeholder: "Dayton",
+                                         third_value: nil,
+                                         fourth_label: :county,
+                                         fourth_desc: "County",
+                                         fourth_placeholder: "Montgomery",
+                                         fourth_value: nil,
+                                         fifth_label: :state,
+                                         fifth_desc: "State",
+                                         fifth_placeholder: "OH",
+                                         fifth_value: nil,
+                                         sixth_label: :zip,
+                                         sixth_desc: "Zip Code",
+                                         sixth_placeholder: "45459",
+                                         sixth_value: nil ,
+                                         submit_button: "add market"}
+    %>
+  </fieldset>
+</section>
