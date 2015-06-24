@@ -7,15 +7,9 @@
       <%= f.label :num_employees , "Number of Employees" %>
       <%= f.text_field :num_employees %>
 
-      <%= f.label :market_id %>
-      <%= f.text_field :market_id, "#{@market_id.to_i}" %>
-      <!-- Above isn't working. market_id looks like a string -->
-      <!-- error: undefined method `merge' for "1":String -->
+      <%= f.hidden_field :market_id, value: @market_id %>
 
   </fieldset>
       <%= f.submit %>
 <% end %>
- <%= params %>
 
-<!-- Need to have this POST to market_vendors_path (instead of default vendors_path) -->
-<!-- Need to associate this new vendor with the market_id it's in -->
