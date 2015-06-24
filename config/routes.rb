@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
 
   root 'users#index'
-  resources :markets  # individual markets
+  resources :markets do # individual markets
+    collection do
+      get 'vendor/:id', action: "by_vendor", as: "by_vendor"
+    end
+  end
   resources :vendors
   resources :users, only: [:index] do
     collection do
