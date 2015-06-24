@@ -13,8 +13,7 @@
     <th> County </th>
     <th> State </th>
     <th> Zip </th>
-    <th> Created On </th>
-    <th> Updated On </th>
+    <th> Established </th>
   </tr>
 
   <tr>
@@ -26,12 +25,15 @@
     <td> <%= @market.state %> </td>
     <td> <%= @market.zip %> </td>
     <td> <%= @market.created_at %> </td>
-    <td> <%= @market.updated_at %> </td>
-
-    <td> <%= link_to "Edit", "/markets/#{@market.id}/edit" %></td>
-    <td> <%= link_to "Vendors", "/markets/#{@market.id}/vendors" %> </td>
-    <!-- need route for link above -->
   </tr>
 
-
 </table>
+
+<ul>
+<% @market_vendors.each do |vendor| %>
+  <li>
+   <%= vendor.name %>
+  </li>
+</ul>
+
+<% end %>

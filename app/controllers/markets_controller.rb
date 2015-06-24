@@ -6,6 +6,7 @@ class MarketsController < ApplicationController
 
   def show
     find_market
+    @market_vendors = Vendor.where(market_id: "#{@market.id}")
   end
 
   def edit
