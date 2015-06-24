@@ -13,6 +13,13 @@ class MarketsController < ApplicationController
     find_market
   end
 
+  def update
+    find_market
+    @market.update(create_params[:market])
+
+    redirect_to '/markets'
+  end
+
   def new
     @market = Market.new
   end
