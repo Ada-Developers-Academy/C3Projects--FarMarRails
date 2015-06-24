@@ -31,11 +31,21 @@
 
 <%= link_to "Add New Vendor", new_market_vendor_path(@market.id) %>
 
-<ul>
-<% @market_vendors.each do |vendor| %>
-  <li>
-   <%= vendor.name %>
-  </li>
-</ul>
-
-<% end %>
+<table>
+  <thead>
+    Vendor List
+  </thead>
+  <tr>
+    <th> Name </th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @market_vendors.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.name %> </td>
+    <td> <%= link_to "Edit", "/markets/#{@market.id}/vendors/#{vendor.id}/edit" %></td>
+    <!-- above not working, routing! -->
+    <td>  </td>
+  </tr>
+  <% end %>
+</table>

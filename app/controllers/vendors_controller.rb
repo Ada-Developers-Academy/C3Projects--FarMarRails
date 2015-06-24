@@ -13,6 +13,17 @@ class VendorsController < ApplicationController
     redirect_to "/markets/#{@vendor.market_id}"
 	end
 
+	def edit
+		find_vendor
+	end
+
+	def update
+		find_vendor
+		@vendor.update(create_params[:vendor])
+
+		redirect_to "market_path(#{@vendor.market_id})"
+	end
+
 ##################### PRIVATE METHODS #####################
   private
 
