@@ -12,10 +12,10 @@
     <div class="money">
       <h3 class="section-header">Revenue</h3>
 
-      <h2>$200.01</h2>
+      <h2>$ <%= @sum / 100 %>.<%= @sum % 100 %> </h2>
       <h4>This Month</h4>
 
-      <h2>$1000.00</h2>
+      <h2>$<%= @total_amount / 100 %>.<%= @total_amount % 100  %></h2>
       <h4>Total</h4>
     </div>
 

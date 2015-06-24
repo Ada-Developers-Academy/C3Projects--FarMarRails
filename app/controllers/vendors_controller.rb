@@ -44,10 +44,12 @@ class VendorsController < ApplicationController
     end
 
     vendor = Vendor.find(params[:q].to_i)
-    sales = Sale.all
     all_sales = vendor.sales
     @sales = all_sales.slice(0, 5)
-    total_sales = total_sales(vendor)
+    @total_amount = total_sales(vendor)
+    month_sales = month_sales(vendor)
+    @sum = 0
+    month_sales.each { |amount| @sum += amount }
   end
 
   def sales
@@ -56,14 +58,8 @@ class VendorsController < ApplicationController
   end
 
   def sales_current_month
-    current_month = Time.now.month
-
     @vendor = Vendor.find(params.permit(:id)[:id])
-    @sales = []
-
-    sales = @vendor.sales.map do |sale|
-      @sales.push(sale) if sale.purchase_time.month == current_month
-    end
+    @sales = month_sales(@vendor)
 
     if @sales.length == 0
       render :sales_empty
@@ -80,7 +76,20 @@ class VendorsController < ApplicationController
 
   def total_sales(vendor)
     all_sales = vendor.sales
+    amounts = all_sales.map { |sale| sale.amount }
+    total = amounts.inject { |sum, n| sum + n }
+    return total
+  end
 
+  def month_sales(vendor)
+    current_month = Time.now.month
+    sales = []
+
+    vendor.sales.each do |sale|
+      sales.push(sale) if sale.purchase_time.month == current_month
+    end
+
+    return sales
   end
 
 end # class
