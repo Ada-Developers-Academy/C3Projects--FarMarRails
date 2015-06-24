@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :vendors, except: [:show] # Everything except show
   end
 
-  resources :vendors, only: [] do
+  resources :vendors, only: [:index, :show] do
     resources :products, except: [:index, :show] # create, edit and delete
     resources :sales, only: [:index, :create, :new]# create
   end

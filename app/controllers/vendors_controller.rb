@@ -1,5 +1,17 @@
 class VendorsController < ApplicationController
 
+  def index
+    @vendors = Vendor.all
+
+    render :index
+  end
+
+  def show
+
+    @vender = Vendor.find(params[:id])
+
+  end
+
   def new
     @vendor = Vendor.new
   end

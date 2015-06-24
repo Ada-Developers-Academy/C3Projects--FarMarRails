@@ -1,0 +1,16 @@
+<h1>Index of Vendors </h1>
+
+<%= button_to "Add a New Vendor", new_market_path, method: "get" %>
+
+<table>
+
+  <th>Vendors</th>
+
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to "#{vendor.name}", vendor_path(vendor.id) %></td>
+  </tr>
+
+  <% end %>
+
+</table>
