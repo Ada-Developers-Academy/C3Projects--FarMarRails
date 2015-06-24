@@ -13,7 +13,6 @@ html {
 /* Homepage --------------------------------------------------- */
 
 .homepage {
-  font-family: 'Poiret One', cursive;
   text-align: center;
 }
 
@@ -37,6 +36,7 @@ html {
 .homepage h2 {
   margin: 0 auto;
   width: 400px;
+  font-family: 'Poiret One', cursive;
   font-size: 1.1em;
   text-transform: lowercase;
 }
@@ -61,12 +61,10 @@ html {
 /* Links ------------------------------------------------------ */
 
 a:link, a:visited {
-  color: #000;
+  color: red;
   text-decoration: none;
-  font-style: italic;
 }
 
 a:hover {
-  color: red;
-  font-style: normal;
+  color: #000;
 }
