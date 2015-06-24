@@ -6,11 +6,43 @@
         Address
       </td>
       <td>
-
+        City
+      </td>
+      <td>
+        County
+      </td>
+      <td>
+        State
+      </td>
+      <td>
+        Zip Code
       </td>
     </tr>
   </thead>
   <tbody>
-
+    <tr>
+      <td>
+        <%= @market.address %>
+      </td>
+      <td>
+        <%= @market.city %>
+      </td>
+      <td>
+        <%= @market.county %>
+      </td>
+      <td>
+        <%= @market.state %>
+      </td>
+      <td>
+        <%= @market.zip %>
+      </td>
+    </tr>
   </tbody>
 </table>
+
+<h2>Vendors associated with <%= @market.name %></h2>
+<% @market.vendors.each do |vendor| %>
+<li>
+  <%= vendor.name %>
+</li>
+<% end %>
