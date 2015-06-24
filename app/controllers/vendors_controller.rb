@@ -44,6 +44,15 @@ class VendorsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+
+    @market = Market.find(params[:market_id])
+    @vendors = @market.vendors
+    render "markets/show"
+  end
+
   private
 
   def create_params

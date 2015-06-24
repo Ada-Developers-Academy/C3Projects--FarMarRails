@@ -6,3 +6,4 @@
 <p>No of employees: <%=@vendor.no_of_employees %></p>
 <p>Market ID: <%=@vendor.market_id  %></p>
 <%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %>
+<%= button_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %>
