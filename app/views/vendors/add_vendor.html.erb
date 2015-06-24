@@ -1,0 +1,17 @@
+<h1>Add new vendor</h1>
+
+<%= form_for @vendor do |v| %>
+ <fieldset>
+   <legend>New vendor</legend>
+   <%= v.label :name %>
+   <%= v.text_field :name %>
+
+   <%= v.label :no_of_employees %>
+   <%= v.text_field :no_of_employees %>
+
+   <%= v.label :market_id %>
+   <%= v.text_field :market_id, :value => params[:market_id] %>
+ </fieldset>
+
+ <%= v.submit 'Submit new vendor' %>
+<% end %>
