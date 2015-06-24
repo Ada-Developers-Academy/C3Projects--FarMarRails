@@ -1,0 +1,17 @@
+<h1>Add this Vendor</h1>
+
+
+<%= form_for @vendor do |f| %>
+
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :no_of_employees %>
+    <%= f.text_field :no_of_employees %>
+
+  </fieldset>
+
+  <%= f.submit %>
+
+  <% end %>

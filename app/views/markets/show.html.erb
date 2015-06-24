@@ -25,6 +25,7 @@
 </ul>
 
 <%= button_to "Edit This Market", edit_market_path, method: :get %>
+<%= button_to "Add a Vendor to This Market", new_vendor_path, {method: :get, params: {:market_id => @market.id}} %>
 
 <h2>List of Vendors</h2>
 
@@ -70,6 +71,3 @@
   <% end %>
 </table>
 <br>
-
-
-
