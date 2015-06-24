@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+
+<main>
+  <table>
+    <tr>
+      <th>Market Name</th>
+    </tr>
+    <tr>
+      <td>(click each for details)</td>
+    </tr>
+    <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to "#{market.name.titlecase}", by_market_users_path(market.id) %> </td>
+    </tr>
+    <% end %>
+  </table>
+</main>
