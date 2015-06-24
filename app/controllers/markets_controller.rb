@@ -13,6 +13,8 @@ class MarketsController < ApplicationController
   end
 
   def create
+    market = Market.create(market_params)
+    redirect_to market
   end
 
   def edit
