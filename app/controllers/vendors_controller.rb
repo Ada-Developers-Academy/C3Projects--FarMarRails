@@ -2,10 +2,9 @@ class VendorsController < ApplicationController
 
   def index
     @title = "Vendors for "
-    @vendor_id =params[:id]
-    @vendor = Vendor.find(@vendor_id)
-    @market = @vendor.market
-
+    @market_id = params[:market_id]
+    @market = Market.find(@market_id)
+    @vendors = @market.vendors
     render :index
   end
 
