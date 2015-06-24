@@ -2,41 +2,40 @@ class ProductsController < ApplicationController
 
   def new
 
-    @product = Product.new
-  end
+   @product = Product.new
+ end
 
-  def create
+ def create
 
-    @product = Product.create(create_params[:product])
+   @product = Product.create(create_params[:product])
 
-    redirect_to vendor_path(@product.vendor_id)
-  end
+   redirect_to vendor_path(@product.vendor_id)
+ end
 
-  def edit
-    @product = Product.find(params[:id])
+ def edit
+   @product = Product.find(params[:id])
 
-  end
+ end
 
-  def update
-    @product = Product.find(params[:product][:id])
-    @product.update(create_params[:product])
+ def update
+   @product = Product.find(params[:product][:id])
+   @product.update(create_params[:product])
 
-    redirect_to vendor_path(@product.vendor_id)
-  end
+   redirect_to vendor_path(@product.vendor_id)
+ end
 
-  def destroy
-    @product = Product.destroy(params[:id])
+ def destroy
+   @product = Product.destroy(params[:id])
 
-    redirect_to vendor_path(@product.vendor_id)
+   redirect_to vendor_path(@product.vendor_id)
 
-  end
+ end
 
-  private
+ private
 
-  def create_params
-    params.permit(product: [:name, :vendor_id, :id])
+ def create_params
+   params.permit(product: [:name, :vendor_id, :id])
 
-  end
-
+ end
 
 end

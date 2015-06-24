@@ -12,6 +12,8 @@ class VendorsController < ApplicationController
     @display_products = @vendor.products
     @display_sales = @vendor.sales
 
+   
+
   end
 
   def new
