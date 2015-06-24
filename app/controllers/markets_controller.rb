@@ -10,4 +10,9 @@ class MarketsController < ApplicationController
     @header = "Vendor Detail"
     @vendor = Vendor.find(params[:id])
   end
+
+  def show
+    @header = "Market Details"
+    @market = Market.find(params[:id])
+  end
 end
