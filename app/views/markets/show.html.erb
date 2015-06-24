@@ -34,8 +34,17 @@
 
 <h2>This Market's Vendors</h2>
 
-<ul>
-  <% @vendors.each do |vendor| %>
-    <li><%= "#{ vendor.name } (##{ vendor.id })" %></li>
-  <% end %>
-</ul>
+<% @vendors.each do |vendor| %>
+  <div class="padding-wrapper">
+    <table class="market-location">
+      <tr>
+        <td class="right">ID</td>
+        <td><%= "#{ vendor.id }" %></td>
+      </tr>
+      <tr>
+        <td class="right">Name</td>
+        <td><%= "#{ vendor.name }" %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

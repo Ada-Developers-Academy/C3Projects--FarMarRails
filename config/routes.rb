@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root "users#index"
   get "/market_dashboard" => "users#market"
   get "/vendor_dashboard" => "users#vendor"
+  post "/market/search" => "markets#search"
+  post "/vendor/search" => "vendors#search"
+
   resources :markets, only: [:show, :index]
 
   get '/markets/' => 'markets#index'

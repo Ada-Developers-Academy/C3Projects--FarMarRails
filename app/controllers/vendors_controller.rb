@@ -1,5 +1,4 @@
 class VendorsController < ApplicationController
-
   def index
     @vendors = Vendor.all
   end
@@ -34,8 +33,15 @@ class VendorsController < ApplicationController
   def delete
     vendor = Vendor.find(params[:vendor_id])
     vendor.delete
-    
+
     redirect_to "/vendors"
+  end
+
+  def search
+    # I wasn't sure how else to handle this.
+    if (params.permit(:q)[:q].to_i <= Vendor.last.id)
+      @q = params.permit(:q)[:q]
+    end
   end
 
   private
@@ -43,4 +49,5 @@ class VendorsController < ApplicationController
   def create_params
     params.permit(vendor: [:name, :number_of_employees])
   end
-end
+
+end # class
