@@ -1,1 +1,10 @@
-<%= @vendors.limit(10) %>
+
+<table>
+  <tr>
+    <th>Vendor Name</th>
+  </tr>
+  <tr>
+  <% @vendors.limit(10).to_a.each do |vendor| %>
+  <td><%= vendor.name %></td>
+  </tr>
+  <% end %>
