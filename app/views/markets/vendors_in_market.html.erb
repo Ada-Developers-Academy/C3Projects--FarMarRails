@@ -1,1 +1,18 @@
-<h2>Your Vendors</h2>
+<h2><%= @market.name %>'s Vendors</h2>
+
+<div class="market_vendors">
+  <table>
+    <tr>
+      <th>Vendor Name</td>
+      <th>No. of Employees</td>
+    </tr>
+
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= vendor.num_employees %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
