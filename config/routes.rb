@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/welcome/markets/:id' => 'welcome#show_market', as: 'show_market'
 
   resources :markets
+  resources :vendors
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
