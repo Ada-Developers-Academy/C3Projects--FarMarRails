@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
   def destroy
     edit
     @product.destroy
-    @product.save
 
     redirect_to vendor_products_path
   end
