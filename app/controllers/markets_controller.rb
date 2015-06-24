@@ -4,6 +4,11 @@ class MarketsController < ApplicationController
     @all_markets = Market.all
   end
 
+  def view
+    find_market
+    @market_vendors = Vendor.where(market_id: "#{@market.id}")
+  end
+
   def show
     find_market
     @market_vendors = Vendor.where(market_id: "#{@market.id}")

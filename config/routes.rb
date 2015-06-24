@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'far_mars#index'
 
-  resources :markets
+  get '/view_markets/:id' => 'markets#view'
+
+  resources :markets do
+    resources :vendors, only: [:new, :create, :update]
+  end
+
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

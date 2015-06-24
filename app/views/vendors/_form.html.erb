@@ -1,0 +1,18 @@
+<%= form_for @vendor do |f| %>
+  <fieldset>
+    <legend> Vendor Details </legend>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :num_employees , "Number of Employees" %>
+      <%= f.text_field :num_employees %>
+
+      <%= f.label :market_id %>
+      <%= f.text_field :market_id %>
+
+  </fieldset>
+      <%= f.submit %>
+<% end %>
+
+<!-- Need to have this POST to market_vendors_path (instead of default vendors_path) -->
+<!-- Need to associate this new vendor with the market_id it's in -->
