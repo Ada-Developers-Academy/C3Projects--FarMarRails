@@ -6,4 +6,11 @@
   <li>Zip: <%= @market.zip %></li>
 </ul>
 
+<h3>Vendors</h3>
+<ul>
+  <% @market.vendors.each do |vendor| %>
+    <li><%= vendor.name %></li>
+  <% end %>
+</ul>
+
 <%= render "footer" %>
