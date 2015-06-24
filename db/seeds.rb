@@ -19,7 +19,7 @@ markets.each do |row|
   market[:state] = row[5]
   market[:zip] = row[6]
 
-  Market.find_or_create_by(market)
+  Market.create(market)
 end
 
 vendors = CSV.read('./seed_csvs/vendors.csv', :headers => false)
@@ -30,7 +30,7 @@ vendors.each do |row|
   vendor[:no_of_employees] = row[2]
   vendor[:market_id] = row[3]
 
-  Vendor.find_or_create_by(vendor)
+  Vendor.create(vendor)
 end
 
 products = CSV.read('./seed_csvs/products.csv', :headers => false)
@@ -40,7 +40,7 @@ products.each do |row|
   product[:name] = row[1]
   product[:vendor_id] = row[2]
 
-  Product.find_or_create_by(product)
+  Product.create(product)
 end
 
 sales = CSV.read('./seed_csvs/sales.csv', :headers => false)
@@ -52,5 +52,5 @@ sales.each do |row|
   sale[:vendor_id] = row[3]
   sale[:product_id] = row[4]
 
-  Sale.find_or_create_by(sale)
+  Sale.create(sale)
 end
