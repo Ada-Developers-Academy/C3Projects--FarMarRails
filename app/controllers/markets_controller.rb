@@ -18,7 +18,7 @@ class MarketsController < ApplicationController
   def show
     @market = Market.find(params[:id])
 
-    @list_of_vendors = Vendor.where(:market_id => params[:id])
+    @vendors = Vendor.where(:market_id => params[:id])
   end
 
   private
