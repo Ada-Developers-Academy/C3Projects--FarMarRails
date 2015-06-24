@@ -15,6 +15,7 @@ class MarketsController < ApplicationController
   end
 
   def edit
+    show
   end
 
   def show
@@ -26,6 +27,10 @@ class MarketsController < ApplicationController
   end
 
   def update
+    show
+    @market.update(create_params[:market])
+
+    redirect_to market_portal_path
   end
 
   private
