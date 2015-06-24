@@ -6,6 +6,7 @@ class VendorsController < ApplicationController
 
 	def new
 		@vendor = Vendor.new
+		@market_id = params[:market_id]
 		@url = market_vendors_path
 	end
 
