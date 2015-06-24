@@ -23,7 +23,7 @@
     <% Market.all.each do |market|%>
       <tr>
         <td>
-          <a href = <%= "/markets/#{market.id}" %>><%= market.name %></a>
+          <a href=<%= "/markets/#{market.id}" %>><%= market.name %></a>
         </td>
         <td>
           <%= market.city%>

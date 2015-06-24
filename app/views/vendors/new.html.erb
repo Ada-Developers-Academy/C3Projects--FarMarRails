@@ -2,7 +2,7 @@
  <% market = Market.find(params[:market_id]) %>
   <fieldset class="add_vendor_form">
     <legend>Add a Vendor</legend>
-    <%= render partial: "form", locals:{ url: "markets/:id/vendors/new",
+    <%= render partial: "form", locals:{ url: "../../:id/vendors/new",
                                          item: @vendor,
                                          name_desc: "Vendor Name",
                                          name_placeholder: "Brenna & Sons",

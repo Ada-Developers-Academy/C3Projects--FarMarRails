@@ -42,10 +42,10 @@
 
 <h2>Vendors associated with <%= @market.name %></h2>
 <p>
-  <a href=<%=  %>>+ Add a Vendor to <%= @market.name %></a>
+  <a href=<%= "/markets/#{@market.id}/vendors/new" %>>+ Add a Vendor to <%= @market.name %></a>
 </p>
 <% @market.vendors.each do |vendor| %>
 <li>
-  <%= vendor.name %>
+    <a href=<%= "/markets/#{@market.id}/vendors/#{vendor.id}" %>><%= vendor.name %></a>
 </li>
 <% end %>

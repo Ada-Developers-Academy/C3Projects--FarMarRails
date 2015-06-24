@@ -3,6 +3,14 @@ class VendorsController < ApplicationController
   def index
   end
 
+  def show
+    @title = " information"
+    @vendor_id =params[:id]
+    @vendor = Vendor.find(@vendor_id)
+
+    render :market_show
+  end
+
   def new
     @vendor = Vendor.new(vendor_params[:vendor])
   end
