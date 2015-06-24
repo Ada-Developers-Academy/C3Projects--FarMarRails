@@ -9,7 +9,7 @@ class VendorsController < ApplicationController
 
     @vendor = Vendor.create(create_params[:vendor])
 
-    redirect_to root_url
+    redirect_to market_path(@vendor.market_id)
   end
 
   private
