@@ -1,2 +1,44 @@
 class ProductsController < ApplicationController
+
+  def index
+  end
+
+  def show
+  end
+
+  # Add a new product
+  def new
+    @product = Product.new(product_params[:product])
+    @vendor  = Vendor.find(params[:vendor_id]) 
+  end
+
+  def create
+    @product = Product.new(product_params[:product])
+    @product.save
+    redirect_to :index
+  end
+
+  # Edit an existing product
+  def edit
+    @product = Product.find(params[:id])
+
+    render :edit
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @name = product_params[:product][:name]
+
+    @market.update(name: @name)
+    @market.save
+
+    redirect_to :products
+  end
+
+  private
+
+  def product_params
+    params.permit(product: [:name])
+  end
+
 end

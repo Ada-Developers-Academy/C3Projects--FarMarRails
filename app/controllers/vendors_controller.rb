@@ -29,24 +29,21 @@ class VendorsController < ApplicationController
   end
 
   # Edit an existing vendor
+  def edit
+    @vendor = Vendor.find(params[:id])
+    render :edit
+  end
+
   def update
-    @market = Market.find(params[:id])
-    @name = market_params[:market][:name]
-    @address = market_params[:market][:address]
-    @city = market_params[:market][:city]
-    @county = market_params[:market][:county]
-    @state = market_params[:market][:state]
-    @zip = market_params[:market][:zip]
+    @vendor = vendor.find(params[:id])
+    @name = vendor_params[:market][:name]
+    @no_of_employees = vendor_params[:market][:no_of_employees]
 
-    @market.update(name: @name)
-    @market.update(address: @address)
-    @market.update(city: @city)
-    @market.update(county: @county)
-    @market.update(state: @state)
-    @market.update(zip: @zip)
-    @market.save
+    @vendor.update(name: @name)
+    @vendor.update(no_of_employees: @no_of_employees)
+    @vendor.save
 
-    redirect_to :markets
+    redirect_to :vendors
   end
 
   def destroy
@@ -57,6 +54,7 @@ class VendorsController < ApplicationController
   end
 
   private
+
   def vendor_params
     params.permit(vendor: [:name, :no_of_employees, :market_id])
   end
