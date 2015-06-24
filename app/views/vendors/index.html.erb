@@ -1,3 +1,9 @@
-<h1> Log Using Your Vendor Id </h2>
+<%= render "shared/header" %>
+  <fieldset>
 
-  
+  <%= form_for @vendor do |f| %>
+  <%= f.label :id, "Vendor Id:"  %>
+  <%= f.collection_select(:id, Vendor.all, :id, :id)  %>
+  <%= f.submit %>
+    <% end %>
+  </fieldset>

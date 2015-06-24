@@ -1,5 +1,7 @@
 class VendorsController < ApplicationController
   def index
+  @header= "Log Using Your Vendor Id"
+  @vendor = Vendor.find(1)
   end
 
   def show
