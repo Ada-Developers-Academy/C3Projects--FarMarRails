@@ -1,6 +1,7 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,4 +11,29 @@ html, body {
 body {
   width: 960px;
   margin: 0 auto;
+}
+
+#login-form {
+  margin: auto;
+  width: 550px;
+}
+
+#login-form h1 {
+  background: #ccc;
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding: 0 0 0 0;
+}
+
+#login-form form {
+  background: #eee;
+  margin-top: 0px;
+}
+
+#login-form div {
+  padding: 10px;
+}
+
+#login-form .submit {
+  padding: 10px; // this won't work until background-url because ????? who knows
 }
