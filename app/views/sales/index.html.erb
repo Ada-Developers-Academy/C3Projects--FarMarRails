@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Time of Purchase</th>
+    <th>Product ID</th>
+  </tr>
+  <% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.amount %></td>
+    <td><%= sale.purchase_time %></td>
+    <td><%= sale.product_id %></td>
+  </tr>
+  <% end %>
+</table>

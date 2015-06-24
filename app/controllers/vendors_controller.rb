@@ -15,6 +15,10 @@ class VendorsController < ApplicationController
     redirect_to by_market_path
   end
 
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
   def edit
     @vendor = Vendor.find(params[:id])
     @url = market_vendor_path
