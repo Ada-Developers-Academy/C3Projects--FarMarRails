@@ -1,27 +1,8 @@
 <h1> Vendors </h1>
 
-<%= form_tag vendor_path, :method => 'get' do %>
+<%= form_tag confirm_vendors_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :id, params[:id] %>
     <%= submit_tag "FIND", :name => nil %>
   </p>
-<% end %>
-
-
-
-<%= # form_tag "/vendors/:id", method: "get" do %>
-  <%= # label_tag "vendor[:id]", "Vendor ID #" %>
-  <%= # text_field_tag "vendor[:id]" %>
-  <%= # submit_tag "Find" %>
-<% # end %>
-
-<!-- <form action="/vendors/:id" method="get">
-  <input type='text' name="vendor[id]">
-  <input type='submit' value="ARR">
-</form> -->
-
-<%= form_for(@vendor, url: vendor_path(@vendor), html: {method: "get"}) do |f| %>
-  <%= f.label :id %>
-  <%= f.text_field :id %>
-  <%= f.submit(value: "FIND") %>
 <% end %>

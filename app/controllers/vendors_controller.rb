@@ -4,14 +4,14 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
   end
 
-  def search
+  def confirm
+    @vendor = Vendor.find(params[:id])
 
+    redirect_to vendor_path(@vendor)
   end
 
   def show
-    raise
     @vendor = Vendor.find(params[:id])
-    # @vendor = Vendor.find(params["vendor"][":id"].to_i)
   end
 
 end
