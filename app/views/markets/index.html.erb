@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 <main>
-  <h2> <%= link_to "Add a Market", new_market_path %> </h2> 
+  <h2> <%= link_to "Add a Market", new_market_path %> </h2>
   <table>
     <tr>
       <th>Market Name</th>
@@ -14,6 +14,8 @@
     </tr>
     <% end %>
   </table>
-</main>
 
+<h2> <%= link_to "Add a Vendor", new_by_market_path %> </h2>
 <%= render "shared/all_vendors" %>
+
+</main>

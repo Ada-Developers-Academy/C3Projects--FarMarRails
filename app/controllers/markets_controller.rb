@@ -6,10 +6,10 @@ class MarketsController < ApplicationController
     @vendors = Vendor.order("lower(name) ASC").all
   end
 
-  def by_vendor
-    @header = "Vendor Detail"
-    @vendor = Vendor.find(params[:id])
-  end
+  # def by_vendor
+  #   @header = "Vendor Detail"
+  #   @vendor = Vendor.find(params[:id])
+  # end
 
   def show
     @header = "Market Details"
@@ -38,6 +38,12 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
     @market.update(create_params[:market])
     redirect_to markets_url
+  end
+
+  def destroy
+    @market = Market.find(params[:id])
+    @market.destroy
+    redirect_to markets_path
   end
 
   private

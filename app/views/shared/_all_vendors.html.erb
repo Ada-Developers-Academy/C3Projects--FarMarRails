@@ -8,7 +8,7 @@
     </tr>
     <% @vendors.each do |vendor| %>
     <tr>
-      <td><%= link_to "#{vendor.name.titlecase}", by_vendor_markets_path(vendor.id) %> </td>
+      <td><%= link_to "#{vendor.name.titlecase}", by_market_path(vendor.id) %> </td>
     </tr>
     <% end %>
   </table>
