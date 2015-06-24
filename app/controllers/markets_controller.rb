@@ -2,6 +2,7 @@ class MarketsController < ApplicationController
   def index
     @markets = Market.all
 
+    render :index
   end
 
   def show
@@ -17,6 +18,7 @@ class MarketsController < ApplicationController
   def create
     @market = Market.new(create_params[:market])
     @market.save
+    @markets = Market.all
 
     render :index
   end

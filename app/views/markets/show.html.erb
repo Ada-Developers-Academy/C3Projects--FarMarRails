@@ -1,4 +1,4 @@
-<%= render partial: "header" %>
+<%= link_to "Back to markets", markets_path %>
 
 <p>Market name: <%=@market.name  %></p>
 <p>Address:
@@ -12,3 +12,5 @@
   <%= v.name %>
   <% end %>
 </p>
+
+<%= link_to "Edit", edit_market_path %>

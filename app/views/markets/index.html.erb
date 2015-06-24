@@ -4,10 +4,8 @@
 
 <h3>Market options:</h3>
 <%= link_to "Create a new market", new_market_path %>
-
 <% @markets.each do |market| %>
   <p>
-    <%= market.name %>
-    <%= link_to "Edit", "markets/#{market.id}/edit" %>  
+   <%= link_to "#{market.name}", "markets/#{market.id}" %>
   </p>
 <% end %>
