@@ -45,6 +45,10 @@ class VendorsController < ApplicationController
   end
 
   def destroy
+    show
+    @vendor.destroy
+
+    redirect_to market_vendors_path
   end
 
   private

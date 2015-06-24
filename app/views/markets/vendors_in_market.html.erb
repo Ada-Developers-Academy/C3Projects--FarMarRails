@@ -13,6 +13,7 @@
         <td><%= vendor.name %></td>
         <td><%= vendor.num_employees %></td>
         <td><%= button_to "Edit Vendor", "/markets/#{@market[:id]}/vendors/#{vendor[:id]}/edit", method: :get, class: "button" %></td>
+        <td><%= button_to "Delete Vendor", "/markets/#{@market[:id]}/vendors/#{vendor[:id]}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" }, class: "button" %></td>
 
       </tr>
     <% end %>
