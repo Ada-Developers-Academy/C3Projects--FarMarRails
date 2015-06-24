@@ -3,7 +3,7 @@ class MarketsController < ApplicationController
     @markets = Market.all
   end
 
-  def search
+  def dashboard
     # I wasn't sure how else to handle this.
     if (params.permit(:query)[:query].to_i <= Market.last.id)
       @query = params.permit(:query)[:query]

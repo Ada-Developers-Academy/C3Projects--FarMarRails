@@ -1,5 +1,8 @@
 <!-- SEARCH -->
+<h1 class="center">welcome to the vendor login</h1>
 <%= form_tag(controller: "vendors", action: "search") do %>
+
+<%= form_tag(controller: "vendors", action: "dashboard") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>

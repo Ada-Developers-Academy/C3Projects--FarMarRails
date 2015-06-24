@@ -37,7 +37,7 @@ class VendorsController < ApplicationController
     redirect_to "/vendors"
   end
 
-  def search
+  def dashboard
     # I wasn't sure how else to handle this.
     if (params.permit(:query)[:query].to_i <= Vendor.last.id)
       @query = params.permit(:query)[:query]
@@ -52,6 +52,23 @@ class VendorsController < ApplicationController
   def sales
     @vendor = Vendor.find(params.permit(:id)[:id])
     @sales = @vendor.sales
+  end
+
+  def sales_current_month
+    current_month = Time.now.month
+
+    @vendor = Vendor.find(params.permit(:id)[:id])
+    @sales = []
+
+    sales = @vendor.sales.map do |sale|
+      @sales.push(sale) if sale.purchase_time.month == current_month
+    end
+
+    if @sales.length == 0
+      render :sales_empty
+    else
+      render :sales
+    end
   end
 
   private

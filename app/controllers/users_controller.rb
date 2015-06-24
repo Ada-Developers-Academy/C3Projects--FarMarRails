@@ -2,11 +2,9 @@ class UsersController < ApplicationController
   def index
   end
 
-  def market_dashboard
-    render :market
+  def market_login
   end
 
-  def vendor_dashboard
-    render :vendor
+  def vendor_login
   end
 end

@@ -3,16 +3,17 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root "users#index"
 
-  # Jeri's routes to grab dashboard selector (maybe rename to login page?)
-  get "/market_dashboard" => "users#market"
-  get "/vendor_dashboard" => "users#vendor"
+  # routes to grab login pages
+  get "/market_login" => "users#market_login"
+  get "/vendor_login" => "users#vendor_login"
 
-  # Jeri's routes to display actual dashbaord (maybe rename to dashboard?)
-  post "/market/search" => "markets#search"
-  post "/vendor/search" => "vendors#search"
+  # routes to dashboards (maybe keep as post only to simulate logged in environment. we can link_to with post methods.)
+  post "/market/dashboard" => "markets#dashboard"
+  post "/vendor/dashboard" => "vendors#dashboard"
 
   # Jeri's routes to display sales lists
   get "/vendor/:id/sales" => "vendors#sales"
+  get "/vendor/:id/sales/current" => "vendors#sales_current_month"
 
 
 
