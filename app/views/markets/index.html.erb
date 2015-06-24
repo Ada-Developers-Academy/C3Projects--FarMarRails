@@ -1,4 +1,20 @@
-<% @markets.limit(10).to_a.each do |market| %>
-<%= link_to "#{market.name}", market_vendors_path(market.id), method: :get %>
-<% end %>
-
+<table>
+  <tr>
+    <th>Market</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>County</th>
+    <th>Zip</th>
+  </tr>
+  <% @markets.to_a.each do |market| %>
+  <tr>
+    <td><%= link_to "#{market.name}", market_vendors_path(market.id), method: :get %></td>
+    <td><%= market.address %></td>
+    <td><%= market.city %></td>
+    <td><%= market.state %></td>
+    <td><%= market.county %></td>
+    <td><%= market.zip %></td>
+  </tr>
+  <% end %>
+</table>
