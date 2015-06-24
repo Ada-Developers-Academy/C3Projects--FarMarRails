@@ -1,0 +1,20 @@
+<h2>Products</h2>
+
+<td><%= button_to "Create Product", new_vendor_product_path, method: :get, class: "button" %></td>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Add Sale</th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+    <td><%= product.name %></td>
+    <td><%= button_to "Edit", '/vendors/:vendor_id/products/:id/edit', method: :get, class: "button" %> </td>
+    <td><%= button_to "Delete", '/vendors/:vendor_id/products/:id', method: :destroy, class: "button" %> </td>
+    <td><%= button_to "Add Sale", class: "button" %> </td>
+    </tr>
+  <% end %>
+</table>
