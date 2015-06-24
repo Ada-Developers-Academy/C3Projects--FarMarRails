@@ -22,11 +22,18 @@ main {
 }
 
 /* VENDOR DASHBOARD */
-.vendor-money, .vendor-product {
+.vendor-money, .vendor-products {
   height: 100%;
   width: 48.5%;
   background-color: gray;
   padding: 5px;
+}
+
+.section-header {
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: 5px;
+  font-weight: 600;
 }
 
 .vendor-money {
@@ -40,9 +47,6 @@ main {
   margin: 10px 0px 10px 3px;
 }
 
-.section-header {
-  text-align: left;
-  text-transform: uppercase;
-  margin-left: 5px;
-  font-weight: 600;
+.vendor-products a {
+  float: right;
 }

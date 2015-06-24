@@ -1,12 +1,5 @@
 <h1 class="center">welcome to the vendor dashboard</h1>
 
-<!-- SEARCH -->
-<%= form_tag(controller: "vendors", action: "dashboard") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
 <main>
   <section class="vendor-money">
     <div class="money">
@@ -26,24 +19,30 @@
         <% @sales.each do |sale| %>
         <li>
           #<%= sale.id %>
-          $<%= sale.amount %>
-          <%= sale.purchase_time.strftime("%m.%d.%y") %>
+          $<%= sale.amount / 100 %>.<%= sale.amount % 100 %>
+           <%= sale.purchase_time.strftime("%m.%d.%y") %>
         </li>
         <% end %>
       </ul>
+
+      <%= link_to "All Sales", "/vendors/#{@vendor.id}/sales" %>
     </div>
+
 
     <!-- button for new sales -->
   </section>
 
   <section class="vendor-products">
+    <%= link_to "Manage", "/vendors/#{@vendor.id}/products" %>
     <h3 class="section-header">Products</h3>
 
     <div>
       <ul>
+        <% @all_products.each do |product| %>
         <li>
-
+          <%= product.name %>
         </li>
+        <% end %>
       </ul>
     </div>
   </section>

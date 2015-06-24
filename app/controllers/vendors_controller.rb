@@ -43,29 +43,15 @@ class VendorsController < ApplicationController
       @query = params.permit(:query)[:query]
     end
 
-    vendor = Vendor.find(params[:q].to_i)
-    all_sales = vendor.sales
+    @vendor = Vendor.find(params[:q].to_i)
+    all_sales = @vendor.sales
     @sales = all_sales.slice(0, 5)
-    @total_amount = total_sales(vendor)
-    month_sales = month_sales(vendor)
+    @total_amount = total_sales(@vendor)
+    month_sales = month_sales(@vendor)
     @sum = 0
     month_sales.each { |amount| @sum += amount }
-  end
 
-  def sales
-    @vendor = Vendor.find(params.permit(:id)[:id])
-    @sales = @vendor.sales
-  end
-
-  def sales_current_month
-    @vendor = Vendor.find(params.permit(:id)[:id])
-    @sales = month_sales(@vendor)
-
-    if @sales.length == 0
-      render :sales_empty
-    else
-      render :sales
-    end
+    @all_products = @vendor.products
   end
 
   private

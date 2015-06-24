@@ -12,12 +12,13 @@ Rails.application.routes.draw do
   post "/vendors/dashboard" => "vendors#dashboard"
 
   # Jeri's routes to display sales lists
-  get "/vendor/:id/sales" => "vendors#sales"
-  get "/vendor/:id/sales/current" => "vendors#sales_current_month"
+  get "/vendors/:id/sales" => "sales#index"
+  get "/vendors/:id/sales/current" => "sales#current_month"
 
 
 
   resources :markets, except: [:destroy]
+
   resources :vendors
 
 
