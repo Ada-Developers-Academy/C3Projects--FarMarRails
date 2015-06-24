@@ -1,5 +1,8 @@
 <h1>Vendors at <%= @market.name %></h1>
 
+<% if current_page?(controller: 'markets', action: 'vendors') %>
+<!-- CREATE VENDOR BUTTON -->
+<% end %>
 <table>
 <tr>
   <th>
@@ -11,6 +14,11 @@
   <th>
     Employees
   </th>
+  <% if current_page?(controller: 'markets', action: 'vendors')%>
+  <th class="center">
+    Edit
+  </th>
+  <% end %>
 </tr>
 <tbody>
   <% @vendors.each do |vendor| %>
@@ -24,6 +32,11 @@
     <td>
       <%= vendor.num_employees %>
     </td>
+    <% if current_page?(controller: 'markets', action: 'vendors')%>
+      <td class="center">
+        <!-- EDIT VENDOR BUTTON -->
+      </td>
+    <% end %>
   </tr>
   <% end %>
 </tbody>

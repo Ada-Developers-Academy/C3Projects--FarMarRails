@@ -13,11 +13,20 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :markets, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :markets, only: [:index, :new, :create, :show, :edit, :update] do
     member do
-      get 'vendors', action: 'vendors', as: 'vendors'
+      # get 'vendors', action: 'vendors', as: 'vendors'
+      get 'vendors', action: 'vendors_index', as: 'vendors'
+      post 'vendors', action: 'vendor_create'
+      get 'vendors/:id', action: 'vendor_show', as: 'vendor'
+      patch 'vendors/:id', action: 'vendor_update'
+      put 'vendors/:id', action: 'vendor_update'
+      delete 'vendors/:id', action: 'vendor_destroy'
+      get 'vendors/new', action: 'vendors_new', as: 'new_vendor'
+      get 'vendors/:id/edit', action: 'vendors_edit', as: 'edit_vendor'
     end
   end
+
 
   resources :vendors, only: [:index, :show] do
     member do
@@ -28,6 +37,10 @@ Rails.application.routes.draw do
     end
 
   end
+
+
+
+
 
 
     # EXAMPLE
