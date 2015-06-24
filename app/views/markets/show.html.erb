@@ -7,14 +7,13 @@
   <%=@market.county  %>,
   <%=@market.state  %>.
   <%=@market.zip  %></p>
+<%= link_to "Edit market", edit_market_path %>
 
 
-    <p>Vendors: </p>
-      <% @vendors.each do |vendor| %>
-        <p>
-          <%= link_to "#{vendor.name}", market_vendor_path("#{@market.id}", "#{vendor.id}")%>
-        </p>
-      <% end %>
+<p>"<%= "#{@market.name}" %>" has these vendors: </p>
+  <% @vendors.each do |vendor| %>
+    <p>
+      <%= link_to "#{vendor.name}", market_vendor_path("#{@market.id}", "#{vendor.id}")%>
+    </p>
+  <% end %>
 </p>
-
-<%= link_to "Edit", edit_market_path %>

@@ -1,1 +1,8 @@
+<%= link_to "Back to market", market_path("#{@market.id}") %>
+
 <h1>HERES THE SPECIFIC VENDOR PAGE </h1>
+
+<p>Vendor name: <%=@vendor.name  %></p>
+<p>No of employees: <%=@vendor.no_of_employees %></p>
+<p>Market ID: <%=@vendor.market_id  %></p>
+<%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %>

@@ -28,6 +28,7 @@ class MarketsController < ApplicationController
 
   def edit
     @market = Market.find(params[:id])
+    @vendors = @market.vendors
 
     render :edit_market
   end
@@ -48,6 +49,8 @@ class MarketsController < ApplicationController
                    state:   new_state,
                    zip:     new_zip
                   )
+
+    @vendors = @market.vendors
 
     render :show
   end
