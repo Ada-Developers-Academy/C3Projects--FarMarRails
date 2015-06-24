@@ -17,7 +17,15 @@ class MarketsController < ApplicationController
     @market = Market.new
   end
 
-private
+  def create
+    @market = Market.new(create_params[:market])
+    @market.save
+
+    redirect_to '/markets'
+  end
+
+##################### PRIVATE METHODS #####################
+  private
 
   def find_market
       id = params[:id]
@@ -25,7 +33,7 @@ private
   end
 
   def create_params
-    params_permit(:market [:id, :name, :address, :city, :county, :state, :zip])
+    params.permit(market: [:id, :name, :address, :city, :county, :state, :zip])
   end
 
 
