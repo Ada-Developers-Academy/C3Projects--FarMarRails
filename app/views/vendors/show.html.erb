@@ -1,1 +1,27 @@
-<h1>I'm a vendor</h1>
+<h1>Vendor Details</h1>
+
+<table>
+  <th>Name</th>
+  <th>Number of Employees</th>
+
+  <tr>
+    <td><%= @vendor.name %></td>
+    <td><%= @vendor.no_of_employees %></td>
+    <% @market = Market.find(@vendor.market_id) %>
+    <td><%= @market.name %></td>
+
+  </tr>
+
+</table>
+
+<h2>The Products for This Vendor</h2>
+
+<table>
+
+  <% @display_products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+  </tr>
+  <% end %>
+
+</table>

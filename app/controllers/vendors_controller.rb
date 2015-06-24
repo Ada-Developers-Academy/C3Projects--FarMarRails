@@ -8,7 +8,8 @@ class VendorsController < ApplicationController
 
   def show
 
-    @vender = Vendor.find(params[:id])
+    @vendor = Vendor.find(params[:id])
+    @display_products = @vendor.products
 
   end
 
