@@ -46,7 +46,12 @@ def update
 end
 
 def destroy
+  @vendor = Vendor.find(params[:vendor_id])
 
+  @product = Product.find(params[:id])
+  @product.destroy
+
+  redirect_to "/vendors/#{@vendor.id}/products"
 end
 
 
