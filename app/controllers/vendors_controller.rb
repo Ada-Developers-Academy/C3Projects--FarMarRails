@@ -1,8 +1,8 @@
 class VendorsController < ApplicationController
-  before_action :set_vendor, only: [:show, :edit, :update]
-  before_action :set_market, only: [:new, :create, :edit, :update]
+  before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_market, only: [:new, :create, :edit, :update, :destroy]
 
-  def index
+  def index 
     @vendors = Vendor.all
   end
 
@@ -27,6 +27,11 @@ class VendorsController < ApplicationController
   def update
     @vendor.update(vendor_params)
     redirect_to market_vendor_path(@market, @vendor)
+  end
+
+  def destroy
+    @vendor.destroy
+    redirect_to market_path(@market)
   end
 
   private
