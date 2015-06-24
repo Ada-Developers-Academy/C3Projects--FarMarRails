@@ -52,7 +52,6 @@ class VendorsController < ApplicationController
   def sales
     @vendor = Vendor.find(params.permit(:id)[:id])
     @sales = @vendor.sales
-    raise
   end
 
   private

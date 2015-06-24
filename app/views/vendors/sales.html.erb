@@ -1,14 +1,18 @@
-<table>
-  <thead>
-    <td>Transaction ID</td>
-    <td>Amount</td>
-    <td>Purchase Time</td>
-  </thead>
-<% @sales.each do |sale| %>
+<div class="padding-wrapper">
+  <table class="market-location">
     <tr>
-      <td><%= sale.id %></td>
-      <td><%= sale.amount %></td>
-      <td><%= sale.purchase_time %></td>
+      <th>Item</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Time</th>
     </tr>
-<% end %>
-</table>
+  <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.product.name %></td>
+        <td>$<%= sale.dollar_amount %></td>
+        <td><%= sale.date %></td>
+        <td><%= sale.time %></td>
+      </tr>
+  <% end %>
+  </table>
+</div>
