@@ -12,6 +12,8 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+
+    @products = Product.where(:vendor_id => params[:id])
   end
 
   def create

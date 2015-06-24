@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :products
+
+  resources :sales, only [:index, :show, :create, :new]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
