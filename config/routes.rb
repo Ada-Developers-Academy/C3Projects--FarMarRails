@@ -15,14 +15,19 @@ Rails.application.routes.draw do
   get "/vendors/:id/sales" => "sales#index"
   get "/vendors/:id/sales/current" => "sales#current_month"
 
-  get "/vendors/:vendor_id/products" => "products#index"
-  get "/vendors/:vendor_id/products/new" => "products#new"
-  post "/vendors/:vendor_id/products/new" => "products#create"
+  # get "/vendors/:vendor_id/products" => "products#index"
+  # get "/vendors/:vendor_id/products/new" => "products#new"
+  # post "/vendors/:vendor_id/products/new" => "products#create"
+  # get "/vendors/:vendor_id/product/:product_id/edit" => "products#edit"
+
+
 
 
 
   resources :markets, except: [:destroy]
-  resources :vendors
+  resources :vendors do
+    resources :products, except: [:show]
+  end
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

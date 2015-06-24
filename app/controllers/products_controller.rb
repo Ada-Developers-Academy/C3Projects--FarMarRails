@@ -11,12 +11,18 @@ class ProductsController < ApplicationController
 
   def create
     @vendor = Vendor.find(params[:vendor_id])
-    params[:selected] = 'none'
     params[:product][:vendor_id] = @vendor.id
     product = Product.new(create_params[:product])
     product.save
 
     redirect_to "/vendors/#{@vendor.id}/products"
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
   end
 
   private
