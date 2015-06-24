@@ -4,11 +4,14 @@
     <th>Time of Purchase</th>
     <th>Product ID</th>
   </tr>
+  <% total_sales = 0 %>
   <% @sales.each do |sale| %>
   <tr>
-    <td><%= sale.amount %></td>
+    <td>$<%= (sale.amount)/100.to_f %></td>
+    <% total_sales += sale.amount %>
     <td><%= sale.purchase_time %></td>
     <td><%= sale.product_id %></td>
   </tr>
   <% end %>
 </table>
+<p>Total sales: $<%= total_sales/100.to_f %></p>

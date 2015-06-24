@@ -1,10 +1,15 @@
+<%= button_to "Create Product", new_vendor_product_path, method: :get %>
 <table>
   <tr>
     <th>Name</th>
+    <th></th>
+    <th></th>
   </tr>
   <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
+    <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: :get %></td>
+    <td><%= button_to "Delete Product", vendor_product_path(@vendor.id, product.id), method: :delete %></td>
   </tr>
   <% end %>
 </table>
