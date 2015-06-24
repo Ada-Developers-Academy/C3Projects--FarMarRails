@@ -22,6 +22,17 @@ class MarketsController < ApplicationController
     @market = Market.find(@market_id)
 
     render :market_show
+
+  def new
+    @market = Market.new(market_params[:market])
+    @market.save
+    index
+  end
+
+  private
+
+  def market_params
+    params.permit(market: [:name, :address, :city, :county, :state, :zip])
   end
 
 end
