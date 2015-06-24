@@ -5,7 +5,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
-    @market = Market.find(params[:id])
+    @market = Market.find(params[:market_id])
 
     render :show
   end
@@ -18,8 +18,9 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = Vendor.new(create_params[:vendor])
+    @vendor.save
     @market = Market.find(params[:vendor][:market_id])
-    @vendors = Vendor.all
+    @vendors = @market.vendors
 
     render "markets/show"
   end
@@ -39,13 +40,13 @@ class VendorsController < ApplicationController
     @vendor.update(name:            new_name,
                    no_of_employees: new_no_of_employees
                   )
-    @market = Market.find(params[:id])
+    @market = Market.find(params[:vendor][:market_id])
     render :show
   end
 
   private
 
   def create_params
-    params.permit(vendor: [:name, :no_of_employees])
+    params.permit(vendor: [:name, :no_of_employees, :market_id])
   end
 end
