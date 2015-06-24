@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<td><%= button_to "Create Product", new_vendor_product_path, method: :get, class: "button" %></td>
+<td><%= button_to "Create Product", "/vendors/#{@vendor[:id]}/products/new", method: :get, class: "button" %></td>
 
 <table>
   <tr>

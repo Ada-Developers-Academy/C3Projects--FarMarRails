@@ -1,0 +1,11 @@
+<%= form_for @product, url: @url, html: {class: "forms"} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, required: :true %>
+
+  <%= f.hidden_field :vendor_id, :value => "#{@vendor[:id]}" %>
+
+  <%= f.submit %>
+
+   <% end %>
+
