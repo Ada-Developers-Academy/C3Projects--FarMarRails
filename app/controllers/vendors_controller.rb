@@ -1,7 +1,7 @@
 class VendorsController < ApplicationController
 
 	def index
-		@vendors = Vendor.all
+		@all_vendors = Vendor.all
 	end
 
 	def new
@@ -17,6 +17,7 @@ class VendorsController < ApplicationController
 
 	def edit
 		find_vendor
+		@market_id = params[:market_id]
 		@url = market_vendor_path
 	end
 
