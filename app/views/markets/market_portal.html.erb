@@ -12,7 +12,7 @@
   <tr>
     <td><%= market.name %></td>
     <td><%= button_to "Edit Market", edit_market_path(market), method: :get, class: "button" %></td>
-    <td><%= button_to "View Vendors", market_vendors_path(market), method: :get, class: "button" %></td>
+    <td><%= button_to "View Vendors", vendors_in_market_markets_path(market), method: :get, class: "button" %></td>
   </tr>
 <% end %>
 </table>

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/markets/market_portal/' => 'markets#market_portal', as: :market_portal
 
   resources :markets, except: [:destroy] do
+    collection do
+      get '/:market_id/vendors', action: 'vendors_in_market', as: 'vendors_in_market'
+    end
+
     resources :vendors
   end
 

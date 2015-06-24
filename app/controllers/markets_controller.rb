@@ -33,6 +33,13 @@ class MarketsController < ApplicationController
     redirect_to market_portal_path
   end
 
+  def vendors_in_market
+    @market = Market.find(params[:market_id])
+    @vendors = @market.vendors
+
+    # redirect_to market_portal_path
+  end
+
   private
 
   def create_params
