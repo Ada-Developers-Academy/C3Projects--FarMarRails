@@ -6,9 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header id= "top">
+
+</header>
 <body>
 
 <%= yield %>
 
 </body>
+<footer>
+  <%= link_to "Top", "#top" %>
+  <%= link_to "Market Home", "/markets" %>
+  <%= link_to "Home", "/" %>
+</footer>
 </html>

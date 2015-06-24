@@ -24,7 +24,7 @@ private
   end
 
   def create_params
-    params_permit(:market [:name, :id])
+    params_permit(:market [:id, :name, :address, :city, :county, :state, :zip])
   end
 
 

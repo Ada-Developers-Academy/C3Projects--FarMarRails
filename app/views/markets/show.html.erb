@@ -28,6 +28,7 @@
     <td> <%= @market.created_at %> </td>
     <td> <%= @market.updated_at %> </td>
 
+    <td> <%= link_to "Edit", "/markets/#{@market.id}/edit" %></td>
     <td> <%= link_to "Vendors", "/markets/#{@market.id}/vendors" %> </td>
     <!-- need route for link above -->
   </tr>
