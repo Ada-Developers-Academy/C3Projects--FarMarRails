@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+ margin: 0;
+ padding: 0;
+ height: 100%;
+}
+
+body {
+ width: 960px;
+ margin: 0 auto;
+}
+
+nav {
+  background: #ccc;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  padding: 0 20px;
+}
+
+nav a:link, nav a:visited {
+  text-decoration: none;
+}
+
+nav a:hover, nav a:active {
+  color: #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.market-location td {
+  padding: 5px;
+}
+
+.market-location {
+  background: #ccc;
+}

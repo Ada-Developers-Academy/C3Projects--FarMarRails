@@ -1,0 +1,41 @@
+<h2>This Market's Data</h2>
+
+<table class="market-location">
+  <tr>
+    <td class="right">ID</td>
+    <td><%= "#{ @market.id }" %></td>
+  </tr>
+  <tr>
+    <td class="right">Market Name</td>
+    <td><%= "#{ @market.name }" %></td>
+  </tr>
+  <tr>
+    <td class="right">Location</td>
+    <td><%= "#{ @market.address }" %></td>
+  </tr>
+  <tr>
+    <td class="right">City</td>
+    <td><%= "#{ @market.city }" %></td>
+  </tr>
+  <tr>
+    <td class="right">County</td>
+    <td><%= "#{ @market.county }" %></td>
+  </tr>
+  <tr>
+    <td class="right">State</td>
+    <td><%= "#{ @market.state }" %></td>
+  </tr>
+  <tr>
+    <td class="right">Zipcode</td>
+    <td><%= "#{ @market.zipcode }" %></td>
+  </tr>
+</table>
+
+
+<h2>This Market's Vendors</h2>
+
+<ul>
+  <% @vendors.each do |vendor| %>
+    <li><%= "#{ vendor.name } (##{ vendor.id })" %></li>
+  <% end %>
+</ul>

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Current</title>
+  <title>FarMarRails -- adh+js/master</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <nav>
+      <%= link_to "Home", "/", title: "Visit the home page." %>
+      <%= link_to "View All Markets", "/markets", title: "View all markets." %>
+      <%= link_to "Market Dashboard", "/market_dashboard", title: "Enter market mode." %>
+      <%= link_to "Vendor Dashboard", "/vendor_dashboard", title: "Enter vendor mode." %>
+    </nav>
+  </header>
 
-<%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
 </body>
 </html>
