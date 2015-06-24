@@ -1,0 +1,21 @@
+<h1> Use this form to add a new Vendor to Your Market</h1>
+<%= form_for @new do |f| %>
+
+<fieldset>
+  <legend>Add a New Vendor to Market </legend>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :no_of_employees %>
+  <%= f.text_field :no_of_employees %>
+
+  <%= f.hidden_field :market_id, :value => "#{@market.id}" %>
+
+</fieldset>
+<%=  f.submit "Add This New Vendor" %>
+
+<% end %>
+<br>
+<br>
+
+  <a href="/markets/">Go Back to all Markets</a>

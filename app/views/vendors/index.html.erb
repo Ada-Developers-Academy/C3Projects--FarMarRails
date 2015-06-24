@@ -1,0 +1,9 @@
+<h1>Vendors</h1>
+
+<% @vendors.each do |vendor| %>
+  <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %>
+<% end %>
+
+<br>
+<br>
+<%= link_to "Create New Vendor", "/markets/#{params[:market_id].to_s}/vendors/new" %>

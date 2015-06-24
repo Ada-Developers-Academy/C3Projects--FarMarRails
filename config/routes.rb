@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :vendors
   end
 
-  resources :vendors, only:[:index] do
+  resources :vendors do
     resources :products
     resources :sales, except:[:destroy]
   end
