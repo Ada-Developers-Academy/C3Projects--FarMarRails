@@ -1,3 +1,55 @@
-<h1> HELLO </h1>
+<h1> Markets </h1>
 
-<%= @display_me %>
+<table border "1">
+  <tr>
+    <th>
+      MARKET ID
+    </th>
+    <th>
+      MARKET NAME
+    </th>
+    <th>
+      STREET ADDRESS
+    </th>
+    <th>
+      CITY
+    </th>
+    <th>
+      COUNTY
+    </th>
+    <th>
+      STATE
+    </th>
+    <th>
+      ZIP CODE
+    </th>
+
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td>
+      <%= market.id %>
+    </td>
+    <td>
+      <%= market.name %>
+    </td>
+    <td>
+      <%= market.street_address %>
+    </td>
+    <td>
+      <%= market.city %>
+    </td>
+    <td>
+      <%= market.county %>
+    </td>
+    <td>
+      <%= market.state %>
+    </td>
+    <td>
+      <%= market.zip %>
+    </td>
+  </tr>
+  <% end %>
+
+</table>
