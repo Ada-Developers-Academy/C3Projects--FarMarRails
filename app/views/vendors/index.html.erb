@@ -4,7 +4,7 @@
     <th>Vendor Name</th>
   </tr>
   <tr>
-  <% @vendors.limit(10).to_a.each do |vendor| %>
-  <td><%= vendor.name %></td>
+  <% @vendors.to_a.each do |vendor| %>
+  <td><%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %></td>
   </tr>
   <% end %>
