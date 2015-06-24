@@ -1,0 +1,47 @@
+<h1>Market #</h1>
+
+<ul>
+  <li>
+    Market ID: <%= @market.id %>
+  </li>
+  <li>
+    Market Name: <%= @market.name %>
+  </li>
+  <li>
+    Address: <%= @market.street_address %>
+  </li>
+  <li>
+    City: <%= @market.city %>
+  </li>
+  <li>
+    State: <%= @market.state %>
+  </li>
+  <li>
+    Zip: <%= @market.zip %>
+  </li>
+  <li>
+    County: <%= @market.county %>
+  </li>
+</ul>
+
+<h2>List of Vendors</h2>
+
+<table border "1">
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td>
+      <%= vendor.id %>
+    </td>
+    <td>
+      <%= link_to "#{vendor.name}", vendor_path(vendor) %>
+    </td>
+    <td>
+      <%= vendor.no_of_employees %>
+    </td>
+    <td>
+      <%= vendor.market_id %>
+    </td>
+  </tr>
+  <% end %>
+</table>
