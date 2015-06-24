@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :sales, except:[:destroy]
   end
 
+  get 'vendors/:id' => 'vendors#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

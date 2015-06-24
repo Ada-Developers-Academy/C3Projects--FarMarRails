@@ -1,0 +1,5 @@
+<h1>Vendors</h1>
+
+<% @vendors.each do |vendor| %>
+  <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %>
+<% end %>

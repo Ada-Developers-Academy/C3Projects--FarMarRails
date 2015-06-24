@@ -1,6 +1,9 @@
 class VendorsController < ApplicationController
 
   def index
+    @vendors = Vendor.all
+
+    render :index
   end
 
   def create
@@ -13,6 +16,10 @@ class VendorsController < ApplicationController
   end
 
   def show
+    @vendor = Vendor.find(params[:id])
+    @vendor_market = @vendor.market.name
+    
+    render :show
   end
 
   def update
