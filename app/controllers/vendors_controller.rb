@@ -49,6 +49,14 @@ class VendorsController < ApplicationController
     redirect_to :markets
   end
 
+  def destroy
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+
+    redirect_to market_vendors_path
+  end
+
+  private
   def vendor_params
     params.permit(vendor: [:name, :no_of_employees, :market_id])
   end

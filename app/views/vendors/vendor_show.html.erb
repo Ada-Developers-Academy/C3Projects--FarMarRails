@@ -27,10 +27,10 @@
         <%= @vendor.no_of_employees %>
       </td>
       <td>
-        edit
+        <a href =<%=  "#{edit_market_vendor_path}"%>>edit</a>
       </td>
       <td>
-        delete
+        <%= button_to "Delete", market_vendor_path, :confirm => "Are you sure you want to delete #{@vendor.name}?", :method => :delete %>
       </td>
     </tr>
   </tbody>
