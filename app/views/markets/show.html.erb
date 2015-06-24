@@ -16,3 +16,9 @@
   <li>State: <%=@market.state %></li>
   <li>Zipcode: <%=@market.zip %></li>
 </ul>
+
+<%= link_to "Edit Market Details", edit_market_path(@market.id) %>
+<br>
+<br>
+
+  <a href="/markets/">Go Back to all Markets</a>

@@ -3,3 +3,7 @@
 <% @markets.each do |market| %>
   <%= link_to "#{market.name}", "/markets/#{market.id}" %>
 <% end %>
+
+<br>
+<br>
+<%= link_to "Create New Market", "/markets/new" %>
