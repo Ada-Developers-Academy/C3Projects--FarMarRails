@@ -17,6 +17,10 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
   end
 
+  def market_portal
+    @markets = Market.all
+  end
+
   def update
   end
 

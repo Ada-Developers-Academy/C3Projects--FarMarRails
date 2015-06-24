@@ -1,0 +1,19 @@
+<h1>Welcome to the Market Portal!</h1>
+<td><%= button_to "Create Market", new_market_path, method: :get %></td>
+
+<table border = "0">
+  <tr>
+    <th>Market Name</th>
+    <th>Edit Market</th>
+    <th>Vendors</th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= button_to "Edit Market", edit_market_path(market), method: :get %></td>
+    <td><%= button_to "View Vendors", market_vendors_path(market), method: :get %></td>    
+  </tr>
+<% end %>
+
+</table>

@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get '/markets/market_portal/' => 'markets#market_portal', as: :market_portal
+
   resources :markets, except: [:destroy] do
     resources :vendors
   end
+
 
   resources :vendors, only: [:index] do
     resources :sales
