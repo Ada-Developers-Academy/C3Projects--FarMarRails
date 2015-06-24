@@ -1,34 +1,26 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  root "users#index"
 
-  get '/markets' => 'markets#index'
+  resources :markets, except: [:destroy]
+  resources :vendors
 
   # Jeri's routes
-  root "users#index"
   get "/market_dashboard" => "users#market"
   get "/vendor_dashboard" => "users#vendor"
+
   post "/market/search" => "markets#search"
   post "/vendor/search" => "vendors#search"
 
-  resources :markets, only: [:show, :index]
+  # get '/vendors' => 'vendors#index'
 
-  get '/markets/' => 'markets#index'
+  # get '/vendors/new' => 'vendors#new'
+  # post '/vendors/new' => 'vendors#create'
 
-  get '/markets/new' => 'markets#new'
-  post '/markets/new' => 'markets#create'
-
-  get '/markets/:market_id/edit' => 'markets#edit'
-  patch '/markets/:market_id/edit' => 'markets#update'
-
-  get '/vendors' => 'vendors#index'
-
-  get '/vendors/new' => 'vendors#new'
-  post '/vendors/new' => 'vendors#create'
-
-  get '/vendors/:vendor_id/edit' => 'vendors#edit'
-  patch '/vendors/:vendor_id/edit' => 'vendors#update'
-  post '/delete/:vendor_id' => 'vendors#delete'
+  # get '/vendors/:vendor_id/edit' => 'vendors#edit'
+  # patch '/vendors/:vendor_id/edit' => 'vendors#update'
+  # post '/delete/:vendor_id' => 'vendors#delete'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
