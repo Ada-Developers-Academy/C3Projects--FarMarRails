@@ -1,4 +1,4 @@
-<h1>test</h1>
+<h1>All Markets</h1>
 
 <table>
   <thead>
@@ -27,7 +27,7 @@
     <% Market.all.each do |market|%>
       <tr>
         <td>
-          <%= market.name %>
+          <%= market.name.split.map(&:capitalize).join(' ') %>
         </td>
         <td>
           <%= market.address%>
@@ -42,7 +42,10 @@
           <%= market.state %>
         </td>
         <td>
-          <%= market.zip %>
+          <% if market.zip.to_s.length == 5 %>
+            <%= market.zip %>
+          <% else %>
+          <% end %>
         </td>
       </tr>
     <% end %>
