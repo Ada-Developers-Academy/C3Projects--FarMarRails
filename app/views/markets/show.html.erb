@@ -1,4 +1,4 @@
-<h1>All Markets</h1>
+<h1><%= @market.name %></h1>
 <table>
 <tr>
   <th>
@@ -23,37 +23,35 @@
     Zip
   </th>
   <th class="center">
-    Details
+    Vendors
   </th>
 </tr>
 <tbody>
-  <% @markets.each do |market| %>
   <tr>
     <td>
-      <%= market.id %>
+      <%= @market.id %>
     </td>
     <td>
-      <%= market.name %>
+      <%= @market.name %>
     </td>
     <td>
-      <%= market.address %>
+      <%= @market.address %>
     </td>
     <td>
-      <%= market.city %>
+      <%= @market.city %>
     </td>
     <td>
-      <%= market.county %>
+      <%= @market.county %>
     </td>
     <td>
-      <%= market.state %>
+      <%= @market.state %>
     </td>
     <td>
-      <%= market.zip %>
+      <%= @market.zip %>
     </td>
     <td class="center">
-      <%= link_to "Details", market_path(market) %>
+      <%= link_to "Vendors", vendors_market_path(@market) %>
     </td>
   </tr>
-  <% end %>
 </tbody>
 </table>

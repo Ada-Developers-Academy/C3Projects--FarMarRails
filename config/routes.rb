@@ -5,7 +5,19 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
-  resources :markets, only: [:index, :show]
+  resources :markets, only: [:index, :show] do
+    member do
+      get 'vendors', action: 'vendors', as: 'vendors'
+    end
+  end
+
+    # EXAMPLE
+    # collection do
+    #   get 'released/:year', action: 'by_year',  as: 'by_year'
+    # end
+    # by_year_albums GET  /albums/released/:year(.:format) albums#by_year
+    # <%= link_to "Albums for the year #{@year}", by_year_albums_path(@year) %>
+
 
   resources :vendors, only: [:index, :show]
 
