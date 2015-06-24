@@ -51,7 +51,11 @@
       <%= market.zip %>
     </td>
     <td class="center">
-      <%= link_to "Details", "" %>
+      <% if current_page?(controller: 'users', action: 'index',) %>
+        <%= link_to "Details", controller: 'users', action: 'show', id: market.id %>
+      <% elsif current_page?(controller: 'markets', action: 'index') %>
+        <%= link_to "Details", controller: 'markets', action: 'show', id: market.id %>
+      <% end %>
     </td>
   </tr>
   <% end %>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def welcome
     render :welcome
   end
-  
+
   def index
     @markets = Market.all
     render :index

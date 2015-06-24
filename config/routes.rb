@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#welcome'
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index] do
+    collection do
+      get 'markets', action: 'index', as: 'markets'
+      get 'markets/:id', action: 'show', as: 'market'
+    end
     member do
       get 'vendors', action: 'vendors', as: 'vendors'
     end
