@@ -9,12 +9,12 @@
   </thead>
   <th> ID </th>
   <th> Name </th>
-  <th> Edit </th>
+  <th> Details </th>
   <% @all_markets.each do |market| %>
   <tr>
     <td> <%= market.id  %></td>
     <td> <%= market.name %></td>
-    <td> <%= link_to "Details", "/market/#{market.id}/show" %> </td>
+    <td> <%= link_to "Details", "/markets/#{market.id}" %> </td>
   </tr>
 
   <% end %>

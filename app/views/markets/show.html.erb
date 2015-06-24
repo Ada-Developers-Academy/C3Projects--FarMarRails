@@ -4,9 +4,10 @@
   <thead>
     Details
   </thead>
-  
+
   <tr>
     <th> ID </th>
+    <th> Name </th>
     <th> Address </th>
     <th> City </th>
     <th> County </th>
@@ -26,6 +27,9 @@
     <td> <%= @market.zip %> </td>
     <td> <%= @market.created_at %> </td>
     <td> <%= @market.updated_at %> </td>
+
+    <td> <%= link_to "Vendors", "/markets/#{@market.id}/vendors" %> </td>
+    <!-- need route for link above -->
   </tr>
 
 

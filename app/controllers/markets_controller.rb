@@ -8,6 +8,14 @@ class MarketsController < ApplicationController
     find_market
   end
 
+  def edit
+    find_market
+  end
+
+  def new
+    @market = Market.new
+  end
+
 private
 
   def find_market
