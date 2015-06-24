@@ -9,17 +9,16 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
     @legend = "Add vendor information below:"
     @url = "/markets/#{@market.id}/vendors"
+    @id = :market_id
+    @value = @market.id
 
   end
 
   def create
-    @id = :market_id
     @market = Market.find(params[:market_id])
     @vendor = Vendor.create(create_params[:vendor])
-    @value = @market.id
 
-
-    redirect_to market_portal_path
+    redirect_to market_vendors_path
   end
 
   def show
