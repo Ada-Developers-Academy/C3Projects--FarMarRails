@@ -27,7 +27,8 @@ class MarketsController < ApplicationController
   def new
     @market = Market.new(market_params[:market])
     @market.save
-    index
+    
+    render :new
   end
 
   private
