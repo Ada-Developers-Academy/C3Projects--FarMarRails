@@ -27,7 +27,7 @@
     <% Market.all.each do |market|%>
       <tr>
         <td>
-          <%= market.name.split.map(&:capitalize).join(' ') %>
+          <a href=<%="/markets/#{market.id}"%>><%= market.name.split.map(&:capitalize).join(' ') %></a>
         </td>
         <td>
           <%= market.address%>
