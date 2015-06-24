@@ -13,6 +13,7 @@ class VendorsController < ApplicationController
     # this is for showing specific vendor page for VENDOR USER
     if params[:id] == @vendor.id.to_s
       @market = Market.find(@vendor.market_id)
+      @products = @vendor.products
     end
 
     # this is for showing specific vendor page for MARKET USER

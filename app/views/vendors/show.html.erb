@@ -4,6 +4,7 @@
 
 <p>Vendor name: <%=@vendor.name  %></p>
 <p>No of employees: <%=@vendor.no_of_employees %></p>
-<p>Market ID: <%=@vendor.market_id  %></p>
+<p>Market name: <%= @vendor.market.name  %></p>
 <%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %>
 <%= button_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %>
+<p><%= link_to "Display all products for this vendor", vendor_products_path("#{@vendor.id}")%></p>
