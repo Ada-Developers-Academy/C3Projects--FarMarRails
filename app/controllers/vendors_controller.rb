@@ -1,11 +1,24 @@
 class VendorsController < ApplicationController
   def index
+    @vendors = Vendor.all
 
+    if params[:market_id]
+      @market = Market.find(params[:vendor][:market_id])
+    end
   end
 
   def show
     @vendor = Vendor.find(params[:id])
-    @market = Market.find(params[:market_id])
+
+    # this is for showing specific vendor page for VENDOR USER
+    if params[:id] == @vendor.id.to_s
+      @market = Market.find(@vendor.market_id)
+    end
+
+    # this is for showing specific vendor page for MARKET USER
+    if params[:market_id]
+      @market = Market.find(params[:market_id])
+    end
 
     render :show
   end

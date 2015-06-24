@@ -1,3 +1,9 @@
 <%= render partial: "header" %>
 
 <h1>Hello Vendor!!!</h1>
+
+<% @vendors.each do |vendor| %>
+  <p>
+   <%= link_to "#{vendor.name}", vendor_path("#{vendor.id}") %>
+  </p>
+<% end %>
