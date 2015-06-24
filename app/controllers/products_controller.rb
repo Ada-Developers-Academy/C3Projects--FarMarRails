@@ -23,15 +23,18 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @vendor = Vendor.find(params[:vendor_id])
-    @product = @vendor.products.find(params[:id])
+    edit
     @product.update(create_params[:product])
 
     redirect_to vendor_products_path
   end
 
   def destroy
+    edit
+    @product.destroy
+    @product.save
 
+    redirect_to vendor_products_path
   end
 
   private
