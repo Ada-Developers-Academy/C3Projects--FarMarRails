@@ -1,0 +1,14 @@
+<%= render partial: "header" %>
+
+<p>Market name: <%=@market.name  %></p>
+<p>Address:
+  <%=@market.address  %>,
+  <%=@market.city  %>,
+  <%=@market.county  %>,
+  <%=@market.state  %>.
+  <%=@market.zip  %></p>
+  <% vendors = @market.vendors %>
+<p>Vendors: <% vendors.each do |v| %>
+  <%= v.name %>
+  <% end %>
+</p>

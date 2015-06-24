@@ -1,0 +1,7 @@
+<%= render partial: "header" %>
+
+<h1>Hello Market!</h1>
+
+<% @markets.each do |market| %>
+  <p><%= link_to "#{market.name}", "markets/#{market.id}" %></p>
+<% end %>

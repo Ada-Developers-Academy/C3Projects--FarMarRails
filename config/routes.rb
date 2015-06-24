@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'welcomes#index'
+  get '/welcomes/markets'    => 'welcomes#display_all_markets'
+  get '/welcomes/markets/:id' => 'welcomes#display_specific_market'
 
   resources :markets do
     resources :vendors
