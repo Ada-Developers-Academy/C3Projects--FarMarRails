@@ -10,6 +10,7 @@ class VendorsController < ApplicationController
 
     @vendor = Vendor.find(params[:id])
     @display_products = @vendor.products
+    @display_sales = @vendor.sales
 
   end
 
