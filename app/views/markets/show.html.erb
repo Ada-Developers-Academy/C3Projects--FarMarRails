@@ -4,4 +4,12 @@
 
 <%= link_to "Edit this market", edit_market_path %>
 
-<%= link_to "Create a new vendor for this market", new_vendor_path %>
+<h3>Vendors</h3>
+
+<%= link_to "Create a new vendor for this market", new_market_vendor_path(@market) %>
+
+<ul>
+  <% @market.vendors.each do |vendor| %>
+    <li><%= link_to vendor.name, market_vendor_path(@market, vendor) %></li>
+  <% end %>
+</ul>
