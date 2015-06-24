@@ -22,9 +22,17 @@ class MarketsController < ApplicationController
     market = Market.find(params[:market_id])
     edited_market = params[:market]
 
-    task.update_all(edited_market)
+    market.update(
+      name: edited_market[:name],
+      address: edited_market[:address],
+      city: edited_market[:city],
+      county: edited_market[:county],
+      state: edited_market[:state],
+      zipcode: edited_market[:zipcode]
+    )
 
-    redirect_to "/markets/#{market.id}/"
+    # update when market#show is created
+    redirect_to "/markets/"
   end
 
   private
