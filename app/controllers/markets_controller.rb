@@ -16,8 +16,7 @@ class MarketsController < ApplicationController
   end
 
   def new
-    @new_market = Market.new
-
+    @market = Market.new
   end
 
   def create
