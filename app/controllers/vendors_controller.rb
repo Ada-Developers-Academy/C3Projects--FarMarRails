@@ -15,6 +15,17 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
     @sales = Sale.where(vendor_id: params[:id])
 
+    @month = Date.new.strftime('%Y%m')
+    @show_current_month = params[:show_current_month]
+
+    # this will make a new array @sales of only the sales for that month
+    if @show_current_month
+      @sales = @sales.each do |sale|
+        if sale.purchase_time.strftime('%Y%m') == @month
+          sale
+        end
+      end
+    end
 
     @total_amount = 0
     @sales.each do |sale|

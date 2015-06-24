@@ -1,3 +1,4 @@
+<%= params %>
 <h1><%= "#{@vendor.name}'s Sales" %></h1>
 <table>
 <tr>
@@ -16,20 +17,20 @@
 </tr>
 <tbody>
   <% @sales.each do |sale| %>
-    <tr>
-      <td>
-        <%= sale.id %>
-      </td>
-      <td>
-        <%= "$#{sale.amount}" %>
-      </td>
-      <td>
-        <%= sale.purchase_time %>
-      </td>
-      <td>
-        <%= sale.product.name %>
-      </td>
-    </tr>
+      <tr>
+        <td>
+          <%= sale.id %>
+        </td>
+        <td>
+          <%= "$#{sale.amount}" %>
+        </td>
+        <td>
+          <%= sale.purchase_time %>
+        </td>
+        <td>
+          <%= sale.product.name %>
+        </td>
+      </tr>
   <% end %>
   <tr>
     <th>
@@ -41,3 +42,6 @@
   </tr>
 </tbody>
 </table>
+
+<%= button_to "Show Sales from Current Month", sales_vendor_path, params: {show_current_month: true} %>
+<%= button_to "Show All Sales", sales_vendor_path, params: {show_current_month: false} %>
