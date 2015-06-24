@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   resources :markets
 
-  resources :vendors
+  resources :vendors do
+    collection do
+      get '/confirm', action: 'confirm', as: 'confirm'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
