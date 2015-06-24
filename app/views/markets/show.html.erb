@@ -1,0 +1,37 @@
+<h1> Market Detail for <%= @market.name %></h1>
+
+<table>
+  <thead>
+    Details
+  </thead>
+
+  <tr>
+    <th> ID </th>
+    <th> Name </th>
+    <th> Address </th>
+    <th> City </th>
+    <th> County </th>
+    <th> State </th>
+    <th> Zip </th>
+    <th> Created On </th>
+    <th> Updated On </th>
+  </tr>
+
+  <tr>
+    <td> <%= @market.id %> </td>
+    <td> <%= @market.name %></td>
+    <td> <%= @market.address %> </td>
+    <td> <%= @market.city %> </td>
+    <td> <%= @market.county %> </td>
+    <td> <%= @market.state %> </td>
+    <td> <%= @market.zip %> </td>
+    <td> <%= @market.created_at %> </td>
+    <td> <%= @market.updated_at %> </td>
+
+    <td> <%= link_to "Edit", "/markets/#{@market.id}/edit" %></td>
+    <td> <%= link_to "Vendors", "/markets/#{@market.id}/vendors" %> </td>
+    <!-- need route for link above -->
+  </tr>
+
+
+</table>
