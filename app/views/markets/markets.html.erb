@@ -1,0 +1,53 @@
+<h1>All Markets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        City
+      </th>
+      <th>
+        County
+      </th>
+      <th>
+        State
+      </th>
+      <th>
+        Zip Code
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Market.all.each do |market|%>
+      <tr>
+        <td>
+          <%= market.name.split.map(&:capitalize).join(' ') %>
+        </td>
+        <td>
+          <%= market.address%>
+        </td>
+        <td>
+          <%= market.city %>
+        </td>
+        <td>
+          <%= market.county %>
+        </td>
+        <td>
+          <%= market.state %>
+        </td>
+        <td>
+          <% if market.zip.to_s.length == 5 %>
+            <%= market.zip %>
+          <% else %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
