@@ -1,4 +1,24 @@
-<h1>Welcome to FarMar,</h1>
-<h2>The One-Stop Shop for All Things Farmer's Market</h2>
+<h1>Welcome to FarMar</h1>
+<h2> I am a... </h2>
+<%= link_to "Market", "/markets" %>
+<%= link_to "Vendor", "/vendor" %>
 
-<%= link_to "Markets", "/markets" %>
+
+
+<table>
+  <thead>
+    Market List
+  </thead>
+  <th> ID </th>
+  <th> Name </th>
+  <th> Details </th>
+  <% @all_markets.each do |market| %>
+  <tr>
+    <td> <%= market.id  %></td>
+    <td> <%= market.name %></td>
+    <td> <%= link_to "Details", "/markets/#{market.id}" %> </td>
+  </tr>
+
+  <% end %>
+
+</table>
