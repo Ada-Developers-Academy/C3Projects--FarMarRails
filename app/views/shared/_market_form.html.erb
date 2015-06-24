@@ -1,0 +1,27 @@
+<main>
+  <%= form_for @market do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @market.name, :required => true %>
+
+      <%= f.label :address %>
+      <%= f.text_area :address, value: @market.address  %>
+
+      <%= f.label :city %>
+      <%= f.text_area :city, value: @market.city  %>
+
+      <%= f.label :county  %>
+      <%= f.text_area :county, value: @market.county %>
+
+      <%= f.label :state %>
+  <!-- need to fix state drop down -->
+      <%= f.collection_select :state, Market.order(:state).uniq,:id,:state, value: @market.state, include_blank: true %>
+
+      <%= f.label :zip  %>
+      <%= f.text_area :zip, value: @market.zip %>
+    </fieldset>
+    <section >
+      <%= f.submit "#{@adj} Market" %>
+    </section>
+  <% end %>
+</main>
