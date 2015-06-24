@@ -25,6 +25,7 @@
 </ul>
 
 <%= button_to "Edit This Market", edit_market_path, method: :get %>
+<% # Params in the below 'button_to' is used to pass on the current market id, so we can create a vendor with that specific market. %>
 <%= button_to "Add a Vendor to This Market", new_vendor_path, {method: :get, params: {:market_id => @market.id}} %>
 
 <h2>List of Vendors</h2>
