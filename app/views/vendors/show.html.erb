@@ -10,11 +10,9 @@
 
 <ul>
   <% @vendor.products.each do |product| %>
-    <li><%= product.name %></li>
+    <li><%= link_to product.name, vendor_product_path(@vendor, product) %></li>
   <% end %>
 </ul>
-
-<%# link_to product.name, vendor_product_path(product) %>
 
 <!-- # list of products
 
