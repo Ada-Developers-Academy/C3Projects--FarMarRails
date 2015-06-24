@@ -31,6 +31,13 @@ class VendorsController < ApplicationController
     redirect_to "/vendors/"
   end
 
+  def delete
+    vendor = Vendor.find(params[:vendor_id])
+    vendor.delete
+    vendor.save
+    redirect_to "/vendors"
+  end
+
   private
 
   def create_params

@@ -2,6 +2,9 @@
   <% @vendors.each do |vendor| %>
   <li>
     <%= vendor.name %>
+    <%= button_to "/delete/#{vendor.id}", data: { confirm: "Are you sure? This is permanent." } do %>
+      Delete
+    <% end %>
   </li>
   <% end %>
 </ul>
