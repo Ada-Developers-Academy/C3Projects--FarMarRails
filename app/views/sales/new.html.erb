@@ -1,0 +1,15 @@
+<%= form_for @sale, url: vendor_sales_path, method: :post do |f| %>
+<%= f.label :amount %>
+<%= f.text_field :amount %>
+
+<%= f.label :purchase_time %>
+<%= f.date_field :purchase_time %>
+
+<%= f.label :products %>
+<%= f.collection_select :product_id, @products, :id, :name %>
+
+<%= f.hidden_field :vendor_id, :value => params[:vendor_id] %>
+
+<%= f.submit %>
+<% end %>
+
