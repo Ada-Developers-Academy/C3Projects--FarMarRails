@@ -1,0 +1,17 @@
+<h1>Welcome to the Vendor Portal!</h1>
+
+<table border = "0">
+  <tr>
+    <th>Vendor Name</th>
+    <th>Vendor Products</th>
+    <th>Vendor Sales</th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+    <td><%= button_to "View Products", vendor_products_path(vendor), method: :get, class: "button" %></td>
+    <td><%= button_to "View Sales", vendor_sales_path(vendor), method: :get, class: "button" %></td>
+  </tr>
+<% end %>
+</table>
