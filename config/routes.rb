@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :vendors, only: [:index, :show] do
+    member do
+      get 'sales', action: 'sales', as: 'sales'
+    end
 
   end
 

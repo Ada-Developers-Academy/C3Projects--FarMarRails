@@ -1,0 +1,39 @@
+<h1><%= @vendor.name %></h1>
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Number of Employees
+  </th>
+  <th class="center">
+    Sales
+  </th>
+  <th class="center">
+    Products
+  </th>
+</tr>
+<tbody>
+  <tr>
+    <td>
+      <%= @vendor.id %>
+    </td>
+    <td>
+      <%= @vendor.name %>
+    </td>
+    <td>
+      <%= @vendor.num_employees %>
+    </td>
+    <td class="center">
+      <%= link_to "#{@vendor.name}'s sales", sales_vendor_path(@vendor.id) %>
+    </td>
+    <td class="center">
+      link to products
+    </td>
+  </tr>
+</tbody>
+</table>
