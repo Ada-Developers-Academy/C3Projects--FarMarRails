@@ -26,9 +26,14 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new(market_params[:market])
+
+  end
+
+  def create
+    @title = "Add New Market"
+    @market = Market.new(market_params[:market])
     @market.save
-    
-    render :new
+    redirect_to :markets
   end
 
   private
