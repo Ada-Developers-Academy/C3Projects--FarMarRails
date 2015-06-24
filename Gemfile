@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'money-rails', '~> 1.4.1'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -35,8 +37,6 @@ group :development, :test do
   gem "binding_of_caller"
 
   # Use sqlite3 as the database for Active Record
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

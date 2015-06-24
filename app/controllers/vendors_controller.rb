@@ -42,6 +42,11 @@ class VendorsController < ApplicationController
     if (params.permit(:query)[:query].to_i <= Vendor.last.id)
       @query = params.permit(:query)[:query]
     end
+
+    vendor = Vendor.find(params[:q].to_i)
+    sales = Sale.all
+    all_sales = sales.where(vendor_id: vendor.id)
+    @sales = all_sales.slice(0, 5)
   end
 
   private
