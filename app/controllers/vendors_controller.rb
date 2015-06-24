@@ -3,6 +3,12 @@ class VendorsController < ApplicationController
 
   end
 
+  def show
+    @vendor = Vendor.find(params[:id])
+
+    render :show
+  end
+
   def new
 
   end
