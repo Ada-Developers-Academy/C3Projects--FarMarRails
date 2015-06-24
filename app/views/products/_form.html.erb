@@ -3,5 +3,8 @@
         <%= f.label :name, "#{name_desc}" %>
         <%= f.text_field :name, required: true, autofocus: true, placeholder: name_placeholder, value: name_value %>
     </span>
+    <span class="form_field">
+        <%= f.hidden_field :market_id, value: market_id_value %>
+    </span>
     <%= f.submit submit_button %>
 <% end %>
