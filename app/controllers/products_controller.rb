@@ -12,6 +12,17 @@ class ProductsController < ApplicationController
     redirect_to vendor_path(@product.vendor_id)
   end
 
+  def edit
+    @product = Product.find(params[:id])
+
+  end
+
+  def update
+    @product = Product.find(params[:product][:id])
+    @product.update(create_params[:product])
+
+    redirect_to vendor_path(@product.vendor_id)
+  end
 
   private
 

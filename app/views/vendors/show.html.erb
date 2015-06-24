@@ -3,6 +3,7 @@
 <table>
   <th>Name</th>
   <th>Number of Employees</th>
+  <th>Name of Market</th>
 
   <tr>
     <td><%= @vendor.name %></td>
@@ -21,7 +22,8 @@
   <% @display_products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
-    <td></td>
+
+    <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: "get" %></td>
 
   </tr>
   <% end %>
