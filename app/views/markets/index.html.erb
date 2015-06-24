@@ -7,11 +7,10 @@
 <% @markets.each do |market| %>
   <tr>
     <td><%= market.name %></td>
-    <td><%= button_to "View Market", market_path(market), method: :get %></td>
+    <td><%= button_to "View Market", market_path(market), method: :get, class: "button" %></td>
   </tr>
 <% end %>
 
 </table>
 
 <%= render "footer" %>
-
