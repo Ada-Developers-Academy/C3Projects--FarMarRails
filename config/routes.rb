@@ -8,10 +8,13 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+  # resources :markets, only: [:index, :new] do
+  # end
+
   get '/markets/' => 'markets#index'
 
   get '/markets/new' => 'markets#new'
-  post '/markets' => 'markets#create'
+  post '/markets/new' => 'markets#create'
 
   get '/markets/:market_id/edit' => 'markets#edit'
   patch '/markets/:market_id/edit' => 'markets#update'
