@@ -6,16 +6,6 @@ class MarketsController < ApplicationController
     render :markets
   end
 
-  def name_sort
-    @all_markets = Market.all.order(:name)
-    render :markets
-  end
-
-  def state_sort
-    @all_markets = Market.all.order(:state)
-    render :markets
-  end
-
   def show
     @title = " information"
     @market_id =params[:id]
@@ -40,6 +30,16 @@ class MarketsController < ApplicationController
 
   def market_params
     params.permit(market: [:name, :address, :city, :county, :state, :zip])
+  end
+
+  def name_sort
+    @all_markets = Market.all.order(:name)
+    render :markets
+  end
+
+  def state_sort
+    @all_markets = Market.all.order(:state)
+    render :markets
   end
 
 end
