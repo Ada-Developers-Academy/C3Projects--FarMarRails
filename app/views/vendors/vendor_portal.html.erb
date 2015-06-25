@@ -5,7 +5,7 @@
     <h2>put a brief description here of what the app does and who can use it or maybe something else I dunno</h2>
     <p>I would like to...</p>
       <%= link_to "Add/Edit Products", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/", class: "button_link"%>
-      <%= link_to "Add a Sale", "", class: "button_link" %>
+      <%= link_to "Add a Sale", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/sales/new", class: "button_link" %>
   </div>
 
 
