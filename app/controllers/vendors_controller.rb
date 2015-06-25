@@ -10,9 +10,6 @@ class VendorsController < ApplicationController
   end
 
   def sales
-    # the only reason I used an instance variable
-    # for @vendor was to be able to print it on the page
-    @vendor = Vendor.find(params[:id])
     @sales = Sale.where(vendor_id: params[:id])
 
     @month = Date.new.strftime('%Y%m')
@@ -36,9 +33,6 @@ class VendorsController < ApplicationController
   end
 
   def products
-    # the only reason I used an instance variable
-    # for @vendor was to be able to print it on the page
-    @vendor = Vendor.find(params[:id])
     @products = Product.where(vendor_id: params[:id])
     render 'vendor/products'
   end
