@@ -1,0 +1,8 @@
+<% @sales.each do |sale| %>
+  <p>Sale amount: <%= sale.amount  %></p>
+  <p>Purchase time: <%= sale.purchase_time  %></p>
+  <p>Vendor ID: <%= sale.vendor_id %></p>
+  <p>Product: <%= sale.product.name  %></p>
+<% end %>
+
+<%= button_to "+ Sale", new_vendor_product_sale_path("#{@vendor.id}", "#{@product.id}"), method: "get" %>

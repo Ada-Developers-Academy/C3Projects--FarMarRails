@@ -1,0 +1,23 @@
+<h1>Add new sale</h1>
+
+<%= form_for @sale, url: vendor_product_sales_path("#{params[:vendor_id]}", "#{params[:product_id]}") do |s| %>
+ <fieldset>
+   <legend>New product</legend>
+   <%= s.label :amount %>
+   <%= s.text_field :amount %>
+
+   <%= s.label :purchase_time %>
+   <%= s.date_field :purchase_time %>
+
+
+   <%= s.label :vendor_id %>
+   <%= s.text_field :vendor_id, :value => params[:vendor_id] %>
+
+
+   <%= s.label :product_id %>
+   <%= s.text_field :product_id, :value => params[:product_id] %>
+
+ </fieldset>
+
+ <%= s.submit 'Submit new sale' %>
+<% end %>
