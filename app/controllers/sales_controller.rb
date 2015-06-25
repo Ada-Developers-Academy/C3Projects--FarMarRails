@@ -3,6 +3,7 @@ class SalesController < ApplicationController
   def index
     @vendor = Vendor.find(params[:vendor_id])
     @vendor_sales = @vendor.sales
+    @total_amount = Sale.total_amount(@vendor)
     render :index
   end
 
