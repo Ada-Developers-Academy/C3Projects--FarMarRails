@@ -1,0 +1,14 @@
+<h1>Sales for the month</h1>
+
+<table>
+
+  <th>$ Amount</th>
+  <th>Purchase Time</th>
+
+  <% @monthlysales.each do |sale| %>
+  <tr>
+    <td><%= sale.amount %></td>
+    <td><%= sale.purchase_time %></td>
+  <tr>
+<% end %>
+</table

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
+  get 'vendors/:vendor_id/month_sales' => 'sales#month_sales', as: 'month_sales'
+
   resources :markets, except: [:destroy] do # Everything except destroy
     resources :vendors, except: [:show] # Everything except show
   end
