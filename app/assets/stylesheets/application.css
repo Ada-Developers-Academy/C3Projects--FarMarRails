@@ -51,17 +51,39 @@ table {
   margin: auto;
 }
 
-footer{
-  margin: 10px auto;
-  background-color: rgba(255, 255, 255, 0.7);
+header {
+  text-align: right;
+  font-weight: 900;
 }
 
-a{
-  text-decoration: none;
+footer{
+  margin: 40px auto;
+  background-color: #000;
+  height: 40px;
+  text-align: center;
+
 }
+
+a, a:visited {
+  text-decoration: none;
+  padding: 15px;
+  color: #fff;
+  vertical-align: center;
+  height: 35px;
+  line-height: 35px;
+}
+
+#home_buttons {
+  text-align: center;
+
+}
+
+
+
 
 .forms {
   background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
 }
 
 input, textarea, select {

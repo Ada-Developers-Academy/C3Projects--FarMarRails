@@ -1,3 +1,5 @@
+<%= render 'shared/header' %>
+
 <h2>Products</h2>
 
 <td><%= button_to "Create Product", new_vendor_product_path(@vendor.id), method: :get, class: "button" %></td>
@@ -17,4 +19,5 @@
   <% end %>
 </table>
 
+<%= render "shared/footer" %>
 

@@ -1,3 +1,5 @@
+<%= render 'shared/header' %>
+
 <h1>Sales for</h1>
 <h1><%= @vendor.name %>:</h1>
 
@@ -25,3 +27,6 @@
 <%= button_to "View Sales From The Past Month", current_month_vendor_sales_path, method: :get, class: "button" %>
 
 <%= button_to "Add Sale", new_vendor_sale_path(@vendor.id), method: :get, class: "button" %>
+
+
+<%= render "shared/footer" %>

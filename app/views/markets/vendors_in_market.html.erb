@@ -1,3 +1,5 @@
+<%= render 'shared/header' %>
+
 <h2><%= @market.name %>'s Vendors</h2>
 <td><%= button_to "Create a New Vendor", new_market_vendor_path, method: :get, class: "button" %></td>
 
@@ -17,10 +19,8 @@
 
       </tr>
     <% end %>
-
-
-
   </table>
 </div>
 
 
+<%= render "shared/footer" %>

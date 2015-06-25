@@ -1,3 +1,7 @@
+<%= render 'shared/header' %>
+
 <h2>Update Vendor Information</h2>
 
 <%= render partial: 'vendor_form', locals: {legend: "Update Vendor Information Below:", url: "/markets/#{@market.id}/vendors/#{@vendor.id}", method: :patch, id: @market.id, value: @vendor.id} %>
+
+<%= render "shared/footer" %>
