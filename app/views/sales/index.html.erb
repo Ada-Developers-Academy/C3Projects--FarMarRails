@@ -21,3 +21,5 @@
 
 <%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
 <%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %>
+
+<h3>Sales for <%= Time.now.strftime("%B") %></h3>
