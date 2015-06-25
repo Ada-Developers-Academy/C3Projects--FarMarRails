@@ -1,20 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header {
-  width: 100%;
-}
-
-h1 {
-  height: 100px;
-  line-height: 100px;
-  white-space: nowrap;
+.btn-identity {
+  margin: 0 auto;
+  width: 200px;
   text-align: center;
+  background-color: #869D34; /* green */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #556321; /* dk green */
+  border-bottom: 5px solid #556321;
 }
-
-form {
-  text-align: center;
-}
-form label, form input {
-  margin: 10px 0;
+.btn-identity a {
+  text-decoration: none;
+  color: #fff;
 }
