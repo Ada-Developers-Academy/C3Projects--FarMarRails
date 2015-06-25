@@ -59,10 +59,9 @@ class VendorsController < ApplicationController
   end
 
   def login
-    render :vendor_login
-    # vendor_id = params[:vendor_login]
-    #
-    # redirect_to "/vendor_portal/vendor_id"
+    vendor_id = params[:vendor_login]
+
+    redirect_to "/vendor_portal/#{vendor_id}"
   end
 
   def portal
