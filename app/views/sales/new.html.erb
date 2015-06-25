@@ -1,0 +1,24 @@
+<h1>Add a New Sale!</h1>
+
+<fieldset>
+  <legend>New Sale</legend>
+
+  <%= form_for @sale, url: "/vendors/#{@vendor[:id]}/sales", html: {class: "forms"} do |f| %>
+
+    <%= f.label :amount %>
+    <%= f.text_field :amount, required: :true %>
+
+    <%= f.label :purchase_time %>
+    <%= f.datetime_select :purchase_time, required: :true %>
+
+    <%= f.label :product_id %>
+    <%= f.collection_select :product_id, @products, :id, :name, prompt: "Select One", required: :true %>
+
+
+    <%= f.hidden_field :vendor_id, :value => "#{@vendor[:id]}" %>
+
+    <%= f.submit %>
+
+  <% end %>
+
+</fieldset>

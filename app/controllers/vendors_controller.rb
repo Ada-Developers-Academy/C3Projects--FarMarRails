@@ -7,11 +7,6 @@ class VendorsController < ApplicationController
   def new
     @market = Market.find(params[:market_id])
     @vendor = Vendor.new
-    # @legend = "Add vendor information below:"
-    # @url = "/markets/#{@market.id}/vendors"
-    # @id = :market_id
-    # @value = @market.id
-
   end
 
   def create
@@ -28,11 +23,6 @@ class VendorsController < ApplicationController
   def edit
     show
     @market = Market.find(params[:market_id])
-    # @legend = "Add vendor information below:"
-    # @id = :id
-    # @url = "/markets/#{@market.id}/vendors/#{@vendor.id}"
-    # @value = @vendor.id
-
   end
 
   def update

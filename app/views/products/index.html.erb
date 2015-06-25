@@ -7,14 +7,12 @@
     <th>Product Name</th>
     <th>Edit</th>
     <th>Delete</th>
-    <th>Add Sale</th>
   </tr>
   <% @products.each do |product| %>
     <tr>
     <td><%= product.name %></td>
     <td><%= button_to "Edit", edit_vendor_product_path(@vendor.id, product), action: "edit", method: :get, class: "button" %> </td>
     <td><%= button_to "Delete", "/vendors/#{@vendor[:id]}/products/#{product[:id]}", method: :delete, data: { confirm: "Are you sure you want to delete this product?" }, class: "button" %> </td>
-    <td><%= button_to "Add Sale", class: "button" %> </td>
     </tr>
   <% end %>
 </table>

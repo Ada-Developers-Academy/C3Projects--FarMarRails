@@ -3,12 +3,14 @@
 
 <table>
   <tr>
+    <th>Product Name</th>
     <th>Sale Amount</th>
     <th>Purchase Date/Time</th>
   </tr>
 
   <% @sales.each do |sale| %>
     <tr>
+        <td><%= sale.product.name %></td>
         <td>$<%= sale.amount %></td>
         <td><%= sale.purchase_time %></td>
         </td>
@@ -21,3 +23,5 @@
 </table>
 
 <%= button_to "View Sales From The Past Month", current_month_vendor_sales_path, method: :get, class: "button" %>
+
+<%= button_to "Add Sale", new_vendor_sale_path(@vendor.id), method: :get, class: "button" %>
