@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(product: [:name])
+    params.permit(product: [:name, :vendor_id])
   end
 
 end
