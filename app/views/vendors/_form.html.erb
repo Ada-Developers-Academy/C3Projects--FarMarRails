@@ -1,6 +1,6 @@
-<%= form_for @vendor, url: url ||= '' do |f| %>
+<%= form_for @vendor, url: url &&= '' do |f| %>
   <%= f.hidden_field(:market_id, value: params[:market_id]) %>
-  
+
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br><br>
