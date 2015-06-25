@@ -1,7 +1,7 @@
 <body class="market-background">
-<%= button_to "Create a New Market", new_market_path, method: :get %>
-<%= button_to "Sort by Market Name", sort_by_name_path, method: :get %>
-<%= button_to "Sort by State", sort_by_state_path, method: :get %>
+<%= button_to "Create a New Market", new_market_path, method: :get, class: "button" %>
+<%= button_to "Sort by Market Name", sort_by_name_path, method: :get, class: "button" %>
+<%= button_to "Sort by State", sort_by_state_path, method: :get, class: "button" %>
 <div class="text_box">
 <table>
   <tr>
@@ -21,7 +21,7 @@
     <td><%= market.state %></td>
     <td><%= market.county %></td>
     <td><%= market.zip %></td>
-    <td><%= button_to "Edit Market", edit_market_path(market.id), method: :get %></td>
+    <td><%= button_to "Edit Market", edit_market_path(market.id), method: :get, class: "inner_button" %></td>
   </tr>
   <% end %>
 </table>

@@ -1,5 +1,6 @@
+<h1><%= @market.name %>'s Vendors</h1>
 <body class="market-background">
-<%= button_to "Add Another Vendor", new_market_vendor_path(@market.id), method: :get %>
+<%= button_to "Add Another Vendor", new_market_vendor_path(@market.id), method: :get, class: "button" %>
 <div class="text_box">
 <table>
   <tr>
@@ -12,8 +13,8 @@
   <tr>
     <td><%=vendor.name%></td>
     <td><%=vendor.num_of_employees%></td>
-    <td><%=button_to "Edit Vendor", edit_market_vendor_path(@market.id, vendor.id), method: :get %>
-    <td><%=button_to "Delete Vendor", market_vendor_path(@market.id, vendor.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    <td><%=button_to "Edit Vendor", edit_market_vendor_path(@market.id, vendor.id), method: :get, class: "inner_button" %>
+    <td><%=button_to "Delete Vendor", market_vendor_path(@market.id, vendor.id), method: :delete, data: {confirm: "Are you sure?"}, class: "inner_button" %>
   </tr>
   <% end %>
 </table>

@@ -10,8 +10,8 @@
   <tr>
     <td><%= @vendor.name %></td>
     <td><%= @vendor.num_of_employees %></td>
-    <td><%= button_to "Products", vendor_products_path(@vendor.id), method: :get %></td>
-    <td><%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get %></td>
+    <td><%= button_to "Products", vendor_products_path(@vendor.id), method: :get, class: "inner_button" %></td>
+    <td><%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get, class: "inner_button" %></td>
   </tr>
 </table>
 </div>
