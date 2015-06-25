@@ -1,3 +1,57 @@
-<%= @vendor.name %>
+<h1><%= @vendor.name %></h1>
 
-<%= params %>
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Employees
+  </th>
+  <th>
+    Market ID
+  </th>
+  <% if current_page?(controller: 'markets', action: 'vendor_show')%>
+    <th class="center">
+      Edit
+    </th>
+  <% end %>
+  <% if current_page?(controller: 'markets', action: 'vendor_show')%>
+    <th class="center">
+      Delete
+    </th>
+  <% end %>
+
+</tr>
+<tbody>
+
+  <tr>
+    <td>
+      <%= @vendor.id %>
+    </td>
+    <td>
+      <%= @vendor.name %>
+    </td>
+    <td>
+      <%= @vendor.num_employees %>
+    </td>
+    <td>
+      <%= @vendor.market_id %>
+    </td>
+    <% if current_page?(controller: 'markets', action: 'vendor_show')%>
+      <td class="center">
+        <%= link_to "Edit", edit_vendor_market_path(@vendor) %>
+      </td>
+    <% end %>
+    <% if current_page?(controller: 'markets', action: 'vendor_show')%>
+      <td class="center">
+        <%= link_to "Delete", "#" %>
+      </td>
+    <% end %>
+
+  </tr>
+</tbody>
+</table>
