@@ -2,7 +2,7 @@
     <h1>Farmer's Market Interactive</h1>
     <h2>Welcome to FMI. You can view all markets, or let us know if you're a market or a vendor to make changes to your business.</h2>
     <p>are you a...</p>
-      <%= link_to "MARKET", "/markets", class: "button_link"%>
-      <%= link_to "VENDOR", "/vendor_portal", class: "button_link" %>
+      <%= link_to "MARKET", markets_path, class: "button_link"%>
+      <%= link_to "VENDOR", vendor_portal_path, class: "button_link" %>
     <p>or would you like to <%= link_to "view all markets", controller: "users", action: "show" %>?</p>
 </section>
