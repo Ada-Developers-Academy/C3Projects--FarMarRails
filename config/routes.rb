@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'vendors/:vendor_id', action: 'vendor_show', as: 'vendor'
       patch 'vendors/:vendor_id', action: 'vendor_update'
       put 'vendors/:vendor_id', action: 'vendor_update'
-      delete 'vendors/:vendor_id', action: 'vendor_destroy'
+      delete 'vendors/:vendor_id', action: 'vendors_destroy'
 
 
     end

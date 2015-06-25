@@ -68,21 +68,28 @@ class MarketsController < ApplicationController
   end
 
   def vendor_update
-    # @vendor = Vendor.find(params[:vendor_id])
-    # @vendor.update(form_params[:vendor])
-
-
+    # Rails can't access VendorsController
     @market = Market.find(params[:id])
     @vendor = @market.vendors.find(params[:vendor_id])
     @vendor.update(form_params[:vendor])
-
     redirect_to vendor_market_path
+  end
+
+  def vendors_delete
+    @vendor = Vendor.find(params[:vendor_id])
+  end
+
+  def vendors_destroy
+    @market = Market.find(params[:id])
+    @vendor = @market.vendors.find(params[:vendor_id])
+    @vendor.destroy
+    redirect_to vendors_market_path
   end
 
   private
 
   def form_params
-    params.permit(market: [:name, :address, :city, :county, :state, :zip], vendor: [:name, :num_employees, :market_id])
+    params.permit(market: [:name, :address, :city, :county, :state, :zip], vendor: [:name, :num_employees, :market_id, :_destroy])
   end
 
 end

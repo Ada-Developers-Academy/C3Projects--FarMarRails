@@ -48,7 +48,7 @@
     <% end %>
     <% if current_page?(controller: 'markets', action: 'vendor_show')%>
       <td class="center">
-        <%= link_to "Delete", "#" %>
+        <%= button_to "Delete", { action: "vendors_destroy", vendor_id: @vendor.id, _destroy: true }, method: :delete, data: { confirm: "Are you sure?" } %>
       </td>
     <% end %>
 
