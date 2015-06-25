@@ -17,8 +17,8 @@
  /* Base Design ------------------------------------------------ */
 
  html {
-   font-family: 'Helvetica', Arial, sans-serif;
-   background: #fff image-url("strawberries.jpg") no-repeat center center fixed;
+   font-family: 'Nixie One', cursive;
+   background: #fff url("strawberries.jpg") no-repeat center fixed;
    background-size: cover;
  }
 
