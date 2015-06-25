@@ -1,0 +1,29 @@
+<!-- TODO: clean up this file! -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Product</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sales.each do |sale| %>
+      <tr>
+        <td><%= sale.purchase_time %></td>
+        <td><%= Product.find(sale.product_id).name %></td>
+        <!-- TODO: format as a dollar amount: $x.xx -->
+        <td>$<%= sale.amount.to_f/100 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2">Sales Total</th>
+      <!-- TODO: format as a dollar amount: $x.xx -->
+      <!-- TODO: put sales.reduce[...] somewhere else :) -->
+      <td>$<%= sales.reduce(0){ |sum, sale| sum + sale.amount }.to_f/100 %></td>
+    </tr>
+  </tfoot>
+</table>

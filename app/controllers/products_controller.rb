@@ -2,6 +2,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_vendor, only: [:show, :new, :create, :edit, :update, :destroy]
 
+  def show
+    @sales = @product.sales
+  end
+
   def new
     @product = Product.new
   end

@@ -12,4 +12,5 @@
 
 <%= link_to "Create a new sale for this product", new_vendor_sale_path(@vendor, :product_id => params[:id]) %>
 
-<!--  -->
+<h3>Sales</h3>
+<%= render 'shared/sales_table', {sales: @sales} %>

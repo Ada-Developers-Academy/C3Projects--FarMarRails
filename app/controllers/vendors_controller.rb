@@ -2,7 +2,7 @@ class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
   before_action :set_market, only: [:new, :create, :edit, :update, :destroy]
 
-  def index 
+  def index
     @vendors = Vendor.all
   end
 
@@ -11,6 +11,10 @@ class VendorsController < ApplicationController
       set_market
       render 'show_from_markets'
     end
+
+    # TODO: come back to this
+    @sales = @vendor.sales
+    ### @current_month_sales # TODO: COME BACK TO THIS!
   end
 
   def new
