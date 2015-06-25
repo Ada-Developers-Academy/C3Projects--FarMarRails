@@ -14,7 +14,8 @@
         <%= link_to "View all markets", "/markets", title: "View all markets." %>
       </div>
       <div class="nav-right">
-        <%= link_to params[:id] ? "Log out" : "Log in", "/", title: params[:id] ? "Log out of your account." : "Log into your account." %>
+        <% id = params[:id] || params[:market_id] || params[:vendor_id] || false %>
+        <%= link_to id ? "Log out" : "Log in", "/", title: id ? "Log out of your account." : "Log into your account." %>
       </div>
     </nav>
     <%= yield :dashboard_nav %>

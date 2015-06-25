@@ -1,1 +1,1 @@
-<nav><%= link_to "Dashboard", "/vendors/dashboard", title: "Go back to the Dashboard." %></nav>
+<%= link_to "Dashboard", "/vendors/#{ params[:vendor_id] || params[:id] }/dashboard", title: "Go back to the Dashboard." %>
