@@ -1,9 +1,6 @@
-<h1>Edit This Market</h1>
-
-<nav>
-  <ul>
-    <li><%= link_to "Back to all markets", markets_path %></li>
-  </ul>
-</nav>
+<%= render partial: "users/header", locals: {  title: "Edit This Market",
+                                        link_name: "Back to all Markets",
+                                        link_path: markets_path,
+                                        second_link: false } %>
 
 <%= render "market_form" %>

@@ -1,11 +1,7 @@
-<h1>Market Details</h1>
-
-<nav>
-  <ul>
-    <li><%= link_to "Back to all markets", markets_path %></li>
-  </ul>
-</nav>
-
+<%= render partial: "users/header", locals: { title: "Market Details",
+                                            link_name: "Back to all Markets",
+                                            link_path: markets_path,
+                                            second_link: false } %>
 
 <table>
   <th>Name</th>
