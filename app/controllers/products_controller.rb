@@ -6,8 +6,6 @@ class ProductsController < ApplicationController
     @sales = @product.sales
   end
 
-  @product.sales.where("strftime('%m', date_column) + 0 = ?", Sale.current_month)
-
   def new
     @product = Product.new
   end
