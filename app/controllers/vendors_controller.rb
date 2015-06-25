@@ -26,7 +26,7 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new(vendor_params[:vendor])
     @vendor.save
 
-    redirect_to market_vendors_path
+    redirect_to market_path(@vendor.market_id)
   end
 
   # Edit an existing vendor
