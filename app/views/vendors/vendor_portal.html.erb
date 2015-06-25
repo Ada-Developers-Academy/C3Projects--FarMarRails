@@ -48,7 +48,7 @@
       </tbody>
     </table>
 
-    <h3>Monthly Sales: $<%= @total_sales %></h3>
+    <h3>Monthly Sales for <%= Date.today.strftime("%B") %>: $<%= @month_sales %></h3>
     <table>
       <thead>
         <tr>
@@ -68,21 +68,23 @@
       </thead>
       <tbody>
         <% @vendor.sales.all.each do |sale| %>
-        <tr>
-          <td>
-            <%= sale.amount %>
-          </td>
-        <td>
-          <%= sale.purchase_time %>
-        </td>
-        <td>
-          <%= sale.vendor_id %>
-        </td>
-        <td>
-          <%= sale.product_id %>
-        </td>
+          <% if sale.purchase_time.to_date.strftime("%Y-%m") == @date_today %>
+            <tr>
+              <td>
+                <%= sale.amount %>
+              </td>
+              <td>
+                <%= sale.purchase_time %>
+              </td>
+              <td>
+                <%= sale.vendor_id %>
+              </td>
+              <td>
+                <%= sale.product_id %>
+              </td>
+            </tr>
+          <% end %>
         <% end %>
-        </tr>
       </tbody>
     </table>
   </div>
