@@ -10,8 +10,7 @@
 
   <div>
     <h1>Sales Information</h1>
-    <h2>Current Month</h2>
-    <h3>Running total: <%= @sales_total %></h3>
+    <h3>Total Sales: $<%= @total_sales %></h3>
     <table>
       <thead>
         <tr>
@@ -30,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <% Sale.all.each do |sale| %>
+        <% @vendor.sales.all.each do |sale| %>
         <tr>
           <td>
             <%= sale.amount %>
@@ -49,6 +48,42 @@
       </tbody>
     </table>
 
-    <h2>Running Total</h2>
+    <h3>Monthly Sales: $<%= @total_sales %></h3>
+    <table>
+      <thead>
+        <tr>
+          <td>
+            Amount
+          </td>
+          <td>
+            Purchase Time
+          </td>
+          <td>
+            Vendor Id
+          </td>
+          <td>
+            Product Id
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vendor.sales.all.each do |sale| %>
+        <tr>
+          <td>
+            <%= sale.amount %>
+          </td>
+        <td>
+          <%= sale.purchase_time %>
+        </td>
+        <td>
+          <%= sale.vendor_id %>
+        </td>
+        <td>
+          <%= sale.product_id %>
+        </td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>

@@ -59,6 +59,13 @@ class VendorsController < ApplicationController
   end
 
   def portal
+    @vendor_id = params[:id]
+    @vendor = Vendor.find(@vendor_id)
+    @sales = @vendor.sales.all
+    @total_sales = 0
+    @sales.each do |sale|
+      @total_sales += sale.amount.to_i
+    end
     render :vendor_portal
   end
 

@@ -20,7 +20,7 @@ post "/market/name_sort"       => "markets#name_sort"
 post "/market/city_sort"       => "markets#state_sort"
 
 get "/vendor_login"            => "vendors#login"
-get "/vendor_portal"           => "vendors#portal"
+get "/vendor_portal/:id"       => "vendors#portal"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
