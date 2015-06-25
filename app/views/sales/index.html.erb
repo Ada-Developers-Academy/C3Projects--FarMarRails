@@ -2,28 +2,30 @@
   <%= render partial: "/vendors/dashboard" %>
 <% end %>
 
-<div class="padding-wrapper">
-  <table class="market-location">
-    <tr>
-      <td colspan="4">
-        <h2><%= link_to "View sales just for the current month.", "./sales/current", title: "Click here to review this month's sales." %></h2>
-      </td>
-    </tr>
-    <tr>
-      <th>Item</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th>Time</th>
-    </tr>
-  <% @sales.each do |sale| %>
-      <tr>
-        <td><%= sale.product.name %></td>
-        <td>$<%= sale.dollar_amount %></td>
-        <td><%= sale.date %></td>
-        <td><%= sale.time %></td>
-      </tr>
-  <% end %>
-  </table>
-</div>
+<header>
+  <h1>All Sales</h1>
+</header>
 
-<%= link_to "Add a new sale.", "./sales/new", title: "Add a new sale for this vendor." %>
+<div class="sales-wrapper">
+  <h4><%= link_to "View this Month's Sales", "./sales/current", title: "Click here to review this month's sales." %></h4>
+  <h4><%= link_to "+ Sale", "./sales/new", title: "Add a new sale for this vendor." %></h4>
+
+  <section class="all-sales">
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    <% @sales.each do |sale| %>
+        <tr>
+          <td><%= sale.product.name %></td>
+          <td>$<%= sale.dollar_amount %></td>
+          <td><%= sale.date %></td>
+          <td><%= sale.time %></td>
+        </tr>
+    <% end %>
+    </table>
+  </section>
+</div>
