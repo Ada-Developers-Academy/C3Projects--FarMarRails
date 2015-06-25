@@ -1,5 +1,6 @@
 <body class="market-background">
 <%= button_to "Add Another Vendor", new_market_vendor_path(@market.id), method: :get %>
+<div class="text_box">
 <table>
   <tr>
     <th>Name</th>
@@ -16,4 +17,5 @@
   </tr>
   <% end %>
 </table>
+</div>
 </body>
