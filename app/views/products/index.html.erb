@@ -1,8 +1,10 @@
 <p>"<%= "#{@vendor.name}" %>" has these products: </p>
   <% @products.each do |product| %>
     <p>
-      <%= link_to "#{product.name}", edit_vendor_product_path("#{@vendor.id}", "#{product.id}") %>
+      <%= "#{product.name}" %>
+      <%= button_to "Edit product", edit_vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "get" %>
       <%= button_to "Delete product", vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "delete" %>
+      <%= button_to "See all sales", vendor_product_sales_path("#{@vendor.id}", "#{product.id}"), method: "get" %>
     </p>
   <% end %>
 </p>
