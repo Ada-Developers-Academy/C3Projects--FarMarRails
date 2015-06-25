@@ -1,9 +1,7 @@
 <section class="homepage">
   <div>
-    <h1>Welcome back</h1>
-    <h1><%= @vendor.name %></h1>
-    <h2>put a brief description here of what the app does and who can use it or maybe something else I dunno</h2>
-    <p>I would like to...</p>
+    <h1>Welcome back <%= @vendor.name %>!</h1>
+    <h3>I would like to...</h3>
       <%= link_to "Add/Edit Products", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/", class: "button_link"%>
       <%= link_to "Add a Sale", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/sales/new", class: "button_link" %>
   </div>
@@ -15,18 +13,18 @@
     <table>
       <thead>
         <tr>
-          <td>
+          <th>
             Amount
-          </td>
-          <td>
-            Purchase Time
-          </td>
-          <td>
-            Vendor Id
-          </td>
-          <td>
-            Product Id
-          </td>
+          </th>
+          <th>
+            Purchase Date
+          </th>
+          <th>
+            Vendor ID
+          </th>
+          <th>
+            Product ID
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +34,7 @@
             <%= sale.amount %>
           </td>
         <td>
-          <%= sale.purchase_time %>
+          <%= sale.purchase_time.strftime("%m/%d/%Y") %>
         </td>
         <td>
           <%= sale.vendor_id %>
@@ -53,18 +51,18 @@
     <table>
       <thead>
         <tr>
-          <td>
+          <th>
             Amount
-          </td>
-          <td>
+          </th>
+          <th>
             Purchase Time
-          </td>
-          <td>
-            Vendor Id
-          </td>
-          <td>
-            Product Id
-          </td>
+          </th>
+          <th>
+            Vendor ID
+          </th>
+          <th>
+            Product ID
+          </th>
         </tr>
       </thead>
       <tbody>

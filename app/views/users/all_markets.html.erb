@@ -41,10 +41,7 @@
         <%= market.state %>
       </td>
       <td>
-        <% if market.zip.to_s.length == 5 %>
-        <%= market.zip %>
-        <% else %>
-        <% end %>
+        <%= market.zip.to_s.length == 5 ? market.zip : "" %>
       </td>
     </tr>
     <% end %>
