@@ -10,7 +10,7 @@
       <%= f.date_field :purchase_time %>
 
       <%= f.label :product_id, 'Product' %>
-      <%= f.collection_select :product_id, @vendor.products, :id, :name, :prompt => true %>
+      <%= f.collection_select :product_id, @vendor.products, :id, :name, :prompt => true, :include_blank => true %>
 
       <%= f.hidden_field :vendor_id, :value => "#{@vendor.id}" %>
 

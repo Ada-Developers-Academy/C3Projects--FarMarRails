@@ -7,7 +7,6 @@ class SalesController < ApplicationController
     @time = Time.now
     @sales_current_month = @vendor_sales.where(purchase_time: @time.beginning_of_month..@time.end_of_month)
     @total_current_month = Sale.total_current_month(@vendor)
-
     render :index
   end
 
