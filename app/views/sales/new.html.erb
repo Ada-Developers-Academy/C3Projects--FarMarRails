@@ -4,7 +4,7 @@
 <fieldset class="form">
 
       <%= f.label :amount, 'Sale Amount in Cents' %>
-      <%= f.text_field :amount %>
+      <%= f.text_field :amount, required: "required" %>
 
       <%= f.label :purchase_time, 'Purchase Date' %>
       <%= f.date_field :purchase_time %>

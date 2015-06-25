@@ -10,13 +10,13 @@
     <% @vendor_sales.each do |sale| %>
   <tr>
     <td> <%= number_to_currency((sale.amount/100.00)) %> </td>
-    <td> <%= sale.purchase_time.strftime ("%m/%d/%Y") %> </td>
-    <td> <% if sale.product == nil %>
-         <%= " " %>
-         <% else %>
-         <%= sale.product.name %>
-         <% end %>
+    <td> <% if sale.purchase_time == nil %>
+          <%= " " %>
+          <% else %>
+          <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
+          <% end %>
     </td>
+    <td> <%= sale.product.name %> </td>
   </tr>
     <% end %>
 </table>
@@ -37,13 +37,13 @@
     <% @sales_current_month.each do |sale| %>
   <tr>
     <td> <%= number_to_currency(sale.amount/100.00) %> </td>
-    <td> <%= sale.purchase_time.strftime("%m/%d/%Y") %> </td>
-    <td> <% if sale.product == nil %>
-         <%= " " %>
-         <% else %>
-         <%= sale.product.name %>
-         <% end %>
+    <td> <% if sale.purchase_time == nil %>
+          <%= " " %>
+          <% else %>
+          <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
+          <% end %>
     </td>
+    <td> <%= sale.product.name %> </td>
   </tr>
     <% end %>
 </table>

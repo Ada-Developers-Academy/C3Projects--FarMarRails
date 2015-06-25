@@ -2,6 +2,9 @@ class Sale < ActiveRecord::Base
   belongs_to :product
   belongs_to :vendor
 
+
+  validates_presence_of :amount
+
   def self.total_amount(vendor)
     total = 0
     vendor.sales.each do |sale|
