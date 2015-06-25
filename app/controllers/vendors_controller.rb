@@ -3,6 +3,28 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
   end
 
+  def login
+    if (params.permit(:login_id)[:login_id].to_i <= Vendor.last.id)
+      id = params.permit(:login_id)[:login_id]
+      redirect_to "/vendors/#{ id }/dashboard"
+    else
+      redirect_to "/vendors/vendor_not_found"
+    end
+  end
+
+  def dashboard
+    @vendor = Vendor.find(params.permit(:id)[:id])
+    all_sales = @vendor.sales
+    @sales = all_sales.slice(0, 5)
+
+    @total_amount = total_sales(@vendor)
+    month_sales = month_sales(@vendor)
+    @sum = 0
+    month_sales.each { |amount| @sum += amount }
+
+    @all_products = @vendor.products
+  end
+
   def new
     @vendor = Vendor.new
   end
@@ -38,27 +60,6 @@ class VendorsController < ApplicationController
     redirect_to "/vendors"
   end
 
-  def login
-    # I wasn't sure how else to handle this.
-    if (params.permit(:login_id)[:login_id].to_i <= Vendor.last.id)
-      @login_id = params.permit(:login_id)[:login_id]
-    end
-
-    @vendor = Vendor.find(params[:login_id].to_i)
-    all_sales = @vendor.sales
-    @sales = all_sales.slice(0, 5)
-
-    @total_amount = total_sales(@vendor)
-    month_sales = month_sales(@vendor)
-    @sum = 0
-    # use reduce?
-    month_sales.each { |amount| @sum += amount }
-
-    @all_products = @vendor.products
-
-    render :dashboard
-  end
-
   private
 
   def create_params
@@ -69,6 +70,7 @@ class VendorsController < ApplicationController
     all_sales = vendor.sales
     amounts = all_sales.map { |sale| sale.amount }
     total = amounts.inject { |sum, n| sum + n }
+
     return total
   end
 
