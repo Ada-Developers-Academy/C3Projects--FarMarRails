@@ -18,7 +18,6 @@ class SalesController < ApplicationController
     redirect_to vendor_path(params[:sale][:vendor_id])
   end
 
-
   def month_sales
     @time = Time.now
 
@@ -42,7 +41,6 @@ class SalesController < ApplicationController
       sum + n
     end
   end
-
 
   def destroy
     @sale = Sale.destroy(params[:id])
