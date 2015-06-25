@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :sales, only: [:index, :create, :new, :destroy]
   end
 
+  resources :users, only: [:show] 
+
   # resources :products
   # resources :sales
 

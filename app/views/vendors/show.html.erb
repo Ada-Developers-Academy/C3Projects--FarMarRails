@@ -41,24 +41,25 @@
 
 <%= button_to "New Sale", new_vendor_sale_path(@vendor.id), method: "get" %>
 
-<h2><%= "Sales for #{@vendor.name}" %></h2>
+<% unless @revenue == nil %>
+  <h2><%= "Total Revenue for #{@vendor.name} is #{number_to_currency(@revenue / 100.00)}" %></h2>
+<% end %>
 
-<h3><%= "Total Revenue for #{@vendor.name} is #{number_to_currency(@revenue / 100.00)}" %></h3>
+<% unless @display_sales.length == 0 %>
+  <h3><%= "Sales for #{@vendor.name}" %></h3>
+  <table>
+    <% @display_sales.each do |sale| %>
 
+    <tr>
+      <% @product = Product.find(sale.product_id) %>
+      <td><%= @product.name %></td>
 
-<table>
-  <% @display_sales.each do |sale| %>
+      <td><%= number_to_currency(sale.amount / 100.00)%></td>
 
-  <tr>
-    <% @product = Product.find(sale.product_id) %>
-    <td><%= @product.name %></td>
+      <td><%= button_to "Delete Sale", "/vendors/#{@vendor.id}/sales/#{sale.id}", method: "delete", data: { confirm: "Are you sure you want to delete this Sale?" } %></td>
+    </tr>
 
-    <td><%= number_to_currency(sale.amount / 100.00)%></td>
-
-    <td><%= button_to "Delete Sale", "/vendors/#{@vendor.id}/sales/#{sale.id}", method: "delete", data: { confirm: "Are you sure you want to delete this Sale?" } %></td>
-  </tr>
-
-  <% end %>
-</table>
-
-<%= button_to "Vendor sales list for this month", "/vendors/#{@vendor.id}/month_sales", method: "get" %>
+    <% end %>
+  </table>
+  <%= button_to "Vendor sales list for this month", "/vendors/#{@vendor.id}/month_sales", method: "get" %>
+<% end %>
