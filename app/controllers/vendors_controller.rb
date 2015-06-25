@@ -15,6 +15,8 @@ class VendorsController < ApplicationController
     # TODO: come back to this
     @sales = @vendor.sales
     ### @current_month_sales # TODO: COME BACK TO THIS!
+    @current_month_sales = @vendor.current_month_sales
+    # @current_sales = @product.sales.where(:purchase_time.month == Sale.current_month)
   end
 
   def new

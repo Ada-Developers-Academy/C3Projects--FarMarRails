@@ -21,5 +21,8 @@
 
 <%= render 'shared/sales_table', { sales: @sales } %>
 
-<!-- <h3>Current Month's Sales</h3> -->
-<%# render 'shared/sales_table', { sales: @current_month_sales } %>
+<h3>Current Month's Sales</h3>
+<!-- uncomment for debugging -->
+<p>for the month of: <%= Vendor.current_month %> </p>
+
+<%= render 'shared/sales_table', { sales: @current_month_sales } %>
