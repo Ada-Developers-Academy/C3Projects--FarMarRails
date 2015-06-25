@@ -18,6 +18,16 @@ body {
   background-size: 100%;
 }
 
+div.text_box {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  padding-bottom: 200px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.5;
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
