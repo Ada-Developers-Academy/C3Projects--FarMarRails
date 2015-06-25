@@ -1,21 +1,7 @@
 <%= render "shared/header" %>
 <main>
   <h2> <%= link_to "Add a Market", new_market_path %> </h2>
-  <table>
-    <tr>
-      <th>Market Name</th>
-    </tr>
-    <tr>
-      <td>(click each for details)</td>
-    </tr>
-    <% @markets.each do |market| %>
-    <tr>
-      <td><%= link_to "#{market.name.titlecase}", market_path(market.id) %> </td>
-    </tr>
-    <% end %>
-  </table>
-
-<h2> <%= link_to "Add a Vendor", new_by_market_path %> </h2>
-<%= render "shared/all_vendors" %>
-
+  <%= render "shared/all_markets" %>
+  <h2> <%= link_to "Add a Vendor", new_by_market_path %> </h2>
+  <%= render "shared/all_vendors" %>
 </main>

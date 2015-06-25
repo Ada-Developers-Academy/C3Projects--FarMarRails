@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def by_market
     @market = Market.find(params[:id])
+    @path = "user"
     @header = "This Market"
     @vendor = Vendor.where(:market_id => @market.id)
   end

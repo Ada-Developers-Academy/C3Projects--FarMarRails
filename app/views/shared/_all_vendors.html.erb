@@ -3,12 +3,13 @@
     <tr>
       <th>Vendor Name</th>
     </tr>
-    <tr>
-      <td>(click each for details)</td>
-    </tr>
     <% @vendors.each do |vendor| %>
     <tr>
-      <td><%= link_to "#{vendor.name.titlecase}", by_market_path(vendor.id) %> </td>
+      <% if @markets %>
+        <td><%= link_to "#{vendor.name.titlecase}", by_market_path(vendor.id) %> </td>
+      <% else %>
+        <td><%= link_to "#{vendor.name.titlecase}", vendor_path(vendor.id) %> </td>
+      <% end %>
     </tr>
     <% end %>
   </table>

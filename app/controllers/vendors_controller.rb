@@ -1,7 +1,8 @@
 class VendorsController < ApplicationController
   def index
-  @header= "Log Using Your Vendor Id"
-  @vendor = Vendor.find(1)
+  @header= "Select your Vendor Name"
+  @vendors = Vendor.order("lower(name) ASC").all
+  # @user = User.new
   end
 
   def show
