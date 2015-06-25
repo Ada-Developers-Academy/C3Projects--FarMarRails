@@ -38,22 +38,36 @@ class MarketsController < ApplicationController
 
   def vendor_show
     @vendor = Vendor.find(params[:id])
+    @market = Market.where(id: (@vendor.market_id))
     render :vendor_show
   end
 
   def vendor_new
-    # RAILS DOESN'T RECOGNIZE
+    # Rails can't access VendorsController
     # @vendor = Vendor.new
     @market = Market.find(params[:id])
     render :vendor_new
   end
 
   def vendor_create
-    # RAILS DOESN'T RECOGNIZE. THIS NEEDS TO HAPPEN INSIDE THE VENDORS CONTROLLER?
+    # Rails can't access VendorsController
     @market = Market.find(params[:id])
     @vendor = @market.vendors.new(form_params[:vendor])
     @vendor.save
     redirect_to vendors_market_path
+  end
+
+  def vendor_edit
+    # @market = Market.find()
+    # @vendor = @market.vendors.find(params[:id])
+    @vendor = Vendor.find(params[:id])
+    @market = Market.where(id: (@vendor.market_id))
+    render :vendor_edit
+  end
+
+  def vendor_update
+
+    redirect_to vendor_market
   end
 
   private
