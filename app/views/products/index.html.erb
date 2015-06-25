@@ -9,3 +9,4 @@
   </ul>
 
 <%= link_to "Add a Product", new_vendor_product_path(@vendor.id) %>
+<%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %>
