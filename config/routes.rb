@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/market" => "users#market"
   get "/vendor" => "users#vendor"
 
-  # routes to dashboards (maybe keexp as post only to simulate logged in environment. we can link_to with post methods.)
+  # routes to dashboards
   post "/markets/login" => "markets#login"
   post "/vendors/login" => "vendors#login"
   get "/markets/:id/dashboard" => "markets#dashboard"
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :vendors, except: [:index, :show]
   end
 
-  # custom routes for market users
+  # market user error messages
   get "/markets/new/error" => "markets#error"
   get "/markets/edit/error" => "markets#error"
   get "/markets/:market_id/vendors/new/error" => "vendors#error"
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :sales, only: [:index, :new, :create]
   end
 
-  # custom routes for vendor user error messages)
+  # vendor user error messages
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
   get "/vendors/:vendor_id/products/new/error" => "products#error"
   get "/vendors/:vendor_id/products/edit/error" => "products#error"
