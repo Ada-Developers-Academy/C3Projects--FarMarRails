@@ -13,10 +13,15 @@ header, nav {
   text-align: center;
 }
 
+.button_to {
+  padding-bottom: 15px;
+}
+
 /*________NAV________*/
 
 nav ul {
   list-style: none;
+  padding: 0;
 }
 
 nav li {
@@ -24,13 +29,22 @@ nav li {
   margin: 0;
 }
 
+/*________TABLE_DATA________*/
+
+th {
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
 
 /*________FORM________*/
 
-form {
-  width:350px;
-}
-
 form label {
   display: block;
+}
+
+fieldset {
+    border: 0;
 }
