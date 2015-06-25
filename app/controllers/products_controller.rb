@@ -37,7 +37,17 @@ class ProductsController < ApplicationController
     )
     @vendor = Vendor.find(params[:product][:vendor_id])
     @products = @vendor.products
+
+    render :index
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
     
+    @vendor = Vendor.find(params[:vendor_id])
+    @products = @vendor.products
+
     render :index
   end
 

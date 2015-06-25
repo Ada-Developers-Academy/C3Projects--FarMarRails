@@ -2,6 +2,7 @@
   <% @products.each do |product| %>
     <p>
       <%= link_to "#{product.name}", edit_vendor_product_path("#{@vendor.id}", "#{product.id}") %>
+      <%= button_to "Delete product", vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "delete" %>
     </p>
   <% end %>
 </p>
