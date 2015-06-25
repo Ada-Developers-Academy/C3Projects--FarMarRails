@@ -31,12 +31,12 @@
 
     <% @sales_current_month.each do |sale| %>
   <tr>
-    <td> <%= sale.amount %> </td>
-    <td> <%= sale.purchase_time %> </td>
+    <td> <%= number_to_currency(sale.amount/100.00) %> </td>
+    <td> <%= sale.purchase_time.strftime("%m/%d/%Y") %> </td>
     <td> <%= sale.product.name %> </td>
   </tr>
     <% end %>
 </table>
 
 <h4>Total Amount for <%= Time.now.strftime("%B") %></h4>
-<p> <%= %> </p>
+<p> <%= number_to_currency(@total_current_month/100.00)%> </p>

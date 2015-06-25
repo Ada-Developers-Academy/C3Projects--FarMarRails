@@ -4,9 +4,10 @@ class SalesController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     @vendor_sales = @vendor.sales
     @total_amount = Sale.total_amount(@vendor)
-    @current_month = Sale.start...Sale.end_of_month
-    @sales_current_month = @vendor_sales.where(:purchase_time => @current_month)
-  
+    @time = Time.now
+    @sales_current_month = @vendor_sales.where(purchase_time: @time.beginning_of_month..@time.end_of_month)
+    @total_current_month = Sale.total_current_month(@vendor)
+
     render :index
   end
 

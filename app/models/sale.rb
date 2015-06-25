@@ -10,11 +10,12 @@ class Sale < ActiveRecord::Base
     return total
   end
 
-  def self.start
-    Time.new(Time.now.month)
-  end
-
-  def self.end_of_month
-    Time.new(Time.now.month + 1)
+  def self.total_current_month(vendor)
+    total = 0
+    sales_current_month = vendor.sales.where(purchase_time: Time.now.beginning_of_month..Time.now.end_of_month)
+    sales_current_month.each do |sale|
+      total += sale.amount
+    end
+    return total
   end
 end
