@@ -9,7 +9,11 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.create(create_params[:sale])
+    p = create_params[:sale]
+
+    p[:amount] = p[:amount].to_f * 100
+
+    @sale = Sale.create(p)
 
     redirect_to vendor_path(params[:sale][:vendor_id])
   end
