@@ -8,23 +8,21 @@ Rails.application.routes.draw do
   get "/vendor_login" => "users#vendor_login"
 
   # routes to dashboards (maybe keep as post only to simulate logged in environment. we can link_to with post methods.)
-  post "/markets/dashboard" => "markets#dashboard"
-  post "/vendors/dashboard" => "vendors#dashboard"
+  post "/markets/login" => "markets#login"
+  post "/vendors/login" => "vendors#loginb"
+  get "/markets/:id/dashboard" => "markets#dashboard"
+  get "/vendors/:id/dashboard" => "vendors#dashboard"
+  get "/markets/market_not_found" => "markets#market_not_found"
+  get "/vendors/vendor_not_found" => "vendors#vendor_not_found"
 
   # Jeri's routes to display sales lists
-  get "/vendors/:id/sales" => "sales#index"
-  get "/vendors/:id/sales/current" => "sales#current_month"
+  get "/vendors/:id/sales" => "vendors#sales"
+  get "/vendors/:id/sales/current" => "vendors#sales_current_month"
 
-  # get "/vendors/:vendor_id/products" => "products#index"
-  # get "/vendors/:vendor_id/products/new" => "products#new"
-  # post "/vendors/:vendor_id/products/new" => "products#create"
-  # get "/vendors/:vendor_id/product/:product_id/edit" => "products#edit"
+  resources :markets, except: [:destroy] do
+    resources :vendors, except: [:index, :show]
+  end
 
-
-
-
-
-  resources :markets, except: [:destroy]
   resources :vendors do
     resources :products, except: [:show]
   end

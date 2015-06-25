@@ -1,6 +1,65 @@
-<!-- SEARCH -->
-<%= form_tag(controller: "vendors", action: "dashboard") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<main>
+  <section class="vendor-money">
+    <h2>This Market</h2>
+    <h1><%= @market.name %></h1>
+    <table class="market-location">
+      <tr>
+        <td colspan="2">
+          <%= link_to "Edit this market.", "./edit", title: "Update the details of this market." %>
+        </td>
+      <tr>
+        <td class="right">ID</td>
+        <td><%= "#{ @market.id }" %></td>
+      </tr>
+      <tr>
+        <td class="right">Market Name</td>
+        <td><%= "#{ @market.name }" %></td>
+      </tr>
+      <tr>
+        <td class="right">Location</td>
+        <td><%= "#{ @market.address }" %></td>
+      </tr>
+      <tr>
+        <td class="right">City</td>
+        <td><%= "#{ @market.city }" %></td>
+      </tr>
+      <tr>
+        <td class="right">County</td>
+        <td><%= "#{ @market.county }" %></td>
+      </tr>
+      <tr>
+        <td class="right">State</td>
+        <td><%= "#{ @market.state }" %></td>
+      </tr>
+      <tr>
+        <td class="right">Zipcode</td>
+        <td><%= "#{ @market.zipcode }" %></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="vendor-products">
+    <h2>This Market's Vendors</h2>
+    <%= link_to "Add new vendor.", "./vendors/new", title: "Create a new vendor for this market." %>
+
+    <% @vendors.each do |vendor| %>
+      <div class="padding-wrapper">
+        <table class="market-location">
+          <tr>
+            <td colspan="2" class="center">
+              <%= link_to "Manage this vendor.", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
+            </td>
+          </td>
+          <tr>
+            <td class="right">ID</td>
+            <td><%= "#{ vendor.id }" %></td>
+          </tr>
+          <tr>
+            <td class="right">Name</td>
+            <td><%= "#{ vendor.name }" %></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </section>
+</main>

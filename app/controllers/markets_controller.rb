@@ -3,11 +3,21 @@ class MarketsController < ApplicationController
     @markets = Market.all
   end
 
-  def dashboard
-    # I wasn't sure how else to handle this.
-    if (params.permit(:query)[:query].to_i <= Market.last.id)
-      @query = params.permit(:query)[:query]
+  def login
+    if (params.permit(:login_id)[:login_id].to_i <= Market.last.id)
+      id = params.permit(:login_id)[:login_id]
+      redirect_to "/markets/#{ id }/dashboard"
+    else
+      redirect_to "/markets/market_not_found"
     end
+  end
+
+  def dashboard
+    @market = Market.find(params.permit(:id)[:id])
+    @vendors = @market.vendors
+  end
+
+  def market_not_found
   end
 
   def show
@@ -27,11 +37,13 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    @market = Market.find(params[:market_id])
+    @market = Market.find(params[:id])
   end
 
   def update
-    market = Market.find(params[:market_id])
+    id = params[:id]
+
+    market = Market.find(id)
     edited_market = params[:market]
 
     market.update(
@@ -44,7 +56,7 @@ class MarketsController < ApplicationController
     )
 
     # update when market#show is created
-    redirect_to "/markets/"
+    redirect_to "/markets/#{ id }/dashboard"
   end
 
   private

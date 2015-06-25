@@ -1,8 +1,6 @@
-<!-- SEARCH -->
-<h1 class="center">welcome to the vendor login</h1>
-
+<h1 class="center">which vendor would you like to log in as?</h1>
 <%= form_tag(controller: "vendors", action: "dashboard") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <%= label_tag(:login_id, "Vendor ID:") %>
+  <%= text_field_tag(:login_id) %>
+  <%= submit_tag("Log in") %>
 <% end %>

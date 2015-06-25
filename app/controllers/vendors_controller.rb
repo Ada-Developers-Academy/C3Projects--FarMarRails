@@ -10,15 +10,16 @@ class VendorsController < ApplicationController
   def create
     vendor = Vendor.new(create_params[:vendor])
     vendor.save
-    redirect_to "/vendors"
+
+    redirect_to "/markets/#{ vendor.market_id }/dashboard"
   end
 
   def edit
-    @vendor = Vendor.find(params[:vendor_id])
+    @vendor = Vendor.find(params[:id])
   end
 
   def update
-    vendor = Vendor.find(params[:vendor_id])
+    vendor = Vendor.find(params[:id])
     edited_vendor = params[:vendor]
 
     vendor.update(
@@ -27,11 +28,11 @@ class VendorsController < ApplicationController
     )
 
     # update when vendor#show is created
-    redirect_to "/vendors/"
+    redirect_to "/markets/#{ vendor.market_id }/dashboard"
   end
 
   def delete
-    vendor = Vendor.find(params[:vendor_id])
+    vendor = Vendor.find(params[:id])
     vendor.delete
 
     redirect_to "/vendors"
@@ -43,7 +44,7 @@ class VendorsController < ApplicationController
       @query = params.permit(:query)[:query]
     end
 
-    @vendor = Vendor.find(params[:q].to_i)
+    @vendor = Vendor.find(params[:query].to_i)
     all_sales = @vendor.sales
     @sales = all_sales.slice(0, 5)
     @total_amount = total_sales(@vendor)
@@ -57,7 +58,7 @@ class VendorsController < ApplicationController
   private
 
   def create_params
-    params.permit(vendor: [:name, :number_of_employees])
+    params.permit(vendor: [:name, :number_of_employees, :market_id])
   end
 
   def total_sales(vendor)
