@@ -40,7 +40,11 @@
   <h3 class="section-header">Vendors</h3>
 
   <% @vendors.each do |vendor| %>
+      <%= link_to "Delete", "./vendors/#{ vendor.id }", title: "Delete this vendor.",
+          data: { confirm: "Are you sure? This is permanent." }, method: :delete %>
+
       <%= link_to "Edit", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
+
 
       <ul class="market-location">
         <li>

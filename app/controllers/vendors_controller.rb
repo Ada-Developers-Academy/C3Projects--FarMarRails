@@ -59,11 +59,11 @@ class VendorsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     vendor = Vendor.find(params[:id])
-    vendor.delete
+    vendor.destroy
 
-    redirect_to "/vendors"
+    redirect_to "/markets/#{ params[:market_id] }/dashboard"
   end
 
   private
