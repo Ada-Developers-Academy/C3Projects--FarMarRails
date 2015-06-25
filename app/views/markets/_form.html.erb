@@ -1,27 +1,22 @@
 <%= form_for item do |f| %>
-    <span class="form_field">
-        <%= f.label :name, "#{name_desc}" %>
-        <%= f.text_field :name, required: true, autofocus: true, placeholder: name_placeholder, value: name_value %>
-    </span>
-    <span class="form_field">
-        <%= f.label :address, "#{address_desc}" %>
-        <%= f.text_field :address, placeholder: address_placeholder, value: address_value %>
-    </span>
-    <span class="form_field">
-        <%= f.label :city, "#{city_desc}" %>
-        <%= f.text_field :city, placeholder: city_placeholder, value: city_value %>
-    </span>
-    <span class="form_field">
-        <%= f.label :county, "#{county_desc}" %>
-        <%= f.text_field :county, placeholder: county_placeholder, value: county_value %>
-    </span>
-    <span class="form_field">
-        <%= f.label :state, "#{state_desc}" %>
-        <%= f.text_field :state, placeholder: state_placeholder, value: state_value %>
-    </span>
-    <span class="form_field">
-        <%= f.label :zip, "#{zip_desc}" %>
-        <%= f.text_field :zip, placeholder: zip_placeholder, value: zip_value %>
-    </span>
-    <%= f.submit submit_button %>
+    
+  <%= f.label :name, "#{name_desc}" %>
+  <%= f.text_field :name, class: "form_field", required: true, autofocus: true, placeholder: name_placeholder, value: name_value %>
+
+  <%= f.label :address, "#{address_desc}" %>
+  <%= f.text_field :address, class: "form_field", placeholder: address_placeholder, value: address_value %>
+
+  <%= f.label :city, "#{city_desc}" %>
+  <%= f.text_field :city, class: "form_field", placeholder: city_placeholder, value: city_value %>
+
+  <%= f.label :county, "#{county_desc}" %>
+  <%= f.text_field :county, class: "form_field", placeholder: county_placeholder, value: county_value %>
+
+  <%= f.label :state, "#{state_desc}" %>
+  <%= f.text_field :state, class: "form_field", placeholder: state_placeholder, value: state_value %>
+
+  <%= f.label :zip, "#{zip_desc}" %>
+  <%= f.text_field :zip, class: "form_field", placeholder: zip_placeholder, value: zip_value %>
+   
+  <%= f.submit submit_button, class: "submit_button" %>
 <% end %>
