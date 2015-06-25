@@ -17,9 +17,9 @@ class ProductsController < ApplicationController
     if product.valid?
       product.save
 
-      redirect_to "/vendors/#{@vendor.id}/products"
+      redirect_to "/vendors/#{ @vendor.id }/products"
     else
-      redirect_to "/vendors/#{@vendor.id}/products/new/error"
+      redirect_to "/vendors/#{ @vendor.id }/products/new/error"
     end
   end
 
@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.destroy
 
-    redirect_to "/vendors/#{vendor_id}/products"
+    redirect_to "/vendors/#{ vendor_id }/products"
   end
 
   private
