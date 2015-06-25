@@ -1,9 +1,12 @@
-<h1>WELCOME TO WHATEVER</h1>
+<h1>FARMER'S MARKETS</h1>
+<h3>Here you can find information about farmer's markets in the United States.</h3>
 
 <div class = "nav">
-  <%= link_to 'See all markets', 'welcomes/markets' %>
-  <%= link_to 'Login as Market', markets_path %>
-  <%= link_to 'Login as Vendor', vendors_path %>
+  <ul>
+    <li><%= link_to 'See all markets', 'welcomes/markets' %></li>
+    <li>Market <%= link_to 'Login', markets_path %></li>
+    <li>Vendor <%= link_to 'Login', vendors_path %></li>
+  </ul>
 </div>
 
 <div class="welcome_pic">

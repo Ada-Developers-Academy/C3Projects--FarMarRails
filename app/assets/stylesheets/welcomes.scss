@@ -5,12 +5,15 @@ body {
   width: 960px;
   font-family: Brushstroke, fantasy;
   font-size: 18px;
-  padding: 100px;
   color: #8a6e6c;
   margin: auto;
 }
 
 h1 {
+  text-align: center;
+}
+
+h3 {
   text-align: center;
 }
 
@@ -30,27 +33,31 @@ a:hover {
 }
 .article1 {
   float: left;
-  width: 29.33%;
+  width: 31.6%;
   position: relative;
-  text-align: auto;
-  // left: 68.67%;
+  padding: 6px;
 }
 
 .article2 {
   float: left;
-  width: 29.33%;
+  width: 31.6%;
   position: relative;
-  // left: 72.67%;
+  padding: 6px;
 }
 
 .article3 {
   float: left;
-  width: 29.33%;
+  width: 31.6%;
   position: relative;
-  // left: 76.67%;
+  padding: 6px;
 }
 
 .welcome_pic img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.nav ul li {
+  padding: 8px 75px;
+  display: inline-block;
 }
