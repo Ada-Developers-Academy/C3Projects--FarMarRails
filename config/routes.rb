@@ -27,12 +27,12 @@ Rails.application.routes.draw do
   get "/markets/:market_id/vendors/edit/error" => "vendors#error"
 
   # routes for vendor users
-  resources :vendors, only: [:index] do
+  resources :vendors, only: [] do
     resources :products, except: [:show]
     resources :sales, only: [:index, :new, :create]
   end
 
-  # custom routes for vendor users (including error messages)
+  # custom routes for vendor user error messages)
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
   get "/vendors/:vendor_id/products/new/error" => "products#error"
   get "/vendors/:vendor_id/products/edit/error" => "products#error"
