@@ -7,7 +7,7 @@
 
   <% @monthlysales.each do |sale| %>
   <tr>
-    <td><%= sale.amount %></td>
+   <td><%= number_to_currency(sale.amount /100.00) %></td>
     <td><%= sale.purchase_time %></td>
   <tr>
 <% end %>

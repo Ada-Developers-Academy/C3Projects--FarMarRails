@@ -12,7 +12,7 @@ class VendorsController < ApplicationController
     @display_products = @vendor.products
     @display_sales = @vendor.sales
 
-    @revenue = total_sales(@vendor) / 100.0
+    @revenue = total_sales(@vendor)
 
   end
 
