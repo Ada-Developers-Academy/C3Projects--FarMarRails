@@ -20,7 +20,7 @@
 
     <div class="sales">
       <%= link_to "All Sales", "/vendors/#{@vendor.id}/sales" %>
-      <h3 class="section-header">Sales</h3>
+      <h3 class="section-header">Recent Sales</h3>
 
       <ul>
         <% @sales.reverse.each do |sale| %>
@@ -38,9 +38,6 @@
         <% end %>
       </ul>
     </div>
-
-
-    <!-- button for new sales -->
   </section>
 
   <section class="vendor-products">

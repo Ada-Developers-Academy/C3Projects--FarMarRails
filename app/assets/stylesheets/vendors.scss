@@ -20,6 +20,7 @@
   color: darken(#ccc, 60);
 }
 
+
 .vendor-money {
   float: left;
   text-align: center;
@@ -65,6 +66,8 @@
     float: right;
   }
 }
+
+
 .vendor-products {
   float: right;
   margin: 10px 0px 10px 3px;
@@ -78,5 +81,21 @@
 
   &:hover {
     color: #fff;
+  }
+}
+
+.vendor-products div ul {
+  text-align: center;
+  list-style-type: none;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+.vendor-products li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+
+  &:last-child {
+    border-bottom: none;
   }
 }
