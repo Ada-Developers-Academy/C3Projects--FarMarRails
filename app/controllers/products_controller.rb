@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update]
-  before_action :set_vendor, only: [:show, :new, :create, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_vendor, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -14,6 +14,11 @@ class ProductsController < ApplicationController
   def update
     @product.update(product_params)
     redirect_to vendor_product_path(@vendor, @product)
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to vendor_path(@vendor)
   end
 
   private
