@@ -15,65 +15,26 @@ Rails.application.routes.draw do
   get "/markets/market_not_found" => "markets#market_not_found"
   get "/vendors/vendor_not_found" => "vendors#vendor_not_found"
 
-  # Jeri's routes to display sales lists
-  # get "/vendors/:id/sales" => "vendors#sales"
-  # get "/vendors/:id/sales/current" => "vendors#sales_current_month"
-
+  # resource routes for market users
   resources :markets, except: [:destroy] do
     resources :vendors, except: [:index, :show]
   end
 
+  # custom routes for market users
+  get "/markets/new/error"
+  get "/markets/edit/error"
+  get "/vendors/new/error"
+  get "/vendors/edit/error"
+
+  # routes for vendor users
   resources :vendors, only: [:index] do
     resources :products, except: [:show]
     resources :sales, only: [:index, :new, :create]
   end
 
+  # custom routes for vendor users (including error messages)
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
-
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  get "/products/new/error"
+  get "/products/edit/error"
+  get "/sales/new/error"
 end
