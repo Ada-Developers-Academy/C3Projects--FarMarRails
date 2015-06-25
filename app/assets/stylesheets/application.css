@@ -15,12 +15,8 @@
  */
 
 
-/*___GLOBAL___*/
-
-form {
-  width:350px;
-}
-
-form label {
-  display: block;
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }

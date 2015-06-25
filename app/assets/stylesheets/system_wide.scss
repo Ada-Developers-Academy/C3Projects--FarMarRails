@@ -1,0 +1,36 @@
+body {
+  font-family: 'Verdana', arial, sans-serif;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+  background: rgb(50, 227, 178);
+}
+
+a {
+  color: rgb(0, 53, 38);
+}
+
+header, nav {
+  text-align: center;
+}
+
+/*________NAV________*/
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  padding: 0;
+  margin: 0;
+}
+
+
+/*________FORM________*/
+
+form {
+  width:350px;
+}
+
+form label {
+  display: block;
+}
