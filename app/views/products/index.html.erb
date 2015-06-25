@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<td><%= button_to "Create Product", "/vendors/#{@vendor[:id]}/products/new", method: :get, class: "button" %></td>
+<td><%= button_to "Create Product", new_vendor_product_path(@vendor.id), method: :get, class: "button" %></td>
 
 <table>
   <tr>
@@ -12,9 +12,11 @@
   <% @products.each do |product| %>
     <tr>
     <td><%= product.name %></td>
-    <td><%= button_to "Edit", "/vendors/#{@vendor[:id]}/products/#{product[:id]}/edit", method: :get, class: "button" %> </td>
+    <td><%= button_to "Edit", edit_vendor_product_path(@vendor.id, product), action: "edit", method: :get, class: "button" %> </td>
     <td><%= button_to "Delete", "/vendors/#{@vendor[:id]}/products/#{product[:id]}", method: :delete, data: { confirm: "Are you sure you want to delete this product?" }, class: "button" %> </td>
     <td><%= button_to "Add Sale", class: "button" %> </td>
     </tr>
   <% end %>
 </table>
+
+
