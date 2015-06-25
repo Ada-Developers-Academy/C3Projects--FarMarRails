@@ -27,6 +27,7 @@ class VendorsController < ApplicationController
     # sets timeframe
     @show_current_month = params[:show_current_month]
     if @show_current_month == "true"
+      # Sets current month range
       current_date_time = DateTime.now
       beginning_of_month = current_date_time.beginning_of_month
       end_of_month = current_date_time.end_of_month
@@ -34,7 +35,7 @@ class VendorsController < ApplicationController
 
       @sales = Sale.where(
         vendor_id: params[:id],
-        :purchase_time => beg..finish
+        :purchase_time => @month_range
         )
     else
       @sales = Sale.where(vendor_id: params[:id])
