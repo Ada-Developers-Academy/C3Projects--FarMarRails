@@ -1,8 +1,8 @@
-<h1> Vendor Detail for <%= @vendor.name %></h1>
+<h1> Vendor Details for <%= @vendor.name %></h1>
 
 <table>
   <thead>
-    Details
+    Vendor Details
   </thead>
 
   <tr>
@@ -21,7 +21,11 @@
   </tr>
 
 </table>
+<h2> Sales </h2>
 
+<%= link_to "New Transaction", new_vendor_sale_path %>
+
+<h2>Products</h2>
 
 <%= link_to "Add New Product", new_vendor_product_path(@vendor.id) %>
 

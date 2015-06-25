@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :vendors do
-    # resources :sales, only: [:index, :create, :new]
+    resources :sales
     resources :products
   end
 
