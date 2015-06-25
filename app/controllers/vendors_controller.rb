@@ -27,19 +27,16 @@ class VendorsController < ApplicationController
     # sets timeframe
     @show_current_month = params[:show_current_month]
     if @show_current_month == "true"
-      # current_date_time = DateTime.now
-      # beginning_of_month = current_date_time.beginning_of_month
-      # end_of_month = current_date_time.end_of_month
-      # @month_range = (beginning_of_month..end_of_month)
+      current_date_time = DateTime.now
+      beginning_of_month = current_date_time.beginning_of_month
+      end_of_month = current_date_time.end_of_month
+      @month_range = (beginning_of_month..end_of_month)
 
-      @sales = Sale.where(vendor_id: params[:id], purchase_time: @month_range)
+      @sales = Sale.where(
+        vendor_id: params[:id],
+        :purchase_time => beg..finish
+        )
 
-    # this will make a new array @sales of only the sales for that month
-      # @sales = @sales.map do |sale|
-      #   if @month_range.include?(sale.purchase_time)
-      #     sale
-      #   end
-      # end
     else
       @sales = Sale.where(vendor_id: params[:id])
     end
