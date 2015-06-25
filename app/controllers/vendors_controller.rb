@@ -7,10 +7,10 @@ class VendorsController < ApplicationController
   def new
     @market = Market.find(params[:market_id])
     @vendor = Vendor.new
-    @legend = "Add vendor information below:"
-    @url = "/markets/#{@market.id}/vendors"
-    @id = :market_id
-    @value = @market.id
+    # @legend = "Add vendor information below:"
+    # @url = "/markets/#{@market.id}/vendors"
+    # @id = :market_id
+    # @value = @market.id
 
   end
 
@@ -28,10 +28,10 @@ class VendorsController < ApplicationController
   def edit
     show
     @market = Market.find(params[:market_id])
-    @legend = "Add vendor information below:"
-    @id = :id
-    @url = "/markets/#{@market.id}/vendors/#{@vendor.id}"
-    @value = @vendor.id
+    # @legend = "Add vendor information below:"
+    # @id = :id
+    # @url = "/markets/#{@market.id}/vendors/#{@vendor.id}"
+    # @value = @vendor.id
 
   end
 
@@ -40,7 +40,7 @@ class VendorsController < ApplicationController
     @market = Market.find(params[:market_id])
     @vendor.update(create_params[:vendor])
 
-    redirect_to market_portal_path
+    redirect_to market_vendors_path
   end
 
   def destroy

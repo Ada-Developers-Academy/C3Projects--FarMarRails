@@ -1,7 +1,7 @@
 <fieldset>
-  <legend><%= @legend %></legend>
+  <legend><%= legend %></legend>
 
-  <%= form_for @vendor, url: @url, html: {class: "forms"} do |f| %>
+  <%= form_for @vendor, url: url, method: method, html: {class: "forms"} do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name, required: :true %>
@@ -9,7 +9,7 @@
     <%= f.label "Number of Employees" %>
     <%= f.text_field :num_employees %>
 
-    <%= f.hidden_field(@id, :value => "#{@value}") %>
+    <%= f.hidden_field(id, :value => "#{value}") %>
 
     <%= f.submit %>
 
