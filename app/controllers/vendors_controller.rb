@@ -12,7 +12,7 @@ class VendorsController < ApplicationController
 
   def show
     @title = " information"
-    @vendor_id =params[:id]
+    @vendor_id = params[:id]
     @vendor = Vendor.find(@vendor_id)
 
     render :vendor_show
@@ -53,7 +53,7 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
     @vendor.destroy
 
-    redirect_to market_vendor_path
+    redirect_to market_path(@vendor.market_id)
   end
 
   def landing
