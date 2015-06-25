@@ -1,5 +1,5 @@
 <h1 class="center">which vendor would you like to log in as?</h1>
-<%= form_tag(controller: "vendors", action: "dashboard") do %>
+<%= form_tag(controller: "vendors", action: "login") do %>
   <%= label_tag(:login_id, "Vendor ID:") %>
   <%= text_field_tag(:login_id) %>
   <%= submit_tag("Log in") %>

@@ -38,13 +38,13 @@ class VendorsController < ApplicationController
     redirect_to "/vendors"
   end
 
-  def dashboard
+  def login
     # I wasn't sure how else to handle this.
-    if (params.permit(:query)[:query].to_i <= Vendor.last.id)
-      @query = params.permit(:query)[:query]
+    if (params.permit(:login_id)[:login_id].to_i <= Vendor.last.id)
+      @login_id = params.permit(:login_id)[:login_id]
     end
 
-    @vendor = Vendor.find(params[:query].to_i)
+    @vendor = Vendor.find(params[:login_id].to_i)
     all_sales = @vendor.sales
     @sales = all_sales.slice(0, 5)
     @total_amount = total_sales(@vendor)
@@ -53,6 +53,8 @@ class VendorsController < ApplicationController
     month_sales.each { |amount| @sum += amount }
 
     @all_products = @vendor.products
+
+    render :dashboard
   end
 
   private

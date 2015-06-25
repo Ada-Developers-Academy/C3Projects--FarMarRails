@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # routes to dashboards (maybe keep as post only to simulate logged in environment. we can link_to with post methods.)
   post "/markets/login" => "markets#login"
-  post "/vendors/login" => "vendors#loginb"
+  post "/vendors/login" => "vendors#login"
   get "/markets/:id/dashboard" => "markets#dashboard"
   get "/vendors/:id/dashboard" => "vendors#dashboard"
   get "/markets/market_not_found" => "markets#market_not_found"
