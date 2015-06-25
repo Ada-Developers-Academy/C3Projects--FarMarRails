@@ -54,6 +54,14 @@ class VendorsController < ApplicationController
     redirect_to market_vendors_path
   end
 
+  def login
+    render :vendor_login
+  end
+
+  def portal
+    render :vendor_portal
+  end
+
   private
 
   def vendor_params

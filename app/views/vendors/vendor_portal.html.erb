@@ -1,0 +1,54 @@
+<section class="homepage">
+  <div>
+    <h1>Vendor Portal</h1>
+    <h2>put a brief description here of what the app does and who can use it or maybe something else I dunno</h2>
+    <p>I would like to...</p>
+      <%= button_to "Add/Edit Products", "/markets", class: "button"%>
+      <%= button_to "Add a Sale", "", class: "button" %>
+  </div>
+
+
+  <div>
+    <h1>Sales Information</h1>
+    <h2>Current Month</h2>
+    <h3>Running total: <%= @sales_total %></h3>
+    <table>
+      <thead>
+        <tr>
+          <td>
+            Amount
+          </td>
+          <td>
+            Purchase Time
+          </td>
+          <td>
+            Vendor Id
+          </td>
+          <td>
+            Product Id
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <% Sale.all.each do |sale| %>
+        <tr>
+          <td>
+            <%= sale.amount %>
+          </td>
+        <td>
+          <%= sale.purchase_time %>
+        </td>
+        <td>
+          <%= sale.vendor_id %>
+        </td>
+        <td>
+          <%= sale.product_id %>
+        </td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Running Total</h2>
+  </div>
+</section>
