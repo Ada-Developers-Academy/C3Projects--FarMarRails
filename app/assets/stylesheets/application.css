@@ -24,6 +24,8 @@ html, body {
 body {
  width: 100%;
  margin: 0 auto;
+ position: relative;
+ top: -17px;
 }
 
 main {
@@ -38,6 +40,9 @@ nav {
   font-size: 16px;
   padding: 8px;
   text-align: right;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 nav a {
@@ -79,6 +84,9 @@ h4 {
 a {
   color: #0F0E05; /* green-black */
   text-decoration: none;
+}
+a:hover {
+  color: #ccc;
 }
 
 

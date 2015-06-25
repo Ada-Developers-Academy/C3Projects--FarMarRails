@@ -1,4 +1,4 @@
-<ul>
+<ul class="all-markets">
   <% @markets.each do |market| %>
     <li><%= link_to "#{ market.name }", "/markets/#{ market.id }", title: "Review #{ market.name }." %></li>
   <% end %>
