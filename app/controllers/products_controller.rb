@@ -3,12 +3,12 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @vendor_id = params[:vendor_id]
-    @url = "/vendors/#{@product.vendor_id}/products"
+    @url = "/vendors/#{@vendor_id}/products"
   end
 
   def create
     @product = Product.create(create_params[:product])
-    # redirect_to "/vendors"
+    redirect_to "/vendors/#{@product.vendor_id}"
   end
 
 ##################### PRIVATE METHODS #####################
