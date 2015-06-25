@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :vendors do
     # resources :sales, only: [:index, :create, :new]
-    # resources :products
+    resources :products
   end
 
   # Example resource route with options:

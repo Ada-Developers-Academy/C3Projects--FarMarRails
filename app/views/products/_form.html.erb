@@ -1,0 +1,12 @@
+<%= form_for @product, url: @url do |f| %>
+  <fieldset>
+    <legend> Product Details </legend>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.hidden_field :vendor_id, value: @vendor_id %>
+
+  </fieldset>
+      <%= f.submit %>
+      <%= params %>
+<% end %>
