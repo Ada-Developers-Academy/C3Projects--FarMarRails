@@ -5,6 +5,7 @@ class VendorsController < ApplicationController
     @market_id = params[:market_id]
     @market = Market.find(@market_id)
     @vendors = @market.vendors
+    
     render :index
   end
 
@@ -32,6 +33,7 @@ class VendorsController < ApplicationController
   # Edit an existing vendor
   def edit
     @vendor = Vendor.find(params[:id])
+
     render :edit
   end
 
@@ -79,6 +81,7 @@ class VendorsController < ApplicationController
         @month_sales += sale.amount.to_i
       end
     end
+
     render :vendor_portal
   end
 
