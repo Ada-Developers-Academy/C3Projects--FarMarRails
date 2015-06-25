@@ -1,4 +1,9 @@
-<h2><%= link_to "View products just for the current month.", "./current", title: "Click here to review this month's products." %></h2>
+<% content_for :dashboard_nav do %>
+  <%= render partial: "/vendors/dashboard" %>
+<% end %>
+
+
+<h2><%= link_to "View products just for the current month.", "./products/current", title: "Click here to review this month's products." %></h2>
 <%= link_to "+ New Product", "/vendors/#{@vendor.id}/products/new" %>
 
 <ul>

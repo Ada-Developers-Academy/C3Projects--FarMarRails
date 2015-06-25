@@ -10,9 +10,14 @@
 <body>
   <header>
     <nav>
-      <%= link_to "View all markets", "/markets", title: "View all markets." %>
-      <%= link_to "Log out", "/", title: "Log out of your dashboard." %>
+      <div class="nav-left">
+        <%= link_to "View all markets", "/markets", title: "View all markets." %>
+      </div>
+      <div class="nav-right">
+        <%= link_to params[:id] ? "Log out" : "Log in", "/", title: params[:id] ? "Log out of your account." : "Log into your account." %>
+      </div>
     </nav>
+    <%= yield :dashboard_nav %>
   </header>
 
   <main>

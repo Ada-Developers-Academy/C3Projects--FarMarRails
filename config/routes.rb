@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   get "/vendors/vendor_not_found" => "vendors#vendor_not_found"
 
   # Jeri's routes to display sales lists
-  get "/vendors/:id/sales" => "vendors#sales"
-  get "/vendors/:id/sales/current" => "vendors#sales_current_month"
+  # get "/vendors/:id/sales" => "vendors#sales"
+  # get "/vendors/:id/sales/current" => "vendors#sales_current_month"
 
   resources :markets, except: [:destroy] do
     resources :vendors, except: [:index, :show]
@@ -25,7 +25,10 @@ Rails.application.routes.draw do
 
   resources :vendors do
     resources :products, except: [:show]
+    resources :sales, except: [:show]
   end
+
+  get "/vendors/:vendor_id/sales/current" => "sales#current_month"
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

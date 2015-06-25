@@ -1,11 +1,15 @@
 class SalesController < ApplicationController
   def index
-    @vendor = Vendor.find(params.permit(:id)[:id])
+    @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
     @sales = @vendor.sales
+
+    if @sales.length == 0
+      render ":empty"
+    end
   end
 
   def current_month
-    @vendor = Vendor.find(params.permit(:id)[:id])
+    @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
     @sales = month_sales(@vendor)
 
     if @sales.length == 0

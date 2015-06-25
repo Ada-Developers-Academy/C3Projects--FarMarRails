@@ -1,3 +1,7 @@
+<% content_for :dashboard_nav do %>
+  <%= render partial: "/vendors/dashboard" %>
+<% end %>
+
 <h1>Rename Product</h1>
 
 <%= render partial: "form", locals: { url: "./", submit: "Rename Product" }%>
