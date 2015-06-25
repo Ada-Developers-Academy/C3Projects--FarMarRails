@@ -17,7 +17,6 @@ class VendorsController < ApplicationController
     render 'vendor/sales'
   end
 
-# THIS METHOD IS DOING TOO MUCH!!! REFACTOR WHEN YOU HAVE A CHANCE! - C
   def sales_this_month
     # sets timeframe
     @show_current_month = params[:show_current_month]
@@ -28,6 +27,8 @@ class VendorsController < ApplicationController
         vendor_id: params[:id],
         :purchase_time => month_range
         )
+      # how to do this without searching database? gahh.
+      @vendor_name = Vendor.find(params[:id]).name
     else
       @sales = Sale.where(vendor_id: params[:id])
     end
