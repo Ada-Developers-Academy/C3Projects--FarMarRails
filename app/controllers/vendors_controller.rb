@@ -1,11 +1,8 @@
 class VendorsController < ApplicationController
 
   def index
-    if params[:market_id]
-      @vendors = Vendor.where(:market_id => params[:market_id])
-    else
-      @vendors = Vendor.all
-    end
+    @vendors = Vendor.all
+
     render :index
   end
 
@@ -27,8 +24,7 @@ class VendorsController < ApplicationController
   end
 
   def show
-    @vendor = Vendor.find(params[:id])
-    render :show
+
   end
 
   def update
