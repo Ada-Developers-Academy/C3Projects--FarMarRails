@@ -10,29 +10,12 @@ class VendorsController < ApplicationController
     redirect_to vendor_path(@vendor)
   end
 
-  def show
+   def show
     @vendor = Vendor.find(params[:id])
 
     @products = Product.where(:vendor_id => params[:id])
     @sales = Sale.where(:vendor_id => params[:id])
-
-    # MONTH DISPLAY CODE #
-    current_year = DateTime.now.year
-    current_month = DateTime.now.month
-
-    month_sales = []
-
-    @sales.each do |sale|
-      answer = sale[:purchase_time] <=> DateTime.new(current_year, current_month)
-
-      if answer == 1
-        month_sales.push(sale)
-      end
-    end
-
-    @sales = month_sales
-    # MONTH DISPLAY CODE #
-
+    
     sum = 0
     @sales.each do |sale|
       sum += sale[:amount]
@@ -40,6 +23,39 @@ class VendorsController < ApplicationController
 
     @total_sales = sum
 
+  end
+
+  def show_monthly
+    @vendor = Vendor.find(params[:id])
+
+    @products = Product.where(:vendor_id => params[:id])
+    @sales = Sale.where(:vendor_id => params[:id])
+
+      # MONTH DISPLAY CODE #
+      current_year = DateTime.now.year
+      current_month = DateTime.now.month
+
+      month_sales = []
+
+      @sales.each do |sale|
+        answer = sale[:purchase_time] <=> DateTime.new(current_year, current_month)
+
+        if answer == 1
+          month_sales.push(sale)
+        end
+      end
+
+      @sales = month_sales
+      # MONTH DISPLAY CODE #
+    sum = 0
+    @sales.each do |sale|
+      sum += sale[:amount]
+    end
+
+    @total_sales = sum
+
+    render :show
+    # redirect_to(vendor_path(@vendor.id)) 
   end
 
   def create

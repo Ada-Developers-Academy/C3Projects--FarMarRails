@@ -71,6 +71,11 @@
 
 <h2>Sale List</h2>
 
+<%= button_to "Display All Sales",vendor_path(@vendor.id), method: :get  %>
+<br>
+<%= button_to "Display This Month's Sales",  show_monthly_vendor_path(@vendor.id), method: :get  %>
+<br>
+
 <table border "1">
 
   <tr>

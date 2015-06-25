@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     collection do
       get '/confirm', action: 'confirm', as: 'confirm'
     end
+    member do
+      get '/show_monthly', action: 'show_monthly', as: 'show_monthly'
+    end
   end
 
   resources :products
