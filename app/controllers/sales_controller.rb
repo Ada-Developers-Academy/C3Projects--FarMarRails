@@ -15,6 +15,13 @@ class SalesController < ApplicationController
     redirect_to vendor_path(params[:sale][:vendor_id])
   end
 
+
+  def month_sales
+
+    render :month_sales
+
+  end
+
   private
 
   def create_params
