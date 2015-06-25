@@ -6,8 +6,8 @@
       <%= f.label :amount, 'Sale Amount' %>
       <%= f.text_field :amount %>
 
-      <%= f.label :purchase_time, 'Purchase Time' %>
-      <%= f.text_field :purchase_time %>
+      <%= f.label :purchase_time, 'Purchase Date' %>
+      <%= f.date_field :purchase_time %>
 
       <%= f.label :product_id, 'Product' %>
       <%= f.collection_select :product_id, @vendor.products, :id, :name, :prompt => true %>

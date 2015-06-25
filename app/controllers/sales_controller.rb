@@ -8,12 +8,12 @@ class SalesController < ApplicationController
 
   def create
     @vendor = Vendor.find(params[:vendor_id])
-
     @url = "/vendors/#{@vendor.id}/sales"
+
     @sale = Sale.new(create_params[:sale])
     @sale.save
 
-    redirect_to "/vendors/#{@vendor.id}/sales"
+    redirect_to vendor_sales_path(@vendor.id)
   end
 
   def new
