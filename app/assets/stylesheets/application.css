@@ -32,6 +32,7 @@ main {
   width: 960px;
   margin: 0 auto;
   height: 100%;
+  padding: 10px;
 }
 
 nav {

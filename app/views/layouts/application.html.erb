@@ -15,9 +15,8 @@
     <%= link_to id ? "Log Out" : "Log In", "/", title: id ? "Log out of your account." : "Log in to your account." %>
   </nav>
 
-  <%= yield :breadcrumbs %>
-
   <main>
+    <%= yield :breadcrumbs %>
     <%= yield %>
   </main>
 
