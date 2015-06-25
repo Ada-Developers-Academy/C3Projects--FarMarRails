@@ -33,6 +33,7 @@ body {
 }
 
 /* Homepage --------------------------------------------------- */
+
 .homepage {
   text-align: center;
 }
@@ -45,11 +46,12 @@ body {
 
 .homepage h2 {
   margin: 0 auto;
+  padding: 20px 0;
   width: 450px;
   font-size: 1.1em;
 }
 
-.homepage .home_link, .submit_button {
+.homepage .button_link, .submit_button {
   display: inline-block;
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
@@ -61,7 +63,16 @@ body {
   text-decoration: none;
 }
 
+/* Tables ----------------------------------------------------- */
+
+th {
+  text-align: left;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
 /* Links ------------------------------------------------------ */
+
 a:link,
 a:visited {
   color: #A00;
@@ -75,10 +86,11 @@ a:hover {
 }
 
 /* Forms ------------------------------------------------------ */
+
 .form_field {
   display: block;
-  padding-right: 15px;
-  padding-bottom: 2px;
+  padding-right: 25px;
+  padding-bottom: 3px;
   margin-bottom: 15px;
 }
 
@@ -89,4 +101,12 @@ a:hover {
 
 .submit_button:hover {
   font-style: italic;
+}
+
+/* Footer ---------------------------------------------------- */
+
+footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 0.7em;
 }

@@ -1,5 +1,4 @@
 <h1>All Markets</h1>
-
 <table>
   <thead>
     <tr>
@@ -25,29 +24,29 @@
   </thead>
   <tbody>
     <% Market.all.each do |market|%>
-      <tr>
-        <td>
-          <a href = <%= "/all_markets/#{market.id}" %>><%= market.name %></a>
-        </td>
-        <td>
-          <%= market.address%>
-        </td>
-        <td>
-          <%= market.city %>
-        </td>
-        <td>
-          <%= market.county %>
-        </td>
-        <td>
-          <%= market.state %>
-        </td>
-        <td>
-          <% if market.zip.to_s.length == 5 %>
-            <%= market.zip %>
-          <% else %>
-          <% end %>
-        </td>
-      </tr>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", "/all_markets/#{market.id}" %>
+      </td>
+      <td>
+        <%= market.address%>
+      </td>
+      <td>
+        <%= market.city %>
+      </td>
+      <td>
+        <%= market.county %>
+      </td>
+      <td>
+        <%= market.state %>
+      </td>
+      <td>
+        <% if market.zip.to_s.length == 5 %>
+        <%= market.zip %>
+        <% else %>
+        <% end %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>

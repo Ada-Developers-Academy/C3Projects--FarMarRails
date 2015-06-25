@@ -4,12 +4,12 @@
   <fieldset class="add_product_form">
     <legend>Add a Product</legend>
     <%= render partial: "form", locals: { url: market_vendor_products_path(market_id, vendor_id),
-    item: @product,
-    name_desc: "Product Name",
-    name_placeholder: "Healthy Celery",
-    name_value: nil,
-    vendor_id_value: vendor_id,
-    submit_button: "add product to #{@vendor.name}" }
+                                          item: @product,
+                                          name_desc: "Product Name",
+                                          name_placeholder: "Healthy Celery",
+                                          name_value: nil,
+                                          vendor_id_value: vendor_id,
+                                          submit_button: "add product to #{@vendor.name}" }
     %>
   </fieldset>
 </section>

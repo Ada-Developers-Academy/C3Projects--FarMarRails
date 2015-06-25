@@ -2,21 +2,21 @@
 <table>
   <thead>
     <tr>
-      <td>
+      <th>
         Address
-      </td>
-      <td>
+      </th>
+      <th>
         City
-      </td>
-      <td>
+      </th>
+      <th>
         County
-      </td>
-      <td>
+      </th>
+      <th>
         State
-      </td>
-      <td>
+      </th>
+      <th>
         Zip Code
-      </td>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -39,13 +39,12 @@
     </tr>
   </tbody>
 </table>
-
 <h2>Vendors associated with <%= @market.name %></h2>
 <p>
-  <a href=<%= "/markets/#{@market.id}/vendors/new" %>>+ Add a Vendor to <%= @market.name %></a>
+  <%= link_to "+ Add a Vendor to #{@market.name}", "/markets/#{@market.id}/vendors/new" %>
 </p>
 <% @market.vendors.each do |vendor| %>
 <li>
-    <a href=<%= "/markets/#{@market.id}/vendors/#{vendor.id}" %>><%= vendor.name %></a>
+  <%= link_to "#{vendor.name}", "/markets/#{@market.id}/vendors/#{vendor.id}" %>
 </li>
 <% end %>

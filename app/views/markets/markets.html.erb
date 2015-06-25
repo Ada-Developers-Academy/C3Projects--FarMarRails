@@ -14,27 +14,24 @@
       <th>
         State
       </th>
-      <th>
-        Edit Market
-      </th>
     </tr>
   </thead>
   <tbody>
     <% Market.all.each do |market|%>
-      <tr>
-        <td>
-          <a href=<%= "/markets/#{market.id}" %>><%= market.name %></a>
-        </td>
-        <td>
-          <%= market.city%>
-        </td>
-        <td>
-          <%= market.state %>
-        </td>
-        <td>
-          <a href =<%= "#{edit_market_path(market)}"%>>Edit</a>
-        </td>
-      </tr>
-      <% end %>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", "/markets/#{market.id}" %>
+      </td>
+      <td>
+        <%= market.city%>
+      </td>
+      <td>
+        <%= market.state %>
+      </td>
+      <td>
+        <%= link_to "Edit", "#{edit_market_path(market)}" %>
+      </td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
