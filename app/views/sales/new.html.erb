@@ -5,19 +5,26 @@
 
 <!-- WIP As a vendor, I can create a Sale for one of my Products. -->
 
-<%= form_for @sale, url: "./" do |f| %>
-  <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
+<header>
+  <h1>Create a Sale</h1>
+</header>
 
-  <%= f.label :amount, "Sale Amount (in dollars)", placeholder: "56.18" %>
-  $<%= f.text_field :amount, size: "10", required: true %>
+<section class="edit-form">
+  <%= form_for @sale, url: "./" do |f| %>
+    <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
 
-  <%= f.label :purchase_time %>
-  <%= f.datetime_select :purchase_time %>
+    <%= f.label :amount, "Sale Amount (in dollars)", placeholder: "56.18" %>
+    <br>
+    <%= f.text_field :amount, size: "10", required: true, placeholder: "$0.00" %>
+    <br><br>
+    <%= f.label :purchase_time %>
+    <%= f.date_field :purchase_time %>
+    <br><br>
+    <%= f.label :product_id %>
+    <%= collection_select :sale, :product_id, @vendor.products, :id, :name %>
 
-  <%= f.label :product_id %>
-  <%= collection_select :sale, :product_id, @vendor.products, :id, :name %>
-
-  <!-- time_field("task", "started_at", min: Time.now) -->
-
-  <%= f.submit "Create New Sale" %>
-<% end %>
+    <!-- time_field("task", "started_at", min: Time.now) -->
+    <br><br>
+    <%= f.submit "Create New Sale" %>
+  <% end %>
+</section>
