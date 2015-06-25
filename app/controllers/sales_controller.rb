@@ -37,14 +37,32 @@ class SalesController < ApplicationController
     # person = Person.new(name: "John Doe")
     # person.valid? # => true
     # person.errors.messages # => {}
+    #
+    # class Person < ActiveRecord::Base
+    #   validates :name, presence: true, length: { minimum: 3 }
+    # end
+    #
+    # person = Person.new
+    # person.valid? # => false
+    # person.errors.messages
+    #  # => {:name=>["can't be blank", "is too short (minimum is 3 characters)"]}
+    #
+    # person = Person.new(name: "John Doe")
+    # person.valid? # => true
+    # person.errors.messages # => {}
 
     params = create_params[:sale]
     params[:amount] = convert_dollars_to_cents(params[:amount])
 
     sale = Sale.new(params)
-    sale.save
 
-    redirect_to "/vendors/#{ sale.vendor_id }/sales"
+    if sale.valid?
+      sale.save
+      
+      redirect_to "/vendors/#{ sale.vendor_id }/sales"
+    else
+      redirect_to "/vendors/#{ sale.vendor_id }/sales/new/error"
+    end
   end
 
   private
@@ -56,6 +74,7 @@ class SalesController < ApplicationController
   def convert_dollars_to_cents(dollar_amount)
     cent_amount = dollar_amount.to_f * 100
     cent_amount = cent_amount.to_i
+    return "zero" if cent_amount == 0
   end
 
   def month_sales(vendor)

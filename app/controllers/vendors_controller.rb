@@ -31,9 +31,14 @@ class VendorsController < ApplicationController
 
   def create
     vendor = Vendor.new(create_params[:vendor])
-    vendor.save
 
-    redirect_to "/markets/#{ vendor.market_id }/dashboard"
+    if vendor.valid?
+      vedor.save
+
+      redirect_to "/markets/#{ vendor.market_id }/dashboard"
+    else
+      redirect_to "/markets/#{ vendor.market_id }/new/error"
+    end
   end
 
   def edit
@@ -44,13 +49,19 @@ class VendorsController < ApplicationController
     vendor = Vendor.find(params[:id])
     edited_vendor = params[:vendor]
 
-    vendor.update(
-      name: edited_vendor[:name],
-      number_of_employees: edited_vendor[:number_of_employees]
-    )
 
-    # update when vendor#show is created
-    redirect_to "/markets/#{ vendor.market_id }/dashboard"
+    if Vendor.new(edited_vendor).valid?
+      vendor.update(
+        name: edited_vendor[:name],
+        number_of_employees: edited_vendor[:number_of_employees]
+      )
+      # vendor.save # is this necessary?
+
+      # update when vendor#show is created
+      redirect_to "/markets/#{ vendor.market_id }/dashboard"
+    else
+      redirect_to "/markets/#{ vendor.market_id }/new/error"
+    end
   end
 
   def delete
