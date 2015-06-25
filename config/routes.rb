@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "users#index"
 
   # routes to grab login pages
-  get "/market_login" => "users#market_login"
-  get "/vendor_login" => "users#vendor_login"
+  get "/market" => "users#market"
+  get "/vendor" => "users#vendor"
 
   # routes to dashboards (maybe keep as post only to simulate logged in environment. we can link_to with post methods.)
   post "/markets/login" => "markets#login"

@@ -9,7 +9,7 @@
 </head>
 <body>
   <nav>
-    <%= link_to "View all markets", "/markets", title: "View all markets." %>
+    <%= link_to "All Markets", "/markets", title: "All Markets" %>
 
     <% id = params[:id] || params[:market_id] || params[:vendor_id] || false %>
     <%= link_to id ? "Log Out" : "Log In", "/", title: id ? "Log out of your account." : "Log in to your account." %>

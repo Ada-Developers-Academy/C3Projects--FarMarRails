@@ -48,7 +48,6 @@ nav a:link, nav a:visited {
 }
 nav a:hover, nav a:active {
   color: #fff;
-  text-decoration: underline;
 }
 
 .right {
@@ -67,18 +66,18 @@ nav a:hover, nav a:active {
   padding: 10px;
 }
 
-.nav-left {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  width: 455px;
+.btn-identity {
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+  background-color: #869D34; /* green */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #556321; /* dk green */
+  border-bottom: 5px solid #556321;
 }
-
-.nav-right {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  width: 455px;
+.btn-identity a {
+  text-decoration: none;
+  color: #fff;
 }

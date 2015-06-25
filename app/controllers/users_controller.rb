@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def index
   end
 
-  def market_login
+  def market
   end
 
-  def vendor_login
+  def vendor
   end
 end
