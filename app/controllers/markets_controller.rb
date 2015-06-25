@@ -68,8 +68,15 @@ class MarketsController < ApplicationController
   end
 
   def vendor_update
+    # @vendor = Vendor.find(params[:vendor_id])
+    # @vendor.update(form_params[:vendor])
 
-    redirect_to vendor_market
+
+    @market = Market.find(params[:id])
+    @vendor = @market.vendors.find(params[:vendor_id])
+    @vendor.update(form_params[:vendor])
+
+    redirect_to vendor_market_path
   end
 
   private
