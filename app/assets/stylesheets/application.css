@@ -45,26 +45,19 @@ body {
 
 .homepage h2 {
   margin: 0 auto;
-  width: 400px;
-  font-family: 'Poiret One', cursive;
+  width: 450px;
   font-size: 1.1em;
-  text-transform: lowercase;
 }
 
-.homepage .home_link {
+.homepage .home_link, .submit_button {
   display: inline-block;
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
+  border: 2px solid #FFF;
   color: #FFF;
   background: #000;
   padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
-
-.home_link:hover {
-  color: #000;
-  background: #FFF;
   text-decoration: none;
 }
 
@@ -90,12 +83,10 @@ a:hover {
 }
 
 .submit_button {
-  border: 2px solid #000;
-  background-color: #FFF;
-  font-size: 11px;
+  font-family: 'Nixie One', cursive;
+  font-size: 13px;
 }
 
 .submit_button:hover {
-  border: 2px solid #393;
-  color: #393;
+  font-style: italic;
 }
