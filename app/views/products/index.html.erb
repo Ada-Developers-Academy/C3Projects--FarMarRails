@@ -1,0 +1,32 @@
+<h1>Products sold by <%= @vendor.name %> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Id
+      </th>
+      <th>
+        Vendor Id
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product|%>
+      <tr>
+        <td>
+          <%= product.name %></a>
+        </td>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= product.vendor_id %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
