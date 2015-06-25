@@ -17,6 +17,7 @@ class MarketsController < ApplicationController
 
   def vendor_show
     @vendor = Vendor.find(params[:id])
+    render :vendor_show
   end
 
   def edit
