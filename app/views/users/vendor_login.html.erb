@@ -1,8 +1,10 @@
-<!-- SEARCH -->
-<h1 class="center">welcome to the vendor login</h1>
+<header>
+  <h1>Welcome to the Vendor Login</h1>
+</header>
 
 <%= form_tag(controller: "vendors", action: "dashboard") do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Vendor Identification Number: ") %>
   <%= text_field_tag(:q) %>
+  <br>
   <%= submit_tag("Search") %>
 <% end %>

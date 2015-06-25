@@ -18,34 +18,31 @@ html, body {
  margin: 0;
  padding: 0;
  height: 100%;
+ font-family: 'Helvetica', sans-serif;
 }
 
 body {
- width: 960px;
+ width: 100%;
  margin: 0 auto;
 }
 
 nav {
   background: #ccc;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  text-align: right;
 }
 
 nav a {
   padding: 0 20px;
+  color: #09141B; /* black */
 }
-
 nav a:link, nav a:visited {
   text-decoration: none;
 }
-
 nav a:hover, nav a:active {
   color: #fff;
-}
-
-.center {
-  text-align: center;
+  text-decoration: underline;
 }
 
 .right {

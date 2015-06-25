@@ -1,4 +1,7 @@
-<h1 class="center">welcome to the market dashboard</h1>
+<header>
+  <h1>Welcome to the Market Login</h1>
+</header>
+
 <%= form_tag(controller: "markets", action: "dashboard") do %>
   <%= label_tag(:query, "Search for:") %>
   <%= text_field_tag(:query) %>

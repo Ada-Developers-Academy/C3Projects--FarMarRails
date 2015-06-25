@@ -8,12 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <nav>
-      <%= link_to "View all markets", "/markets", title: "View all markets." %>
-      <%= link_to "Log out", "/", title: "Log out of your dashboard." %>
-    </nav>
-  </header>
+  <nav>
+    <%= link_to "All Markets", "/markets", title: "All Markets" %>
+    <%= link_to "Log Out", "/", title: "Log out of your dashboard." %>
+  </nav>
 
   <main>
     <%= yield %>
