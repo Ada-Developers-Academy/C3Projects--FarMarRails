@@ -12,13 +12,8 @@ class VendorsController < ApplicationController
 # THIS METHOD IS DOING TOO MUCH!!! REFACTOR WHEN YOU HAVE A CHANCE! - C
   def sales
     @sales = Sale.where(vendor_id: params[:id])
+    @total_amount = calculate_sale_amount(@sales)
 
-    @total_amount = 0
-    unless @sales.nil?
-      @sales.each do |sale|
-        @total_amount += sale.amount
-      end
-    end
 # raise
     render 'vendor/sales'
   end
@@ -41,12 +36,7 @@ class VendorsController < ApplicationController
       @sales = Sale.where(vendor_id: params[:id])
     end
 
-    @total_amount = 0
-    unless @sales.nil?
-      @sales.each do |sale|
-        @total_amount += sale.amount
-      end
-    end
+    @total_amount = calculate_sale_amount(@sales)
 
     render 'vendor/sales'
   end
@@ -60,4 +50,15 @@ class VendorsController < ApplicationController
     @product = Product.find(params[:id])
     render 'vendor/show_product'
   end
+
+  def calculate_sale_amount(sales)
+    total = 0
+    unless sales.nil?
+      sales.each do |sale|
+        total += sale.amount
+      end
+    end
+    return total
+  end
+
 end
