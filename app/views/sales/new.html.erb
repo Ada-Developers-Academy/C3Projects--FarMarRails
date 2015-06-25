@@ -1,5 +1,6 @@
 
 <body class="vendor-background">
+  <div class="text_box">
 <%= form_for @sale, url: vendor_sales_path, method: :post do |f| %>
 <%= f.label :amount %>
 <%= f.text_field :amount %>
@@ -14,5 +15,5 @@
 
 <%= f.submit %>
 <% end %>
+</div>
 </body>
-

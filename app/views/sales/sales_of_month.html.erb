@@ -1,5 +1,6 @@
 <body class="vendor-background">
     <h1><%= Time.now.strftime("%B") %> Sales </h1>
+<div class="text_box">
 <% if @sales.empty? %>
   <p>There are no sales for this month</p>
 <% else%>
@@ -20,4 +21,5 @@
 
 </table>
   <% end %>
+</div>
 </body>
