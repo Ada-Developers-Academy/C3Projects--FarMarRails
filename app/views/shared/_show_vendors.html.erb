@@ -1,9 +1,9 @@
-<h1>Vendors at <%= @market.name %></h1>
-
 <% if current_page?(controller: 'markets', action: 'vendors_index') %>
-<!-- CREATE VENDOR BUTTON -->
-<p class="center">(create vendor button)</p>
+  <div class="button_block">
+    <%= link_to 'Create Vendor', new_vendor_market_path %>
+  </div>
 <% end %>
+<h1>Vendors at <%= @market.name %></h1>
 <table>
 <tr>
   <th>
