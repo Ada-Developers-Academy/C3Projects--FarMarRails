@@ -51,6 +51,15 @@ table {
   margin: auto;
 }
 
+footer{
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+a{
+  text-decoration: none;
+}
+
 .forms {
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -112,6 +121,3 @@ th{
 	position:relative;
 	top:1px;
 }
-
-
-
