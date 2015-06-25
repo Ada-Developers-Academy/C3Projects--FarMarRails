@@ -1,3 +1,4 @@
+<body class="vendor-background">
 <%= button_to "Create a Sale", new_vendor_sale_path(params[:vendor_id]), method: :get %>
 <table>
   <tr>
@@ -18,3 +19,4 @@
 <p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
 
 <%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get %>
+</body>
