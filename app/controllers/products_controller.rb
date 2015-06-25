@@ -33,6 +33,14 @@ class ProductsController < ApplicationController
     redirect_to "/vendors/#{vendor_id}/products"
   end
 
+  def destroy
+    vendor_id = params[:vendor_id]
+    product = Product.find(params[:id])
+    product.destroy
+    
+    redirect_to "/vendors/#{vendor_id}/products"
+  end
+
   private
 
   def create_params

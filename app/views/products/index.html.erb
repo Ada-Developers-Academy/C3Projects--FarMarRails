@@ -13,7 +13,9 @@
         </div>
 
         <div>
-          Delete
+          <%= button_to "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure? This product and its data will be gone forever." } do %>
+            Delete
+          <% end %>
         </div>
       </li>
   <% end %>
