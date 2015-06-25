@@ -6,7 +6,7 @@ class SalesController < ApplicationController
   end
 
   def current_month_sales
-    # index
+    @vendor = Vendor.find(params[:vendor_id])
     @current_month = Sale.current_month.all
   end
 
