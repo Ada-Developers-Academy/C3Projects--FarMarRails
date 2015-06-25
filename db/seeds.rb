@@ -43,7 +43,7 @@ products = CSV.read("seed_csvs/products.csv", {headers: true, return_headers: tr
 products.each do |product_row|
 	product = {}
 	product[:name] = product_row[1]
-	product[:vendor_id] = product[2]
+	product[:vendor_id] = product_row[2]
 
 	Product.create(product)
 end
@@ -61,4 +61,3 @@ sales.each do |sale_row|
 
 	Sale.create(sale)
 end
-
