@@ -35,10 +35,10 @@
           <%= product.vendor_id %>
         </td>
         <td>
-          <%= link_to "Edit" "#{edit_market_vendor_product_path(#{product.id})}" %>
+          <%= link_to "Edit", "#{product.id}/edit" %>
         </td>
         <td>
-          <a href= "">Delete</a>
+        <%= button_to "Delete", market_vendor_products_path, :method => :delete %>
         </td>
       </tr>
       <% end %>
