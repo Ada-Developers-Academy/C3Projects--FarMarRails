@@ -1,4 +1,4 @@
-<% content_for :dashboard_nav do %>
+<% content_for :breadcrumbs do %>
   <%= render partial: "/markets/dashboard" %>
 <% end %>
 
@@ -6,7 +6,7 @@
   <% @vendors.each do |vendor| %>
   <li>
     <%= vendor.name %>
-    <%= button_to "/delete/#{vendor.id}", data: { confirm: "Are you sure? This is permanent." } do %>
+    <%= button_to "/delete/#{ vendor.id }", data: { confirm: "Are you sure? This is permanent." } do %>
       Delete
     <% end %>
   </li>

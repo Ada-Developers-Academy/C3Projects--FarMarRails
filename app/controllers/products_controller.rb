@@ -28,21 +28,24 @@ class ProductsController < ApplicationController
   end
 
   def update
-    vendor_id = params[:vendor_id]
     product = Product.find(params[:id])
     edited_product = params[:product]
+    edited_product[:vendor_id] = params[:vendor_id]
 
-    product.update(name: edited_product[:name])
+    if Product.new(edited_product).valid?
+      product.update(edited_product)
 
-    # update when vendor#show is created
-    redirect_to "/vendors/#{vendor_id}/products"
+      redirect_to "/vendors/#{ product.vendor_id }/products"
+    else
+      redirect_to "/vendors/#{ product.vendor_id }/products/new/error"
+    end
   end
 
   def destroy
     vendor_id = params[:vendor_id]
     product = Product.find(params[:id])
     product.destroy
-    
+
     redirect_to "/vendors/#{vendor_id}/products"
   end
 
