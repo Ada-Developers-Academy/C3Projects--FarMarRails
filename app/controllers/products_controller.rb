@@ -23,6 +23,12 @@ class ProductsController < ApplicationController
     redirect_to "/vendors/#{@product.vendor_id}"
   end
 
+  def destroy
+    find_product
+    @product.destroy
+    redirect_to "/vendors/#{@product.vendor_id}"
+  end
+
 ##################### PRIVATE METHODS #####################
   private
 

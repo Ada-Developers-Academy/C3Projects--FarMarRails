@@ -17,6 +17,7 @@
     <td> <%= @vendor.name %></td>
     <td> <%= @vendor.num_employees %> </td>
     <td> <%= @market.name %> </td>
+
   </tr>
 
 </table>
@@ -36,7 +37,7 @@
   <% @vendor_products.each do |product| %>
   <!-- DRY up with map or something saw in style guide -->
   <tr>
-    <td> <%= link_to "#{product.name}", "/vendors/#{product.vendor_id}/products/#{product.id}/edit" %> </td>
+    <td> <%= product.name %> </td>
 
     <% sales = product.sales %>
     <% amounts = [] %>
@@ -54,6 +55,8 @@
     <td> <%= number_to_currency(month_total) %> </td>
     <td> <%= number_to_currency(total_amounts) %> </td>
     <% end %>
+    <td> <%= link_to "Edit", "/vendors/#{product.vendor_id}/products/#{product.id}/edit" %></td>
+    <td> <%= link_to "X", "/vendors/#{product.vendor_id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %> </td>
   <% end %>
   </tr>
 </table>
