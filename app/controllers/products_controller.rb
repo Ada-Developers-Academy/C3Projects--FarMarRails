@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
     vendor_id = params[:vendor_id]
     product = Product.find(params[:id])
     product.destroy
-    
+
     redirect_to "/vendors/#{vendor_id}/products"
   end
 
