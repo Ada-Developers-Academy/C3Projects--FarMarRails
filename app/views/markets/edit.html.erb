@@ -2,11 +2,12 @@
   <%= render partial: "dashboard" %>
 <% end %>
 
-<h1>Edit Your Market</h1>
+<header>
+  <h1>Edit Your Market</h1>
+</header>
 
 <section class="edit-form">
   <%= render partial: "form", locals: {
-    url: "/markets/#{ @market.id }",
-    submit: "Edit Market"
-  } %>
+                              url: "/markets/#{ @market.id }",
+                              submit: "Edit Market" } %>
 </section>

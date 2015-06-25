@@ -2,6 +2,8 @@
   <%= render partial: "/markets/dashboard" %>
 <% end %>
 
-<h1>Create A New Vendor</h1>
+<h1>Add New Vendor</h1>
 
-<%= render partial: "form", locals: { submit: "Create Vendor", url: "./" }%>
+<section class="edit-form">
+  <%= render partial: "form", locals: { submit: "Add Vendor", url: "./" }%>
+</section>
