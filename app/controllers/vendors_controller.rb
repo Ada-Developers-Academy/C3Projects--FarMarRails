@@ -36,11 +36,9 @@ class VendorsController < ApplicationController
         vendor_id: params[:id],
         :purchase_time => beg..finish
         )
-
     else
       @sales = Sale.where(vendor_id: params[:id])
     end
-
 
     @total_amount = 0
     unless @sales.nil?
