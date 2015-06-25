@@ -47,6 +47,7 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:login_id].to_i)
     all_sales = @vendor.sales
     @sales = all_sales.slice(0, 5)
+    
     @total_amount = total_sales(@vendor)
     month_sales = month_sales(@vendor)
     @sum = 0
