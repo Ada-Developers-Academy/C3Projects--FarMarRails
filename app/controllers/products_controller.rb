@@ -13,14 +13,14 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params[:product])
-    @product.save
+    @product = Product.create(product_params[:product])
     redirect_to :index
   end
 
   # Edit an existing product
   def edit
     @product = Product.find(params[:id])
+    @vendor  = Vendor.find(@product.vendor_id) 
 
     render :edit
   end
