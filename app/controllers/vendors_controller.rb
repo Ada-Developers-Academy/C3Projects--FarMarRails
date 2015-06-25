@@ -5,7 +5,7 @@ class VendorsController < ApplicationController
     @market_id = params[:market_id]
     @market = Market.find(@market_id)
     @vendors = @market.vendors
-    
+
     render :index
   end
 
@@ -53,7 +53,7 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
     @vendor.destroy
 
-    redirect_to market_vendors_path
+    redirect_to market_vendor_path
   end
 
   def landing
