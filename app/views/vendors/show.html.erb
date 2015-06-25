@@ -9,3 +9,4 @@
 <%= button_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %>
 <p><%= link_to "Display all products for this vendor", vendor_products_path("#{@vendor.id}")%></p>
 <p><%= link_to "Display all sales for this vendor", vendor_sales_path("#{@vendor.id}") %></p>
+<p><%= link_to "Display sales for current month", vendor_sales_path("#{@vendor.id}") %></p>

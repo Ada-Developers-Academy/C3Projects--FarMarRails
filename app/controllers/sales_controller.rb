@@ -30,7 +30,15 @@ class SalesController < ApplicationController
     render :index
   end
 
+
+  def current_sales
+    @sales = Vendor.find(params[:vendor_id]).sales
+
+    render :current_sales
+  end
+
   private
+
 
   def create_params
     params.permit(sale: [:amount, :purchase_time, :vendor_id, :product_id])

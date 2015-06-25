@@ -1,0 +1,8 @@
+<% @sales.each do |sale| %>
+<% if sale.purchase_time.month == Time.new.month %>
+  <p>Sale amount: <%= sale.amount  %></p>
+  <p>Purchase time: <%= sale.purchase_time  %></p>
+  <p>Vendor ID: <%= sale.vendor_id %></p>
+  <p>Product: <%= sale.product.name  %></p>
+  <% end %>
+<% end %>
