@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params[:product])
-    # redirect_to :index
+    redirect_to market_vendor_products_path
   end
 
   # Edit an existing product
@@ -33,11 +33,17 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @name = product_params[:product][:name]
+    @product.update(name: @name)
+    @product.save
 
-    @market.update(name: @name)
-    @market.save
+    redirect_to market_vendor_products_path
+  end
 
-    redirect_to :products
+  def destroy
+    @vproduct = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to market_vendors_products_path
   end
 
   private
