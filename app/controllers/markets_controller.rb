@@ -26,7 +26,7 @@ class MarketsController < ApplicationController
   end
 
   def create
-    @market = Market.create(form_params[:market])
+    Market.create(form_params[:market])
     redirect_to markets_path
   end
 
@@ -50,27 +50,17 @@ class MarketsController < ApplicationController
   end
 
   def vendor_create
-    # Rails can't access VendorsController
-    @market = Market.find(params[:id])
-    @vendor = @market.vendors.new(form_params[:vendor])
-    @vendor.save
+    Vendor.create(form_params[:vendor])
     redirect_to vendors_market_path
   end
 
   def vendors_edit
-    # @market = Market.find()
-    # @vendor = @market.vendors.find(params[:id])
-    @market = Market.find(params[:id])
     @vendor = Vendor.find(params[:vendor_id])
-
-    # @vendor = @market.vendors.find(params[:id])
     render :vendors_edit
   end
 
   def vendor_update
-    # Rails can't access VendorsController
-    @market = Market.find(params[:id])
-    @vendor = @market.vendors.find(params[:vendor_id])
+    @vendor = Vendor.find(params[:vendor_id])
     @vendor.update(form_params[:vendor])
     redirect_to vendor_market_path
   end
@@ -80,8 +70,7 @@ class MarketsController < ApplicationController
   end
 
   def vendors_destroy
-    @market = Market.find(params[:id])
-    @vendor = @market.vendors.find(params[:vendor_id])
+    @vendor = Vendor.find(params[:vendor_id])
     @vendor.destroy
     redirect_to vendors_market_path
   end
