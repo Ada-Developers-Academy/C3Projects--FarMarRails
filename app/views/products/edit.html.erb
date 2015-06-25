@@ -4,7 +4,7 @@
 <fieldset class="form">
 
       <%= f.label :name, 'Product Name' %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, required: "required" %>
 
       <%= f.hidden_field :vendor_id, :value => "#{@vendor.id}" %>
 
