@@ -36,7 +36,7 @@
   <% @vendor_products.each do |product| %>
   <!-- DRY up with map or something saw in style guide -->
   <tr>
-    <td> <%= product.name %> </td>
+    <td> <%= link_to "#{product.name}", "/vendors/#{product.vendor_id}/products/#{product.id}/edit" %> </td>
 
     <% sales = product.sales %>
     <% amounts = [] %>
