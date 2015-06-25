@@ -3,6 +3,7 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.new(permit_params[:sale])
     @sale[:purchase_time] = DateTime.now
+    @sale[:amount] = @sale[:amount] * 100
     @sale.save
 
     redirect_to(vendor_path(Vendor.find(@sale.vendor_id)))

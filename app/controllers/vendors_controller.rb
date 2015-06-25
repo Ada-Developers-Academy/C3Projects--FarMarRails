@@ -15,12 +15,17 @@ class VendorsController < ApplicationController
 
     @products = Product.where(:vendor_id => params[:id])
     @sales = Sale.where(:vendor_id => params[:id])
-    
+
+    @sales.each do |sale|
+      sale[:amount] = Money.new(sale[:amount], "USD")
+    end
+
     sum = 0
     @sales.each do |sale|
       sum += sale[:amount]
     end
 
+      # money = Money.new(sum, "USD")
     @total_sales = sum
 
   end
@@ -47,6 +52,11 @@ class VendorsController < ApplicationController
 
       @sales = month_sales
       # MONTH DISPLAY CODE #
+      
+    @sales.each do |sale|
+      sale[:amount] = Money.new(sale[:amount], "USD")
+    end
+
     sum = 0
     @sales.each do |sale|
       sum += sale[:amount]
@@ -55,7 +65,7 @@ class VendorsController < ApplicationController
     @total_sales = sum
 
     render :show
-    # redirect_to(vendor_path(@vendor.id)) 
+    # redirect_to(vendor_path(@vendor.id))
   end
 
   def create
