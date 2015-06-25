@@ -26,7 +26,7 @@ class VendorsController < ApplicationController
   def show
 
     @vendor = Vendor.find(params[:id])
-    @vendor_market = @vendor.market.name
+    @vendor_market = @vendor.market
 
     render :show
   end
