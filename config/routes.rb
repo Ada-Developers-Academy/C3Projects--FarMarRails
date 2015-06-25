@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :sales
-    get 'vendors/:vendor_id/current_sales' => 'sales#current_sales'
+    get 'current_sales' => 'sales#current_sales'
 
   end
 

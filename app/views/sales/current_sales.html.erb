@@ -1,8 +1,11 @@
+<p>Total sales: <%= "#{@current_sales}" %> </p>
 <% @sales.each do |sale| %>
-<% if sale.purchase_time.month == Time.new.month %>
-  <p>Sale amount: <%= sale.amount  %></p>
-  <p>Purchase time: <%= sale.purchase_time  %></p>
-  <p>Vendor ID: <%= sale.vendor_id %></p>
-  <p>Product: <%= sale.product.name  %></p>
+<% if (sale.purchase_time.nil? == false) && (sale.purchase_time.month == Time.new.month) %>
+     <p>Sale amount: <%= sale.amount  %></p>
+     <p>Purchase time: <%= sale.purchase_time  %></p>
+     <p>Vendor ID: <%= sale.vendor_id %></p>
+     <p>Product: <%= sale.product.name  %></p>
+  <% else %>
+    <p>There is no sales for this month :(</p>
   <% end %>
 <% end %>

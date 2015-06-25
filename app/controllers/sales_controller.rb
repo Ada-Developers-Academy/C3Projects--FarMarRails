@@ -30,12 +30,13 @@ class SalesController < ApplicationController
     render :index
   end
 
-
   def current_sales
     @sales = Vendor.find(params[:vendor_id]).sales
+    @current_sales = add_sale_current_amounts(@sales)
 
     render :current_sales
   end
+
 
   private
 
@@ -52,5 +53,14 @@ class SalesController < ApplicationController
     return total
   end
 
+  def add_sale_current_amounts(all_sales)
+    total = 0
+    all_sales.each do |sale|
+      if (sale.purchase_time.nil? == false) && (sale.purchase_time.month == Time.new.month)
+        total += sale.amount
+      end
+    end
+      return total
+  end
 
 end
