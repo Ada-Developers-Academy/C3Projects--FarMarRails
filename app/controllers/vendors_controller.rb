@@ -19,6 +19,8 @@ class VendorsController < ApplicationController
     find_vendor
 		@market = Market.find("#{@vendor.market_id}")
 		@vendor_products = Product.where(vendor_id: "#{@vendor.id}")
+
+    @product_sales = Sale.where(product_id: "product.id")
 	end
 
   def edit

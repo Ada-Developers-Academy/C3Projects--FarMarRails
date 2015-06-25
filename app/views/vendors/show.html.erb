@@ -35,9 +35,17 @@
   </tr>
   <% @vendor_products.each do |product| %>
   <!-- DRY up with map or something saw in style guide -->
+
   <tr>
     <td> <%= product.name %> </td>
-
+    <td> MONTHLY SALES TBD </td>
+    <% sales = product.sales %>
+    <% amounts = [] %>
+    <% sales.each do |sale| %>
+      <% amounts.push(sale.amount) %>
+    <% end %>
+    <% total_amounts = amounts.reduce(:+) %>
+    <td> <%= number_to_currency(total_amounts) %> </td>
   </tr>
     <% end %>
 </table>
