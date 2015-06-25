@@ -17,7 +17,12 @@ Rails.application.routes.draw do
 
 
   resources :vendors do
-    resources :sales
+    resources :sales do
+      collection do
+        get '/current_month', action: 'current_month_sales'
+      end
+    end
+
     resources :products
   end
 
