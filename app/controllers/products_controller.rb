@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params[:product])
-    redirect_to :index
+    # redirect_to :index
   end
 
   # Edit an existing product
