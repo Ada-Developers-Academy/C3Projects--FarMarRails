@@ -1,6 +1,6 @@
 <h1>All Markets</h1>
 <p>
-  <a href= "/markets/new">+ Add a market</a>
+  <%= link_to "+ Add a Market", new_market_path(:market_id) %>
 </p>
 <table>
   <thead>
@@ -20,7 +20,7 @@
     <% Market.all.each do |market|%>
     <tr>
       <td>
-        <%= link_to "#{market.name}", "/markets/#{market.id}" %>
+        <%= link_to "#{market.name}", market_path(market.id) %>
       </td>
       <td>
         <%= market.city%>
@@ -29,7 +29,7 @@
         <%= market.state %>
       </td>
       <td>
-        <%= link_to "Edit", "#{edit_market_path(market)}" %>
+        <%= link_to "Edit", edit_market_path(market.id) %>
       </td>
     </tr>
     <% end %>

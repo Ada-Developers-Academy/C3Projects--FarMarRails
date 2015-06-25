@@ -1,9 +1,9 @@
 <section class="homepage">
   <div>
-    <h1>Welcome back <%= @vendor.name %>!</h1>
-    <h3>I would like to...</h3>
-      <%= link_to "Add/Edit Products", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/", class: "button_link"%>
-      <%= link_to "Add a Sale", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/sales/new", class: "button_link" %>
+      <h1>Welcome back <%= @vendor.name %>!</h1>
+      <h3>I would like to...</h3>
+      <%= link_to "Add/Edit Products", market_vendor_products_path(@vendor.market_id, @vendor.id), class: "button_link" %>
+      <%= link_to "Add a Sale", new_market_vendor_sale_path(@vendor.market_id, @vendor.id), class: "button_link" %>
   </div>
 
 

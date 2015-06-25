@@ -27,7 +27,7 @@
         <%= @vendor.no_of_employees %>
       </td>
       <td>
-        <a href =<%=  "#{edit_market_vendor_path}"%>>edit</a>
+        <%= link_to "edit", edit_market_vendor_path(@vendor.market_id, @vendor.id)%>
       </td>
       <td>
         <%= button_to "Delete", market_vendor_path, :confirm => "Are you sure you want to delete #{@vendor.name}?", :method => :delete %>

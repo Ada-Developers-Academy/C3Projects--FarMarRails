@@ -41,10 +41,10 @@
 </table>
 <h2>Vendors associated with <%= @market.name %></h2>
 <p>
-  <%= link_to "+ Add a Vendor to #{@market.name}", "/markets/#{@market.id}/vendors/new" %>
+  <%= link_to "+ Add a Vendor to #{@market.name}", new_market_vendor_path(@market.id) %>
 </p>
 <% @market.vendors.each do |vendor| %>
 <li>
-  <%= link_to "#{vendor.name}", "/markets/#{@market.id}/vendors/#{vendor.id}" %>
+  <%= link_to "#{vendor.name}", market_vendor_path(@market.id, vendor.id) %>
 </li>
 <% end %>

@@ -26,7 +26,7 @@
     <% Market.all.each do |market|%>
     <tr>
       <td>
-        <%= link_to "#{market.name}", "/all_markets/#{market.id}" %>
+        <%= link_to "#{market.name}", all_markets_path %>
       </td>
       <td>
         <%= market.address%>
