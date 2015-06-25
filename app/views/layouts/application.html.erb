@@ -8,18 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-left">
-        <%= link_to "View all markets", "/markets", title: "View all markets." %>
-      </div>
-      <div class="nav-right">
-        <% id = params[:id] || params[:market_id] || params[:vendor_id] || false %>
-        <%= link_to id ? "Log out" : "Log in", "/", title: id ? "Log out of your account." : "Log in to your account." %>
-      </div>
-    </nav>
-    <%= yield :dashboard_nav %>
-  </header>
+  <nav>
+    <%= link_to "View all markets", "/markets", title: "View all markets." %>
+
+    <% id = params[:id] || params[:market_id] || params[:vendor_id] || false %>
+    <%= link_to id ? "Log Out" : "Log In", "/", title: id ? "Log out of your account." : "Log in to your account." %>
+  </nav>
+
+  <%= yield :breadcrumbs %>
 
   <main>
     <%= yield %>
