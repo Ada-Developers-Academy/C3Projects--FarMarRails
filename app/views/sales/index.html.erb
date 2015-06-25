@@ -13,14 +13,14 @@
   <% @sales.each do |sale| %>
     <tr>
         <td><%= sale.product.name %></td>
-        <td>$<%= sale.amount %></td>
+        <td><%= number_to_currency(sale.amount / 100.00) %></td>
         <td><%= sale.purchase_time %></td>
         </td>
     </tr>
   <% end %>
 
   <tr>
-    <td><h3>Total Sales: $<%= Vendor.total_sales(@vendor) %></h3></td>
+    <td><h3>Total Sales: <%= number_to_currency(Vendor.total_sales(@vendor) / 100.00) %></h3></td>
   </tr>
 </table>
 

@@ -12,16 +12,15 @@
   <% @current_month.each do |sale| %>
     <tr>
         <td><%= sale.product.name %></td>
-        <td>$<%= sale.amount %></td>
+        <td><%= number_to_currency(sale.amount / 100.00) %></td>
         <td><%= sale.purchase_time %></td>
         </td>
     </tr>
   <% end %>
 
   <tr>
-    <td><h3>Total Sales in Current Month: $<%= Sale.current_month_total(@current_month) %></h3></td>
+    <td><h3>Total Sales in Current Month: <%= number_to_currency(Sale.current_month_total(@current_month) / 100.00) %></h3></td>
   </tr>
 </table>
 
 <%= render "shared/footer" %>
-
