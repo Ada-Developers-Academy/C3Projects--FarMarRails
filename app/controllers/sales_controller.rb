@@ -19,7 +19,24 @@ class SalesController < ApplicationController
     end
   end
 
+  def new
+    @sale = Sale.new
+  end
+
+  def create
+    sale = Sale.new(create_params[:sale])
+    sale.save
+
+    redirect_to "/vendors/#{ sale.vendor_id }/sales"
+  end
+
   private
+
+  def create_params
+    params[:sale][:amount] *= 100
+
+    params.permit(sale: [:amount, :purchase_time, :vendor_id,  :product_id])
+  end
 
   def month_sales(vendor)
     current_month = Time.now.month

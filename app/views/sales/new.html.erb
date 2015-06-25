@@ -1,0 +1,21 @@
+<% content_for :dashboard_nav do %>
+  <%= render partial: "/vendors/dashboard" %>
+  <%= render partial: "/vendors/sales" %>
+<% end %>
+
+<!-- WIP As a vendor, I can create a Sale for one of my Products. -->
+
+<%= form_for @sale do |f| %>
+  <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
+
+  <%= f.label :amount, "Sale Amount (in dollars)", placeholder: "56.18" %>
+  $<%= f.text_field :amount, size: "10" %>
+
+  <%= f.label :purchase_time %>
+  <%= f.text_field :purchase_time %>
+
+  <%= f.label :product_id %>
+  <%= f.text_field :product_id %>
+
+  <%= f.submit submit %>
+<% end %>

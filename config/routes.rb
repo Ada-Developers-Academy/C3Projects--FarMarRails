@@ -23,9 +23,9 @@ Rails.application.routes.draw do
     resources :vendors, except: [:index, :show]
   end
 
-  resources :vendors do
+  resources :vendors, only: [:index] do
     resources :products, except: [:show]
-    resources :sales, except: [:show]
+    resources :sales, only: [:index, :new, :create]
   end
 
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
