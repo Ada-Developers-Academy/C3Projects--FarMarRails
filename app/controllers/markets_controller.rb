@@ -37,8 +37,8 @@ class MarketsController < ApplicationController
   end
 
   def vendor_show
-    @vendor = Vendor.find(params[:id])
-    @market = Market.where(id: (@vendor.market_id))
+    @vendor = Vendor.find(params[:vendor_id])
+    @market = Market.find(params[:id])
     render :vendor_show
   end
 
@@ -57,12 +57,14 @@ class MarketsController < ApplicationController
     redirect_to vendors_market_path
   end
 
-  def vendor_edit
+  def vendors_edit
     # @market = Market.find()
     # @vendor = @market.vendors.find(params[:id])
-    @vendor = Vendor.find(params[:id])
-    @market = Market.where(id: (@vendor.market_id))
-    render :vendor_edit
+    @market = Market.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
+
+    # @vendor = @market.vendors.find(params[:id])
+    render :vendors_edit
   end
 
   def vendor_update

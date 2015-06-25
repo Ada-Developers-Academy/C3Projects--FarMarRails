@@ -19,11 +19,11 @@ Rails.application.routes.draw do
       get 'vendors', action: 'vendors_index', as: 'vendors'
       post 'vendors', action: 'vendor_create'
       get 'vendors/new', action: 'vendors_new', as: 'new_vendor'
-      get 'vendors/:id/edit', action: 'vendors_edit', as: 'edit_vendor'
-      get 'vendors/:id', action: 'vendor_show', as: 'vendor'
-      patch 'vendors/:id', action: 'vendor_update'
-      put 'vendors/:id', action: 'vendor_update'
-      delete 'vendors/:id', action: 'vendor_destroy'
+      get 'vendors/:vendor_id/edit', action: 'vendors_edit', as: 'edit_vendor'
+      get 'vendors/:vendor_id', action: 'vendor_show', as: 'vendor'
+      patch 'vendors/:vendor_id', action: 'vendor_update'
+      put 'vendors/:vendor_id', action: 'vendor_update'
+      delete 'vendors/:vendor_id', action: 'vendor_destroy'
 
 
     end

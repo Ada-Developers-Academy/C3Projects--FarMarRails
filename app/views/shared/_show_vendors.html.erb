@@ -29,7 +29,7 @@
     </td>
     <% if current_page?(controller: 'markets', action: 'vendors_index')%>
       <td class="center">
-        <%= link_to "Details", vendor_market_path(vendor) %>
+        <%= link_to "Details", vendor_market_path(@market, vendor) %>
       </td>
     <% end %>
     </tr>
