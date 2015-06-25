@@ -1,4 +1,5 @@
 class SalesController < ApplicationController
+  before_action :set_nav
   # before_action :set_sale, only: []
   before_action :set_vendor, only: [:new, :create]
 
@@ -13,6 +14,9 @@ class SalesController < ApplicationController
   end
 
   private
+    def set_nav
+      @nav = "vendor"
+    end
     # def set_sale
     #   @sale = Sale.find(params[:id])
     # end

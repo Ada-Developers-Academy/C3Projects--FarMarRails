@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_nav
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_vendor, only: [:show, :new, :create, :edit, :update, :destroy]
 
@@ -26,6 +27,10 @@ class ProductsController < ApplicationController
   end
 
   private
+    def set_nav
+      @nav = "vendor"
+    end
+
     def set_product
       @product = Product.find(params[:id])
     end

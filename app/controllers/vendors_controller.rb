@@ -1,4 +1,5 @@
 class VendorsController < ApplicationController
+  before_action :set_nav
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
   before_action :set_market, only: [:new, :create, :edit, :update, :destroy]
 
@@ -41,6 +42,10 @@ class VendorsController < ApplicationController
   end
 
   private
+    def set_nav
+      @nav = params[:market_id] ? "market" : "vendor"
+    end
+
     def set_vendor
       @vendor = Vendor.find(params[:id])
     end

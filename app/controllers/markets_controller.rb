@@ -1,4 +1,5 @@
 class MarketsController < ApplicationController
+  before_action :set_nav
   before_action :set_market, only: [:show, :edit, :update]
 
   def index
@@ -26,6 +27,10 @@ class MarketsController < ApplicationController
   end
 
   private
+    def set_nav
+      @nav = "market"
+    end
+
     def set_market
       @market = Market.find(params[:id])
     end
