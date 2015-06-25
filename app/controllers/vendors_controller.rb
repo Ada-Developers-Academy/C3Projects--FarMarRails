@@ -54,8 +54,12 @@ class VendorsController < ApplicationController
     redirect_to market_vendors_path
   end
 
-  def login
+  def landing
     render :vendor_login
+  end
+
+  def login
+    vendor_id = params[:vendor_login]
   end
 
   def portal
