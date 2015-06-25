@@ -1,0 +1,14 @@
+<main>
+  <%= form_for @product, url: "/vendors/#{@vendor.id}/products/#{@product.id}"  do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @product.name, :required => true %>
+
+      <%= f.label :vendor_id, "Vendor Id" %>
+      <%= f.text_field :vendor_id, value: @product.vendor_id  %>
+
+    <section>
+      <%= f.submit "#{@adj} Product" %>
+    </section>
+  <% end %>
+</main>

@@ -2,4 +2,4 @@
 <%= render "shared/each_vendor" %>
 
 <h2> <%= link_to "View Sales", sales_path %> </h2>
-<h2> <%= link_to "View Products", products_path %> </h2>
+<h2> <%= link_to "View Products", vendor_products_path(@vendor.id) %> </h2>
