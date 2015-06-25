@@ -1,34 +1,23 @@
 // Place all the styles related to the vendors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$body-fontstack: 'Open Sans', sans-serif;
 
-h1, h2, h3, h4 {
-  font-family: $body-fontstack;
-  margin: 0;
-  padding: 0;
-}
-h2 {
-  font-weight: 400;
-  font-size: 35px;
-}
-h4 {
-  font-weight: 700;
-}
-
-/* VENDOR DASHBOARD */
 .vendor-money, .vendor-products {
-  height: 100%;
   width: 48.5%;
-  background-color: gray;
+  background-color: lighten(#ccc, 10);
   padding: 5px;
+  border-radius: 3px;
 }
 
 .section-header {
   text-align: left;
   text-transform: uppercase;
-  margin-left: 5px;
+  padding: 5px 5px 5px 10px;
+  margin-bottom: 10px;
   font-weight: 600;
+  display: block;
+  background-color: #ccc;
+  color: darken(#ccc, 60);
 }
 
 .vendor-money {
@@ -37,11 +26,57 @@ h4 {
   margin: 10px 3px 10px 0px;
 }
 
+.vendor-money > div {
+  margin-bottom: 35px;
+}
+
+.money div {
+  margin-bottom: 10px;
+}
+
+.sales ul {
+  list-style-type: none;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+.sales li {
+  margin-bottom: 3px;
+  padding: 5px;
+
+  &:nth-child(odd) {
+    background-color: darken(#e6e6e6, 20);
+    padding-bottom: 8px;
+
+    div:first-child {
+      color: #e6e6e6;
+    }
+  }
+}
+.sales li div {
+  display: inline;
+
+  &:first-child {
+    float: left;
+    color: darken(#e6e6e6, 30);
+  }
+  &:last-child {
+    float: right;
+  }
+}
 .vendor-products {
   float: right;
   margin: 10px 0px 10px 3px;
 }
 
-.vendor-products a {
+.vendor-products a, .sales a {
   float: right;
+  padding-top: 9px;
+  padding-right: 5px;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+  }
 }

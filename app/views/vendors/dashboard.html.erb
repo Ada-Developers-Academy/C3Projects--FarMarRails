@@ -1,31 +1,42 @@
-<h1 class="center">welcome to the vendor dashboard</h1>
+<header>
+  <h1>Welcome to the Vendor Dashboard</h1>
+</header>
 
 <main>
   <section class="vendor-money">
     <div class="money">
       <h3 class="section-header">Revenue</h3>
 
-      <h2>$ <%= @sum / 100 %>.<%= @sum % 100 %> </h2>
-      <h4>This Month</h4>
+      <div>
+        <h2>$<%= @sum / 100 %>.<%= @sum % 100 %> </h2>
+        <h4>This Month</h4>
+      </div>
 
-      <h2>$<%= @total_amount / 100 %>.<%= @total_amount % 100  %></h2>
-      <h4>Total</h4>
+      <div>
+        <h2>$<%= @total_amount / 100 %>.<%= @total_amount % 100  %></h2>
+        <h4>Total</h4>
+      </div>
     </div>
 
     <div class="sales">
+      <%= link_to "All Sales", "/vendors/#{@vendor.id}/sales" %>
       <h3 class="section-header">Sales</h3>
 
       <ul>
-        <% @sales.each do |sale| %>
+        <% @sales.reverse.each do |sale| %>
         <li>
-          #<%= sale.id %>
-          $<%= sale.amount / 100 %>.<%= sale.amount % 100 %>
+          <div>
+            #<%= sale.id %>
+          </div>
+          <div>
+            $<%= sale.amount / 100 %>.<%= sale.amount % 100 %>
+          </div>
+          <div>
            <%= sale.purchase_time.strftime("%m.%d.%y") %>
+          </div>
         </li>
         <% end %>
       </ul>
-
-      <%= link_to "All Sales", "/vendors/#{@vendor.id}/sales" %>
     </div>
 
 

@@ -27,7 +27,8 @@ body {
 }
 
 main {
-  width: 100%;
+  width: 960px;
+  margin: 0 auto;
   height: 100%;
 }
 
@@ -50,8 +51,42 @@ nav a:hover, nav a:active {
   color: #fff;
 }
 
-.right {
-  text-align: right;
+header {
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  height: 100px;
+  line-height: 100px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 35px;
+}
+h4 {
+  font-weight: 400;
+}
+
+a {
+  color: #0F0E05; /* green-black */
+  text-decoration: none;
+}
+
+
+form {
+  text-align: center;
+}
+form label, form input {
+  margin: 10px 0;
 }
 
 .market-location td {
@@ -64,20 +99,4 @@ nav a:hover, nav a:active {
 
 .padding-wrapper {
   padding: 10px;
-}
-
-.btn-identity {
-  margin: 0 auto;
-  width: 200px;
-  text-align: center;
-  background-color: #869D34; /* green */
-  border-radius: 4px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #556321; /* dk green */
-  border-bottom: 5px solid #556321;
-}
-.btn-identity a {
-  text-decoration: none;
-  color: #fff;
 }
