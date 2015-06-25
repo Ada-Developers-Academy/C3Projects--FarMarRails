@@ -14,15 +14,15 @@
  *= require_self
  */
 
- /* Base Design ------------------------------------------------ */
+/* Base Design ------------------------------------------------ */
 
- html {
-   font-family: 'Nixie One', cursive;
-   background: #fff url("strawberries.jpg") no-repeat center fixed;
-   background-size: cover;
- }
+html {
+  font-family: 'Nixie One', cursive;
+  background: #fff url("strawberries.jpg") no-repeat center fixed;
+  background-size: cover;
+}
 
- body {
+body {
   -webkit-border-radius: 20;
   -moz-border-radius: 20;
   border-radius: 20px;
@@ -30,60 +30,58 @@
   max-width: 960px;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
- }
+}
 
- /* Homepage --------------------------------------------------- */
+/* Homepage --------------------------------------------------- */
+.homepage {
+  text-align: center;
+}
 
- .homepage {
-   text-align: center;
- }
+.homepage h1 {
+  text-decoration: underline;
+  font-family: 'Nixie One', cursive;
+  font-size: 2em;
+}
 
- .homepage h1 {
-   text-decoration: underline;
-   font-family: 'Nixie One', cursive;
-   font-size: 2em;
- }
+.homepage h2 {
+  margin: 0 auto;
+  width: 400px;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.1em;
+  text-transform: lowercase;
+}
 
- .homepage h2 {
-   margin: 0 auto;
-   width: 400px;
-   font-family: 'Poiret One', cursive;
-   font-size: 1.1em;
-   text-transform: lowercase;
- }
+.homepage .button {
+  display: inline-block;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  color: #FFF;
+  background: #000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
 
- .homepage .button {
-   display: inline-block;
-   -webkit-border-radius: 10;
-   -moz-border-radius: 10;
-   border-radius: 10px;
-   color: #FFF;
-   background: #000;
-   padding: 10px 20px 10px 20px;
-   text-decoration: none;
- }
+.button:hover {
+  color: #000;
+  background: #FFF;
+  text-decoration: none;
+}
 
- .button:hover {
-   color: #000;
-   background: #FFF;
-   text-decoration: none;
- }
-
- /* Links ------------------------------------------------------ */
-
- a:link, a:visited {
+/* Links ------------------------------------------------------ */
+a:link,
+a:visited {
   color: #A00;
   font-weight: bold;
   text-decoration: none;
- }
+}
 
- a:hover {
-   color: #000;
-   font-style: italic;
- }
+a:hover {
+  color: #000;
+  font-style: italic;
+}
 
- /* Forms ------------------------------------------------------ */
-
+/* Forms ------------------------------------------------------ */
 .form_field {
   display: block;
   padding-right: 15px;
