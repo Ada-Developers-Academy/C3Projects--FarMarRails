@@ -20,9 +20,6 @@
             Purchase Date
           </th>
           <th>
-            Vendor ID
-          </th>
-          <th>
             Product
           </th>
         </tr>
@@ -35,9 +32,6 @@
           </td>
         <td>
           <%= sale.purchase_time.strftime("%m/%d/%Y") %>
-        </td>
-        <td>
-          <%= sale.vendor_id %>
         </td>
         <td>
           <%= (Product.find(sale.product_id)).name %>
@@ -58,9 +52,6 @@
             Purchase Time
           </th>
           <th>
-            Vendor ID
-          </th>
-          <th>
             Product
           </th>
         </tr>
@@ -74,9 +65,6 @@
               </td>
               <td>
                 <%= sale.purchase_time.strftime("%m/%d/%Y") %>
-              </td>
-              <td>
-                <%= sale.vendor_id %>
               </td>
               <td>
                 <%= (Product.find(sale.product_id)).name %>
