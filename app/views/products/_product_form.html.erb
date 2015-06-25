@@ -3,6 +3,7 @@
     <legend>Product Details</legend>
     <%= f.label :name, "Name: " %>
     <%= f.text_field :name, :required => true %>
+
     <%= f.hidden_field :vendor_id, :value => params[:vendor_id] %> <!-- New form-->
     <%= f.hidden_field :id, :value => params[:id] %> <!-- Edit form -->
   </fieldset>
