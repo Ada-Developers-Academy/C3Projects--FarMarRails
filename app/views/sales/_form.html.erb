@@ -7,9 +7,8 @@
   <%= f.label :purchase_time, "Sale date & time:" %>
   <%= f.datetime_field :purchase_time %>
 
-  <%= collection_select
-
   <%= f.hidden_field :vendor_id, value: params[:vendor_id] %>
+  <%= f.hidden_field :product_id, value: @product.id %>
 
   <%= f.submit %>
 <% end %>

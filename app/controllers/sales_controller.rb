@@ -2,6 +2,16 @@ class SalesController < ApplicationController
   # before_action :set_sale, only: []
   before_action :set_vendor, only: [:new, :create]
 
+  def new
+    @sale = Sale.new
+    @product = Product.find(params[:product_id])
+  end
+
+  def create
+    sale = Sale.create(sale_params)
+    redirect_to vendor_product_path(@vendor, Product.find(params[:sale][:product_id]))
+  end
+
   private
     # def set_sale
     #   @sale = Sale.find(params[:id])
