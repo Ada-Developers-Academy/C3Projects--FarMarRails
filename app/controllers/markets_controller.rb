@@ -43,9 +43,6 @@ class MarketsController < ApplicationController
   end
 
   def vendor_new
-    # Rails can't access VendorsController
-    # @vendor = Vendor.new
-    @market = Market.find(params[:id])
     render :vendor_new
   end
 

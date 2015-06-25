@@ -1,6 +1,6 @@
 <h1>Create Vendor</h1>
 
-<%= form_for [@market, Vendor.new], url: { action: "vendor_create"} do |f| %>
+<%= form_for Vendor.new, url: { action: "vendor_create"} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, :required => true, :placeholder => "(required)" %>
 
