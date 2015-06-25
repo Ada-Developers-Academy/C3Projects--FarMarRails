@@ -22,7 +22,7 @@
         <td><%= market.state %></td>
         <td><%= market.county %></td>
         <td><%= market.zip %></td>
-        <td><%= button_to "Edit Market", edit_market_path(market.id), method: :get %></td>
+        <td><%= button_to "Edit Market", edit_market_path(market.id), method: :get, class: "inner_button" %></td>
       </tr>
       <% end %>
     </table>

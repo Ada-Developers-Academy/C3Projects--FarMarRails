@@ -11,8 +11,8 @@
       <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: :get %></td>
-        <td><%= button_to "Delete Product", vendor_product_path(@vendor.id, product.id), method: :delete %></td>
+        <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: :get, class: "button" %></td>
+        <td><%= button_to "Delete Product", vendor_product_path(@vendor.id, product.id), method: :delete, class: "button" %></td>
       </tr>
       <% end %>
     </table>
