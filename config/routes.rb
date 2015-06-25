@@ -24,8 +24,6 @@ Rails.application.routes.draw do
       patch 'vendors/:vendor_id', action: 'vendor_update'
       put 'vendors/:vendor_id', action: 'vendor_update'
       delete 'vendors/:vendor_id', action: 'vendors_destroy'
-
-
     end
   end
 
@@ -37,9 +35,10 @@ Rails.application.routes.draw do
       get 'products', action: 'products', as: 'products'
       get 'products/:id', action: 'show_product', as: 'product'
     end
-
   end
 
+  resources :products, only: [:index, :new, :create] do
+  end
 
 
 
