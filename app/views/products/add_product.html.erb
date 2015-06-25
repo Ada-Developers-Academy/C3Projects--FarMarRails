@@ -1,6 +1,6 @@
 <h1>Add new product</h1>
 
-<%= form_for @product do |p| %>
+<%= form_for @product, url: vendor_products_path("#{params[:vendor_id]}") do |p| %>
  <fieldset>
    <legend>New product</legend>
    <%= p.label :name %>
