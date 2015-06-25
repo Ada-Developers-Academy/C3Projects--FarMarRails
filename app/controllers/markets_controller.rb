@@ -32,8 +32,14 @@ class MarketsController < ApplicationController
 
   def create
     market = Market.new(create_params[:market])
-    market.save
-    redirect_to "/markets"
+
+    if market.valid?
+      market.save
+
+      redirect_to "/markets"
+    else
+      redirect_to "/markets/new/error"
+    end
   end
 
   def edit
@@ -44,19 +50,24 @@ class MarketsController < ApplicationController
     id = params[:id]
 
     market = Market.find(id)
+    # NOTE: why aren't we using create_params here?
     edited_market = params[:market]
 
-    market.update(
-      name: edited_market[:name],
-      address: edited_market[:address],
-      city: edited_market[:city],
-      county: edited_market[:county],
-      state: edited_market[:state],
-      zipcode: edited_market[:zipcode]
-    )
+    if Market.new(edited_market).valid?
+      market.update(
+        name: edited_market[:name],
+        address: edited_market[:address],
+        city: edited_market[:city],
+        county: edited_market[:county],
+        state: edited_market[:state],
+        zipcode: edited_market[:zipcode]
+      )
 
-    # update when market#show is created
-    redirect_to "/markets/#{ id }/dashboard"
+      # update when market#show is created
+      redirect_to "/markets/#{ id }/dashboard"
+    else
+      redirect_to "/markets/#{ id }/edit/error"
+    end
   end
 
   private

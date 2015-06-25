@@ -13,9 +13,14 @@ class ProductsController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     params[:product][:vendor_id] = @vendor.id
     product = Product.new(create_params[:product])
-    product.save
 
-    redirect_to "/vendors/#{@vendor.id}/products"
+    if product.valid?
+      product.save
+
+      redirect_to "/vendors/#{@vendor.id}/products"
+    else
+      redirect_to "/vendors/#{@vendor.id}/products/new/error"
+    end
   end
 
   def edit
