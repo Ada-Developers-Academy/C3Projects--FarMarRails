@@ -9,7 +9,7 @@
   <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
 
   <%= f.label :amount, "Sale Amount (in dollars)", placeholder: "56.18" %>
-  $<%= f.text_field :amount, size: "10" %>
+  $<%= f.text_field :amount, size: "10", required: true %>
 
   <%= f.label :purchase_time %>
   <%= f.datetime_select :purchase_time %>
