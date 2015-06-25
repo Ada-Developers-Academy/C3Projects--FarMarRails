@@ -1,5 +1,7 @@
 <h1>Products sold by <%= @vendor.name %> </h1>
-
+<p>
+  <a href=<%="/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/new"%>>+ Add a Product</a>
+</p>
 <table>
   <thead>
     <tr>
@@ -11,6 +13,12 @@
       </th>
       <th>
         Vendor Id
+      </th>
+      <th>
+        Edit Product
+      </th>
+      <th>
+        Delete Product
       </th>
     </tr>
   </thead>
@@ -25,6 +33,12 @@
         </td>
         <td>
           <%= product.vendor_id %>
+        </td>
+        <td>
+          <a href= "">Edit</a>
+        </td>
+        <td>
+          <a href= "">Delete</a>
         </td>
       </tr>
       <% end %>
