@@ -5,11 +5,7 @@
     </tr>
     <% @vendors.each do |vendor| %>
     <tr>
-      <% if @markets %>
-        <td><%= link_to "#{vendor.name.titlecase}", by_market_path(vendor.id) %> </td>
-      <% else %>
-        <td><%= link_to "#{vendor.name.titlecase}", vendor_path(vendor.id) %> </td>
-      <% end %>
+      <td><%= link_to "#{vendor.name.titlecase}", "#{@path}/#{vendor.id}" %> </td>
     </tr>
     <% end %>
   </table>

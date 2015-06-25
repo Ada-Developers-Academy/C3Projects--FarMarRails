@@ -2,10 +2,15 @@ class VendorsController < ApplicationController
   def index
   @header= "Select your Vendor Name"
   @vendors = Vendor.order("lower(name) ASC").all
-  # @user = User.new
+  @path = "/vendors"
   end
 
   def show
+    @header = "Vendor Details"
+    @vendor = Vendor.find(params[:id])
+  end
+
+  def by_market
     @header = "Vendor Details"
     @vendor = Vendor.find(params[:id])
   end
