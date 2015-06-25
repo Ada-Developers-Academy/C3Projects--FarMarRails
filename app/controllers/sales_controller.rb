@@ -20,9 +20,11 @@ class SalesController < ApplicationController
 
     @time = Time.now
 
-    @sales = Vendor.find(params[:vendor_id]).sales
+    @vendor = Vendor.find(params[:vendor_id])
 
-    @monthlysales = @sales.where(:purchase_time => @time.beginning_of_month..@time.end_of_month)
+    sales = @vendor.sales
+
+    @monthlysales = sales.where(:purchase_time => @time.beginning_of_month..@time.end_of_month)
 
     render :month_sales
 

@@ -7,8 +7,10 @@
 
   <% @monthlysales.each do |sale| %>
   <tr>
-   <td><%= number_to_currency(sale.amount /100.00) %></td>
+   <td><%= number_to_currency(sale.amount / 100.00) %></td>
     <td><%= sale.purchase_time %></td>
   <tr>
 <% end %>
-</table
+</table>
+
+<%= link_to "Back to vendor", vendor_path(@vendor.id) %>
