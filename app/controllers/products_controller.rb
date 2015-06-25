@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @vendor_id = params[:vendor_id]
     @vendor = Vendor.find(@vendor_id)
     @products = @vendor.products
+
     render :index
   end
 
@@ -18,7 +19,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params[:product])
+    @product = Product.new(product_params[:product])
+    @product.save
+
     redirect_to market_vendor_products_path
   end
 
@@ -40,7 +43,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @vproduct = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @product.destroy
 
     redirect_to market_vendors_products_path
