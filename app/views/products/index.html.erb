@@ -17,10 +17,10 @@
       <%= product.name %></a>
     </td>
     <td>
-      <%= link_to "Edit", "#{product.id}/edit" %>
+      <%= link_to "Edit", edit_market_vendor_product_path(@vendor.market_id, @vendor.id, product.id) %>
     </td>
     <td>
-      <%= link_to "Delete", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/#{product.id}", :method => :delete %>
+      <%= link_to "Delete", market_vendor_product_path(@vendor.market_id, @vendor.id, product.id), :method => :delete %>
     </td>
   </tr>
   <% end %>
