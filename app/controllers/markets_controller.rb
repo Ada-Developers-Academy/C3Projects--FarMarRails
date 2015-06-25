@@ -42,14 +42,17 @@ class MarketsController < ApplicationController
   end
 
   def vendor_new
-    # RAILS DOESN'T RECOGNIZE. THIS NEEDS TO HAPPEN INSIDE THE VENDORS CONTROLLER
+    # RAILS DOESN'T RECOGNIZE
     # @vendor = Vendor.new
+    @market = Market.find(params[:id])
     render :vendor_new
   end
 
   def vendor_create
-    # RAILS DOESN'T RECOGNIZE. THIS NEEDS TO HAPPEN INSIDE THE VENDORS CONTROLLER 
-    @vendor = Vendor.create(form_params[:vendor])
+    # RAILS DOESN'T RECOGNIZE. THIS NEEDS TO HAPPEN INSIDE THE VENDORS CONTROLLER?
+    @market = Market.find(params[:id])
+    @vendor = @market.vendors.new(form_params[:vendor])
+    @vendor.save
     redirect_to vendors_market_path
   end
 
