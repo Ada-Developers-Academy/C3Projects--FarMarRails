@@ -15,17 +15,17 @@ h1 {
 }
 
 .home-background {
-  background-image: url("Light-Wood.jpg");
+  background: image-url("Light-Wood.jpg");
   background-size: 100%;
 }
 
 .market-background {
-  background-image: url("market_background.jpg");
+  background: image-url("market_background.jpg");
   background-size: 100%;
 }
 
 .vendor-background {
-  background-image: url("vendor_background.jpg");
+  background: image-url("vendor_background.jpg");
   background-size: 100%;
 }
 
