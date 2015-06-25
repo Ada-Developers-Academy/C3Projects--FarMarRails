@@ -1,4 +1,10 @@
-<h1>Here are all the Markets</h1>
+<h1>All Markets</h1>
+
+<nav>
+  <ul>
+    <li><%= link_to "Back to main directory", root_path %></li>
+  </ul>
+</nav>
 
 <%= button_to "Add a New Market", new_market_path, method: "get" %>
 
@@ -14,4 +20,3 @@
   <% end %>
 
 </table>
-

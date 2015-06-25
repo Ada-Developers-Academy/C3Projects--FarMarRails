@@ -1,7 +1,10 @@
 <h1>Market Details</h1>
 
-<%= link_to "Edit this market", edit_market_path(@market.id) %>
-<%= link_to "Back to market list", markets_path(@market.id) %>
+<nav>
+  <ul>
+    <li><%= link_to "Back to all markets", markets_path %></li>
+  </ul>
+</nav>
 
 
 <table>
@@ -19,6 +22,7 @@
     <td><%= @market.county %></td>
     <td><%= @market.state %></td>
     <td><%= @market.zip %></td>
+    <td><%= button_to "Edit market", edit_market_path(@market.id), method: "get" %></td>
   </tr>
 
 </table>
