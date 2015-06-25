@@ -1,17 +1,17 @@
 <section class="form">
- <% market = Market.find(params[:market_id]) %>
+  <% market = Market.find(params[:market_id]) %>
   <fieldset class="add_vendor_form">
     <legend>Add a Vendor</legend>
     <%= render partial: "form", locals: { url: market_vendors_path(market),
-                                          item: @vendor,
-                                          name_desc: "Vendor Name",
-                                          name_placeholder: "Brenna & Sons",
-                                          name_value: nil,
-                                          no_of_employees_desc: "Number of Employees",
-                                          no_of_employees_placeholder: "8",
-                                          no_of_employees_value: nil,
-                                          market_id_value: market.id,
-                                          submit_button: "add vendor to #{market.name}" }
+    item: @vendor,
+    name_desc: "Vendor Name",
+    name_placeholder: "Brenna & Sons",
+    name_value: nil,
+    no_of_employees_desc: "Number of Employees",
+    no_of_employees_placeholder: "8",
+    no_of_employees_value: nil,
+    market_id_value: market.id,
+    submit_button: "add vendor to #{market.name}" }
     %>
   </fieldset>
 </section>

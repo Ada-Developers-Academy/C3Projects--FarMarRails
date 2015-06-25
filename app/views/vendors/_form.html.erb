@@ -1,11 +1,9 @@
 <%= form_for item, url: url do |f| %>
-  <%= f.label :name, "#{name_desc}" %>
-  <%= f.text_field :name, class: "form_field", required: true, autofocus: true, placeholder: name_placeholder, value: name_value %>
+<%= f.label :name, "#{name_desc}" %>
+<%= f.text_field :name, class: "form_field", required: true, autofocus: true, placeholder: name_placeholder, value: name_value %>
+<%= f.label :no_of_employees, "#{no_of_employees_desc}" %>
+<%= f.text_field :no_of_employees, class: "form_field", placeholder: no_of_employees_placeholder, value: no_of_employees_value %>
+<%= f.hidden_field :market_id, value: market_id_value %>
 
-  <%= f.label :no_of_employees, "#{no_of_employees_desc}" %>
-  <%= f.text_field :no_of_employees, class: "form_field", placeholder: no_of_employees_placeholder, value: no_of_employees_value %>
-
-  <%= f.hidden_field :market_id, value: market_id_value %>
-  
-  <%= f.submit submit_button, class: "submit_button" %>
+<%= f.submit submit_button, class: "submit_button" %>
 <% end %>

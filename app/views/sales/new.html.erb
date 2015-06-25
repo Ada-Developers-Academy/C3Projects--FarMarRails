@@ -4,16 +4,16 @@
   <fieldset class="add_sale_form">
     <legend>Add a Sale</legend>
     <%= render partial: "form", locals: { url: market_vendor_sales_path(market_id, vendor_id),
-                                          item: @sale,
-                                          amount_desc: "Sale Amount ($)",
-                                          amount_placeholder: "2837",
-                                          amount_value: nil,
-                                          purchase_time_desc: "Sale Date",
-                                          purchase_time_placeholder: nil,
-                                          purchase_time_value: nil,
-                                          vendor_id_value: vendor_id,
-                                          product_id_value: @sale.product_id,
-                                          submit_button: "add sale" }
+    item: @sale,
+    amount_desc: "Sale Amount ($)",
+    amount_placeholder: "2837",
+    amount_value: nil,
+    purchase_time_desc: "Sale Date",
+    purchase_time_placeholder: nil,
+    purchase_time_value: nil,
+    vendor_id_value: vendor_id,
+    product_id_value: @sale.product_id,
+    submit_button: "add sale" }
     %>
   </fieldset>
 </section>
