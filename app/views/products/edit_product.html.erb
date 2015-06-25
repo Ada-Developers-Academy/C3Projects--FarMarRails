@@ -1,0 +1,13 @@
+<%= form_for @product, url: vendor_product_path("#{params[:vendor_id]}", "#{@product[:id]}") do |p| %>
+ <fieldset>
+   <legend>Edit product</legend>
+   <%= p.label :name %>
+   <%= p.text_field :name %>
+
+   <%= p.label :vendor_id %>
+   <%= p.text_field :vendor_id %>
+
+ </fieldset>
+
+ <%= p.submit 'Save changes' %>
+<% end %>

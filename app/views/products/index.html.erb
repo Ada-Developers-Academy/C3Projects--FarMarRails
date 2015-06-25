@@ -1,7 +1,7 @@
 <p>"<%= "#{@vendor.name}" %>" has these products: </p>
   <% @products.each do |product| %>
     <p>
-      <%= product.name %>
+      <%= link_to "#{product.name}", edit_vendor_product_path("#{@vendor.id}", "#{product.id}") %>
     </p>
   <% end %>
 </p>
