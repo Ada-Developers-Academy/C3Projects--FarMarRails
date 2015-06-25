@@ -38,7 +38,7 @@
           <%= link_to "Edit", "#{product.id}/edit" %>
         </td>
         <td>
-        <%= button_to "Delete", "#{product.id}", :method => :delete %>
+        <%= link_to "Delete", "/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/#{product.id}", :method => :delete %>
         </td>
       </tr>
       <% end %>

@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to market_vendors_products_path
+    redirect_to market_vendor_products_path
   end
 
   private
