@@ -20,7 +20,7 @@ class VendorsController < ApplicationController
     @total_amount = total_sales(@vendor)
     month_sales = month_sales(@vendor)
     @sum = 0
-    month_sales.each { |amount| @sum += amount }
+    month_sales.each { |sale| @sum += sale.amount }
 
     @all_products = @vendor.products
   end
@@ -33,11 +33,11 @@ class VendorsController < ApplicationController
     vendor = Vendor.new(create_params[:vendor])
 
     if vendor.valid?
-      vedor.save
+      vendor.save
 
       redirect_to "/markets/#{ vendor.market_id }/dashboard"
     else
-      redirect_to "/markets/#{ vendor.market_id }/new/error"
+      redirect_to "/markets/#{ vendor.market_id }/vendors/new/error"
     end
   end
 
@@ -47,20 +47,15 @@ class VendorsController < ApplicationController
 
   def update
     vendor = Vendor.find(params[:id])
-    edited_vendor = params[:vendor]
-
+    edited_vendor = create_params[:vendor]
 
     if Vendor.new(edited_vendor).valid?
-      vendor.update(
-        name: edited_vendor[:name],
-        number_of_employees: edited_vendor[:number_of_employees]
-      )
-      # vendor.save # is this necessary?
+      vendor.update(edited_vendor)
 
       # update when vendor#show is created
       redirect_to "/markets/#{ vendor.market_id }/dashboard"
     else
-      redirect_to "/markets/#{ vendor.market_id }/new/error"
+      redirect_to "/markets/#{ vendor.market_id }/vendors/new/error"
     end
   end
 

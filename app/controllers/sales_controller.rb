@@ -77,7 +77,8 @@ class SalesController < ApplicationController
   def convert_dollars_to_cents(dollar_amount)
     cent_amount = dollar_amount.to_f * 100
     cent_amount = cent_amount.to_i
-    return "zero" if cent_amount == 0
+
+    return cent_amount == 0 ? "zero" : cent_amount
   end
 
   def month_sales(vendor)

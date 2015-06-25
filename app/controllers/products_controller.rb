@@ -30,7 +30,6 @@ class ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     edited_product = create_params[:product]
-    # edited_product[:vendor_id] = params[:vendor_id]
 
     if Product.new(edited_product).valid?
       product.update(edited_product)
