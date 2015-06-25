@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+<main>
+  <table>
+    <tr>
+      <th>Sale Id</th>
+      <th>Amount</th>
+    </tr>
+    <% total_sales = [] %>
+    <% @sales.each do |sale| %>
+    <tr>
+      <td><%= sale.id %> </td>
+      <td><%= "$#{sale.amount}" %> </td>
+    </tr>
+    <% total_sales.push(sale.amount) %>
+    <% end %>
+  </table>
+  <h1> Sum of Sales </h1>
+  <p> <%= "$#{total_sales.sum}" %> </p>
+</main>

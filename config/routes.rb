@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   root 'users#index'
-  resources :vendors
+  resources :vendors, only: [:index, :show] do
+    member do
+      resources :sales
+      resources :products
+    end
+  end
 
   resources :markets do # individual markets
     collection do
