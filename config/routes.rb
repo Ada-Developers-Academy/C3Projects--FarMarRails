@@ -5,25 +5,25 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
-resources :markets do
-  resources :vendors do
-    resources :sales
-    resources :products
+  resources :markets do
+    resources :vendors do
+      resources :sales
+      resources :products
+    end
   end
-end
 
-get "/all_markets"              => "users#show"
+  get  "/all_markets"       => "users#show"
+  get  "/all_markets/:id"   => "users#market_details"
 
-get "/all_markets/:id"          => "users#market_details"
+  # Market index page sorts
+  post "/market/name_sort"  => "markets#name_sort"
+  post "/market/city_sort"  => "markets#state_sort"
 
-# Market index page sorts
-post "/market/name_sort"       => "markets#name_sort"
-post "/market/city_sort"       => "markets#state_sort"
+  # Vendor Portal
+  get  "/vendor_portal"     => "vendors#landing"
+  post "/vendor_portal"     => "vendors#login"
+  get  "/vendor_portal/:id" => "vendors#portal"
 
-
-get "/vendor_portal"            => "vendors#landing"
-post "/vendor_portal"           => "vendors#login"
-get "/vendor_portal/:id"        => "vendors#portal"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
