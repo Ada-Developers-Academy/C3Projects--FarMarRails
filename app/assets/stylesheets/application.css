@@ -88,15 +88,3 @@ form {
 form label, form input {
   margin: 10px 0;
 }
-
-.market-location td {
-  padding: 5px;
-}
-
-.market-location {
-  background: #ccc;
-}
-
-.padding-wrapper {
-  padding: 10px;
-}

@@ -2,15 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+.details {
+  text-align: left;
+  margin: 0 auto;
+}
+.details tr {
+  margin: 10px 0;
+}
+.details td:first-child {
+  text-align: right;
+  border-right: 1px solid #ccc;
+  padding-right: 3px;
+  color: #9a9a9a;
+}
+.details td:last-child {
+  padding-left: 10px;
 }
 
-body {
-  width: 960px;
-  margin: 0 auto;
+.market-vendors div {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  display: inline;
+  color: #9a9a9a;
+}
+.market-vendors ul {
+  list-style-type: none;
+  padding: 0;
+}
+.market-vendors li {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
 }
 
 #login-form {

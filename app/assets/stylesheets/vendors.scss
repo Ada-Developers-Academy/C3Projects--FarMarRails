@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.vendor-money, .vendor-products {
+.vendor-money, .vendor-products,
+.market-details, .market-vendors {
   width: 48.5%;
   background-color: lighten(#ccc, 10);
   padding: 5px;
@@ -21,7 +22,7 @@
 }
 
 
-.vendor-money {
+.vendor-money, .market-details {
   float: left;
   text-align: center;
   margin: 10px 3px 10px 0px;
@@ -68,12 +69,13 @@
 }
 
 
-.vendor-products {
+.vendor-products, .market-vendors {
   float: right;
   margin: 10px 0px 10px 3px;
 }
 
-.vendor-products a, .sales a {
+.vendor-products a, .sales a,
+.market-details a, .market-vendors a {
   float: right;
   padding-top: 9px;
   padding-right: 5px;
