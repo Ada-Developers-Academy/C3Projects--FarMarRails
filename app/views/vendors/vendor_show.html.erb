@@ -30,7 +30,7 @@
         <%= link_to "edit", edit_market_vendor_path(@vendor.market_id, @vendor.id)%>
       </td>
       <td>
-        <%= button_to "Delete", market_vendor_path, :confirm => "Are you sure you want to delete #{@vendor.name}?", :method => :delete %>
+        <%= link_to "Delete", market_vendor_path(@vendor.market_id, @vendor.id), :method => :delete %>
       </td>
     </tr>
   </tbody>
