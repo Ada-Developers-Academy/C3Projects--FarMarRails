@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :vendors, only: [:index, :show] do
     member do
       get 'sales', action: 'sales', as: 'sales'
-      post 'sales' # will post to sales_vendor_path => vendors#sales
+      post 'sales', action: 'sales_this_month'
       get 'products', action: 'products', as: 'products'
       get 'products/:id', action: 'show_product', as: 'product'
     end

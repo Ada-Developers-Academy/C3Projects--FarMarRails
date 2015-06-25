@@ -1,4 +1,4 @@
-<h1><%= "#{@sales.first.vendor.name}'s Sales" %></h1>
+<%= params %>
 <table>
 <tr>
   <th>
@@ -15,21 +15,27 @@
   </th>
 </tr>
 <tbody>
-  <% @sales.each do |sale| %>
-      <tr>
-        <td>
-          <%= sale.id %>
-        </td>
-        <td>
-          <%= "$#{sale.amount}" %>
-        </td>
-        <td>
-          <%= sale.purchase_time %>
-        </td>
-        <td>
-          <%= sale.product.name %>
-        </td>
-      </tr>
+  <% if @sales.nil? %>
+    <td colspan="4">
+      There were no sales for this month.
+    </td>
+  <% else %>
+    <% @sales.each do |sale| %>
+        <tr>
+          <td>
+            <%= sale.id %>
+          </td>
+          <td>
+            <%= "$#{sale.amount}" %>
+          </td>
+          <td>
+            <%= sale.purchase_time %>
+          </td>
+          <td>
+            <%= sale.product.name %>
+          </td>
+        </tr>
+    <% end %>
   <% end %>
   <tr>
     <th>
