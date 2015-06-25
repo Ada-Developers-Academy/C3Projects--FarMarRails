@@ -51,7 +51,7 @@ body {
   text-transform: lowercase;
 }
 
-.homepage .button {
+.homepage .home_link {
   display: inline-block;
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
@@ -62,7 +62,7 @@ body {
   text-decoration: none;
 }
 
-.button:hover {
+.home_link:hover {
   color: #000;
   background: #FFF;
   text-decoration: none;
