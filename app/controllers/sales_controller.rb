@@ -28,6 +28,13 @@ class SalesController < ApplicationController
 
   end
 
+  def destroy
+    @sale = Sale.destroy(params[:id])
+
+    redirect_to vendor_path(@sale.vendor_id)
+
+  end
+
   private
 
   def create_params

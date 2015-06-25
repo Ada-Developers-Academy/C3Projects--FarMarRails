@@ -7,13 +7,13 @@ Rails.application.routes.draw do
 
   get 'vendors/:vendor_id/month_sales' => 'sales#month_sales', as: 'month_sales'
 
-  resources :markets, except: [:destroy] do # Everything except destroy
-    resources :vendors, except: [:show] # Everything except show
+  resources :markets, except: [:destroy] do
+    resources :vendors, except: [:show]
   end
 
   resources :vendors, only: [:index, :show] do
-    resources :products, except: [:index, :show] # create, edit and delete
-    resources :sales, only: [:index, :create, :new]# create
+    resources :products, except: [:index, :show]
+    resources :sales, only: [:index, :create, :new, :destroy]
   end
 
   # resources :products
