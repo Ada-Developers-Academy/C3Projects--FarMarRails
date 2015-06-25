@@ -5,12 +5,15 @@
   <th>$ Amount</th>
   <th>Purchase Time</th>
 
-  <% @monthlysales.each do |sale| %>
+  <% @month_sales.each do |sale| %>
   <tr>
    <td><%= number_to_currency(sale.amount / 100.00) %></td>
     <td><%= sale.purchase_time %></td>
   <tr>
 <% end %>
 </table>
+
+<p>Total month revenue: <%= number_to_currency(@month_revenue / 100.00) %></p>
+
 
 <%= link_to "Back to vendor", vendor_path(@vendor.id) %>

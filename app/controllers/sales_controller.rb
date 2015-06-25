@@ -24,11 +24,25 @@ class SalesController < ApplicationController
 
     sales = @vendor.sales
 
-    @monthlysales = sales.where(:purchase_time => @time.beginning_of_month..@time.end_of_month)
+    @month_sales = sales.where(:purchase_time => @time.beginning_of_month..@time.end_of_month)
+
+    @month_revenue = month_revenue
 
     render :month_sales
 
   end
+
+  def month_revenue
+    amounts = @month_sales.collect do |sale|
+      sale.amount
+    end
+
+    amounts.inject do |sum, n|
+      sum + n
+    end
+
+  end
+
 
   def destroy
     @sale = Sale.destroy(params[:id])
