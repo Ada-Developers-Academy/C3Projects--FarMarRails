@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     collection do
       get 'markets'
-      get 'market/:id', action: "by_market", as: "by_market"
+      get 'markets/:id', action: "by_market", as: "by_market"
     end
   end
 

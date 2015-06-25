@@ -1,4 +1,4 @@
 <%= render "shared/header" %>
 <main>
-  <%= render "shared/all_markets" %>
+  <%= render partial: "shared/all_markets", path: "by_market_users_path(market.id)"  %>
 </main>
