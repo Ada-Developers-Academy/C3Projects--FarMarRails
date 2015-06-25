@@ -7,13 +7,13 @@ class VendorsController < ApplicationController
   end
 
   def show
-
     @vendor = Vendor.find(params[:id])
+
     @display_products = @vendor.products
+
     @display_sales = @vendor.sales
 
     @revenue = total_sales(@vendor)
-
   end
 
   def new
@@ -21,7 +21,6 @@ class VendorsController < ApplicationController
   end
 
   def create
-
     @vendor = Vendor.create(create_params[:vendor])
 
     redirect_to market_path(@vendor.market_id)
@@ -29,11 +28,11 @@ class VendorsController < ApplicationController
 
   def edit
     @vendor = Vendor.find(params[:id])
-
   end
 
   def update
     @vendor = Vendor.find(params[:vendor][:id])
+
     @vendor.update(create_params[:vendor])
 
     redirect_to market_path(@vendor.market_id)
@@ -43,14 +42,12 @@ class VendorsController < ApplicationController
     @vendor = Vendor.destroy(params[:id])
 
     redirect_to market_path(@vendor.market_id)
-
   end
 
   private
 
   def create_params
     params.permit(vendor: [:name, :no_of_employees, :market_id, :id])
-
   end
 
   def total_sales(vendor)

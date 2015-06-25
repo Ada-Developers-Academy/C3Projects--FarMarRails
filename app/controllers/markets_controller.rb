@@ -1,15 +1,14 @@
 class MarketsController < ApplicationController
 
   def index
-
     @markets = Market.all
 
     render :index
   end
 
   def show
-
     @market = Market.find(params[:id])
+
     @display_vendors = @market.vendors
 
     render :show
@@ -31,6 +30,7 @@ class MarketsController < ApplicationController
 
   def update
     @market = Market.find(params[:id])
+
     @market.update(create_params[:market])
 
     redirect_to market_path
@@ -40,7 +40,6 @@ class MarketsController < ApplicationController
 
   def create_params
     params.permit(market: [:name, :address, :city, :county, :state, :zip])
-
   end
 
 end

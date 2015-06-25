@@ -1,15 +1,14 @@
 class SalesController < ApplicationController
 
   def new
-
     @sale = Sale.new
-    @vendor = Vendor.find(params[:vendor_id])
-    @products = @vendor.products
 
+    @vendor = Vendor.find(params[:vendor_id])
+
+    @products = @vendor.products
   end
 
   def create
-
     @sale = Sale.create(create_params[:sale])
 
     redirect_to vendor_path(params[:sale][:vendor_id])
@@ -17,7 +16,6 @@ class SalesController < ApplicationController
 
 
   def month_sales
-
     @time = Time.now
 
     @vendor = Vendor.find(params[:vendor_id])
@@ -29,7 +27,6 @@ class SalesController < ApplicationController
     @month_revenue = month_revenue
 
     render :month_sales
-
   end
 
   def month_revenue
@@ -40,7 +37,6 @@ class SalesController < ApplicationController
     amounts.inject do |sum, n|
       sum + n
     end
-
   end
 
 
@@ -48,14 +44,12 @@ class SalesController < ApplicationController
     @sale = Sale.destroy(params[:id])
 
     redirect_to vendor_path(@sale.vendor_id)
-
   end
 
   private
 
   def create_params
     params.permit(sale: [:amount, :purchase_time, :vendor_id, :product_id, :id])
-
   end
 
 end
