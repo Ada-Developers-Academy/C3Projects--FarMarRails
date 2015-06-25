@@ -34,6 +34,16 @@ class MarketsController < ApplicationController
     redirect_to markets_path
   end
 
+  def sort_by_name
+    @markets = Market.all.order(:name)
+    render :index
+  end
+
+  def sort_by_state
+    @markets = Market.all.order(:state)
+    render :index
+  end
+
 private
 
   def market_params

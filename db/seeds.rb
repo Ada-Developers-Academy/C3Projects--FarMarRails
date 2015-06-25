@@ -14,8 +14,8 @@ CSV.foreach("db/../seed_csvs/markets.csv") do |row|
     name: row[1],
     address: row[2],
     city: row[3],
-    state: row[4],
-    county: row[5],
+    county: row[4],
+    state: row[5],
     zip: row[6]
     )
 
@@ -49,22 +49,3 @@ CSV.foreach("db/../seed_csvs/sales.csv") do |row|
     )
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

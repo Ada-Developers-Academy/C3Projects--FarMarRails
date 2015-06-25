@@ -7,14 +7,20 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get 'markets/:market_id/vendors' => 'markets#by_market', as: 'by_market'
+
   get 'vendors/:vendor_id/sales_of_month' => 'sales#sales_of_month', as: 'sales_of_month'
+
+  get 'markets/sort_by_name' => 'markets#sort_by_name', as: 'sort_by_name'
+
+  get 'markets/sort_by_state' => 'markets#sort_by_state', as: 'sort_by_state'
+
   resources :markets do
     resources :vendors
   end
 
   resources :vendors do
-    resources :products
-    resources :sales
+    resources :products, except: [:show]
+    resources :sales, only: [:new, :create, :index]
   end
 
   # Example of regular route:

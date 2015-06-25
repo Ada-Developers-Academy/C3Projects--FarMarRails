@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150623222552) do
     t.string   "name"
     t.string   "address"
     t.string   "city"
-    t.string   "state"
     t.string   "county"
+    t.string   "state"
     t.string   "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
