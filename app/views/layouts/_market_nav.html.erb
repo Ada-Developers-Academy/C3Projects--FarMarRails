@@ -1,3 +1,5 @@
 <%= link_to 'All Markets', markets_path %>
-<%= yield :nav %>
+
+<%= link_to 'Market', market_path(@market) if params[:market_id] %>
+
 <%= link_to 'Logout', :root %>
