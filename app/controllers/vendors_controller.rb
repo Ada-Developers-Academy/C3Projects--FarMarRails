@@ -9,7 +9,6 @@ class VendorsController < ApplicationController
     render 'vendor/show'
   end
 
-# THIS METHOD IS DOING TOO MUCH!!! REFACTOR WHEN YOU HAVE A CHANCE! - C
   def sales
     @sales = Sale.where(vendor_id: params[:id])
     @total_amount = calculate_sale_amount(@sales)
@@ -18,19 +17,16 @@ class VendorsController < ApplicationController
     render 'vendor/sales'
   end
 
+# THIS METHOD IS DOING TOO MUCH!!! REFACTOR WHEN YOU HAVE A CHANCE! - C
   def sales_this_month
     # sets timeframe
     @show_current_month = params[:show_current_month]
     if @show_current_month == "true"
-      # Sets current month range
-      current_date_time = DateTime.now
-      beginning_of_month = current_date_time.beginning_of_month
-      end_of_month = current_date_time.end_of_month
-      @month_range = (beginning_of_month..end_of_month)
+      month_range = calculate_month_range
 
       @sales = Sale.where(
         vendor_id: params[:id],
-        :purchase_time => @month_range
+        :purchase_time => month_range
         )
     else
       @sales = Sale.where(vendor_id: params[:id])
@@ -59,6 +55,14 @@ class VendorsController < ApplicationController
       end
     end
     return total
+  end
+
+  def calculate_month_range
+    current_date_time = DateTime.now
+    beginning_of_month = current_date_time.beginning_of_month
+    end_of_month = current_date_time.end_of_month
+    month_range = (beginning_of_month..end_of_month)
+    return month_range
   end
 
 end
