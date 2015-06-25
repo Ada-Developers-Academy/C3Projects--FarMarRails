@@ -11,7 +11,12 @@
   <tr>
     <td> <%= number_to_currency((sale.amount/100.00)) %> </td>
     <td> <%= sale.purchase_time.strftime ("%m/%d/%Y") %> </td>
-    <td> <%= sale.product.name %> </td>
+    <td> <% if sale.product == nil %>
+         <%= " " %>
+         <% else %>
+         <%= sale.product.name %>
+         <% end %>
+    </td>
   </tr>
     <% end %>
 </table>
@@ -33,7 +38,7 @@
   <tr>
     <td> <%= number_to_currency(sale.amount/100.00) %> </td>
     <td> <%= sale.purchase_time.strftime("%m/%d/%Y") %> </td>
-    <td> <% if sale.product.name == nil %>
+    <td> <% if sale.product == nil %>
          <%= " " %>
          <% else %>
          <%= sale.product.name %>
