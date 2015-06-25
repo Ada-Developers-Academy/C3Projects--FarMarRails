@@ -15,7 +15,7 @@
 
 </table>
 
-<h2>The Products for This Vendor</h2>
+<h2><%= "The Products for #{@vendor.name}" %></h2>
 
 <table>
 
@@ -35,7 +35,10 @@
 
 <%= button_to "New Sale", new_vendor_sale_path(@vendor.id), method: "get" %>
 
-<h2>The Sales for This Vendor</h2>
+<h2><%= "Sales for #{@vendor.name}" %></h2>
+
+<h3><%= "Total Revenue for #{@vendor.name} is $#{@revenue}" %></h3>
+
 
 <table>
 

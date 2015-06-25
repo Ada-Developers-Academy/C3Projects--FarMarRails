@@ -12,7 +12,7 @@ class VendorsController < ApplicationController
     @display_products = @vendor.products
     @display_sales = @vendor.sales
 
-   
+    @revenue = total_sales(@vendor) / 100.0
 
   end
 
@@ -51,6 +51,18 @@ class VendorsController < ApplicationController
   def create_params
     params.permit(vendor: [:name, :no_of_employees, :market_id, :id])
 
+  end
+
+  def total_sales(vendor)
+    sales = vendor.sales
+
+    total_revenue = sales.collect do |sale|
+      sale.amount
+    end
+
+    total_revenue.inject do |sum, n|
+      sum + n
+    end
   end
 
 end
