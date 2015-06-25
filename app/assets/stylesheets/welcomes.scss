@@ -1,3 +1,56 @@
 // Place all the styles related to the Welcomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  width: 960px;
+  font-family: Brushstroke, fantasy;
+  font-size: 18px;
+  padding: 100px;
+  color: #8a6e6c;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nav {
+   display: block;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #7994ed;
+ }
+
+.section {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.article1 {
+  float: left;
+  width: 29.33%;
+  position: relative;
+  text-align: auto;
+  // left: 68.67%;
+}
+
+.article2 {
+  float: left;
+  width: 29.33%;
+  position: relative;
+  // left: 72.67%;
+}
+
+.article3 {
+  float: left;
+  width: 29.33%;
+  position: relative;
+  // left: 76.67%;
+}
+
+.welcome_pic img {
+  max-width: 100%;
+  max-height: 100%;
+}
