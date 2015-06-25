@@ -14,6 +14,15 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
 
     @products = Product.where(:vendor_id => params[:id])
+    @sales = Sale.where(:vendor_id => params[:id])
+
+    sum = 0
+    @sales.each do |sale|
+      sum += sale[:amount]
+    end
+
+    @total_sales = sum 
+
   end
 
   def create

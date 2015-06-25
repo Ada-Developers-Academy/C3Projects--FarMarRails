@@ -60,3 +60,57 @@
   </tr>
   <% end %>
 </table>
+
+
+
+<h2>Sale List</h2>
+
+<table border "1">
+
+  <tr>
+    <th>
+      Sale ID
+    </th>
+
+    <th>
+      Purchase Time
+    </th>
+
+    <th>
+      Product ID
+    </th>
+    
+    <th>
+       Amount
+    </th>
+  </tr>
+
+<% @sales.each do |sale| %>
+  <tr>
+    <td>
+      <%= sale.id %>
+    </td>
+
+    <td>
+      <%= sale.purchase_time %>
+    </td>
+    <td>
+      <%= sale.product_id %>
+    </td>
+    <td>
+      <%= sale.amount%>
+    </td>
+
+  </tr>
+  <% end %>
+
+  <tr>
+    <td></td>
+    <td></td>
+<td>Total</td>
+<td> <%= @total_sales %> </td>
+
+  </tr>
+  
+</table>
+
