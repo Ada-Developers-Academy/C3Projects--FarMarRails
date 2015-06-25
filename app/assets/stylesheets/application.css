@@ -25,8 +25,8 @@ div.text_box {
   padding-bottom: 200px;
   background-color: #ffffff;
   border: 1px solid black;
-  opacity:0.5;
-  max-height: 150px;
+  opacity:0.7;
+  max-height: 500px;
   overflow-y: scroll;
 }
 
