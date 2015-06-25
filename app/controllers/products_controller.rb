@@ -23,6 +23,14 @@ class ProductsController < ApplicationController
   end
 
   def update
+    vendor_id = params[:vendor_id]
+    product = Product.find(params[:id])
+    edited_product = params[:product]
+
+    product.update(name: edited_product[:name])
+
+    # update when vendor#show is created
+    redirect_to "/vendors/#{vendor_id}/products"
   end
 
   private
