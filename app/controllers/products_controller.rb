@@ -46,13 +46,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to market_vendors_products_path
+    redirect_to market_vendor_products_path
   end
 
   private
 
   def product_params
-    params.permit(product: [:name])
+    params.permit(product: [:name, :vendor_id])
   end
 
 end

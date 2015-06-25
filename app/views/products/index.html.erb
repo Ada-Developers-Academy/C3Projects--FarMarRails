@@ -1,6 +1,6 @@
 <h1>Products sold by <%= @vendor.name %> </h1>
 <p>
-  <a href=<%="/markets/#{@vendor.market_id}/vendors/#{@vendor.id}/products/new"%>>+ Add a Product</a>
+<%= new_market_vendor_product_path %>
 </p>
 <table>
   <thead>
