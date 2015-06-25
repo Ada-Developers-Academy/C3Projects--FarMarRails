@@ -1,0 +1,43 @@
+<h1> Vendor Detail for <%= @vendor.name %></h1>
+
+<table>
+  <thead>
+    Details
+  </thead>
+
+  <tr>
+    <th> ID </th>
+    <th> Name </th>
+    <th> Number of Employees </th>
+    <th> Market Name </th>
+  </tr>
+
+  <tr>
+    <td> <%= @vendor.id %> </td>
+    <td> <%= @vendor.name %></td>
+    <td> <%= @vendor.num_employees %> </td>
+    <td> <%= @market.name %> </td>
+  </tr>
+
+</table>
+
+
+<%= link_to "Add New Vendor", new_market_vendor_path(@market.id) %>
+
+<table>
+  <thead>
+    Product List
+  </thead>
+  <tr>
+    <th> Name </th>
+    <th> Monthly Sales </th>
+    <th> Total Sales </th>
+  </tr>
+  <% @vendor_products.each do |product| %>
+  <!-- DRY up with map or something saw in style guide -->
+  <tr>
+    <td> <%= product.name %> </td>
+
+  </tr>
+    <% end %>
+</table>

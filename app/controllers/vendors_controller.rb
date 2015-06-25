@@ -1,39 +1,45 @@
 class VendorsController < ApplicationController
 
-	def index
-		@all_vendors = Vendor.all
-	end
+  def index
+    @all_vendors = Vendor.all
+  end
 
-	def new
-		@vendor = Vendor.new
-		@market_id = params[:market_id]
-		@url = market_vendors_path
-	end
+  def new
+    @vendor = Vendor.new
+    @market_id = params[:market_id]
+    @url = market_vendors_path
+  end
 
-	def create
-		@vendor = Vendor.create(create_params[:vendor])
+  def create
+    @vendor = Vendor.create(create_params[:vendor])
     redirect_to "/markets/#{@vendor.market_id}"
+  end
+
+	def show
+    find_vendor
+		@market = Market.find("#{@vendor.market_id}")
+		@vendor_products = Product.where(vendor_id: "#{@vendor.id}")
 	end
 
-	def edit
-		find_vendor
-		@market_id = params[:market_id]
-		@url = market_vendor_path
-	end
+  def edit
+    find_vendor
+    @market_id = params[:market_id]
+    @url = market_vendor_path
+  end
 
-	def update
-		find_vendor
-		@vendor.update(create_params[:vendor])
+  def update
+    find_vendor
+    @vendor.update(create_params[:vendor])
 
-		redirect_to market_path(@vendor.market_id)
-	end
+    redirect_to market_path(@vendor.market_id)
+  end
 
-	def destroy
-		find_vendor
-		@vendor.destroy
+  def destroy
+    find_vendor
+    @vendor.destroy
 
-		redirect_to market_path(@vendor.market_id)
-	end
+    redirect_to market_path(@vendor.market_id)
+  end
 
 ##################### PRIVATE METHODS #####################
   private
