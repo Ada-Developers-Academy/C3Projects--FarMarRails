@@ -13,9 +13,7 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
     @new = Vendor.new(create_params[:vendor])
     @new.save
-  
     redirect_to market_path(id: params[:vendor][:market_id])
-
   end
 
   def new
@@ -29,6 +27,8 @@ class VendorsController < ApplicationController
   end
 
   def show
+    @vendor = Vendor.find(params[:id])
+    render :show
   end
 
   def update
@@ -36,10 +36,13 @@ class VendorsController < ApplicationController
     @vendor.name = create_params[:vendor][:name]
     @vendor.no_of_employees= create_params[:vendor][:no_of_employees]
     @vendor.save
-    redirect_to "/markets/#{@market.id}"
+    redirect_to "/vendors/#{params[:id]}"
   end
 
   def destroy
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+      redirect_to "/markets/#{params[:market_id]}"
   end
 
   def create_params

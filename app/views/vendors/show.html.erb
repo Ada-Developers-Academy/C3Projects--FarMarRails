@@ -1,11 +1,14 @@
-<h1>show</h1>
+<h1>Vendor Name: <%="#{@vendor.name}"%></h1>
 
 
-<h3>Vendors</h3>
+<h3>Vendor Attributes</h3>
+<ul>
+  <li>Vendor Name: <%=@vendor.name %></li>
+  <li>Number of Employees: <%=@vendor.no_of_employees%></li>
+</ul>
 
+<%= link_to "Edit Vendor Details", edit_vendor_path(@vendor.id) %>
+<br>
+<br>
 
-
-
-
-
-  <a href="/markets/">Go Back to all Markets</a>
+  <a href="/vendors/">Go Back to all Vendors</a>
