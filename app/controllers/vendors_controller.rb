@@ -96,4 +96,6 @@ class VendorsController < ApplicationController
     return sales
   end
 
+  def error
+  end
 end # class

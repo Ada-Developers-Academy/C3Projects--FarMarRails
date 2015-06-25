@@ -58,11 +58,14 @@ class SalesController < ApplicationController
 
     if sale.valid?
       sale.save
-      
+
       redirect_to "/vendors/#{ sale.vendor_id }/sales"
     else
       redirect_to "/vendors/#{ sale.vendor_id }/sales/new/error"
     end
+  end
+
+  def error
   end
 
   private

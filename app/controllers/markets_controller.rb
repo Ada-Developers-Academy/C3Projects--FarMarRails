@@ -6,7 +6,7 @@ class MarketsController < ApplicationController
   def login
     if (params.permit(:login_id)[:login_id].to_i <= Market.last.id)
       id = params.permit(:login_id)[:login_id]
-      
+
       redirect_to "/markets/#{ id }/dashboard"
     else
       redirect_to "/markets/market_not_found"
@@ -69,6 +69,9 @@ class MarketsController < ApplicationController
     else
       redirect_to "/markets/#{ id }/edit/error"
     end
+  end
+
+  def error
   end
 
   private

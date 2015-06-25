@@ -49,13 +49,12 @@ class ProductsController < ApplicationController
     redirect_to "/vendors/#{ vendor_id }/products"
   end
 
+  def error
+  end
+
   private
 
   def create_params
     params.permit(product: [:name, :vendor_id])
   end
-
-  # def update_params
-  #   params.permit(product: [:name, :vendor_id])
-  # end
 end

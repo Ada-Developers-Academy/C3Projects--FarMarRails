@@ -21,10 +21,10 @@ Rails.application.routes.draw do
   end
 
   # custom routes for market users
-  get "/markets/new/error"
-  get "/markets/edit/error"
-  get "/vendors/new/error"
-  get "/vendors/edit/error"
+  get "/markets/new/error" => "markets#error"
+  get "/markets/edit/error" => "markets#error"
+  get "/markets/:market_id/vendors/new/error" => "vendors#error"
+  get "/markets/:market_id/vendors/edit/error" => "vendors#error"
 
   # routes for vendor users
   resources :vendors, only: [:index] do
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   # custom routes for vendor users (including error messages)
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
-  get "/products/new/error"
-  get "/products/edit/error"
-  get "/sales/new/error"
+  get "/vendors/:vendor_id/products/new/error" => "products#error"
+  get "/vendors/:vendor_id/products/edit/error" => "products#error"
+  get "/vendors/:vendor_id/sales/new/error" => "sales#error"
 end
