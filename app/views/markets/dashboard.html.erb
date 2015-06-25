@@ -40,7 +40,7 @@
   <h3 class="section-header">Vendors</h3>
 
   <% @vendors.each do |vendor| %>
-      <%= link_to "Manage", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
+      <%= link_to "Edit", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
 
       <ul class="market-location">
         <li>
