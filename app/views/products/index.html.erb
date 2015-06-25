@@ -4,7 +4,7 @@
 
 
 <h2><%= link_to "View products just for the current month.", "./products/current", title: "Click here to review this month's products." %></h2>
-<%= link_to "+ New Product", "/vendors/#{@vendor.id}/products/new" %>
+<%= link_to "+ New Product", "/vendors/#{ @vendor.id }/products/new" %>
 
 <ul>
   <% @products.each do |product| %>
@@ -14,11 +14,11 @@
         </div>
 
         <div>
-          <%= link_to "Rename", "/vendors/#{@vendor.id}/products/#{product.id}/edit" %>
+          <%= link_to "Rename", "/vendors/#{ @vendor.id }/products/#{ product.id }/edit" %>
         </div>
 
         <div>
-          <%= button_to "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure? This product and its data will be gone forever." } do %>
+          <%= button_to "/vendors/#{ @vendor.id }/products/#{ product.id }", method: :delete, data: { confirm: "Are you sure? This product and its data will be gone forever." } do %>
             Delete
           <% end %>
         </div>

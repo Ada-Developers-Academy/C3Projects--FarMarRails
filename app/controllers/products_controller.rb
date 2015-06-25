@@ -29,8 +29,8 @@ class ProductsController < ApplicationController
 
   def update
     product = Product.find(params[:id])
-    edited_product = params[:product]
-    edited_product[:vendor_id] = params[:vendor_id]
+    edited_product = create_params[:product]
+    # edited_product[:vendor_id] = params[:vendor_id]
 
     if Product.new(edited_product).valid?
       product.update(edited_product)
@@ -54,4 +54,8 @@ class ProductsController < ApplicationController
   def create_params
     params.permit(product: [:name, :vendor_id])
   end
+
+  # def update_params
+  #   params.permit(product: [:name, :vendor_id])
+  # end
 end
