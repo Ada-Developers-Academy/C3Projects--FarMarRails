@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#home'
 
-  resources :markets
+  resources :markets do
+    member do
+      get '/show_users', action: 'show_users', as: 'show_users'
+    end
+  end
 
   resources :vendors do
     collection do

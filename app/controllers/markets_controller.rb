@@ -21,6 +21,12 @@ class MarketsController < ApplicationController
     @vendors = Vendor.where(:market_id => params[:id])
   end
 
+  def show_users
+    @market = Market.find(params[:id])
+
+    @vendors = Vendor.where(:market_id => params[:id])
+  end
+
   def edit #GET one market to modify.
    @market = Market.find(params[:id])   
   end
