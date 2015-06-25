@@ -1,18 +1,19 @@
 <body class="vendor-background">
-<div class="text_box">
-<table>
-  <tr>
-    <th>Vendor</th>
-    <th>Number of Employees</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr>
-    <td><%= @vendor.name %></td>
-    <td><%= @vendor.num_of_employees %></td>
-    <td><%= button_to "Products", vendor_products_path(@vendor.id), method: :get %></td>
-    <td><%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get %></td>
-  </tr>
-</table>
-</div>
+  <h1><%= @vendor.name %></h1>
+  <div class="text_box">
+    <table>
+      <tr>
+        <th>Vendor</th>
+        <th>Number of Employees</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td><%= @vendor.name %></td>
+        <td><%= @vendor.num_of_employees %></td>
+        <td><%= button_to "Products", vendor_products_path(@vendor.id), method: :get %></td>
+        <td><%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get %></td>
+      </tr>
+    </table>
+  </div>
 </body>

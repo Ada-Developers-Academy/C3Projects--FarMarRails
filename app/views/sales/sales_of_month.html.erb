@@ -1,25 +1,25 @@
 <body class="vendor-background">
-    <h1><%= Time.now.strftime("%B") %> Sales </h1>
-<div class="text_box">
-<% if @sales.empty? %>
-  <p>There are no sales for this month</p>
-<% else%>
-<table>
-  <tr>
-    <th>Amount</th>
-    <th>Purchase Time</th>
-  </tr>
-    <% total_sales = 0 %>
-    <% @sales.each do |sale|%>
-    <% total_sales += sale.amount %>
-  <tr>
-      <td>$<%= cents_to_dollars(sale.amount) %></td>
-      <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
-  </tr>
-    <% end %>
-    <p>Total Sales: $<%= cents_to_dollars(total_sales) %></p>
+  <h1><%= Time.now.strftime("%B") %> Sales </h1>
+  <div class="text_box">
+    <% if @sales.empty? %>
+      <p>There are no sales for this month</p>
+    <% else%>
+      <table>
+        <tr>
+          <th>Amount</th>
+          <th>Purchase Time</th>
+        </tr>
+          <% total_sales = 0 %>
+          <% @sales.each do |sale|%>
+          <% total_sales += sale.amount %>
+        <tr>
+            <td>$<%= cents_to_dollars(sale.amount) %></td>
+            <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
+        </tr>
+          <% end %>
+          <p>Total Sales: $<%= cents_to_dollars(total_sales) %></p>
 
-</table>
-  <% end %>
-</div>
+      </table>
+      <% end %>
+  </div>
 </body>

@@ -1,23 +1,24 @@
 <body class="vendor-background">
-<%= button_to "Create a Sale", new_vendor_sale_path(params[:vendor_id]), method: :get %>
-<div class="text_box">
-<table>
-  <tr>
-    <th>Amount</th>
-    <th>Time of Purchase</th>
-    <th>Product ID</th>
-  </tr>
-  <% total_sales = 0 %>
-  <% @sales.each do |sale| %>
-  <tr>
-    <td>$<%= cents_to_dollars(sale.amount) %></td>
-    <% total_sales += sale.amount %>
-    <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
-    <td><%= sale.product_id %></td>
-  </tr>
-  <% end %>
-</table>
-<p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
-</div>
-<%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get %>
+  <h1>All Sales for <%= @vendor.name %></h1>
+  <%= button_to "Create a Sale", new_vendor_sale_path(params[:vendor_id]), method: :get %>
+  <div class="text_box">
+    <table>
+      <tr>
+        <th>Amount</th>
+        <th>Time of Purchase</th>
+        <th>Product ID</th>
+      </tr>
+      <% total_sales = 0 %>
+      <% @sales.each do |sale| %>
+      <tr>
+        <td>$<%= cents_to_dollars(sale.amount) %></td>
+        <% total_sales += sale.amount %>
+        <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
+        <td><%= sale.product_id %></td>
+      </tr>
+      <% end %>
+    </table>
+  <p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
+  </div>
+  <%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get %>
 </body>

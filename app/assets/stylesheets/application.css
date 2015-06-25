@@ -4,6 +4,10 @@ body {
   margin: auto;
 }
 
+h1 {
+  text-align: center;
+}
+
 .home-background {
   background-image: url("Light-Wood.jpg");
   background-size: 100%;
@@ -22,15 +26,16 @@ body {
 
 table {
   margin: auto;
+  text-align: center;
 }
 
 table td, th {
   text-align: center;
-  padding: 10px 2%;
+  padding: 10px 1%;
 }
 
-table td {
-  width: 30%;
+table td:nth-child(2), td:first-child {
+  width: 25%;
 }
 
 div.text_box {

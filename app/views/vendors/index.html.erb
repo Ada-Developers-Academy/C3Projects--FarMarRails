@@ -1,14 +1,15 @@
 <body class="vendor-background">
-<div class="text_box">
-<table>
-  <tr>
-    <th>Vendor Name</th>
-  </tr>
-  <tr>
-  <% @vendors.to_a.each do |vendor| %>
-  <td><%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %></td>
-  </tr>
-  <% end %>
-</table>
-</div>
+  <h1>All Vendors</h1>
+  <div class="text_box">
+    <table>
+      <tr>
+        <th>Vendor Name</th>
+      </tr>
+      <tr>
+      <% @vendors.to_a.each do |vendor| %>
+      <td><%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </body>
