@@ -10,4 +10,11 @@ class Sale < ActiveRecord::Base
     return total
   end
 
+  def self.start
+    Time.new(Time.now.month)
+  end
+
+  def self.end_of_month
+    Time.new(Time.now.month + 1)
+  end
 end

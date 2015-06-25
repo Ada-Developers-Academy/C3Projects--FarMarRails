@@ -23,3 +23,20 @@
 <%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %>
 
 <h3>Sales for <%= Time.now.strftime("%B") %></h3>
+
+<table>
+  <th>Sale Amount</th>
+  <th>Purchase Date</th>
+  <th>Product</th>
+
+    <% @sales_current_month.each do |sale| %>
+  <tr>
+    <td> <%= sale.amount %> </td>
+    <td> <%= sale.purchase_time %> </td>
+    <td> <%= sale.product.name %> </td>
+  </tr>
+    <% end %>
+</table>
+
+<h4>Total Amount for <%= Time.now.strftime("%B") %></h4>
+<p> <%= %> </p>
