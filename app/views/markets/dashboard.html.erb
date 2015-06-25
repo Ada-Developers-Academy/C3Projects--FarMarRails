@@ -1,22 +1,20 @@
+<header>
+  <h1>Welcome, <%= @market.name %>!</h1>
+</header>
+
 <main>
-  <section class="vendor-money">
-    <h2>This Market</h2>
-    <h1><%= @market.name %></h1>
-    <table class="market-location">
-      <tr>
-        <td colspan="2">
-          <%= link_to "Edit this market.", "./edit", title: "Update the details of this market." %>
-        </td>
+  <section class="market-details">
+    <%= link_to "Edit", "./edit", title: "Update the details of this market." %>
+    <h3 class="section-header">Market Details</h3>
+
+
+    <table class="details">
       <tr>
         <td class="right">ID</td>
         <td><%= "#{ @market.id }" %></td>
       </tr>
       <tr>
-        <td class="right">Market Name</td>
-        <td><%= "#{ @market.name }" %></td>
-      </tr>
-      <tr>
-        <td class="right">Location</td>
+        <td class="right">Address</td>
         <td><%= "#{ @market.address }" %></td>
       </tr>
       <tr>
@@ -38,28 +36,19 @@
     </table>
   </section>
 
-  <section class="vendor-products">
-    <h2>This Market's Vendors</h2>
-    <%= link_to "Add new vendor.", "./vendors/new", title: "Create a new vendor for this market." %>
+  <section class="market-vendors">
+    <%= link_to "+ New Vendor", "./vendors/new", title: "Create a new vendor for this market." %>
+    <h3 class="section-header">Vendors</h3>
 
     <% @vendors.each do |vendor| %>
-      <div class="padding-wrapper">
-        <table class="market-location">
-          <tr>
-            <td colspan="2" class="center">
-              <%= link_to "Manage this vendor.", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
-            </td>
-          </td>
-          <tr>
-            <td class="right">ID</td>
-            <td><%= "#{ vendor.id }" %></td>
-          </tr>
-          <tr>
-            <td class="right">Name</td>
-            <td><%= "#{ vendor.name }" %></td>
-          </tr>
-        </table>
-      </div>
+        <%= link_to "Manage", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
+
+        <ul class="market-location">
+          <li>
+            <div><%= "ID ##{ vendor.id }" %></div>
+            <%= "#{ vendor.name }" %>
+          </li>
+        </ul>
     <% end %>
   </section>
 </main>
