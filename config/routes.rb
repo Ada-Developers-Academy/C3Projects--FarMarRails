@@ -15,6 +15,13 @@ Rails.application.routes.draw do
 
   get "/markets/:market_id/vendors/:id/edit" => "vendors#edit"
 
+  resources :vendors do
+    resources :sales
+    resources :products
+  end
+
+  get "/vendors/:vendor_id/sales/:current_month" => "sales#show"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -24,10 +31,6 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :vendors do
-    resources :sales
-    resources :products
-  end
 
 
 

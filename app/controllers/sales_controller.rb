@@ -11,6 +11,10 @@ class SalesController < ApplicationController
     redirect_to "/vendors/#{@sale.vendor_id}"
   end
 
+  def show
+
+  end
+
 
 ##################### PRIVATE METHODS #####################
   private
