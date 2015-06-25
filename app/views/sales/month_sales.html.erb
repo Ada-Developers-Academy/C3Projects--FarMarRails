@@ -13,7 +13,10 @@
 <% end %>
 </table>
 
-<p>Total month revenue: <%= number_to_currency(@month_revenue / 100.00) %></p>
-
+<% unless @month_sales.length == 0 %>
+  <p>Total month revenue: <%= number_to_currency(@month_revenue / 100.00) %></p>
+<% else %>
+  <p>There were no sales this month.</p>
+<% end %>
 
 <%= link_to "Back to vendor", vendor_path(@vendor.id) %>
