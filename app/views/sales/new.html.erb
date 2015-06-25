@@ -1,0 +1,19 @@
+<h1>Add a Sale</h1>
+
+<%= form_for @sale, url: @url do |f| %>
+<fieldset class="form">
+
+      <%= f.label :amount, 'Sale Amount' %>
+      <%= f.text_field :amount %>
+
+      <%= f.label :purchase_time, 'Purchase Date' %>
+      <%= f.date_field :purchase_time %>
+
+      <%= f.label :product_id, 'Product' %>
+      <%= f.collection_select :product_id, @vendor.products, :id, :name, :prompt => true %>
+
+      <%= f.hidden_field :vendor_id, :value => "#{@vendor.id}" %>
+
+      <%= f.submit %>
+</fieldset>
+<% end %>

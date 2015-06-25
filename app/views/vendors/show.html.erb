@@ -1,0 +1,9 @@
+<h1> <%= "#{@vendor.name}" %> </h1>
+
+  <ul>
+    <li>Farmer's Market: <%= @vendor_market %> </li>
+    <li>Number of Employees: <%= @vendor.no_of_employees %></li>
+  </ul>
+
+<%= link_to 'Products', vendor_products_path(@vendor.id) %>
+<%= link_to 'Sales', vendor_sales_path(@vendor.id) %>

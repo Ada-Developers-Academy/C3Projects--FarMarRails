@@ -25,6 +25,10 @@ class VendorsController < ApplicationController
 
   def show
 
+    @vendor = Vendor.find(params[:id])
+    @vendor_market = @vendor.market.name
+
+    render :show
   end
 
   def update

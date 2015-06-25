@@ -1,0 +1,19 @@
+<h1> <%= "#{@vendor.name}"%> </h1>
+<h2>Sales</h2>
+
+
+<table>
+  <th>Sale Amount</th>
+  <th>Purchase Date</th>
+  <th>Product</th>
+
+    <% @vendor_sales.each do |sale| %>
+  <tr>
+    <td> <%= number_to_currency((sale.amount/100.00)) %> </td>
+    <td> <%= sale.purchase_time.strftime ("%m/%d/%Y") %> </td>
+    <td> <%= sale.product.name %> </td>
+  </tr>
+    <% end %>
+</table>
+
+<%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
