@@ -1,3 +1,5 @@
+<%= link_to "Back to vendor's products", vendor_products_path("#{params[:vendor_id]}") %>
+
 <%= form_for @product, url: vendor_product_path("#{params[:vendor_id]}", "#{@product[:id]}") do |p| %>
  <fieldset>
    <legend>Edit product</legend>

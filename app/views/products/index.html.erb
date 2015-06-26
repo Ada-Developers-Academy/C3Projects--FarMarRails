@@ -1,12 +1,17 @@
+<%= link_to "Back to vendor", market_vendor_path("#{@vendor.market_id}", "#{@vendor.id}") %>
+
 <p>"<%= "#{@vendor.name}" %>" has these products: </p>
-  <% @products.each do |product| %>
-    <p>
-      <%= "#{product.name}" %>
-      <%= button_to "Edit product", edit_vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "get" %>
-      <%= button_to "Delete product", vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "delete" %>
-      <%= button_to "See all sales", vendor_product_sales_path("#{@vendor.id}", "#{product.id}"), method: "get" %>
-    </p>
-  <% end %>
+  <ol>
+    <% @products.each do |product| %>
+      <li><%= "#{product.name}" %></li>
+        <ul>
+          <li><%= link_to "Edit product", edit_vendor_product_path("#{@vendor.id}", "#{product.id}") %></li>
+          <li><%= link_to "Delete product", vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "delete" %></li>
+          <li><%= link_to "See all sales", vendor_product_sales_path("#{@vendor.id}", "#{product.id}") %></li>
+        </ul>
+
+    <% end %>
+  </ol>
 </p>
 
 <p>
