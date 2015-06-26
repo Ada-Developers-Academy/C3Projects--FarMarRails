@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @vendor.sales.all.each do |sale| %>
+        <% @vendor.sales.each do |sale| %>
         <tr>
           <td>
             <%= sale.amount %>
@@ -57,7 +57,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @vendor.sales.all.each do |sale| %>
+        <% @vendor.sales.each do |sale| %>
           <% if sale.purchase_time.to_date.strftime("%Y-%m") == @date_today %>
             <tr>
               <td>

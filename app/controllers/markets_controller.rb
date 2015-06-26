@@ -1,13 +1,18 @@
 class MarketsController < ApplicationController
 
+  before_action :get_market, only: [:edit, :update]
+
+  def get_market
+    @market = Market.find(params[:id])
+  end
+
   def index
-    @title = "All Markets"
     @markets = Market.all
+
     render :markets
   end
 
   def show
-    @title = " information"
     @market_id = params[:id]
     @market = Market.find(@market_id)
 
@@ -27,12 +32,10 @@ class MarketsController < ApplicationController
 
   # Update an existing market
   def edit
-    @market = Market.find(params[:id])
     render :edit
   end
 
   def update
-    @market = Market.find(params[:id])
     @market.update(market_params[:market])
 
     redirect_to :markets

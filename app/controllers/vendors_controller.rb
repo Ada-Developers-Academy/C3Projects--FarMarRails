@@ -1,5 +1,11 @@
 class VendorsController < ApplicationController
 
+  before_action :get_vendor, only: [:edit, :update, :destroy]
+
+  def get_vendor
+    @vendor = Vendor.find(params[:id])
+  end
+
   def index
     @title = "Vendors for "
     @market_id = params[:market_id]
@@ -31,20 +37,16 @@ class VendorsController < ApplicationController
 
   # Edit an existing vendor
   def edit
-    @vendor = Vendor.find(params[:id])
-
     render :edit
   end
 
   def update
-    @vendor = Vendor.find(params[:id])
     @vendor.update(vendor_params[:vendor])
 
     redirect_to market_vendor_path
   end
 
   def destroy
-    @vendor = Vendor.find(params[:id])
     @vendor.destroy
 
     redirect_to market_path(@vendor.market_id)
