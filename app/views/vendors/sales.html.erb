@@ -54,5 +54,10 @@
 </tbody>
 </table>
 
-<%= button_to "Show Sales from Current Month", sales_vendor_path, params: {show_current_month: true} %>
-<%= button_to "Show All Sales", sales_vendor_path, params: {show_current_month: false} %>
+<div class="button_block">
+  <%= button_to "Show Sales from Current Month", sales_vendor_path, params: {show_current_month: true} %>
+</div>
+
+<div class="button_block">
+  <%= button_to "Show All Sales", sales_vendor_path, params: {show_current_month: false} %>
+</div>
