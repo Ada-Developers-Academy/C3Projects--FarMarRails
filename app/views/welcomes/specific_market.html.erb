@@ -8,10 +8,11 @@
     <%=@market.state  %>.
     <%=@market.zip  %></p>
     <% vendors = @market.vendors %>
-    <p>Vendors: <% vendors.each do |v| %>
-      <%= v.name %>
+    <ol>
+     Vendors: <% vendors.each do |v| %>
+      <li><%= v.name %></li>
       <% end %>
-    </p>
+    </ol>
 </div>
 
 <div class = "specific_market_pic">
