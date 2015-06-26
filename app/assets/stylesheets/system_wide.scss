@@ -1,8 +1,19 @@
 body {
   font-family: 'Verdana', arial, sans-serif;
   font-size: 1.2em;
-  color: rgb(255, 255, 255);
-  background: rgb(50, 227, 178);
+  // color: rgb(255, 255, 255);
+  background-image: image-url("farm.jpeg");
+  background-width: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  height: 70%;
+  overflow: scroll;
+  padding: 20px;
 }
 
 a {
@@ -11,7 +22,8 @@ a {
 
 header, nav {
   text-align: center;
-}
+  margin-bottom: 15px;
+ }
 
 .button_to {
   padding-bottom: 15px;
@@ -31,13 +43,21 @@ nav li {
 
 /*________TABLE_DATA________*/
 
-th {
+.details {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details td {
+  border-right: 1px solid black;
+}
+
+td, th {
+  padding: 5px 15px 5px 15px;
   text-align: left;
 }
 
-td {
-  padding: 10px;
-}
+
 
 /*________FORM________*/
 

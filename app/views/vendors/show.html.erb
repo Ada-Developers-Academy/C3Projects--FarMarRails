@@ -1,15 +1,15 @@
 <%= render partial: "users/header", locals: { title: "Vendor Details", link_name: "Back to Vendors", link_path: vendors_path, second_link: false } %>
 
-<table>
+<table class = "details">
   <th>Name</th>
-  <th>Number of Employees</th>
   <th>Name of Market</th>
+  <th>Number of Employees</th>
 
   <tr>
     <td><%= @vendor.name %></td>
-    <td><%= @vendor.no_of_employees %></td>
     <% @market = Market.find(@vendor.market_id) %>
     <td><%= @market.name %></td>
+    <td><%= @vendor.no_of_employees %></td>
 
   </tr>
 
