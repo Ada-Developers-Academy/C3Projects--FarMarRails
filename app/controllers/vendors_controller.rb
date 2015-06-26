@@ -102,10 +102,6 @@ class VendorsController < ApplicationController
     redirect_to vendor_path
   end
 
-  # def vendors_delete
-  #   @vendor = Vendor.find(params[:vendor_id])
-  # end
-
   def destroy
     vendor = Vendor.find(params[:id])
     vendor.destroy
