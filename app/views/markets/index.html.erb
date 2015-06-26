@@ -1,7 +1,12 @@
 <%= render "shared/header" %>
 <main>
-  <h2> <%= link_to "Add a Market", new_market_path %> </h2>
-  <%= render "shared/all_markets"  %>
-  <h2> <%= link_to "Add a Vendor", new_by_market_path %> </h2>
-  <%= render "shared/all_vendors" %>
+  <div class = "all_markets" >
+    <h2> <%= link_to "Add a Market", new_market_path %> </h2>
+    <%= render "shared/all_markets"  %>
+  </div>
+  <div class = "all_vendors">
+    <h2> <%= link_to "Add a Vendor", new_by_market_path %> </h2>
+    <%= render "shared/all_vendors" %>
+  </div>
 </main>
+<%= render "shared/footer" %>

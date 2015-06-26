@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
+<main>
+  <h2> <%= link_to "View all Markets", markets_users_path %> </h2>
 
-<h2> <%= link_to "Log in as Market", markets_path %> </h2>
-<h2> <%= link_to "Log in as Vendor", vendors_path %> </h2>
-
-<p> <%= link_to "View all Markets", markets_users_path %> </p>
+  <h3> <%= link_to "Market Login", markets_path %> </h3>
+  <h3> <%= link_to "Vendor Login", vendors_path %> </h3>
+</main>

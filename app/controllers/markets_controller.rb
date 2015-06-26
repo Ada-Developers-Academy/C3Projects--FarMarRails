@@ -1,7 +1,7 @@
 class MarketsController < ApplicationController
 
   def index
-    @header = "Farmer's Market Manager"
+    @header = "Market Manager"
     @path = "markets/vendors"
     @markets = Market.order("lower(name) ASC").all
     @vendors = Vendor.order("lower(name) ASC").all

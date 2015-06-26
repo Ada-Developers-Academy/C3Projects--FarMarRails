@@ -10,7 +10,7 @@ html {
   background-image: image-url("restaurant.png");
   background-repeat: repeat;
   font-family: 'Oxygen', sans-serif;
-  color: #391D4D;
+  color: #235140;
   font-size: 18px;
 }
 
@@ -22,7 +22,7 @@ header {
 }
 
 h1 {
-  color: #391d4d;
+  color: #235140;
   font-size: 48px;
   font-variant: small-caps;
   margin: 0 auto;
@@ -31,7 +31,7 @@ h1 {
 main {
   margin: 0 auto;
   width: 960px;
-  background: #89A8A3;
+  background: #eadfd9;
   padding: 15px;
   margin-top: 5px;
   border-radius: 5px;
@@ -129,13 +129,12 @@ padding: 3px;
 
 // Links //
 a {
- color: #6b2148;
- font-size: 0.9em;
+ color: #3e0620;
  text-decoration: none;
 }
 
 a:hover {
- color: #A24252;
+ color: #f7dc70;
 }
 
 // Tables //
@@ -153,6 +152,26 @@ th {
   width: 100px;
 }
 
+.details th {
+  width: 200px;
+}
+
+.all_markets th {
+  font-size: 1.4em;
+}
+
+.all_markets {
+  width: 480px;
+  background: #eadfd9;
+  float: left;
+}
+
+.all_vendors {
+  width: 480px;
+  background: #eadfd9;
+  float:right;
+}
+
 td {
   padding: 3px;
 }
@@ -164,4 +183,14 @@ td {
 
 .details td {
   width: 400px;
+}
+
+.market_form input[type=text] {
+  width: 30%;
+  height: 20px;
+}
+
+.vendor_form input[type=text] {
+  width: 30%;
+  height: 20px;
 }

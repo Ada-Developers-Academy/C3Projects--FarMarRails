@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+
   def index
-    @header = "Farmer's Market Manager"
+    @header = "Farmer's Market Management"
   end
 
   def markets
@@ -9,8 +10,8 @@ class UsersController < ApplicationController
   end
 
   def by_market
+    @header = "Selected Market"
     @market = Market.find(params[:id])
-    @header = "This Market"
     @vendor = Vendor.where(:market_id => @market.id)
   end
 
