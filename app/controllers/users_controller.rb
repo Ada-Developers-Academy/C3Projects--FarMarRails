@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def markets
     @header = "All Markets"
+    # We made the names in alphabetical order and not case-sensitive
     @markets = Market.order("lower(name) ASC").all
   end
 

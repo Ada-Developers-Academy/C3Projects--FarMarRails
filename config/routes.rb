@@ -2,22 +2,26 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
+  # Sales and Products path within the Vendor login
   resources :vendors do
     member do
       resources :sales, only: [:index]
     end
     resources :products, except: [:show] do
+      # Creating a sale for a specific product
       resources :sales, only: [:create, :new]
     end
   end
 
   resources :markets do
     collection do
+      # What Market sees about Vendors is different from what Vendors see
       get 'show_vendor/:id', action: "edit_vendor", as: "edit_vendor"
       resources :vendors, except: [:update, :create], as: "by_market"
     end
   end
 
+  # The routes for the no-login path (user)
   resources :users, only: [:index] do
     collection do
       get 'markets'

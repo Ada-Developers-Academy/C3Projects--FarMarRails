@@ -12,11 +12,11 @@
 
       <%= f.label :county  %>
       <%= f.text_field :county, value: @market.county %>
-
+      <!-- If the state is already there, it is a text box -->
       <% if @adj == "Update" %>
         <%= f.label :state %>
         <%= f.text_field :state, value: @market.state  %>
-
+      <!-- If the state isn't there, it is a drop-down of all states from the market helper-->
       <% else %>
         <%= f.label :state %>
         <%= f.select :state, options_for_select(us_states), {:include_blank => "Please select"}  %>

@@ -2,7 +2,9 @@ class MarketsController < ApplicationController
 
   def index
     @header = "Market Manager"
+    # Allows for viewing and editing a vendor from within the Market log-in
     @path = "markets/show_vendor"
+    # We made the names in alphabetical order and not case-sensitive
     @markets = Market.order("lower(name) ASC").all
     @vendors = Vendor.order("lower(name) ASC").all
   end
@@ -31,7 +33,7 @@ class MarketsController < ApplicationController
   def create
     @market = Market.new(create_params[:market])
     @market.save
-    redirect_to markets_url
+    redirect_to markets_path
   end
 
   def edit
@@ -43,7 +45,7 @@ class MarketsController < ApplicationController
   def update
     @market = Market.find(params[:id])
     @market.update(create_params[:market])
-    redirect_to markets_url
+    redirect_to markets_path
   end
 
   def destroy

@@ -1,7 +1,9 @@
 class VendorsController < ApplicationController
   def index
     @header= "Select your Vendor Name"
+    # We made the names in alphabetical order and not case-sensitive
     @vendors = Vendor.order("lower(name) ASC").all
+    # To direct to the Vendor route for showing one vendor
     @path = "/vendors"
   end
 
@@ -12,6 +14,7 @@ class VendorsController < ApplicationController
 
   def new
     @header= "Add a New Vendor"
+    # Allows re-use of the same form for 'new' & 'edit'
     @adj = "Add"
     @vendor = Vendor.new
   end
@@ -24,6 +27,7 @@ class VendorsController < ApplicationController
 
   def edit
     @header = "Edit Vendor"
+    # Allows re-use of the same form for 'new' & 'edit'
     @adj = "Update"
     @vendor = Vendor.find(params[:id])
   end
@@ -31,7 +35,7 @@ class VendorsController < ApplicationController
   def update
     @vendor = Vendor.find(params[:id])
     @vendor.update(create_params[:vendor])
-    redirect_to markets_url
+    redirect_to markets_path
   end
 
   def destroy
