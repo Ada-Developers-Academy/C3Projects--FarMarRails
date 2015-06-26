@@ -18,7 +18,7 @@
 
 html {
   font-family: 'Nixie One', cursive;
-  background: #fff url("strawberries.jpg") no-repeat center fixed;
+  background: #fff image-url("strawberries.jpg") no-repeat center fixed;
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body {
   border-radius: 20px;
   margin: 20px auto;
   width: 960px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
 }
 
