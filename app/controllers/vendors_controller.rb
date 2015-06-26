@@ -27,10 +27,6 @@ class VendorsController < ApplicationController
         :purchase_time => month_range
         )
 
-      # how to do this without searching database? gahh.
-      # could I pass this in from the previous page (show sales?)
-      # check PARAMS that load this page again and see if the @vendor.id that
-      # I pass in to this path is doing anthing.
       @vendor_name = Vendor.find(params[:id]).name
     else
       @sales = Sale.where(vendor_id: params[:id])
@@ -48,10 +44,8 @@ class VendorsController < ApplicationController
   end
 
   def show_product
-    # since I'm passing in product.id -> where does that go?
-    # do I need to re-loook up in db or can I set @product a diff. way?
     @product = Product.find(params[:product_id])
-    
+
     render 'vendors/show_product'
   end
 
