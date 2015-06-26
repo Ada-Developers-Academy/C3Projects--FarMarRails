@@ -1,6 +1,6 @@
 <%= render partial: "header" %>
 <div class = "specific_market_list">
-  <p>Market name: <%=@market.name  %></p>
+  <p class="market_name"><%=@market.name  %></p>
   <p>Address:
     <%=@market.address  %>,
     <%=@market.city  %>,
@@ -12,4 +12,8 @@
       <%= v.name %>
       <% end %>
     </p>
+</div>
+
+<div class = "specific_market_pic">
+  <%= image_tag "specific_market.png" %>
 </div>
