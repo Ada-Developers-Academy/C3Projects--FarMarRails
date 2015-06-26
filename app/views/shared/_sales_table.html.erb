@@ -13,7 +13,7 @@
       <tr>
         <td><%= sale.purchase_time %></td>
         <td><%= Product.find(sale.product_id).name %></td>
-        <td><%= format_money(sale.amount) %></td>
+        <td class="financial"><%= format_money(sale.amount) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,7 +22,7 @@
       <th colspan="2">Sales Total</th>
       <!-- TODO: put sales.reduce[...] somewhere else :) -->
       <% total_sales = sales.reduce(0){ |sum, sale| sum + sale.amount } %>
-      <td><%= format_money(total_sales) %></td>
+      <td class="financial"><%= format_money(total_sales) %></td>
     </tr>
   </tfoot>
 </table>
