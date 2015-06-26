@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
-  resources :markets do
-    resources :vendors do
-      resources :sales
-      resources :products
+  resources :markets, except: [:destroy] do
+    resources :vendors, except: [:index] do
+      resources :sales, only: [:create, :new]
+      resources :products, except: [:show]
     end
   end
 
