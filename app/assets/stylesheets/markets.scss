@@ -21,6 +21,21 @@ header {
   position: relative;
 }
 
+.footer_text {
+  margin: 0 auto;
+  width: 960px;
+  position: relative;
+}
+
+footer {
+ font-size: 1.4em;
+ font-weight: bold;
+ padding-top: 15px;
+ margin: 0 auto;
+ width: 100%;
+ position: relative;
+}
+
 h1 {
   color: #235140;
   font-size: 48px;
@@ -37,15 +52,8 @@ main {
   border-radius: 5px;
 }
 
-footer {
- font-size: 1.4em;
- font-weight: bold;
- padding-top: 15px;
- margin: 0 auto;
- width: 960px;
-}
 
-.button_placement, .add_button {
+.button_placement {
  padding-top: 10px;
  padding-bottom: 10px;
 }
@@ -54,9 +62,6 @@ footer {
  font-size: 1.2em;
 }
 
-.add_button {
- padding: 10px;
-}
 
 // Text Fields //
 
@@ -73,59 +78,6 @@ display: block;
 padding: 3px;
 }
 
-// Buttons //
-
- .main_button, .add_button input[type=submit] {
-  border-top: 2px solid #8a8191;
-  background: #391d4d;
-  padding: 8px 15px;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;
-  color: white;
-  font-size: 16px;
-  font-family: 'Cabin', sans-serif;
-  text-decoration: none;
-  vertical-align: middle;
-  }
- .main_button:hover,.add_button input[type=submit] {
-  background: #6b2149;
-  color: #ccc;
-  }
- .main_button:active, .add_button input[type=submit] {
-  border-top-color: #571b5c;
-  background: #571b5c;
-  }
-
-.go_home {
-  border-top: 2px solid #cccccc;
-  background: #402f26;
-  padding: 8px 18px;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;
-  color: white;
-  font-size: 14px;
-  font-family: 'Cabin', sans-serif;
-  text-decoration: none;
-  vertical-align: middle;
-  }
-.go_home:hover {
-  background: #f7570d;
-  color: #fce3a4;
-  }
-.go_home:active {
-  border-top-color: #e87c4b;
-  background: #e87c4b;
-  }
 
 // Links //
 a {
@@ -161,7 +113,7 @@ th {
 }
 
 .market_manager {
-  height: 80702px;
+  height: 13880px;
 }
 
 .all_markets {
@@ -174,7 +126,7 @@ th {
   width: 480px;
   background: #eadfd9;
   float:right;
-  height: 80702px;
+  height: 13880px;
 }
 
 td {

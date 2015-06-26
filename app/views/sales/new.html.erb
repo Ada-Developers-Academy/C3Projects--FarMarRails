@@ -1,5 +1,4 @@
 <%= render "shared/header" %>
-
 <main>
   <%= form_for @sale, :url => vendor_product_sales_path, :action => "create" do |f| %>
     <fieldset>
@@ -20,3 +19,4 @@
     </section>
   <% end %>
 </main>
+<%= render "shared/footer" %>

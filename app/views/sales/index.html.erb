@@ -14,9 +14,26 @@
     <% total_sales.push(sale.amount) %>
     <% end %>
   </table>
-  <h1> Sum of Sales </h1>
-  <p> <%= "$#{total_sales.sum}" %> </p>
-
-
-
+    <h3> Sum of Sales </h3>
+    <p> <%= "$#{total_sales.sum}" %> </p>
+      <h3> This Month's Sales </h3>
+  <table>
+    <tr>
+      <th>Sale Id</th>
+      <th>Amount</th>
+    </tr>
+    <% monthly_sales = [] %>
+    <% @sales.each do |sale| %>
+    <tr>
+      <% if @current_month == sale.purchase_time.month %>
+        <td><%= sale.id %> </td>
+        <td><%= "$#{sale.amount}" %> </td>
+        <% monthly_sales.push(sale.amount) %>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+    <h3> Total Monthly Sales </h3>
+    <p> <%= "$#{monthly_sales.sum}" %> </p>
 </main>
+<%= render "shared/footer" %>

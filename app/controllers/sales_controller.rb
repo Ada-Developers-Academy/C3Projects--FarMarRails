@@ -4,7 +4,7 @@ class SalesController < ApplicationController
     @header = "Your Sales"
     @vendor = Vendor.find(params[:id])
     @sales = Sale.where(:vendor_id => @vendor.id)
-
+    @current_month = Time.now.month
   end
 
   def new
