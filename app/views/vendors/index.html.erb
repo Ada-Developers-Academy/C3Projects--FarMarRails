@@ -28,7 +28,7 @@
       <%= vendor.num_employees %>
     </td>
     <td>
-      <%= link_to "Details", vendor_path(vendor.id) %>
+      <%= link_to "Details", vendor_path(vendor.id, params: {market_user: false}) %>
     </td>
   </tr>
   <% end %>

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       # post 'vendors', action: 'vendor_create'
       # get 'vendors/new', action: 'vendors_new', as: 'new_vendor'
       get 'vendors/:vendor_id/edit', action: 'vendors_edit', as: 'edit_vendor'
-      get 'vendors/:vendor_id', action: 'vendor_show', as: 'vendor'
+      # get 'vendors/:vendor_id', action: 'vendor_show', as: 'vendor'
       patch 'vendors/:vendor_id', action: 'vendor_update'
       put 'vendors/:vendor_id', action: 'vendor_update'
       delete 'vendors/:vendor_id', action: 'vendors_destroy'

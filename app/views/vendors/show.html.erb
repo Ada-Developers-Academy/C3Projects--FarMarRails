@@ -10,12 +10,21 @@
   <th>
     Number of Employees
   </th>
+  <% if params[:market_user] == "false" %>
   <th class="center">
     Sales
   </th>
   <th class="center">
     Products
   </th>
+  <% elsif params[:market_user] == "true" %>
+  <th class="center">
+    Edit
+  </th>
+  <th class="center">
+    Delete
+  </th>
+  <% end %>
 </tr>
 <tbody>
   <tr>
@@ -28,12 +37,22 @@
     <td>
       <%= @vendor.num_employees %>
     </td>
+    <% if params[:market_user] == "false" %>
     <td class="center">
       <%= link_to "#{@vendor.name}'s sales", sales_vendor_path(@vendor.id) %>
     </td>
     <td class="center">
       <%= link_to "#{@vendor.name}'s products", products_vendor_path(@vendor.id) %>
     </td>
+    <% elsif params[:market_user] == "true" %>
+      <td class="center">
+        Edit Link
+      </td>
+      <td class="center">
+        Delete Link
+      </td>
+    <% end %>
+
   </tr>
 </tbody>
 </table>
