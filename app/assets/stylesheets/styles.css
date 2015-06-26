@@ -1,9 +1,14 @@
 /*Fonts*/
-  /*font-family: 'Josefin Slab', serif; (weights: 400, 700)*/
-  /*font-family: 'Old Standard TT', serif; (weights: 400, 700)*/
+    /*font-family: 'Roboto', sans-serif; (weights: 100, 300)*/  
+    /*font-family: 'Old Standard TT', serif; (weights: 400, 700)*/
 
 /*Colors:*/
   /*Red color: #E5132F */
   /*Grey color: #EBEAEB */
   /*Dark Grey/Black-ish base color: #262626 */
   /*White: #FFFFFF*/
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+  }

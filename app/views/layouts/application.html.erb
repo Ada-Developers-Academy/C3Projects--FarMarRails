@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>C3ProjectsFarmarrails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700|Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
-</head>
-<header id= "top">
+  <head>
+    <title>C3ProjectsFarmarrails</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='//fonts.googleapis.com/css?family=Roboto:100,300|Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
+  </head>
 
-</header>
-<body>
-
-<%= yield %>
-
-</body>
-<footer>
-  <%= link_to "Top", "#top" %>
-  <%= link_to "Home", "/" %>
-  <%= link_to "Markets", "/markets" %>
-  <%= link_to "Vendors", "/vendors" %>
-</footer>
+  <div class="container">
+    <header id= "top">
+    </header>
+    
+    <body>
+    <%= yield %>
+    </body>
+    
+    <footer>
+      <%= link_to "Top", "#top" %>
+      <%= link_to "Home", "/" %>
+      <%= link_to "Markets", "/markets" %>
+      <%= link_to "Vendors", "/vendors" %>
+    </footer>
+    
+  </div>
 </html>
