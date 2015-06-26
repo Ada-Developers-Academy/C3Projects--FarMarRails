@@ -1,6 +1,7 @@
+<% market_id = @vendor.market_id %>
+<% vendor_id = params[:vendor_id] %>
+<p><%= link_to "<< return to vendor portal", "/vendor_portal/#{vendor_id}" %></p>
 <section class="form">
-  <% market_id = @vendor.market_id %>
-  <% vendor_id = params[:vendor_id] %>
   <fieldset class="add_sale_form">
     <legend>Add a Sale</legend>
     <%= render partial: "form", locals: { url: market_vendor_sales_path(market_id, vendor_id),
