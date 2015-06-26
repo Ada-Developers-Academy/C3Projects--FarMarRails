@@ -1,5 +1,5 @@
 <h1>
-  <% if @sales[1].nil? %>
+  <% if @sales[0].nil? %>
     <%= "#{@vendor_name}'s Sales" %>
   <% else %>
     <%= "#{@sales.first.vendor.name}'s Sales" %>
@@ -21,7 +21,7 @@
   </th>
 </tr>
 <tbody>
-  <% if @sales[1].nil? %>
+  <% if @sales[0].nil? %>
     <td colspan="4">
       There were no sales for this month.
     </td>

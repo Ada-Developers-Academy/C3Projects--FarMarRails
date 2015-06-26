@@ -26,6 +26,7 @@ class VendorsController < ApplicationController
         vendor_id: params[:id],
         :purchase_time => month_range
         )
+
       # how to do this without searching database? gahh.
       # could I pass this in from the previous page (show sales?)
       # check PARAMS that load this page again and see if the @vendor.id that
