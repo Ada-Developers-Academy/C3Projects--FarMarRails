@@ -5,7 +5,7 @@
       <%= f.text_field :name, value: @product.name, :required => true %>
 
       <%= f.label :vendor_id, "Vendor Id" %>
-      <%= f.text_field :vendor_id, value: @product.vendor_id  %>
+      <%= f.text_field :vendor_id, value: @vendor.id %>
 
     <section>
       <%= f.submit "#{@adj} Product" %>

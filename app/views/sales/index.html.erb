@@ -25,10 +25,12 @@
     <% monthly_sales = [] %>
     <% @sales.each do |sale| %>
     <tr>
-      <% if @current_month == sale.purchase_time.month %>
-        <td><%= sale.id %> </td>
-        <td><%= "$#{sale.amount}" %> </td>
-        <% monthly_sales.push(sale.amount) %>
+      <% if sale.purchase_time != nil %>
+        <% if @current_month == sale.purchase_time.month %>
+          <td><%= sale.id %> </td>
+          <td><%= "$#{sale.amount}" %> </td>
+          <% monthly_sales.push(sale.amount) %>
+        <% end %>
       <% end %>
     </tr>
     <% end %>
