@@ -1,7 +1,9 @@
-<h1>Markets</h1>
+<h2>Markets</h2>
 
-<% @markets.each do |market| %>
-  <%= link_to "#{market.name}", market_path(market.id) %>
-<% end %>
+<ul>
+  <% @markets.each do |market| %>
+  <li> <%= link_to "#{market.name}", market_path(market.id) %> </li>
+  <% end %>
+</ul>
 
 <%= link_to "Create New Market", new_market_path %>

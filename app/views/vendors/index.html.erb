@@ -1,7 +1,7 @@
-<h1>Vendors</h1>
+<h2>Vendors</h2>
 
-<% @vendors.each do |vendor| %>
-  <%= link_to "#{vendor.name}", vendor_path(vendor.id) %>
-<% end %>
-
-<%= link_to "Home Page", root_path %>
+<ul>
+  <% @vendors.each do |vendor| %>
+  <li> <%= link_to "#{vendor.name}", vendor_path(vendor.id) %> </li>
+  <% end %>
+</ul>
