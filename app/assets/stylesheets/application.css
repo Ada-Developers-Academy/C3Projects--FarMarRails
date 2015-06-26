@@ -14,12 +14,28 @@
  *= require_self
  */
 
+body {
+  background-image: url("greenwhite.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  font-family: Courier, serif;
+  color: rgb(111,36,152);
+  margin: auto;
+}
 
-body{
-font-family: Courier, serif;
-color:rgb(111,36,152);
-background:rgb(255,255,155);
+.test {
+  /*width: 960px;*/
+  background-color: rgba(255, 255, 255, 0.90);
+  color: rgb(0, 102, 0);
+}
 
+table {
+  background-color: rgba(255, 255, 255, 0.90);
+  color: rgb(0, 102, 0);
+}
+
+a:link {
+  text-decoration: none;
 }
 
 ul{
@@ -33,14 +49,8 @@ img{
   height:250px;
 }
 
-h1{
-  text-align: center;
-}
-
 form{
   width:250px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 label{
