@@ -12,7 +12,16 @@
   padding: 0;
 }
 .all-products li {
-  &:last-child {
-    float: right;
+  margin: 8px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.all-products li div {
+  a:hover {
+    color: #fff;
+  }
+
+  &:last-child a {
+    margin-right: 8px;
   }
 }

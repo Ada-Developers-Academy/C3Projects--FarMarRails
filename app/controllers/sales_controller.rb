@@ -15,6 +15,7 @@ class SalesController < ApplicationController
     if @sales.length == 0
       render :empty
     else
+      # there is no sales view
       render :sales
     end
   end
