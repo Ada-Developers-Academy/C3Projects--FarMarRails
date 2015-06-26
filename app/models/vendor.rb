@@ -10,4 +10,8 @@ class Vendor < ActiveRecord::Base
   def current_month_sales
     sales.where("strftime('%m', purchase_time) + 0 = ?", Vendor.current_month)
   end
+
+  def archive
+    update(archived: true)
+  end
 end

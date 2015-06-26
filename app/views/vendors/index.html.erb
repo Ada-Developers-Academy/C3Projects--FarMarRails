@@ -2,6 +2,8 @@
 
 <ul>
   <% @vendors.each do |vendor| %>
-    <li><%= link_to vendor.name, vendor %></li>
+    <% unless vendor.archived %>
+      <li><%= link_to vendor.name, vendor %></li>
+    <% end %>
   <% end %>
 </ul>
