@@ -1,0 +1,87 @@
+body {
+  font-family: 'Bitter', serif;
+  font-size: 1.2em;
+  background-image: image-url("farm.jpeg");
+  background-width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  overflow: scroll;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+  width: 80%;
+}
+
+a {
+  color: rgb(0, 53, 38);
+}
+
+h1, h2, h3, th {
+font-family: 'Pacifico', cursive;
+}
+
+header, nav {
+  text-align: center;
+  margin-bottom: 15px;
+ }
+
+ .nav_link {
+  padding: 15px;
+ }
+
+.button_to {
+  padding-bottom: 15px;
+}
+
+/*________NAV________*/
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  padding: 0;
+  margin: 0;
+}
+
+/*________TABLE_DATA________*/
+
+.details {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details td {
+  border-right: 1px solid black;
+}
+
+td, th {
+  padding: 5px 15px 5px 15px;
+  text-align: left;
+}
+
+th {
+  font-size: 1.5em;
+}
+
+
+
+/*________FORM________*/
+
+form label {
+  display: block;
+}
+
+fieldset {
+    border: 0;
+}

@@ -1,0 +1,12 @@
+<%= render partial: "users/header", locals: {  title: "All Markets", link_name: "Back to Main Directory", link_path: root_path, second_link: false } %>
+
+<%= button_to "Add a New Market", new_market_path, method: "get" %>
+
+<table>
+  <th>Name</th>
+  <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to "#{market.name}", market_path(market.id) %></td>
+    </tr>
+  <% end %>
+</table>

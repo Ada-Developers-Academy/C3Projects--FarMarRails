@@ -1,0 +1,58 @@
+<%= render partial: "users/header", locals: { title: "Vendor Details", link_name: "Back to Vendors", link_path: vendors_path, second_link: false } %>
+
+<table class = "details">
+  <th>Name</th>
+  <th>Name of Market</th>
+  <th>Number of Employees</th>
+
+  <tr>
+    <td><%= @vendor.name %></td>
+    <% @market = Market.find(@vendor.market_id) %>
+    <td><%= @market.name %></td>
+    <td><%= @vendor.no_of_employees %></td>
+
+  </tr>
+
+</table>
+
+<h2><%= "The Products for #{@vendor.name}" %></h2>
+
+<table>
+  <% @display_products.each do |product| %>
+
+  <tr>
+    <td><%= product.name %></td>
+
+    <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: "get" %></td>
+    <td><%= button_to "Delete Product", "/vendors/#{@vendor.id}/products/#{product.id}", method: "delete", data: { confirm: "Are you sure you want to delete this product?" } %></td>
+  </tr>
+
+  <% end %>
+</table>
+
+<%= button_to "New product", new_vendor_product_path(@vendor.id), method: "get" %>
+
+<%= button_to "New Sale", new_vendor_sale_path(@vendor.id), method: "get" %>
+
+<% unless @revenue == nil %>
+  <h2><%= "Total Revenue for #{@vendor.name} is #{number_to_currency(@revenue / 100.00)}" %></h2>
+<% end %>
+
+<% unless @display_sales.length == 0 %>
+  <h3><%= "Sales for #{@vendor.name}" %></h3>
+  <table>
+    <% @display_sales.each do |sale| %>
+
+    <tr>
+      <% @product = Product.find(sale.product_id) %>
+      <td><%= @product.name %></td>
+
+      <td><%= number_to_currency(sale.amount / 100.00)%></td>
+
+      <td><%= button_to "Delete Sale", "/vendors/#{@vendor.id}/sales/#{sale.id}", method: "delete", data: { confirm: "Are you sure you want to delete this Sale?" } %></td>
+    </tr>
+
+    <% end %>
+  </table>
+  <%= button_to "Vendor sales list for this month", "/vendors/#{@vendor.id}/month_sales", method: "get" %>
+<% end %>

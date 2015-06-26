@@ -1,0 +1,11 @@
+<header>
+  <h1><%= title %></h1>
+</header>
+
+<nav>
+  <%= link_to link_name, link_path, :class => "nav_link" %>
+
+  <% if second_link == true %>
+    <%= link_to link_name2, link_path2, :class => "nav_link" %>
+  <% end %>
+</nav>

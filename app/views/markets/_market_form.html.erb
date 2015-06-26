@@ -1,0 +1,24 @@
+<%= form_for @market do |f| %>
+
+  <fieldset>
+    <legend>Market Details</legend>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name, :required => true %>
+
+    <%= f.label :address, "Address: " %>
+    <%= f.text_field :address, :required => true %>
+
+    <%= f.label :city, "City: " %>
+    <%= f.text_field :city, :required => true %>
+
+    <%= f.label :county, "County: " %>
+    <%= f.text_field :county, :required => true %>
+
+    <%= f.label :state, "State: " %>
+    <%= f.text_field :state, :required => true %>
+
+    <%= f.label :zip, "Zip: " %>
+    <%= f.text_field :zip, :required => true %>
+  </fieldset>
+    <%= f.submit 'Submit' %>
+  <% end %>

@@ -1,0 +1,14 @@
+<%= render partial: "users/header", locals: {  title: "Vendors", link_name: "Back to Main Directory", link_path: root_path, second_link: false } %>
+
+<table>
+
+  <th>Vendors</th>
+
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to "#{vendor.name}", vendor_path(vendor.id) %></td>
+  </tr>
+
+  <% end %>
+
+</table>

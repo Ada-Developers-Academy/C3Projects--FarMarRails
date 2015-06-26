@@ -1,0 +1,3 @@
+<%= render partial: "users/header", locals: { title: "Create a Product", link_name: "Back to Vendor", link_path: vendor_path(params[:vendor_id]), second_link: false } %>
+
+  <%= render partial: "product_form", locals: { url: "/vendors/#{:vendor_id}/products" } %>

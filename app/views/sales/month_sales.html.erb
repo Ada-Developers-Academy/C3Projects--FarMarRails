@@ -1,0 +1,21 @@
+<%= render partial: "users/header", locals: { title: "Sales for the Month", link_name: "Back to Vendor", link_path: vendor_path(@vendor.id), second_link: false } %>
+
+<table>
+
+  <th>$ Amount</th>
+  <th>Purchase Time</th>
+
+  <% @month_sales.each do |sale| %>
+  <tr>
+   <td><%= number_to_currency(sale.amount / 100.00) %></td>
+    <td><%= sale.purchase_time %></td>
+  <tr>
+<% end %>
+</table>
+
+<% unless @month_sales.length == 0 %>
+  <p>Total month revenue: <%= number_to_currency(@month_revenue / 100.00) %></p>
+<% else %>
+  <p>There were no sales this month.</p>
+<% end %>
+

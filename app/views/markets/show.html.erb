@@ -1,0 +1,33 @@
+<%= render partial: "users/header", locals: { title: "Market Details", link_name: "Back to all Markets", link_path: markets_path, second_link: false } %>
+
+<table class = "details">
+  <th>Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>County</th>
+  <th>State</th>
+  <th>Zip</th>
+  <tr>
+    <td><%= @market.name %></td>
+    <td><%= @market.address %></td>
+    <td><%= @market.city %></td>
+    <td><%= @market.county %></td>
+    <td><%= @market.state %></td>
+    <td><%= @market.zip %></td>
+    <td><%= button_to "Edit market", edit_market_path(@market.id), method: "get" %></td>
+  </tr>
+</table>
+
+<h2>The Vendors for This Market</h2>
+
+<table>
+  <% @display_vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+    <td><%= button_to "Edit vendor", edit_market_vendor_path(@market.id, vendor.id), method: "get" %></td>
+    <td><%= button_to "Delete vendor", market_vendor_path(@market.id, vendor.id), method: "delete", data: { confirm: "Are you sure you want to delete this vendor?"} %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "Add a vendor", new_market_vendor_path(@market.id) %>
