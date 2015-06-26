@@ -12,3 +12,37 @@
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
   }
+
+  .container {
+    width: 1000px;
+    margin: 20px auto;
+  }
+
+  header {
+    height: 280px;
+    overflow: hidden;
+  }
+
+  header img {
+    width: 100%;
+  }
+
+  h1 {
+    font-family: 'Old Standard TT', serif;
+  }
+
+  h2 {
+    color: #262626;
+  }
+
+  footer {
+    background-color: #000;
+    color: #EBEAEB;
+  }
+
+  footer a {
+    text-decoration: none;
+    display: inline-block;
+    color: #EBEAEB;
+    margin: 30px;
+  }

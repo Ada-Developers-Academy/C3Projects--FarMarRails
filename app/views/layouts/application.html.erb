@@ -10,6 +10,8 @@
 
   <div class="container">
     <header id= "top">
+      <% num = rand(1..8) %>
+      <%= image_tag("FarMarBanner#{num}") %>
     </header>
     
     <body>
@@ -17,11 +19,11 @@
     </body>
     
     <footer>
-      <%= link_to "Top", "#top" %>
-      <%= link_to "Home", "/" %>
-      <%= link_to "Markets", "/markets" %>
+      <%= link_to "Top", "#top" %> |
+      <%= link_to "Home", "/" %> |
+      <%= link_to "Markets", "/markets" %> |
       <%= link_to "Vendors", "/vendors" %>
     </footer>
-    
+
   </div>
 </html>
