@@ -8,7 +8,7 @@
       <h3 class="section-header">Revenue</h3>
 
       <div>
-        <h2> <%= @sum %> </h2>
+        <h2> <%= @total_month_amount %> </h2>
         <h4>This Month</h4>
       </div>
 
@@ -23,7 +23,7 @@
       <h3 class="section-header">Recent Sales</h3>
 
       <ul>
-        <% @sales.each do |sale| %>
+        <% @recent_sales.each do |sale| %>
         <li>
           <div>
             #<%= sale.id %>

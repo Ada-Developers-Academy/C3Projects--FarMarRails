@@ -4,8 +4,9 @@ class VendorsController < ApplicationController
   end
 
   def login
-    if (params.permit(:login_id)[:login_id].to_i <= Vendor.last.id)
-      id = params.permit(:login_id)[:login_id]
+    id = params[:login_id].to_i
+
+    if (id <= Vendor.last.id && id > 0)
       redirect_to "/vendors/#{ id }/dashboard"
     else
       redirect_to "/vendors/vendor_not_found"
@@ -13,11 +14,11 @@ class VendorsController < ApplicationController
   end
 
   def dashboard
-    @vendor = Vendor.find(params.permit(:id)[:id])
-    @sales = @vendor.recent_sales_first(5)
+    @vendor = Vendor.find(params[:id])
+    @recent_sales = @vendor.recent_sales_first(5)
 
     @total_amount = Money.us_dollar(@vendor.total_sales).format
-    @sum = Money.us_dollar(@vendor.month_total_sales).format
+    @total_month_amount = Money.us_dollar(@vendor.month_total_sales).format
 
     @all_products = @vendor.products
   end
@@ -49,7 +50,6 @@ class VendorsController < ApplicationController
     if Vendor.new(edited_vendor).valid?
       vendor.update(edited_vendor)
 
-      # update when vendor#show is created
       redirect_to "/markets/#{ vendor.market_id }/dashboard"
     else
       redirect_to "/markets/#{ vendor.market_id }/vendors/new/error"
@@ -63,8 +63,7 @@ class VendorsController < ApplicationController
     redirect_to "/markets/#{ params[:market_id] }/dashboard"
   end
 
-  def error
-  end
+  def error; end
 
   private
 

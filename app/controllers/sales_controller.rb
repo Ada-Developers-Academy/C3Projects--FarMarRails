@@ -23,18 +23,17 @@ class SalesController < ApplicationController
     end
   end
 
-  asdf;kjasd;lfkjasl;kdfj;alskdfj
-
   def new
     @sale = Sale.new
     @vendor = Vendor.find(params[:vendor_id])
   end
 
   def create
-    params = create_params[:sale]
-    params[:amount] = convert_dollars_to_cents(params[:amount])
+    sale_params = create_params[:sale]
+    # user input is given in dollars, but the database stores money in whole cents.
+    sale_params[:amount] = convert_dollars_to_cents(sale_params[:amount])
 
-    sale = Sale.new(params)
+    sale = Sale.new(sale_params)
 
     if sale.valid?
       sale.save
@@ -45,8 +44,7 @@ class SalesController < ApplicationController
     end
   end
 
-  def error
-  end
+  def error; end
 
   private
 
@@ -55,9 +53,12 @@ class SalesController < ApplicationController
   end
 
   def convert_dollars_to_cents(dollar_amount)
+    # converting from user's string input into a float for mathematical operations.
+    # if the user provides a non-numeric string, it will become 0.0.
     cent_amount = dollar_amount.to_f * 100
     cent_amount = cent_amount.to_i
 
+    # for bad input, replaces the zero with a string that ActiveRecord will recognize as NaN.
     return cent_amount == 0 ? "zero" : cent_amount
   end
-end
+end # class
