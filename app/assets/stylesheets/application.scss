@@ -37,20 +37,29 @@ h3 {
 
 }
 
-ul li {
-  color: black;
+/* these are the main items in a list (e.g. product name) */
+.list_element {
   text-decoration: none;
 }
 
-ul ul, ul li, ul ul li {
+ul ul, .list_element, ul ul li {
   display: inline-block;
 }
 
+/* these are the buttons */
 ul ul a, .button_to {
   display: inline-block;
   color: gray;
   background-color: lightgray;
   border: none;
+  text-align: center;
+
+  background-color: transparent;
+
+  text-align: center;
+  display: inline-block;
+
+  margin-left: 1em;
 }
 
 table {
