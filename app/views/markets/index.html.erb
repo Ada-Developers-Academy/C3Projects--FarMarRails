@@ -3,12 +3,4 @@
 <%= link_to "Create a New Market", new_market_path %>
 
 
-<%= render "shared/market_list", locals:{
-
-
-
-
-
-
-
-  } %>
+<%= render partial: "shared/market_list", locals: {user: "/"} %>

@@ -30,7 +30,7 @@
       <%= market.id %>
     </td>
     <td>
-      <%= link_to "#{market.name}", path(market) %>
+      <%= link_to "#{market.name}", "/markets/#{market.id}#{user}" %>
     </td>
     <td>
       <%= market.street_address %>
