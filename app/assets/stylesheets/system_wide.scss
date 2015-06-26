@@ -3,7 +3,10 @@ body {
   font-size: 1.2em;
   background-image: image-url("farm.jpeg");
   background-width: 100%;
-  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   height: 100%;
 }
 
