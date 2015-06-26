@@ -1,4 +1,9 @@
 <h1><%= "#{@product.name}" %></h1>
+
+<div class="button_block">
+  <%= link_to "Back to 'All Products'", products_vendor_path, method: :get %>
+</div>
+
 <table>
 <tr>
   <th>
