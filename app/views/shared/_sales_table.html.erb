@@ -9,7 +9,7 @@
   <tbody>
     <% sales.each do |sale| %>
       <tr>
-        <td><%= format_datetime(sale.purchase_time) %></td>
+        <td><%= format_datetime(sale.purchase_time.to_datetime) %></td>
         <td><%= Product.find(sale.product_id).name %></td>
         <td class="financial"><%= format_money(sale.amount) %></td>
       </tr>
