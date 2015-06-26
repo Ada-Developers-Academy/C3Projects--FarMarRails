@@ -3,11 +3,11 @@
 <% end %>
 
 <header>
-  <h1>All Sales</h1>
+  <h1> <%= @header ||= "All Sales" %> </h1>
 </header>
 
 <div class="sales-wrapper">
-  <h4><%= link_to "View this Month's Sales", "./sales/current", title: "Click here to review this month's sales." %></h4>
+  <h4><%= link_to (@link ||= "View this Month's Sales"), "./sales/current", title: "Click here to review this month's sales." %></h4>
   <h4><%= link_to "+ Sale", "./sales/new", title: "Add a new sale for this vendor." %></h4>
 
   <section class="all-sales">

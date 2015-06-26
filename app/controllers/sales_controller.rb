@@ -11,12 +11,13 @@ class SalesController < ApplicationController
   def current_month
     @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
     @sales = month_sales(@vendor)
+    @header = "#{Date::MONTHNAMES[Date.today.month]}'s Sales"
+    @link = "View All Sales"
 
     if @sales.length == 0
       render :empty
     else
-      # there is no sales view
-      render :sales
+      render :index
     end
   end
 
