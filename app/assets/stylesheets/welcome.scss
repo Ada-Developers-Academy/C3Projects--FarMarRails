@@ -28,8 +28,12 @@ h2 {
   text-align: center;
 }
 
-ul {
+.index {
   columns: 4;
   -webkit-columns: 4;
   -moz-columns: 4;
+}
+
+.form {
+  border: none;
 }
