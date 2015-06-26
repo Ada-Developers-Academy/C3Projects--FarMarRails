@@ -35,6 +35,16 @@
     color: #900001;
   }
 
+  .add_new {
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 0.5;
+  }
+
+  .add_new:hover {
+    opacity: 1;
+  }
+
   footer {
     background-color: #000;
     color: #EBEAEB;
