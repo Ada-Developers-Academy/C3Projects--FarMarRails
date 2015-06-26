@@ -4,7 +4,7 @@
 <%= f.label :purchase_time, "#{purchase_time_desc}" %>
 <%= f.date_field :purchase_time, class: "form_field", required: true, autofocus: true, placeholder: purchase_time_placeholder, value: purchase_time_value %>
 <%= f.label :product_id, "#{product_id_desc}" %>
-<p class="form_field"><%= f.collection_select :product_id, Product.all, :id, :name, include_blank: "" %></p>
+<p class="form_field"><%= f.collection_select :product_id, @vendor.products, :id, :name, include_blank: "" %></p>
 <%= f.hidden_field :vendor_id, value: vendor_id_value %>
 <%= f.submit submit_button, class: "submit_button" %>
 <% end %>
