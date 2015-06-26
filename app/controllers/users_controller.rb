@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def market_details
-    @title = " information"
     @market_id =params[:id]
     @market = Market.find(@market_id)
 

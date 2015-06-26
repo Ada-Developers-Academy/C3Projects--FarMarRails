@@ -7,7 +7,6 @@ class VendorsController < ApplicationController
   end
 
   def index
-    @title = "Vendors for "
     @market_id = params[:market_id]
     @market = Market.find(@market_id)
     @vendors = @market.vendors
@@ -15,9 +14,7 @@ class VendorsController < ApplicationController
     render :index
   end
 
-
   def show
-    @title = " information"
     @vendor_id = params[:id]
     @vendor = Vendor.find(@vendor_id)
 
