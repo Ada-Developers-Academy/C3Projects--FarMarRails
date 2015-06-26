@@ -1,5 +1,5 @@
 /*Fonts*/
-    /*font-family: 'Roboto', sans-serif; (weights: 100, 300)*/  
+    /*font-family: 'Roboto', sans-serif; (weights: 100, 300)*/
     /*font-family: 'Old Standard TT', serif; (weights: 400, 700)*/
 
 /*Colors:*/
@@ -45,4 +45,17 @@
     display: inline-block;
     color: #EBEAEB;
     margin: 30px;
+  }
+
+  table {
+    border-radius: 25px;
+    border-color: #E5132F;
+    border: 1px solid black;
+    padding: 35px;
+    margin: 10px auto;
+    width: 1000px;
+  }
+
+  th {
+    text-align: left;
   }
