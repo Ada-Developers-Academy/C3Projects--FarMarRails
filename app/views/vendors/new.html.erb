@@ -1,0 +1,16 @@
+<h1>Create Vendor</h1>
+
+<%= params %>
+
+<%= form_for @vendor do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :placeholder => "(required)" %>
+
+  <%= f.label :num_employees %>
+  <%= f.text_field :num_employees, :placeholder => "(optional)" %>
+
+  <%= f.hidden_field :market_id, :value => params[:market_id]   %>
+
+  <%= f.submit %>
+
+<% end %>

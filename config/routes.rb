@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     member do
       # get 'vendors', action: 'vendors', as: 'vendors'
       get 'vendors', action: 'vendors_index', as: 'vendors'
-      post 'vendors', action: 'vendor_create'
-      get 'vendors/new', action: 'vendors_new', as: 'new_vendor'
+      # post 'vendors', action: 'vendor_create'
+      # get 'vendors/new', action: 'vendors_new', as: 'new_vendor'
       get 'vendors/:vendor_id/edit', action: 'vendors_edit', as: 'edit_vendor'
       get 'vendors/:vendor_id', action: 'vendor_show', as: 'vendor'
       patch 'vendors/:vendor_id', action: 'vendor_update'
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :vendors, only: [:index, :show] do
+  resources :vendors, only: [:index, :show, :new, :create] do
     member do
       get 'sales', action: 'sales', as: 'sales'
       post 'sales', action: 'sales_this_month'

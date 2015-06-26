@@ -25,9 +25,11 @@
   <th class="center">
     Vendors
   </th>
-  <th class="center">
-    Edit
-  </th>
+  <% if current_page?(controller: 'markets', action: 'show') %>
+    <th class="center">
+      Edit
+    </th>
+  <% end %>
 </tr>
 <tbody>
   <tr>

@@ -67,4 +67,54 @@ class VendorsController < ApplicationController
     return month_range
   end
 
+  ### Elsa's rerouting actions ###
+
+  def vendors_index
+    @market = Market.find(params[:id])
+    @vendors = @market.vendors
+    render :vendors_index
+  end
+
+  def vendor_show
+    @vendor = Vendor.find(params[:vendor_id])
+    @market = Market.find(params[:id])
+    render :vendor_show
+  end
+
+  def new
+    @vendor = Vendor.new
+  end
+
+  def create
+    Vendor.create(vendor_params)
+    redirect_to vendors_market_path(id: params[:vendor][:market_id])
+  end
+
+  def vendors_edit
+    @vendor = Vendor.find(params[:vendor_id])
+    render :vendors_edit
+  end
+
+  def vendor_update
+    @vendor = Vendor.find(params[:vendor_id])
+    @vendor.update(form_params[:vendor])
+    redirect_to vendor_market_path
+  end
+
+  def vendors_delete
+    @vendor = Vendor.find(params[:vendor_id])
+  end
+
+  def vendors_destroy
+    @vendor = Vendor.find(params[:vendor_id])
+    @vendor.destroy
+    redirect_to vendors_market_path
+  end
+
+  private
+
+  def vendor_params
+    params.require(:vendor).permit(:name, :num_employees, :market_id, :_destroy)
+  end
+
 end
