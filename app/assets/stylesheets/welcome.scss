@@ -31,6 +31,16 @@ h2 {
   text-align: center;
 }
 
+a {
+  color: #1d3e6e;
+  text-decoration: underline;
+  margin: 5px;
+}
+
+a:hover {
+  color: #7a95b0;
+}
+
 .index {
   columns: 4;
   -webkit-columns: 4;
