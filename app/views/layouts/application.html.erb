@@ -11,9 +11,11 @@
   <header>
     <% unless current_page?(root_path) %>
       <nav>
+        <div class="buttons_inline">
           <%= button_to "Home", root_path, method: :get, class: "button" %>
           <%= button_to "Go to Markets", markets_path, method: :get, class: "button" %>
           <%= button_to "Go to Vendors", vendors_path, method: :get, class: "button" %>
+        </div>
       </nav>
     <% end %>
   </header>
