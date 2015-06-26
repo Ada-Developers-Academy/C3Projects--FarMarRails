@@ -102,14 +102,14 @@ class VendorsController < ApplicationController
     redirect_to vendor_path
   end
 
-  def vendors_delete
-    @vendor = Vendor.find(params[:vendor_id])
-  end
+  # def vendors_delete
+  #   @vendor = Vendor.find(params[:vendor_id])
+  # end
 
-  def vendors_destroy
-    @vendor = Vendor.find(params[:vendor_id])
-    @vendor.destroy
-    redirect_to vendors_market_path
+  def destroy
+    vendor = Vendor.find(params[:id])
+    vendor.destroy
+    redirect_to vendors_market_path(id: params[:market_id])
   end
 
   private
