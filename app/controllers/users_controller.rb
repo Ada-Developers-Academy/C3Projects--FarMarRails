@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-
     render :index
   end
 
   def show
-    @title = "Welcome Market"
+    @markets = Market.all
 
     render :all_markets
   end
@@ -18,4 +17,23 @@ class UsersController < ApplicationController
 
     render :market_show
   end
+
+  def name_sort
+    @markets = Market.order(:name)
+
+    render :all_markets
+  end
+
+  def city_sort
+    @markets = Market.order(:city)
+
+    render :all_markets
+  end
+
+  def state_sort
+    @markets = Market.order(:state)
+    
+    render :all_markets
+  end
+
 end

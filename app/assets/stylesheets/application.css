@@ -18,7 +18,6 @@
 
 html {
   font-family: 'Nixie One', cursive;
-  font-size: 0.9em;
   background: #fff url("strawberries.jpg") no-repeat center fixed;
   background-size: cover;
 }
@@ -96,9 +95,11 @@ a:hover {
 
 .form_field {
   display: block;
-  padding-right: 25px;
+  margin-right: 25px;
   padding-bottom: 3px;
   margin-bottom: 15px;
+  width: 175px;
+  height: 13px;
 }
 
 .submit_button {

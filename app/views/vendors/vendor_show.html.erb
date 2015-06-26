@@ -7,10 +7,10 @@
         ID
       </th>
       <th>
-        Market ID
+        Market
       </th>
       <th>
-        Number of Employees
+        # of Employees
       </th>
     </tr>
   </thead>
@@ -21,13 +21,13 @@
         <%= @vendor.id %>
       </td>
       <td>
-        <%= @vendor.market_id %>
+        <%= (Market.find(@vendor.market_id)).name %>
       </td>
       <td>
         <%= @vendor.no_of_employees %>
       </td>
       <td>
-        <%= link_to "edit", edit_market_vendor_path(@vendor.market_id, @vendor.id)%>
+        <%= link_to "Edit", edit_market_vendor_path(@vendor.market_id, @vendor.id)%>
       </td>
       <td>
         <%= link_to "Delete", market_vendor_path(@vendor.market_id, @vendor.id), :method => :delete %>

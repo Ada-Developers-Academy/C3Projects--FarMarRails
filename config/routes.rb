@@ -12,17 +12,21 @@ Rails.application.routes.draw do
     end
   end
 
-  get  "/all_markets"       => "users#show"
-  get  "/all_markets/:id"   => "users#market_details"
+  get  "/all_markets"        => "users#show"
+  get  "/all_markets/:id"    => "users#market_details"
 
   # Market index page sorts
-  post "/market/name_sort"  => "markets#name_sort"
-  post "/market/city_sort"  => "markets#state_sort"
+  get "/markets_/name_sort"      => "markets#name_sort"
+  get "/markets_/city_sort"      => "markets#city_sort" 
+  get "/markets_/state_sort"     => "markets#state_sort"
+  get "/all_markets_/name_sort"  => "users#name_sort"
+  get "/all_markets_/city_sort"  => "users#city_sort" 
+  get "/all_markets_/state_sort" => "users#state_sort"
 
   # Vendor Portal
-  get  "/vendor_portal"     => "vendors#landing"
-  post "/vendor_portal"     => "vendors#login"
-  get  "/vendor_portal/:id" => "vendors#portal"
+  get  "/vendor_portal"      => "vendors#landing"
+  post "/vendor_portal"      => "vendors#login"
+  get  "/vendor_portal/:id"  => "vendors#portal"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

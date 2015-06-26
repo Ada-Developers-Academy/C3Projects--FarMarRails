@@ -2,7 +2,7 @@ class MarketsController < ApplicationController
 
   def index
     @title = "All Markets"
-
+    @markets = Market.all
     render :markets
   end
 
@@ -52,20 +52,25 @@ class MarketsController < ApplicationController
     redirect_to :markets
   end
 
-  private
-
-  def market_params
-    params.permit(market: [:name, :address, :city, :county, :state, :zip])
+  def name_sort
+    @markets = Market.order(:name)
+    render :markets
   end
 
-  def name_sort
-    @all_markets = Market.all.order(:name)
+  def city_sort
+    @markets = Market.order(:city)
     render :markets
   end
 
   def state_sort
-    @all_markets = Market.all.order(:state)
+    @markets = Market.order(:state)
     render :markets
+  end
+
+  private
+
+  def market_params
+    params.permit(market: [:name, :address, :city, :county, :state, :zip])
   end
 
 end
