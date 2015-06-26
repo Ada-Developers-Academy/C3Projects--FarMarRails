@@ -2,7 +2,6 @@ class Sale < ActiveRecord::Base
   belongs_to :product
   belongs_to :vendor
 
-
   validates_presence_of :amount
 
   def self.total_amount(vendor)
@@ -10,6 +9,7 @@ class Sale < ActiveRecord::Base
     vendor.sales.each do |sale|
       total += sale.amount
     end
+
     return total
   end
 
@@ -19,6 +19,7 @@ class Sale < ActiveRecord::Base
     sales_current_month.each do |sale|
       total += sale.amount
     end
+    
     return total
   end
 end

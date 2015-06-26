@@ -1,9 +1,7 @@
 <h1>Vendors</h1>
 
 <% @vendors.each do |vendor| %>
-  <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %>
+  <%= link_to "#{vendor.name}", vendor_path(vendor.id) %>
 <% end %>
 
-<br>
-<br>
-  <a href="/"> Home Page</a>
+<%= link_to "Home Page", root_path %>

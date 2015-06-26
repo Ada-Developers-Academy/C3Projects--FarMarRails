@@ -1,25 +1,6 @@
-<h1> Use this form to add a new Vendor to Your Market</h1>
-<%= form_for @new do |f| %>
+<h1>Use this form to add a new Vendor to Your Market</h1>
 
-<fieldset>
-  <legend>Add a New Vendor to Market </legend>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: "required" %>
+<%= render "vendor_form" %>
 
-  <%= f.label :no_of_employees %>
-  <%= f.text_field :no_of_employees %>
-
-  <%= f.hidden_field :market_id, :value => "#{@market.id}" %>
-
-</fieldset>
-<%=  f.submit "Add This New Vendor" %>
-
-<% end %>
-<br>
-<br>
-
-<br>
-  <a href="/vendors/">Go Back to all Vendors</a>
-<br>
-<br>
-  <a href="/"> Home Page</a>
+<%= link_to "View All Vendors", vendors_path %>
+<%= link_to "Home Page", root_path %>

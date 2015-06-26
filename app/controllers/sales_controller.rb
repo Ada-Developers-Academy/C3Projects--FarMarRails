@@ -7,13 +7,13 @@ class SalesController < ApplicationController
     @time = Time.now
     @sales_current_month = @vendor_sales.where(purchase_time: @time.beginning_of_month..@time.end_of_month)
     @total_current_month = Sale.total_current_month(@vendor)
+
     render :index
   end
 
   def create
     @vendor = Vendor.find(params[:vendor_id])
     @url = "/vendors/#{@vendor.id}/sales"
-
     @sale = Sale.new(create_params[:sale])
     @sale.save
 

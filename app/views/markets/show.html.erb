@@ -1,19 +1,18 @@
-<h1><%="#{@market.name}"%></h1>
-
+<h1> <%="#{@market.name}"%> </h1>
 
 <h3>Vendors</h3>
+
 <ul>
-
   <% @vendors.each do |vendor| %>
-  <li><%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %></li>
-  <%= button_to "Delete Vendor!", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete, data: { confirm: "Are You Sure You Want to Delete This Vendor?" } %>
+    <li> <%= link_to "#{vendor.name}", vendor(vendor.id) %> </li>
+    <%= button_to "Delete Vendor!", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete, data: { confirm: "Are You Sure You Want to Delete This Vendor?" } %>
   <% end %>
-
 </ul>
 
-<%= link_to "Add A Vendor to This Market", "/markets/#{@market.id}/vendors/new" %>
+<%= link_to "Add A Vendor to This Market", new_market_vendor_path(@market.id) %>
 
 <h3>Market Attributes</h3>
+
 <ul>
   <li>Address: <%=@market.address %></li>
   <li>City: <%=@market.city %></li>
@@ -23,7 +22,4 @@
 </ul>
 
 <%= link_to "Edit Market Details", edit_market_path(@market.id) %>
-<br>
-<br>
-
-  <a href="/markets/">Go Back to all Markets</a>
+<%= link_to "Back to all Markets", markets_path %>

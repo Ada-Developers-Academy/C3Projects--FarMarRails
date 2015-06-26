@@ -1,13 +1,3 @@
 <h1>Add a Product</h1>
 
-<%= form_for @product, url: @url do |f| %>
-<fieldset class="form">
-
-      <%= f.label :name, 'Product Name' %>
-      <%= f.text_field :name, required: "required"  %>
-
-      <%= f.hidden_field :vendor_id, :value => "#{@vendor.id}" %>
-
-      <%= f.submit %>
-</fieldset>
-<% end %>
+<%= render "product_form" %>

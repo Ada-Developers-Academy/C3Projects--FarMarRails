@@ -1,30 +1,6 @@
 
-<h1> Use this form to Edit an existing Market</h1>
-<%= form_for @edit do |f| %>
-<fieldset>
-  <legend>Update a Market </legend>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: "required" %>
+<h1>Use this form to Edit an existing Market</h1>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+<%= render "market_form" %>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-
-  <%= f.label :county %>
-  <%= f.text_field :county %>
-
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-
-  <%= f.label :zip %>
-  <%= f.text_field :zip %>
-
-</fieldset>
-<%=  f.submit "Update the Market" %>
-
-<% end %>
-<br>
-<br>
-<a href="/markets/">Go Back to all Markets</a>
+<%= link_to "Go Back to all Markets", markets_path

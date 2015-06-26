@@ -4,26 +4,29 @@ class MarketsController < ApplicationController
   end
 
   def create
-#POST
     @markets = Market.all
-    @new = Market.new(create_params[:market])
-    @new.save
+    @market = Market.new(create_params[:market])
+    @market.save
+
     render :index
   end
 
   def new
-#GET
     @new = Market.new
+
+    render :new
   end
 
   def edit
-    @edit = Market.find(params[:id])
+    @market = Market.find(params[:id])
+
     render :edit
   end
 
   def show
     @market = Market.find(params[:id])
     @vendors = @market.vendors
+
     render :show
   end
 
@@ -31,15 +34,15 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
     market_params = create_params[:market]
     @market.update(market_params)
-
     @market.save
+
     redirect_to "/markets/#{@market.id}"
   end
 
 private
 
-def create_params
-  params.permit(market: [:name, :address, :city, :county, :state, :zip, :vendor_id])
-end
+  def create_params
+    params.permit(market: [:name, :address, :city, :county, :state, :zip, :vendor_id])
+  end
 
 end
