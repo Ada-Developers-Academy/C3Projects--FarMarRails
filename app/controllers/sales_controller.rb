@@ -11,7 +11,23 @@ class SalesController < ApplicationController
     redirect_to "/vendors/#{@sale.vendor_id}"
   end
 
+  def index
+    @vendor_id = params[:vendor_id]
+    @vendor_sales = Sale.where(vendor_id: "#{@vendor_id}") 
+  end
+
   def show
+    @vendor_id = params[:vendor_id]
+    @vendor_sales = Sale.where(vendor_id: "#{@vendor_id}")
+    @current_month = Time.now.month
+
+    @month_vendor_sales = []
+    @vendor_sales.each do |sale|
+      if sale.purchase_time.month == @current_month
+        @month_vendor_sales.push(sale)
+      end
+    end 
+    
   end
 
 

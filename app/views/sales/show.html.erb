@@ -1,1 +1,26 @@
-<h1>Sale for this month</h1>
+<h1>Sales for this month</h1>
+
+<table>
+  <thead>
+    Transactions
+  </thead>
+  <tr>
+    <th> Product </th>
+    <th> Amount </th>
+    <th> Purchase Time </th>
+  </tr>
+  <% @month_vendor_sales.each do |sale| %>
+  <tr>
+    <% product_id = sale.product_id %>
+    <% product = Product.find(product_id) %>
+
+    <td> <%= product.name %> </td>
+    
+    <% amount = sale.amount / 100 %>
+    <td> <%= number_to_currency(amount) %> </td>
+    
+    <td> <%= sale.purchase_time %> </td>
+  </tr>
+  <% end %>
+</table>
+

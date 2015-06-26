@@ -1,1 +1,25 @@
 <h1> Total sales </h1>
+
+<table>
+  <thead>
+    Transactions
+  </thead>
+  <tr>
+    <th> Product </th>
+    <th> Amount </th>
+    <th> Purchase Time </th>
+  </tr>
+  <% @vendor_sales.each do |sale| %>
+  <tr>
+    <% product_id = sale.product_id %>
+    <% product = Product.find(product_id) %>
+
+    <td> <%= product.name %> </td>
+    
+    <% amount = sale.amount / 100 %>
+    <td> <%= number_to_currency(amount) %> </td>
+    
+    <td> <%= sale.purchase_time %> </td>
+  </tr>
+  <% end %>
+</table>
