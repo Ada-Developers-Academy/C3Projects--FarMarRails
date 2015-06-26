@@ -7,8 +7,6 @@ class MarketsController < ApplicationController
     id = params.permit(:login_id)[:login_id].to_i
 
     if (id <= Market.last.id && id > 0)
-      id = params.permit(:login_id)[:login_id]
-
       redirect_to "/markets/#{ id }/dashboard"
     else
       redirect_to "/markets/market_not_found"
@@ -16,16 +14,14 @@ class MarketsController < ApplicationController
   end
 
   def dashboard
-    @market = Market.find(params.permit(:id)[:id])
+    @market = Market.find(params[:id])
     @vendors = @market.vendors
   end
 
-  def market_not_found
-  end
+  def market_not_found; end
 
   def show
-    id = params.permit(:id)[:id]
-    @market = Market.find(id)
+    @market = Market.find(params[:id])
     @vendors = @market.vendors
   end
 
@@ -50,23 +46,19 @@ class MarketsController < ApplicationController
   end
 
   def update
-    id = params[:id]
-
-    market = Market.find(id)
+    market = Market.find(params[:id])
     edited_market = create_params[:market]
 
     if Market.new(edited_market).valid?
       market.update(edited_market)
 
-      # update when market#show is created
-      redirect_to "/markets/#{ id }/dashboard"
+      redirect_to "/markets/#{ market.id }/dashboard"
     else
-      redirect_to "/markets/#{ id }/edit/error"
+      redirect_to "/markets/#{ market.id }/edit/error"
     end
   end
 
-  def error
-  end
+  def error; end
 
   private
 

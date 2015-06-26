@@ -10,7 +10,7 @@ class Sale < ActiveRecord::Base
   end
 
   def date
-    purchase_time.strftime("%B %-d, %Y")
+    purchase_time.strftime("%m/%d/%y")
   end
 
   def time

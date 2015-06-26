@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 
   def create
     @vendor = Vendor.find(params[:vendor_id])
-    params[:product][:vendor_id] = @vendor.id
     product = Product.new(create_params[:product])
 
     if product.valid?
@@ -42,18 +41,18 @@ class ProductsController < ApplicationController
 
   def destroy
     vendor_id = params[:vendor_id]
+
     product = Product.find(params[:id])
     product.destroy
 
     redirect_to "/vendors/#{ vendor_id }/products"
   end
 
-  def error
-  end
+  def error; end
 
   private
 
   def create_params
     params.permit(product: [:name, :vendor_id])
   end
-end
+end # class

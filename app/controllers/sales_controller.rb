@@ -1,19 +1,20 @@
 class SalesController < ApplicationController
   def index
-    @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
+    @vendor = Vendor.find(params[:vendor_id])
     @sales = @vendor.recent_sales_first
 
     if @sales.length == 0
-      render ":empty"
+      render :empty
     end
   end
 
   def current_month
-    @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
+    @vendor = Vendor.find(params[:vendor_id])
     @sales = @vendor.month_recent_sales_first
+
     @header = "#{Date::MONTHNAMES[Date.today.month]}'s Sales"
     @link_name = "View All Sales"
-    @link = "/vendors/#{@vendor.id}/sales"
+    @link = "/vendors/#{ @vendor.id }/sales"
 
     if @sales.length == 0
       render :empty
@@ -21,6 +22,8 @@ class SalesController < ApplicationController
       render :index
     end
   end
+
+  asdf;kjasd;lfkjasl;kdfj;alskdfj
 
   def new
     @sale = Sale.new

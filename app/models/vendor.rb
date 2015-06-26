@@ -6,7 +6,7 @@ class Vendor < ActiveRecord::Base
   validates_presence_of :name, :number_of_employees, :market_id
   validates_numericality_of :number_of_employees, :market_id
 
-  def recent_sales_first(how_many=sales.count)
+  def recent_sales_first(how_many = sales.count)
     sorted_sales = sales.sort_by { |sale| sale.purchase_time }
     sorted_sales.reverse!
 
@@ -14,9 +14,8 @@ class Vendor < ActiveRecord::Base
   end
 
   def total_sales
-    all_sales = sales
-    amounts = all_sales.map { |sale| sale.amount }
-    total = amounts.inject { |sum, n| sum + n }
+    amounts = sales.map { |sale| sale.amount }
+    total = amounts.reduce { |sum, n| sum + n }
 
     return total
   end
@@ -40,9 +39,8 @@ class Vendor < ActiveRecord::Base
   end
 
   def month_total_sales
-    all_sales = sales
     amounts = month_sales.map { |sale| sale.amount }
-    total = amounts.inject { |sum, n| sum + n }
+    total = amounts.reduce { |sum, n| sum + n }
 
     return total
   end
