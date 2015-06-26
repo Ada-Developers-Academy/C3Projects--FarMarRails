@@ -16,11 +16,6 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
   end
 
-  def by_market
-    @header = "Vendor Details"
-    @vendor = Vendor.find(params[:id])
-  end
-
   def create
     @vendor = Vendor.new(create_params[:vendor])
     @vendor.save

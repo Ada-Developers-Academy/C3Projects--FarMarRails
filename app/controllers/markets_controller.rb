@@ -2,9 +2,14 @@ class MarketsController < ApplicationController
 
   def index
     @header = "Market Manager"
-    @path = "markets/vendors"
+    @path = "markets/show_vendor"
     @markets = Market.order("lower(name) ASC").all
     @vendors = Vendor.order("lower(name) ASC").all
+  end
+
+  def edit_vendor
+    @header = "Vendor Details"
+    @vendor = Vendor.find(params[:id])
   end
 
   def by_vendor

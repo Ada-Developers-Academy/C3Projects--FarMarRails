@@ -3,9 +3,6 @@
     <tr>
       <th>Market Name</th>
     </tr>
-    <tr>
-      <td>(click each for details)</td>
-    </tr>
     <% @markets.each do |market| %>
     <tr>
         <td><%= link_to "#{market.name.titlecase}", "markets/#{market.id}" %> </td>

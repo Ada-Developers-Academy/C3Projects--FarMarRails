@@ -2,19 +2,19 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  resources :vendors, only: [:index, :show, :create] do
+  resources :vendors do
     member do
       resources :sales, only: [:index]
     end
-    resources :products do
+    resources :products, except: [:show] do
       resources :sales, only: [:create, :new]
     end
   end
 
-  resources :markets do # individual markets
+  resources :markets do
     collection do
-      resources :vendors, as: "by_market"
-      resources :vendors, only: [:show], action: "by_market", as: "by_market"
+      get 'show_vendor/:id', action: "edit_vendor", as: "edit_vendor"
+      resources :vendors, except: [:update, :create], as: "by_market"
     end
   end
 
