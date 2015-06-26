@@ -19,9 +19,8 @@ class VendorsController < ApplicationController
     find_vendor
 		@market = Market.find("#{@vendor.market_id}")
     @current_month = Time.now.month
-    
+
     @vendor_products = Product.where(vendor_id: "#{@vendor.id}")
-    # product_sales = Sale.where(product_id: "product.id")
 
     sum_vendor_total_sales
     sum_vendor_month_sales
@@ -36,15 +35,15 @@ class VendorsController < ApplicationController
     vendor_sales.each do |sale|
       vendor_total_amounts.push(sale.amount)
     end
-    @grand_total = vendor_total_amounts.reduce(:+) / 100 
-  end 
+    @grand_total = vendor_total_amounts.reduce(:+) / 100
+  end
 
   def sum_vendor_month_sales
     find_vendor
     @current_month = Time.now.month
 
     vendor_sales = Sale.where(vendor_id: "#{@vendor.id}")
-  
+
     vendor_monthly_amounts = []
 
     vendor_sales.each do |sale|
