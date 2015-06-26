@@ -83,20 +83,23 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
   end
 
+  def edit
+    @vendor = Vendor.find(params[:id])
+  end
+
   def create
     Vendor.create(vendor_params)
     redirect_to vendors_market_path(id: params[:vendor][:market_id])
   end
 
-  def vendors_edit
-    @vendor = Vendor.find(params[:vendor_id])
-    render :vendors_edit
+  def edit
+    @vendor = Vendor.find(params[:id])
   end
 
-  def vendor_update
-    @vendor = Vendor.find(params[:vendor_id])
-    @vendor.update(form_params[:vendor])
-    redirect_to vendor_market_path
+  def update
+    @vendor = Vendor.find(params[:id])
+    @vendor.update(vendor_params)
+    redirect_to vendor_path
   end
 
   def vendors_delete

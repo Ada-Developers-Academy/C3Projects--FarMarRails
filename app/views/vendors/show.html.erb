@@ -46,7 +46,7 @@
     </td>
     <% elsif params[:market_user] == "true" %>
       <td class="center">
-        Edit Link
+        <%= link_to "Edit", edit_vendor_path(market_id: params[:market_id]) %>
       </td>
       <td class="center">
         Delete Link
