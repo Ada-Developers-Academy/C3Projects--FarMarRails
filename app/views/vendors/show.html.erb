@@ -1,4 +1,4 @@
-<h2> <%= "#{@vendor.name}" %> </h2>
+<h2> <%= "#{@vendor.name}" %> <%= button_to 'Edit Vendor Details', edit_vendor_path(@vendor.id) %> </h2>
 
   <ul>
     <li>Farmer's Market: <%= @vendor_market.name %> </li>
@@ -7,5 +7,4 @@
 
 <%= link_to 'Products', vendor_products_path(@vendor.id) %>
 <%= link_to 'Sales', vendor_sales_path(@vendor.id) %>
-<%= link_to 'Edit Vendor Details', edit_vendor_path(@vendor.id) %>
-<%= link_to "Back to #{@vendor_market.name}", market_path(@vendor_market.id) %>
+<p> <%= link_to "Back to #{@vendor_market.name}", market_path(@vendor_market.id) %> </p>
