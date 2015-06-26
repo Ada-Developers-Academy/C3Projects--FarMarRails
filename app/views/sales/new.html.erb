@@ -1,3 +1,3 @@
-<%= render partial: "users/header", locals: {  title: "New Sale", link_name: "Back to Vendor", link_path: vendor_path(@vendor.id), second_link: false } %>
+<%= render partial: "users/header", locals: { title: "New Sale", link_name: "Back to Vendor", link_path: vendor_path(@vendor.id), second_link: false } %>
 
 <%= render partial: "sale_form", locals: { url: "/vendors/#{:vendor_id}/sales" } %>
