@@ -8,12 +8,12 @@
       <h3 class="section-header">Revenue</h3>
 
       <div>
-        <h2>$<%= @sum / 100 %>.<%= @sum % 100 %> </h2>
+        <h2> <%= @sum %> </h2>
         <h4>This Month</h4>
       </div>
 
       <div>
-        <h2>$<%= @total_amount / 100 %>.<%= @total_amount % 100  %></h2>
+        <h2> <%= @total_amount %> </h2>
         <h4>Total</h4>
       </div>
     </div>
@@ -29,7 +29,7 @@
             #<%= sale.id %>
           </div>
           <div>
-            $<%= sale.amount / 100 %>.<%= sale.amount % 100 %>
+            <%= sale.amount_formatted %>
           </div>
           <div>
            <%= sale.purchase_time.strftime("%m/%d/%y") %>

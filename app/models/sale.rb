@@ -5,8 +5,8 @@ class Sale < ActiveRecord::Base
   validates_presence_of :amount, :purchase_time, :vendor_id, :product_id
   validates_numericality_of :amount, :vendor_id, :product_id
 
-  def dollar_amount
-    amount.to_f / 100
+  def amount_formatted
+    Money.us_dollar(amount).format
   end
 
   def date

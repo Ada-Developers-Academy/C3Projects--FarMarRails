@@ -16,8 +16,8 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params.permit(:id)[:id])
     @sales = @vendor.recent_sales_first(5)
 
-    @total_amount = @vendor.total_sales
-    @sum = @vendor.month_total_sales
+    @total_amount = Money.us_dollar(@vendor.total_sales).format
+    @sum = Money.us_dollar(@vendor.month_total_sales).format
 
     @all_products = @vendor.products
   end
