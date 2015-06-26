@@ -9,11 +9,13 @@
 </head>
 <body>
   <header>
-    <nav>
-      <%= button_to "Go to Markets", markets_path, method: :get, class: "button" %>
-      <%= button_to "Go to Vendors", vendors_path, method: :get, class: "button" %>
-      <%= button_to "Home", root_path, method: :get, class: "button" %>
-    </nav>
+    <% unless current_page?(root_path) %>
+      <nav>
+          <%= button_to "Home", root_path, method: :get, class: "button" %>
+          <%= button_to "Go to Markets", markets_path, method: :get, class: "button" %>
+          <%= button_to "Go to Vendors", vendors_path, method: :get, class: "button" %>
+      </nav>
+    <% end %>
   </header>
     <%= yield %>
 </body>
