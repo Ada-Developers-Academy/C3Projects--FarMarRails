@@ -1,7 +1,11 @@
 <h1><%= @vendor.name %></h1>
 
 <div class="button_block">
-  <%= link_to "Back to 'All Vendors'", vendors_path, method: :get %>
+  <% if params[:market_user] == "false" %>
+    <%= link_to "Back to 'All Vendors'", vendors_path, method: :get %>
+  <% elsif params[:market_user] == "true" %>
+    <%= link_to "Back to 'All Vendors'", vendors_market_path, method: :get %>
+  <% end %>
 </div>
 
 <table>
