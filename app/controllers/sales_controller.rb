@@ -12,7 +12,8 @@ class SalesController < ApplicationController
     @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
     @sales = month_sales(@vendor)
     @header = "#{Date::MONTHNAMES[Date.today.month]}'s Sales"
-    @link = "View All Sales"
+    @link_name = "View All Sales"
+    @link = "/vendors/#{@vendor.id}/sales"
 
     if @sales.length == 0
       render :empty
