@@ -4,11 +4,15 @@
 
   <fieldset class="form">
 
+  <div class="form_field">
     <%= f.label :name %>
     <%= f.text_field :name, required: "required" %>
+  </div>
 
+  <div class="form_field">
     <%= f.label :no_of_employees, "Number of Employees" %>
     <%= f.text_field :no_of_employees %>
+  </div>
 
     <%= f.hidden_field :market_id, :value => "#{@market.id}" %>
 

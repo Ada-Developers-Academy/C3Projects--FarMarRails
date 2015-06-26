@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   font-family: 'Patrick Hand SC', cursive;
+  margin: auto;
+  width: 960px;
+  font-size: 25px;
 }
 
 .home::after {
@@ -36,4 +39,8 @@ h2 {
 
 .form {
   border: none;
+}
+
+.form_field {
+  display: block;
 }

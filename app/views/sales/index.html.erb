@@ -30,8 +30,8 @@
 <h4>Total Amount</h4>
 <%= number_to_currency(@total_amount/100.00) %>
 
-<%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
-<%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %>
+<p> <%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %> </p>
+<p> <%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %> </p>
 
 <h3>Sales for <%= Time.now.strftime("%B") %></h3>
 

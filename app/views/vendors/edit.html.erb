@@ -4,12 +4,15 @@
 
   <fieldset class="form">
 
+  <div class="form_field">
     <%= f.label :name %>
     <%= f.text_field :name, required: "required" %>
+  </div>
 
+  <div class="form_field">
     <%= f.label :no_of_employees %>
     <%= f.text_field :no_of_employees %>
-
+  </div>
 
   </fieldset>
     <%= f.submit %>
