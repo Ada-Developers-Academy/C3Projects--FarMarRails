@@ -46,20 +46,16 @@ h1 {
 main {
   margin: 0 auto;
   width: 960px;
-  background: #eadfd9;
+  background-color: rgba(234,223,217,0.4);
   padding: 15px;
   margin-top: 5px;
   border-radius: 5px;
 }
 
-
-.button_placement {
- padding-top: 10px;
- padding-bottom: 10px;
-}
-
-.button_placement a {
- font-size: 1.2em;
+.button input[type=submit] {
+  padding: 8px 15px;
+  font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
 }
 
 
@@ -122,13 +118,11 @@ th {
 
 .all_markets {
   width: 480px;
-  background: #eadfd9;
   float: left;
 }
 
 .all_vendors {
   width: 480px;
-  background: #eadfd9;
   float:right;
   height: 13500px;
 }
