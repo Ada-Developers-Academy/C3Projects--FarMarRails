@@ -1,7 +1,6 @@
 body {
-  font-family: 'Verdana', arial, sans-serif;
+  font-family: 'Bitter', serif;
   font-size: 1.2em;
-  // color: rgb(255, 255, 255);
   background-image: image-url("farm.jpeg");
   background-width: 100%;
   background-repeat: no-repeat;
@@ -9,20 +8,31 @@ body {
 }
 
 main {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  height: 70%;
   overflow: scroll;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70%;
+  width: 80%;
 }
 
 a {
   color: rgb(0, 53, 38);
 }
 
+h1, h2, h3, th {
+font-family: 'Pacifico', cursive;
+}
+
 header, nav {
   text-align: center;
   margin-bottom: 15px;
+ }
+
+ .nav_link {
+  padding: 15px;
  }
 
 .button_to {
@@ -54,7 +64,11 @@ nav li {
 
 td, th {
   padding: 5px 15px 5px 15px;
-  text-align: left;
+  text-align: justify;
+}
+
+th {
+  font-size: 1.5em;
 }
 
 
