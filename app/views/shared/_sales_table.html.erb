@@ -18,8 +18,7 @@
   <tfoot>
     <tr>
       <th colspan="2">Sales Total</th>
-      <% total_sales = sales.reduce(0){ |sum, sale| sum + sale.amount } %>
-      <td class="financial"><%= format_money(total_sales) %></td>
+      <td class="financial"><%= format_money(Sale.sum_amount(sales)) %></td>
     </tr>
   </tfoot>
 </table>
