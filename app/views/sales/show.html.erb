@@ -16,7 +16,7 @@
 
     <td> <%= product.name %> </td>
     
-    <% amount = sale.amount / 100 %>
+    <% amount = sale.amount / 100.00 %>
     <td> <%= number_to_currency(amount) %> </td>
     
     <td> <%= sale.purchase_time %> </td>

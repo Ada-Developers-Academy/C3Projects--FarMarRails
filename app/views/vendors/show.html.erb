@@ -26,7 +26,7 @@
 
 <h2> Sales </h2>
 
-<%= link_to "New Transaction", new_vendor_sale_path(@vendor.id) %>
+<%= link_to "+ New Transaction", new_vendor_sale_path(@vendor.id), class: "add_new" %>
 
 <p> Current Month Sales: <%= link_to "#{number_to_currency(@month_total)}", "/vendors/#{@vendor.id}/sales/#{@current_month}" %> </p>
 <p> Total Sales: <%= link_to "#{number_to_currency(@grand_total)}", vendor_sales_path(@vendor.id) %> </p>
@@ -35,7 +35,7 @@
 
 <h2>Products</h2>
 
-<%= link_to "Add New Product", new_vendor_product_path(@vendor.id) %>
+<%= link_to "+ New Product", new_vendor_product_path(@vendor.id), class: "add_new"%>
 <div class="clear"></div>
 <table>
   <thead>
