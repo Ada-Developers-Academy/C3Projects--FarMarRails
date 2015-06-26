@@ -1,10 +1,11 @@
 <h1>
-  <% if @sales[0].nil? %>
-    <%= "#{@vendor_name}'s Sales" %>
-  <% else %>
-    <%= "#{@sales.first.vendor.name}'s Sales" %>
-  <% end %>
+  <%= @vendor_name %>
 </h1>
+
+<div class="button_block">
+  <%= link_to "Back to #{@vendor_name}'s Information", vendor_path, method: :get %>
+</div>
+
 <table>
 <tr>
   <th>

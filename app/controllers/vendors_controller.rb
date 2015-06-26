@@ -11,6 +11,7 @@ class VendorsController < ApplicationController
 
   def sales
     @sales = Sale.where(vendor_id: params[:id])
+    @vendor_name = @sales.first.vendor.name
     @total_amount = calculate_sale_amount(@sales)
 
     render 'vendors/sales'
@@ -30,6 +31,7 @@ class VendorsController < ApplicationController
       @vendor_name = Vendor.find(params[:id]).name
     else
       @sales = Sale.where(vendor_id: params[:id])
+      @vendor_name = @sales.first.vendor.name
     end
 
     @total_amount = calculate_sale_amount(@sales)

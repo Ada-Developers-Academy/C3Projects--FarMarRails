@@ -1,4 +1,9 @@
 <h1><%= "#{@products.first.vendor.name}'s Products" %></h1>
+
+<div class="button_block">
+  <%= link_to "Back to #{@products.first.vendor.name}'s Information", vendor_path, method: :get %>
+</div>
+
 <table>
 <tr>
   <th>
@@ -29,5 +34,5 @@
 </table>
 
 <div class="button_block">
-  <%= link_to "Create a new product", new_product_path(vendor_id: @products.first.id) %>  
+  <%= link_to "Create a new product", new_product_path(vendor_id: @products.first.id) %>
 </div>
