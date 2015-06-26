@@ -14,13 +14,10 @@ class VendorsController < ApplicationController
 
   def dashboard
     @vendor = Vendor.find(params.permit(:id)[:id])
-    all_sales = @vendor.sales
-    @sales = all_sales.slice(0, 5)
+    @sales = @vendor.recent_sales_first(5)
 
-    @total_amount = total_sales(@vendor)
-    month_sales = month_sales(@vendor)
-    @sum = 0
-    month_sales.each { |sale| @sum += sale.amount }
+    @total_amount = @vendor.total_sales
+    @sum = @vendor.month_total_sales
 
     @all_products = @vendor.products
   end
@@ -66,31 +63,12 @@ class VendorsController < ApplicationController
     redirect_to "/markets/#{ params[:market_id] }/dashboard"
   end
 
+  def error
+  end
+
   private
 
   def create_params
     params.permit(vendor: [:name, :number_of_employees, :market_id])
-  end
-
-  def total_sales(vendor)
-    all_sales = vendor.sales
-    amounts = all_sales.map { |sale| sale.amount }
-    total = amounts.inject { |sum, n| sum + n }
-
-    return total
-  end
-
-  def month_sales(vendor)
-    current_month = Time.now.month
-    sales = []
-
-    vendor.sales.each do |sale|
-      sales.push(sale) if sale.purchase_time.month == current_month
-    end
-
-    return sales
-  end
-
-  def error
   end
 end # class
