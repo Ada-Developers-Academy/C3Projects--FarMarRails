@@ -3,4 +3,10 @@
   <%= render partial: "/vendors/products" %>
 <% end %>
 
-<%= render partial: "form", locals: { submit: "Create Product" }%>
+<header>
+  <h1>Add A Product</h1>
+</header>
+
+<section class="edit-form">
+  <%= render partial: "form", locals: { submit: "Create Product" }%>
+</section>
