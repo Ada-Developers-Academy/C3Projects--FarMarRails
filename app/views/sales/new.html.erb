@@ -13,8 +13,8 @@
     <%= f.label :purchase_time %>
     <%= f.datetime_select :purchase_time, required: :true %>
 
-    <%= f.label :product_id %>
-    <%= f.collection_select :product_id, @products, :id, :name, prompt: "Select One", required: :true %>
+    <%= f.label "Select Product:" %>
+    <%= f.collection_select :product_id, @products, :id, :name, required: :true %>
 
 
     <%= f.hidden_field :vendor_id, :value => "#{@vendor[:id]}" %>
