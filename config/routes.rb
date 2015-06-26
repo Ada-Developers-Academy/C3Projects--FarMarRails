@@ -17,16 +17,16 @@ Rails.application.routes.draw do
 
   # Market index page sorts
   get "/markets_/name_sort"      => "markets#name_sort"
-  get "/markets_/city_sort"      => "markets#city_sort" 
+  get "/markets_/city_sort"      => "markets#city_sort"
   get "/markets_/state_sort"     => "markets#state_sort"
   get "/all_markets_/name_sort"  => "users#name_sort"
-  get "/all_markets_/city_sort"  => "users#city_sort" 
+  get "/all_markets_/city_sort"  => "users#city_sort"
   get "/all_markets_/state_sort" => "users#state_sort"
 
   # Vendor Portal
   get  "/vendor_portal"      => "vendors#landing"
   post "/vendor_portal"      => "vendors#login"
-  get  "/vendor_portal/:id"  => "vendors#portal"
+  get  "/vendor_portal/:id"  => "vendors#portal", as: :vendor_portal_page
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
