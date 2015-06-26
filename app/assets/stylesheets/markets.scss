@@ -1,3 +1,167 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Main styling //
+
+html {
+  margin: 0 auto;
+  padding: 0;
+  background-image: image-url("restaurant.png");
+  background-repeat: repeat;
+  font-family: 'Oxygen', sans-serif;
+  color: #391D4D;
+  font-size: 18px;
+}
+
+header {
+  margin: 0 auto;
+  width: 960px;
+  margin-top: 50px;
+  position: relative;
+}
+
+h1 {
+  color: #391d4d;
+  font-size: 48px;
+  font-variant: small-caps;
+  margin: 0 auto;
+}
+
+main {
+  margin: 0 auto;
+  width: 960px;
+  background: #89A8A3;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+footer {
+ font-size: 1.4em;
+ font-weight: bold;
+ padding-top: 15px;
+ margin: 0 auto;
+ width: 960px;
+}
+
+.button_placement, .add_button {
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.button_placement a {
+ font-size: 1.2em;
+}
+
+.add_button {
+ padding: 10px;
+}
+
+// Text Fields //
+
+textarea {
+ width: 200px;
+ height: 40px;
+ border: 1px solid #cccccc;
+ padding: 5px;
+ resize: none;
+}
+
+label {
+display: block;
+padding: 3px;
+}
+
+// Buttons //
+
+ .main_button, .add_button input[type=submit] {
+  border-top: 2px solid #8a8191;
+  background: #391d4d;
+  padding: 8px 15px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 16px;
+  font-family: 'Cabin', sans-serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+ .main_button:hover,.add_button input[type=submit] {
+  background: #6b2149;
+  color: #ccc;
+  }
+ .main_button:active, .add_button input[type=submit] {
+  border-top-color: #571b5c;
+  background: #571b5c;
+  }
+
+.go_home {
+  border-top: 2px solid #cccccc;
+  background: #402f26;
+  padding: 8px 18px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: white;
+  font-size: 14px;
+  font-family: 'Cabin', sans-serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+.go_home:hover {
+  background: #f7570d;
+  color: #fce3a4;
+  }
+.go_home:active {
+  border-top-color: #e87c4b;
+  background: #e87c4b;
+  }
+
+// Links //
+a {
+ color: #6b2148;
+ font-size: 0.9em;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #A24252;
+}
+
+// Tables //
+
+table {
+text-align: left;
+vertical-align: middle;
+width: 600px;
+}
+
+th {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding-bottom: 3px;
+  width: 100px;
+}
+
+td {
+  padding: 3px;
+}
+
+// moves over the check and delete boxes
+.icon {
+  text-align: center;
+}
+
+.details td {
+  width: 400px;
+}
