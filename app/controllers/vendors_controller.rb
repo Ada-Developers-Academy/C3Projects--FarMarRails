@@ -64,7 +64,15 @@ class VendorsController < ApplicationController
   def login
     vendor_id = params[:vendor_login]
 
-    redirect_to vendor_portal_page_path(vendor_id)
+    begin
+      Vendor.find(vendor_id)
+      redirect_to vendor_portal_page_path(vendor_id)
+
+    # in process of adding warning of vendor ID entered DNE
+    rescue
+      @error = "Sorry, that vendor ID does not exist."
+      render :vendor_login, error: @error
+    end    
   end
 
   def portal
