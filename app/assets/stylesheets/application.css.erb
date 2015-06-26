@@ -5,10 +5,6 @@ body {
   margin-top: 70px;
 }
 
-header nav .button_to {
-  display: inline-block;
-  width: 100px;
-}
 
 h1 {
   text-align: center;
@@ -22,18 +18,37 @@ h1 {
 .market-background {
   background-image: url(<%= asset_path "market_background.jpg" %>);
   background-size: 100%;
+  margin-top: 10px;
 }
 
 .vendor-background {
   background-image: url(<%= asset_path "vendor_background.jpg" %>);
   background-size: 100%;
+  margin-top: 10px;
+}
+
+.buttons_inline .button_to {
+  display: inline-block;
+}
+
+.sort_markets {
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+  text-align: center;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.new_market {
+  display: inline-block;
 }
 
 .button, .inner_button {
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
   border-radius: 5px;
-  font-family: Arial;
+  font-family: 'Muli', sans-serif;
   color: #ffffff;
   font-size: 12px;
   background: #9ac6e3;
@@ -66,6 +81,11 @@ table td:nth-child(2), td:first-child {
   width: 25%;
 }
 
+input, select {
+  display: block;
+  text-align: center;
+}
+
 div.text_box {
   margin-left: auto;
   margin-right: auto;
@@ -76,6 +96,7 @@ div.text_box {
   opacity:0.7;
   max-height: 500px;
   overflow-y: scroll;
+  margin-top: 10px;
 }
 
 
