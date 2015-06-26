@@ -10,9 +10,7 @@ class SalesController < ApplicationController
 
   # Carly helped figure out how to permit entering amounts as dollars
   def create
-    sale_params_hash = sale_params
-    sale_params_hash[:amount] = Sale.format_input(sale_params_hash[:amount])
-    sale = Sale.create(sale_params_hash)
+    sale = Sale.create(sale_params)
     redirect_to vendor_product_path(@vendor, Product.find(params[:sale][:product_id]))
   end
 
@@ -33,6 +31,9 @@ class SalesController < ApplicationController
     # end
 
     def sale_params
-      params.permit(sale: [:amount, :purchase_time, :vendor_id, :product_id])[:sale]
+      sale_params = params.permit(sale: [:amount, :purchase_time, :vendor_id, :product_id])[:sale]
+      sale_params[:amount] = Sale.format_input(sale_params[:amount])
+
+      sale_params
     end
 end
