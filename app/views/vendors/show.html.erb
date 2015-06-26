@@ -1,12 +1,20 @@
 <%= link_to "Back to market", market_path("#{@market.id}") %>
 
-<h1>HERES THE SPECIFIC VENDOR PAGE </h1>
+<h1><%="#{@vendor.name}" %></h1>
 
-<p>Vendor name: <%=@vendor.name  %></p>
+<div class="nav_vendor">
+  <ul>
+    <li><%= link_to "Display all products for this vendor", vendor_products_path("#{@vendor.id}")%></li>
+    <li><%= link_to "Display all sales for this vendor", vendor_sales_path("#{@vendor.id}") %></li>
+    <li><%= link_to "Display sales for current month", "#{@vendor.id}/current_sales" %></li>
+ </ul>
+</div>
+
 <p>No of employees: <%=@vendor.no_of_employees %></p>
 <p>Market name: <%= @vendor.market.name  %></p>
-<%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %>
-<%= button_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %>
-<p><%= link_to "Display all products for this vendor", vendor_products_path("#{@vendor.id}")%></p>
-<p><%= link_to "Display all sales for this vendor", vendor_sales_path("#{@vendor.id}") %></p>
-<p><%= link_to "Display sales for current month", "#{@vendor.id}/current_sales" %></p>
+<p><%= link_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %></p>
+<p><%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %></p>
+
+<div class = "specific_market_pic">
+  <%= image_tag "specific_market.png" %>
+</div>
