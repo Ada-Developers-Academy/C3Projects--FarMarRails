@@ -7,9 +7,18 @@ class MarketsController < ApplicationController
   end
 
   def index
-    @markets = Market.all
-
+    # @markets = Market.all
+    if params[:search]
+      @markets = Market.search(params[:search]).order("created_at DESC")
+    else
+      @markets = Market.all.order('created_at DESC')
+    end
     render :markets
+  end
+
+  def search
+    @markets = Market.search params[:search]
+    render :search_results
   end
 
   def show

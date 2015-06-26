@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get "/all_markets_/city_sort"  => "users#city_sort"
   get "/all_markets_/state_sort" => "users#state_sort"
 
+  # Market index page search
+  get "/markets_/search_results" => "markets#search"
+  
   # Vendor Portal
   get  "/vendor_portal"      => "vendors#landing"
   post "/vendor_portal"      => "vendors#login"

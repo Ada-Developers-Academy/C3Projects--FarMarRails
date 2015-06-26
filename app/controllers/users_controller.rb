@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def state_sort
     @markets = Market.order(:state)
-    
+
     render :all_markets
   end
 

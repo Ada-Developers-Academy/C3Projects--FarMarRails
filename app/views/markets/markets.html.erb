@@ -1,5 +1,9 @@
 <%= link_to "<< return to main page", "/" %>
 <h1>All Markets</h1>
+<%= form_tag({controller:'markets', action: 'search'}, method: "get") do %>
+<%= text_field_tag :search, params[:search], id: 'search_field', placeholder: "Search by Name" %>
+<%= submit_tag "Search" %>
+<% end %>
 <p>
   <%= link_to "+ Add a Market", new_market_path(:market_id) %>
 </p>
