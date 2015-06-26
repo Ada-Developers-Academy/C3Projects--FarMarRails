@@ -9,7 +9,7 @@
     <th>Purchase Date/Time</th>
   </tr>
 
-  <% if @current_month %>
+  <% if @current_month.length != 0 %>
     <% @current_month.each do |sale| %>
       <tr>
           <td><%= sale.product.name %></td>
