@@ -1,16 +1,3 @@
 <h1>Edit this Product</h1>
 
-
-<%= form_for @product do |f| %>
-
-  <fieldset>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.hidden_field :vendor_id %>
-
-  </fieldset>
-
-  <%= f.submit %>
-
-  <% end %>
+<%= render partial: "shared/product_form" %> 

@@ -1,28 +1,22 @@
 <h1>Market </h1>
 
-<ul>
-  <li>
-    Market ID: <%= @market.id %>
-  </li>
-  <li>
-    Market Name: <%= @market.name %>
-  </li>
-  <li>
-    Address: <%= @market.street_address %>
-  </li>
-  <li>
-    City: <%= @market.city %>
-  </li>
-  <li>
-    State: <%= @market.state %>
-  </li>
-  <li>
-    Zip: <%= @market.zip %>
-  </li>
-  <li>
-    County: <%= @market.county %>
-  </li>
-</ul>
+
+<%= render partial: "shared/market_details", locals: {
+
+  details: {
+
+    "Market ID"   => @market.id,
+    "Market Name" => @market.name,
+    "Address"     => @market.street_address,
+    "City"        => @market.city,
+    "State"       => @market.state,
+    "Zip"         => @market.zip,
+    "County"      => @market.county
+
+  }
+} %>
+
+
 
 <%= button_to "Edit This Market", edit_market_path, method: :get %>
 <% # Params in the below 'button_to' is used to pass on the current market id, so we can create a vendor with that specific market. %>
