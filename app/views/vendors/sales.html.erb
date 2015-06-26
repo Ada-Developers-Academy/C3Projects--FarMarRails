@@ -3,7 +3,7 @@
 </h1>
 
 <div class="button_block">
-  <%= link_to "Back to #{@vendor_name}'s Information", vendor_path, method: :get %>
+  <%= link_to "Back to #{@vendor_name}'s Information", vendor_path(params: { market_user: "false" }), method: :get %>
 </div>
 
 <table>
