@@ -1,6 +1,6 @@
 <h2> <%= "#{@vendor.name}"%> </h2>
-<h3>Sales</h3>
 
+<h3>All Sales</h3>
 
 <table>
   <th>Sale Amount</th>
@@ -27,8 +27,7 @@
 
 </table>
 
-<h4>Total Amount</h4>
-<%= number_to_currency(@total_amount/100.00) %>
+<h4>Total Amount: <%= number_to_currency(@total_amount/100.00) %> </h4>
 
 <p> <%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %> </p>
 <p> <%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %> </p>
@@ -59,5 +58,5 @@
     <% end %>
 </table>
 
-<h4>Total Amount for <%= Time.now.strftime("%B") %></h4>
-<%= number_to_currency(@total_current_month/100.00)%>
+<h4>Total Amount for <%= Time.now.strftime("%B") %>:
+<%= number_to_currency(@total_current_month/100.00)%> </h4>
