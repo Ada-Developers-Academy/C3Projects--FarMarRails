@@ -20,11 +20,16 @@ h3 {
 .nav {
    display: block;
    text-decoration: none;
+   background-color: #c7e9ff;
 }
 
 a:hover {
    color: #7994ed;
  }
+
+a {
+   text-decoration: none;
+}
 
 .section {
   width: 100%;
@@ -60,4 +65,12 @@ a:hover {
 .nav ul li {
   padding: 8px 75px;
   display: inline-block;
+}
+
+.markets_list {
+  background-color:  #c7e9ff;
+}
+
+.specific_market_list {
+  background-color:  #c7e9ff;
 }
