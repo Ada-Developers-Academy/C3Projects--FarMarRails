@@ -4,7 +4,9 @@ class MarketsController < ApplicationController
   end
 
   def login
-    if (params.permit(:login_id)[:login_id].to_i <= Market.last.id)
+    id = params.permit(:login_id)[:login_id].to_i
+
+    if (id <= Market.last.id && id > 0)
       id = params.permit(:login_id)[:login_id]
 
       redirect_to "/markets/#{ id }/dashboard"
