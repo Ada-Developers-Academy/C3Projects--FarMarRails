@@ -1,6 +1,6 @@
 <%= form_for [ @vendor, @sale ] do |f| %>
-  <%= f.label :amount, "Sale amount (in cents):" %>
-  <%= f.number_field :amount, required: :true, min: 1 %>
+  <%= f.label :amount, "Sale amount:" %>
+  <%= f.text_field :amount, required: :true, placeholder: "$0.00"%>
 
   <%= f.label :purchase_time, "Time and date of sale:" %>
   <%= f.datetime_local_field :purchase_time, required: :true %>

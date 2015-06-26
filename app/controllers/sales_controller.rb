@@ -8,8 +8,11 @@ class SalesController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 
+  # Carly helped figure out how to permit entering amounts as dollars
   def create
-    sale = Sale.create(sale_params)
+    sale_params_hash = sale_params
+    sale_params_hash[:amount] = Sale.format_input(sale_params_hash[:amount])
+    sale = Sale.create(sale_params_hash)
     redirect_to vendor_product_path(@vendor, Product.find(params[:sale][:product_id]))
   end
 
