@@ -57,33 +57,39 @@ class VendorsController < ApplicationController
     @month_total = vendor_monthly_amounts.reduce(:+) / 100
   end
 
+  # WIP- Displaying total & monthly sales by product...
 
-  def sum_product_total_sales(product)
-    sales = product.sales
-    amounts = []
+  # def sum_product_total_sales
+  #   find_vendor
+  #   @vendor_products = Product.where(vendor_id: "#{@vendor.id}")
+  #   amounts = []
 
-    sales.each do |sale|
-      amounts.push(sale.amount)
-    end
+  #   @vendor_products.each do |product|
+  #     sales = product.sales
 
-    @product_total_amount = amounts.reduce(:+)
-  end
+  #     sales.each do |sale|
+  #       amounts.push(sale.amount)
+  #     end
+  #   end
 
-  def sum_product_month_sales(product)
-    sales = product.sales
-    @current_month = Time.now.month
-    monthly_amounts = []
+  #   @product_total_amount = amounts.reduce(:+)
+  # end
 
-    sales.each do |sale|
-      if sale.purchase_time.month == @current_month
-        monthly_amounts.push(sale.amount)
-      else
-        monthly_amounts.push(0)
-      end
-    end
+  # def sum_product_month_sales(product)
+  #   sales = product.sales
+  #   @current_month = Time.now.month
+  #   monthly_amounts = []
 
-    @product_month_total_amount = monthly_amounts.reduce(:+)
-  end
+  #   sales.each do |sale|
+  #     if sale.purchase_time.month == @current_month
+  #       monthly_amounts.push(sale.amount)
+  #     else
+  #       monthly_amounts.push(0)
+  #     end
+  #   end
+
+  #   @product_month_total_amount = monthly_amounts.reduce(:+)
+  # end
 
   def edit
     find_vendor

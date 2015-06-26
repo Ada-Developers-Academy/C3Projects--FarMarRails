@@ -36,39 +36,21 @@
 <h2>Products</h2>
 
 <%= link_to "Add New Product", new_vendor_product_path(@vendor.id) %>
-
+<div class="clear"></div>
 <table>
   <thead>
     Product List
   </thead>
   <tr>
     <th> Name </th>
-    <th> Monthly Sales </th>
-    <th> Total Sales </th>
+    <th></th>
+    <th></th>
   </tr>
   <% @vendor_products.each do |product| %>
-  <!-- DRY up with map or something saw in style guide -->
   <tr>
     <td> <%= product.name %> </td>
-
-    <% sales = product.sales %>
-    <% amounts = [] %>
-    <% monthly_amounts = [ ] %>
-
-    <% sales.each do |sale| %>
-
-      <% if sale.purchase_time.month == @current_month %>
-        <% monthly_amounts.push(sale.amount) %>
-      <% end %>
-      <% month_total = monthly_amounts.reduce(:+) %>
-      <% amounts.push(sale.amount) %>
-      <% total_amounts = amounts.reduce(:+) %>
-
-    <td> <%= number_to_currency(month_total) %> </td>
-    <td> <%= number_to_currency(total_amounts) %> </td>
-    <% end %>
     <td> <%= link_to "Edit", "/vendors/#{product.vendor_id}/products/#{product.id}/edit" %></td>
     <td> <%= link_to "X", "/vendors/#{product.vendor_id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %> </td>
-  <% end %>
   </tr>
+  <% end %>
 </table>
