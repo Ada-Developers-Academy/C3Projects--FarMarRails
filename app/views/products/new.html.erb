@@ -1,0 +1,11 @@
+<h1>Create Product</h1>
+
+<%= form_for @product, url: { action: "create"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.hidden_field :vendor_id, :value => @vendor_id %>
+
+  <%= f.submit %>
+
+<% end %>

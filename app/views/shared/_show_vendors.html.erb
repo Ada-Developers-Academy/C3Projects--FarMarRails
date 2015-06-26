@@ -1,0 +1,47 @@
+<% if current_page?(controller: 'markets', action: 'vendors_index') %>
+  <div class="button_block">
+    <%= link_to 'Create Vendor', new_vendor_path(market_id: params[:id]) %>
+  </div>
+<% end %>
+<h1>Vendors at <%= @market.name %></h1>
+
+<div class="button_block">
+  <% if current_page?(controller: 'users', action: 'vendors') %>
+    <%= link_to "Back to #{@market.name} Information", market_users_path, method: :get %>
+  <% elsif current_page?(controller: 'markets', action: 'vendors_index')%>
+    <%= link_to "Back to #{@market.name} Information", market_path, method: :get %>
+  <% end %>
+</div>
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <% if current_page?(controller: 'markets', action: 'vendors_index')%>
+    <th class="center">
+      Details
+    </th>
+  <% end %>
+  </tr>
+<tbody>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td>
+      <%= vendor.id %>
+    </td>
+    <td>
+      <%= vendor.name %>
+    </td>
+    <% if current_page?(controller: 'markets', action: 'vendors_index')%>
+      <td class="center">
+        <%= link_to "Details", vendor_path(id: vendor.id, params: { market_user: true, market_id: params[:id] } ) %>
+      </td>
+    <% end %>
+    </tr>
+  <% end %>
+</tbody>
+</table>

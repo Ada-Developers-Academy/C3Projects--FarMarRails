@@ -1,0 +1,16 @@
+<h1>Create a Sale</h1>
+
+<%= form_for @sale, url: { action: "create"} do |f| %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.label :purchase_time %>
+  <%= f.datetime_local_field :purchase_time %>
+
+  <%= f.hidden_field :vendor_id, :value => @sale.vendor_id   %>
+  <%= f.hidden_field :product_id, :value => @sale.product_id   %>
+
+  <%= f.submit %>
+
+<% end %>

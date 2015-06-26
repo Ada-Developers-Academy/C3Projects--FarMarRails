@@ -1,0 +1,41 @@
+<h1>All Vendors</h1>
+
+<div class="button_block">
+  <%= link_to "Back to Homepage", root_path, method: :get %>
+</div>
+
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Employees
+  </th>
+  <th>
+    Details
+  </th>
+</tr>
+<tbody>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td>
+      <%= vendor.id %>
+    </td>
+    <td>
+      <%= vendor.name %>
+    </td>
+    <td>
+      <%= vendor.num_employees %>
+    </td>
+    <td>
+      <%= link_to "Details", vendor_path(vendor.id, params: {market_user: false}) %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>

@@ -1,0 +1,44 @@
+<h1><%= "#{@product.name}" %></h1>
+
+<div class="button_block">
+  <%= link_to "Back to 'All Products'", products_vendor_path, method: :get %>
+</div>
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Edit
+  </th>
+  <th>
+    delete
+  </th>
+  <th>
+    Create Sale
+  </th>
+</tr>
+<tbody>
+    <tr>
+      <td>
+        <%= @product.id %>
+      </td>
+      <td>
+        <%= @product.name %>
+      </td>
+      <td>
+        <%= link_to "Edit this product", edit_product_path(product_id: @product.id) %>
+      </td>
+      <td>
+        <%= button_to "Delete", product_path(product_id: @product.id), method: :delete, data: { confirm: "Are you sure?"} %>
+      </td>
+      <td>
+        <%= link_to "Create a sale for this product", new_sale_path(id: @product.vendor.id, product_id: @product.id) %>
+      </td>
+    </tr>
+</tbody>
+</table>

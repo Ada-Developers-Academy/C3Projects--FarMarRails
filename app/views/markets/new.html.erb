@@ -1,0 +1,24 @@
+<h1>Create Market</h1>
+
+<%= form_for @market do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :placeholder => "(required)" %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, :placeholder => "(optional)" %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city, :placeholder => "(optional)" %>
+
+  <%= f.label :county %>
+  <%= f.text_field :county, :placeholder => "(optional)" %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state, :placeholder => "(optional)" %>
+
+  <%= f.label :zip %>
+  <%= f.text_field :zip, :placeholder => "(optional)" %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,38 @@
+<h1><%= "#{@products.first.vendor.name}'s Products" %></h1>
+
+<div class="button_block">
+  <%= link_to "Back to #{@products.first.vendor.name}'s Information", vendor_path(params: { market_user: "false" }), method: :get %>
+</div>
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Details
+  </th>
+</tr>
+<tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.id %>
+      </td>
+      <td>
+        <%= product.name %>
+      </td>
+      <td>
+        <%= link_to "Details", product_vendor_path(product_id: product.id) %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<div class="button_block">
+  <%= link_to "Create a new product", new_product_path(vendor_id: @products.first.id) %>
+</div>

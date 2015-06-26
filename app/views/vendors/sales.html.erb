@@ -1,0 +1,64 @@
+<h1>
+  <%= @vendor_name %>
+</h1>
+
+<div class="button_block">
+  <%= link_to "Back to #{@vendor_name}'s Information", vendor_path(params: { market_user: "false" }), method: :get %>
+</div>
+
+<table>
+<tr>
+  <th>
+    ID
+  </th>
+  <th>
+    Amount
+  </th>
+  <th>
+    Purchase Time
+  </th>
+  <th>
+    Product
+  </th>
+</tr>
+<tbody>
+  <% if @sales[0].nil? %>
+    <td colspan="4">
+      There were no sales for this month.
+    </td>
+  <% else %>
+    <% @sales.each do |sale| %>
+        <tr>
+          <td>
+            <%= sale.id %>
+          </td>
+          <td>
+            <%= "$#{sale.amount}" %>
+          </td>
+          <td>
+            <%= sale.purchase_time %>
+          </td>
+          <td>
+            <%= sale.product.name %>
+          </td>
+        </tr>
+    <% end %>
+  <% end %>
+  <tr>
+    <th>
+      Total Amount
+    </th>
+    <td>
+      <%= "$#{@total_amount}" %>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<div class="button_block">
+  <%= button_to "Show Sales from Current Month", sales_vendor_path, params: {show_current_month: true} %>
+</div>
+
+<div class="button_block">
+  <%= button_to "Show All Sales", sales_vendor_path, params: {show_current_month: false} %>
+</div>
