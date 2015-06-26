@@ -1,6 +1,16 @@
-<h1>Vendor Portal</h1>
+<section class="form">
+  <%= form_tag vendor_portal_path, method: :post do %>
+  <%= label_tag (:vendor_login) %>
+    <%= text_field_tag :vendor_login, nil, class: "form_field", placeholder: "Example: 12345" %>
+    <%= submit_tag "Login", class: "submit_button" %>
+  <% end %>
+</section>
+
+
+
+<!--
 <form accept-charset="UTF-8"  method="post">
   <label for="vendor_login">Your vendor id:</label>
   <input id="vendor_login" name="vendor_login" type="text" />
   <input name="login" type="submit" value="Login" />
-</form>
+</form> -->
