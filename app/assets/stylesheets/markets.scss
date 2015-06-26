@@ -104,6 +104,12 @@ th {
   width: 100px;
 }
 
+.index_header th {
+  font-size: 1.3em;
+
+
+}
+
 .details th {
   width: 200px;
 }
@@ -150,4 +156,9 @@ td {
 .vendor_form input[type=text] {
   width: 30%;
   height: 20px;
+}
+
+.login {
+  display: inline-block;
+  margin-right: 25px;
 }
