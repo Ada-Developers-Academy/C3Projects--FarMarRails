@@ -1,9 +1,9 @@
-<h1>Sales for this month</h1>
+<h1><%= @vendor.name %></h1>
 
+<h2><%= Time.now.strftime("%B") %> Sales</h2>
+
+<h3>TRANSACTIONS</h3>
 <table>
-  <thead>
-    Transactions
-  </thead>
   <tr>
     <th> Product </th>
     <th> Amount </th>

@@ -15,11 +15,13 @@ class SalesController < ApplicationController
 
   def index
     @vendor_id = params[:vendor_id]
+    @vendor = Vendor.find(@vendor_id)
     @vendor_sales = Sale.where(vendor_id: "#{@vendor_id}") 
   end
 
   def show
     @vendor_id = params[:vendor_id]
+    @vendor = Vendor.find(@vendor_id)
     @vendor_sales = Sale.where(vendor_id: "#{@vendor_id}")
     @current_month = Time.now.month
 

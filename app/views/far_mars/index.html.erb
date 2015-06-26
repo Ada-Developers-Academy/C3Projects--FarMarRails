@@ -4,18 +4,16 @@
 <%= link_to "Vendor", "/vendors" %>
 <div class="clear"></div>
 
+<h3>MARKETS</h3>
 <table>
-  <thead>
-    Market List
-  </thead>
   <th> ID </th>
   <th> Name </th>
-  <th> Details </th>
+  <th> </th>
   <% @all_markets.each do |market| %>
   <tr>
     <td> <%= market.id  %></td>
     <td> <%= market.name %></td>
-    <td> <%= link_to "Details", "/view_markets/#{market.id}" %> </td>
+    <td> <%= link_to "Details", "/view_markets/#{market.id}", class: "edit_delete" %> </td>
   </tr>
 
   <% end %>

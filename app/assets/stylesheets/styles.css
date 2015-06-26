@@ -35,14 +35,29 @@
     color: #900001;
   }
 
-  .add_new {
+  h3 {
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+
+  }
+
+  .edit_delete {
     text-decoration: none;
     font-weight: 700;
     opacity: 0.5;
   }
 
-  .add_new:hover {
+  .edit_delete:hover {
     opacity: 1;
+  }
+
+  p {
+    display: inline-block;
+    padding: 20px;
+  }
+
+  span {
+    font-weight: 700;
   }
 
   footer {
