@@ -95,10 +95,25 @@ a:hover {
   color: #ccc;
 }
 
-
 form {
   text-align: center;
 }
 form label, form input {
   margin: 10px 0;
+}
+
+div.error-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+.error {
+  color: #c33;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.error-details {
+  color: #300;
 }
