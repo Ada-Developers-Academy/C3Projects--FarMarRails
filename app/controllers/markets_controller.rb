@@ -39,7 +39,7 @@ class MarketsController < ApplicationController
     if market.valid?
       market.save
 
-      redirect_to "/markets"
+      redirect_to "/markets/#{ market.id }/dashboard"
     else
       redirect_to "/markets/new/error"
     end

@@ -35,8 +35,8 @@ class Vendor < ActiveRecord::Base
   def month_recent_sales_first
     sorted_sales = month_sales.sort_by { |sale| sale.purchase_time }
     sorted_sales.reverse!
-    
-    return sorted_sales.slice(0, how_many)
+
+    return sorted_sales
   end
 
   def month_total_sales

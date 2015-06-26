@@ -10,7 +10,7 @@ class SalesController < ApplicationController
 
   def current_month
     @vendor = Vendor.find(params.permit(:vendor_id)[:vendor_id])
-    @sales = month_sales(@vendor)
+    @sales = @vendor.month_recent_sales_first
     @header = "#{Date::MONTHNAMES[Date.today.month]}'s Sales"
     @link_name = "View All Sales"
     @link = "/vendors/#{@vendor.id}/sales"
@@ -56,16 +56,5 @@ class SalesController < ApplicationController
     cent_amount = cent_amount.to_i
 
     return cent_amount == 0 ? "zero" : cent_amount
-  end
-
-  def month_sales(vendor)
-    current_month = Time.now.month
-    sales = []
-
-    vendor.sales.each do |sale|
-      sales.push(sale) if sale.purchase_time.month == current_month
-    end
-
-    return sales
   end
 end
