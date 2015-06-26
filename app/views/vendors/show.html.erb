@@ -18,7 +18,7 @@
 
 <h2> Sales </h2>
 
-<%= link_to "+ New Transaction", new_vendor_sale_path(@vendor.id) %>
+<%= link_to "+ New Transaction", new_vendor_sale_path(@vendor.id), class: "link" %>
 
 <div class="clear"></div>
 
@@ -29,9 +29,9 @@
 
 <h2>Products</h2>
 
-<%= link_to "+ New Product", new_vendor_product_path(@vendor.id)%>
+<%= link_to "+ New Product", new_vendor_product_path(@vendor.id), class: "link" %>
 <div class="clear"></div>
-<table>
+<table class="products">
   <tr>
     <th> Name </th>
     <th></th>

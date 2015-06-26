@@ -31,6 +31,7 @@
 
   h1 {
     font-family: 'Old Standard TT', serif;
+    border-bottom: solid;
   }
 
   h2 {
@@ -55,6 +56,41 @@
     opacity: 1;
     color: #262626;
   }
+
+  .products {
+    width: 300px;
+  }
+
+  .link {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-color: #E5132F;
+    border-radius: 28px;
+    width: 25%;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #F4F5E3;
+    font-size: 20px;
+    background: #262626;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.link:hover {
+  background: #ebeaeb;
+  color: #262626;
+  text-decoration: none;
+  border: solid #262626 1px;
+}
+
+.home_buttons {
+  margin: 1% auto;
+
+}
 
   p {
     display: inline-block;
