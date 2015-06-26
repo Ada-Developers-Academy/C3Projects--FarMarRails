@@ -70,9 +70,7 @@ class VendorsController < ApplicationController
     @date_today = Date.today.strftime("%Y-%m")
     @month_sales = 0
     @sales.each do |sale|
-      if sale.purchase_time.to_date.strftime("%Y-%m") == @date_today
-        @month_sales += sale.amount.to_i
-      end
+      sale.purchase_time.to_date.strftime("%Y-%m") == @date_today ? @month_sales += sale.amount.to_i : nil
     end
 
     render :vendor_portal
