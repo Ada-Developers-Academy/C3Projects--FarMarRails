@@ -1,5 +1,5 @@
 <body class="market-background">
-  <h1>Edit <%= @vendor %></h1>
+  <h1>Edit <%= @vendor.name %></h1>
   <div class="text_box">
   <%= render partial: "shared/vendor_form", locals: {vendor: @vendor, url: @url, method: @method} %>
   </div>
