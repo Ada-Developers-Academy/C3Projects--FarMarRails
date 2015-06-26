@@ -25,7 +25,6 @@ class VendorsController < ApplicationController
 
     sum_vendor_total_sales
     sum_vendor_month_sales
-
   end
 
   def sum_vendor_total_sales
@@ -57,6 +56,34 @@ class VendorsController < ApplicationController
     end
 
     @month_total = vendor_monthly_amounts.reduce(:+) / 100
+  end
+
+
+  def sum_product_total_sales(product)
+    sales = product.sales
+    amounts = []
+
+    sales.each do |sale|
+      amounts.push(sale.amount)
+    end
+
+    @product_total_amount = amounts.reduce(:+)
+  end
+
+  def sum_product_month_sales(product)
+    sales = product.sales
+    @current_month = Time.now.month
+    monthly_amounts = []
+
+    sales.each do |sale|
+      if sale.purchase_time.month == @current_month
+        monthly_amounts.push(sale.amount)
+      else
+        monthly_amounts.push(0)
+      end
+    end
+
+    @product_month_total_amount = monthly_amounts.reduce(:+)
   end
 
   def edit
