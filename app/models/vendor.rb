@@ -8,7 +8,7 @@ class Vendor < ActiveRecord::Base
   end
 
   def current_month_sales
-    sales.where("strftime('%m', purchase_time) + 0 = ?", Vendor.current_month)
+    sales.where(:purchase_time => Time.now.beginning_of_month..Time.now.end_of_month)
   end
 
   def archive
