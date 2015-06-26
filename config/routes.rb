@@ -12,12 +12,12 @@ Rails.application.routes.draw do
       get '/:market_id/vendors', action: 'vendors_in_market', as: 'vendors_in_market'
     end
 
-    resources :vendors
+    resources :vendors, except: [:show]
   end
 
 
   resources :vendors, only: [:index] do
-    resources :sales do
+    resources :sales, except: [:update, :destroy, :edit, :show] do
       collection do
         get '/current_month', action: 'current_month_sales'
       end
