@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/market" => "users#market"
   get "/vendor" => "users#vendor"
 
-  # attempting to login.
+  # attempting to log in.
   post "/markets/login" => "markets#login"
   post "/vendors/login" => "vendors#login"
 
