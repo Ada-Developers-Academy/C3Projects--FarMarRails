@@ -1,31 +1,30 @@
 <%= link_to "Back to market", market_path("#{@market.id}") %>
 
-
 <div class= "form">
- <%= form_for @market do |m| %>
-  <fieldset>
-    <legend>New task</legend>
-    <%= m.label :name %>
-    <%= m.text_field :name %>
+  <%= form_for @market do |m| %>
+    <fieldset>
+      <legend>New task</legend>
+      <%= m.label :name %>
+      <%= m.text_field :name %>
 
-    <%= m.label :address %>
-    <%= m.text_field :address %>
+      <%= m.label :address %>
+      <%= m.text_field :address %>
 
-    <%= m.label :city %>
-    <%= m.text_field :city %>
+      <%= m.label :city %>
+      <%= m.text_field :city %>
 
-    <%= m.label :county %>
-    <%= m.text_field :county %>
+      <%= m.label :county %>
+      <%= m.text_field :county %>
 
-    <%= m.label :state %>
-    <%= m.text_field :state %>
+      <%= m.label :state %>
+      <%= m.text_field :state %>
 
-    <%= m.label :zip %>
-    <%= m.text_field :zip %>
+      <%= m.label :zip %>
+      <%= m.text_field :zip %>
+    </fieldset>
 
-  </fieldset>
- <%= m.submit 'Save changes' %>
-<% end %>
+    <%= m.submit 'Save changes' %>
+  <% end %>
 </div>
 
 <div class="welcome_pic">

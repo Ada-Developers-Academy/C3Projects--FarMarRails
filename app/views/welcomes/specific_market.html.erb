@@ -1,6 +1,9 @@
 <%= render partial: "header" %>
+
 <div class = "specific_market_list">
+
   <p class="market_name"><%=@market.name  %></p>
+
   <p>Address:
     <%=@market.address  %>,
     <%=@market.city  %>,
@@ -8,9 +11,10 @@
     <%=@market.state  %>.
     <%=@market.zip  %></p>
     <% vendors = @market.vendors %>
-    <ol>
-     Vendors: <% vendors.each do |v| %>
-      <li><%= v.name %></li>
+
+    <ol>Vendors:
+      <% vendors.each do |v| %>
+        <li><%= v.name %></li>
       <% end %>
     </ol>
 </div>

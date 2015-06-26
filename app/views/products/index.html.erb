@@ -9,7 +9,6 @@
           <li><%= link_to "Delete product", vendor_product_path("#{@vendor.id}", "#{product.id}"), method: "delete" %></li>
           <li><%= link_to "See all sales", vendor_product_sales_path("#{@vendor.id}", "#{product.id}") %></li>
         </ul>
-
     <% end %>
   </ol>
 </p>

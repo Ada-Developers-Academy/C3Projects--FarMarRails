@@ -3,14 +3,14 @@
 <h1>Add new product</h1>
 
 <%= form_for @product, url: vendor_products_path("#{params[:vendor_id]}") do |p| %>
- <fieldset>
-   <legend>New product</legend>
-   <%= p.label :name %>
-   <%= p.text_field :name %>
+  <fieldset>
+    <legend>New product</legend>
+    <%= p.label :name %>
+    <%= p.text_field :name %>
 
-   <%= p.label :vendor_id %>
-   <%= p.text_field :vendor_id, :value => params[:vendor_id] %>
- </fieldset>
+    <%= p.label :vendor_id %>
+    <%= p.text_field :vendor_id, :value => params[:vendor_id] %>
+  </fieldset>
 
  <%= p.submit 'Submit new product' %>
 <% end %>

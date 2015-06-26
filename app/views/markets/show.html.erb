@@ -9,12 +9,11 @@
   <%=@market.zip  %></p>
 <%= link_to "Edit market", edit_market_path("#{@market.id}") %>
 
-
 <p>"<%= "#{@market.name}" %>" has these vendors: </p>
   <ol>
     <% @vendors.each do |vendor| %>
       <li><%= link_to "#{vendor.name}", market_vendor_path("#{@market.id}", "#{vendor.id}")%></li>
-      <% end %>
+    <% end %>
   </ol>
 </p>
 

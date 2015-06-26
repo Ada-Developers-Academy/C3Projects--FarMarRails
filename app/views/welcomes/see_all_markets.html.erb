@@ -1,10 +1,11 @@
 <%= render partial: "header" %>
+
 <h1>USA farmer's markets!</h1>
 
 <div class = "markets_list">
   <ol>
     <% @markets.each do |market| %>
       <li><%= link_to "#{market.name}", "markets/#{market.id}" %></li>
-      <% end %>
+    <% end %>
   </ol>
 </div>

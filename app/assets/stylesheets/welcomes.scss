@@ -26,6 +26,7 @@ h3 {
 .link_back a {
   color: white;
 }
+
 .nav ul li {
    display: inline-block;
    text-decoration: none;
@@ -47,8 +48,6 @@ h3 {
   display: inline-block;
 }
 
-
-
 .nav_vendor ul li {
    display: inline-block;
    text-decoration: none;
@@ -69,6 +68,7 @@ h3 {
   padding: 8px;
   display: inline-block;
 }
+
 a:hover {
    color: #7994ed;
  }
@@ -110,17 +110,11 @@ a {
   max-height: 100%;
 }
 
-
 .markets_list {
   background-color: black;
   opacity: 1.0;
   filter: alpha(opacity=100);
 }
-
-// .markets_list a {
-//    text-decoration: none;
-//    color: white
-// }
 
 .markets_list a:hover {
    color: #7994ed;

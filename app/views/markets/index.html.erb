@@ -12,10 +12,8 @@
 
 <div class = "markets_list">
   <ol>
-   <% @markets.each do |market| %>
-    <li>
-      <%= link_to "#{market.name}", market_path("#{market.id}") %>
-    </li>
+    <% @markets.each do |market| %>
+      <li><%= link_to "#{market.name}", market_path("#{market.id}") %></li>
     <% end %>
   </ol>
 </div>
