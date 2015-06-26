@@ -11,13 +11,13 @@
   <div class="container">
     <header id= "top">
       <% num = rand(1..8) %>
-      <%= image_tag("FarMarBanner#{num}") %>
+      <%= image_tag(asset_path("FarMarBanner#{num}")) %>
     </header>
-    
+
     <body>
     <%= yield %>
     </body>
-    
+
     <footer>
       <%= link_to "Top", "#top" %> |
       <%= link_to "Home", "/" %> |
