@@ -52,39 +52,6 @@ nav a {
   color: black;
 }
 
-h1 {
-
-}
-
-h3 {
-
-}
-
-/* these are the main items in a list (e.g. product name) */
-// .list_element {
-//   text-decoration: none;
-// }
-
-// ul ul, .list_element, ul ul li {
-//   display: inline-block;
-// }
-
-/* these are the buttons */
-// ul ul a, .button_to {
-//   // display: inline-block;
-//   // color: gray;
-//   // background-color: lightgray;
-//   border: 1px solid grey;
-//   text-align: center;
-
-//   background-color: transparent;
-
-//   text-align: center;
-//   display: inline-block;
-
-//   margin-left: 1em;
-// }
-
 .log_in_button, #welcome_markets_button, .button {
   display: inline-block;
   padding: 20px;
@@ -131,7 +98,6 @@ ul {
 }
 
 form {
-  // text-align: left;
   width: 400px;
   margin: 0 auto;
 }
@@ -140,11 +106,6 @@ input,  {
   display: block;
   margin: 10px auto;
 }
-
-// input[type="submit"] {
-//   // margin-top: 40px;
-//   border: 1px solid black;
-// }
 
 table {
   border-collapse: collapse;
