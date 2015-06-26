@@ -1,13 +1,13 @@
 <%= form_for [ @vendor, @sale ] do |f| %>
   <%= f.label :amount, "Sale amount (in cents):" %>
-  <%= f.number_field :amount %>
+  <%= f.number_field :amount, required: :true %>
 
   <!-- TODO: change this field to select date & time? -->
   <%= f.label :purchase_time, "Sale date & time:" %>
-  <%= f.datetime_field :purchase_time %>
+  <%= f.datetime_field :purchase_time, required: :true %>
 
   <%= f.hidden_field :vendor_id, value: params[:vendor_id] %>
   <%= f.hidden_field :product_id, value: @product.id %>
 
-  <%= f.submit %>
+  <%= f.submit class: "button" %>
 <% end %>

@@ -1,11 +1,11 @@
 <%= form_for [ @market, @vendor ] do |f| %>
   <%= f.label :name, "Vendor name:" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: :true %>
 
   <%= f.label :num_employees, "Number of employees:" %>
   <%= f.text_field :num_employees %>
 
   <%= f.hidden_field :market_id, value: params[:market_id] %>
 
-  <%= f.submit %>
+  <%= f.submit class: "button" %>
 <% end %>

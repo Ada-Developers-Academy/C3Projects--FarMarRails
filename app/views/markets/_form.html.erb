@@ -1,6 +1,6 @@
 <%= form_for @market do |f| %>
   <%= f.label :name, "Market name:" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: :true %>
 
   <%= f.label :address, "Street address:" %>
   <%= f.text_field :address %>
@@ -17,5 +17,5 @@
   <%= f.label :zip, "Zip:" %>
   <%= f.text_field :zip %>
 
-  <%= f.submit %>
+  <%= f.submit class: "button" %>
 <% end %>

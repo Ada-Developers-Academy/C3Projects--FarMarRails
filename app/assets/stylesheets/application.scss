@@ -41,7 +41,7 @@ a {
   color: black;
 }
 
-li a:hover {
+li a:hover, nav a:hover {
   color: $darkgray;
 }
 
@@ -61,47 +61,60 @@ h3 {
 }
 
 /* these are the main items in a list (e.g. product name) */
-.list_element {
-  text-decoration: none;
-}
+// .list_element {
+//   text-decoration: none;
+// }
 
-ul ul, .list_element, ul ul li {
-  display: inline-block;
-}
+// ul ul, .list_element, ul ul li {
+//   display: inline-block;
+// }
 
 /* these are the buttons */
-ul ul a, .button_to {
-  display: inline-block;
-  color: gray;
-  background-color: lightgray;
-  border: 1px solid grey;
-  text-align: center;
+// ul ul a, .button_to {
+//   // display: inline-block;
+//   // color: gray;
+//   // background-color: lightgray;
+//   border: 1px solid grey;
+//   text-align: center;
 
-  background-color: transparent;
+//   background-color: transparent;
 
-  text-align: center;
-  display: inline-block;
+//   text-align: center;
+//   display: inline-block;
 
-  margin-left: 1em;
-}
+//   margin-left: 1em;
+// }
 
-.button {
-  display: inline-block;
-  // margin: 20px  0 0;
-  padding: 5px;
-  background-color: lightgray;
-  border: 1px solid grey;
-}
-
-.log_in_button, #welcome_markets {
+.log_in_button, #welcome_markets_button, .button {
   display: inline-block;
   padding: 20px;
-  margin: 0 20px 30px 0;
+  margin: 20px;
   border: 1px solid white;
   background-color: white;
+  font-size: 1em;
+  font-weight: bold;
 }
 
-#welcome_markets {
+.inline_button, input[type="submit"].inline_button {
+  display: inline-block;
+  border: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+form[class="button_to"] {
+  display: inline-block;
+}
+
+.button:hover, input[type="submit"]:hover {
+  background-color: $darkgray;
+  color: white;
+  border-color: $darkgray;
+}
+
+#welcome_markets_button {
   display: block;
   padding: 20px;
   margin: 0 auto;
@@ -115,18 +128,25 @@ ul {
   margin: 20px auto;
 }
 
-input,  {
-  display: block;
-  margin: 10px 0;
+form {
+  // text-align: left;
+  width: 400px;
+  margin: 0 auto;
 }
 
-input[type="submit"] {
-  margin-top: 40px;
-  border: 1px solid black;
+input,  {
+  display: block;
+  margin: 10px auto;
 }
+
+// input[type="submit"] {
+//   // margin-top: 40px;
+//   border: 1px solid black;
+// }
 
 table {
   border-collapse: collapse;
+  margin: 0 auto;
 }
 
 table, th, td {
@@ -134,5 +154,5 @@ table, th, td {
 }
 
 th,td {
-  padding: .25em;
+  padding: 1em;
 }
