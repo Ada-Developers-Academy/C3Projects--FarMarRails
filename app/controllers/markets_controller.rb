@@ -6,9 +6,6 @@ class MarketsController < ApplicationController
     @markets = Market.all
   end
 
-  def show
-  end
-
   def new
     @market = Market.new
   end
@@ -16,9 +13,6 @@ class MarketsController < ApplicationController
   def create
     market = Market.create(market_params)
     redirect_to market
-  end
-
-  def edit
   end
 
   def update
@@ -36,6 +30,6 @@ class MarketsController < ApplicationController
     end
 
     def market_params
-      params.permit(market: [:name, :address, :city, :county, :state, :zip] )[:market]
+      params.permit(market: [:name, :address, :city, :county, :state, :zip])[:market]
     end
 end

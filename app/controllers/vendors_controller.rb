@@ -1,7 +1,7 @@
 class VendorsController < ApplicationController
   before_action :set_nav
-  before_action :set_vendor, only: [:show, :edit, :update, :destroy]
-  before_action :set_market, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_vendor, except: [:index, :new, :create]
+  before_action :set_market, except: [:index, :show]
 
   def index
     @vendors = Vendor.all
@@ -13,11 +13,8 @@ class VendorsController < ApplicationController
       render 'show_from_markets'
     end
 
-    # TODO: come back to this
     @sales = @vendor.sales
-    ### @current_month_sales # TODO: COME BACK TO THIS!
     @current_month_sales = @vendor.current_month_sales
-    # @current_sales = @product.sales.where(:purchase_time.month == Sale.current_month)
   end
 
   def new
@@ -25,7 +22,6 @@ class VendorsController < ApplicationController
   end
 
   # vendors are only created, updated, or destroyed from market path
-
   def create
     vendor = Vendor.create(vendor_params)
     redirect_to market_vendor_path(@market, vendor)
@@ -55,6 +51,6 @@ class VendorsController < ApplicationController
     end
 
     def vendor_params
-      params.permit(vendor: [:name, :num_employees, :market_id] )[:vendor]
+      params.permit(vendor: [:name, :num_employees, :market_id])[:vendor]
     end
 end
