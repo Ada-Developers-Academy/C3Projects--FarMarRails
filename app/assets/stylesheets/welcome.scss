@@ -10,7 +10,7 @@ body {
 
 .home::after {
   content: " ";
-  background-image: url("home.jpg");
+  background-image: url("/public/home.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
