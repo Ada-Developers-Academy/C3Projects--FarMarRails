@@ -4,6 +4,7 @@ class SalesController < ApplicationController
     @header = "Your Sales"
     @vendor = Vendor.find(params[:id])
     @sales = Sale.where(:vendor_id => @vendor.id)
+
   end
 
   def new
@@ -18,7 +19,7 @@ class SalesController < ApplicationController
     @product = Product.find(params[:product_id])
     @sale = Sale.new(create_params[:sale])
     @sale.save
-    redirect_to sales_path
+    redirect_to sales_path(@vendor.id)
   end
 
   private
