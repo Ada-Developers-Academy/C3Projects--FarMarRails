@@ -12,7 +12,7 @@ class MarketsController < ApplicationController
   end
 
   def new
-    @new = Market.new
+    @market = Market.new
 
     render :new
   end
