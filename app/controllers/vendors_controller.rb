@@ -37,7 +37,7 @@ class VendorsController < ApplicationController
   end
 
   def destroy
-    @vendor.destroy
+    @vendor.archive
     redirect_to market_path(@market)
   end
 

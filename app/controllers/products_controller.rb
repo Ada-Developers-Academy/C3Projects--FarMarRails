@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    @product.archive
     redirect_to vendor_path(@vendor)
   end
 
