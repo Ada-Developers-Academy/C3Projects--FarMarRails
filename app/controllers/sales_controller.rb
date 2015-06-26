@@ -25,32 +25,6 @@ class SalesController < ApplicationController
   end
 
   def create
-    # class Person < ActiveRecord::Base
-    #   validates :name, presence: true, length: { minimum: 3 }
-    # end
-    #
-    # person = Person.new
-    # person.valid? # => false
-    # person.errors.messages
-    #  # => {:name=>["can't be blank", "is too short (minimum is 3 characters)"]}
-    #
-    # person = Person.new(name: "John Doe")
-    # person.valid? # => true
-    # person.errors.messages # => {}
-    #
-    # class Person < ActiveRecord::Base
-    #   validates :name, presence: true, length: { minimum: 3 }
-    # end
-    #
-    # person = Person.new
-    # person.valid? # => false
-    # person.errors.messages
-    #  # => {:name=>["can't be blank", "is too short (minimum is 3 characters)"]}
-    #
-    # person = Person.new(name: "John Doe")
-    # person.valid? # => true
-    # person.errors.messages # => {}
-
     params = create_params[:sale]
     params[:amount] = convert_dollars_to_cents(params[:amount])
 
