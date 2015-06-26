@@ -1,6 +1,19 @@
 <h1>Use this form to Edit Vendor Information</h1>
 
-<%= render "vendor_form" %>
+<%= form_for @vendor do |f| %>
+
+  <fieldset>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, required: "required" %>
+
+    <%= f.label :no_of_employees %>
+    <%= f.text_field :no_of_employees %>
+
+
+  </fieldset>
+    <%= f.submit %>
+<% end %>
 
 <%= link_to "View All Vendors", vendors_path %>
 <%= link_to "Home Page", root_path %>
