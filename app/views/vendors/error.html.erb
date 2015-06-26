@@ -2,10 +2,12 @@
   <%= render partial: "/markets/dashboard" %>
 <% end %>
 
-<p class="error">Error: Vendor not created or updated.</p>
+<div class="error-wrapper">
+  <p class="error">Error: Vendor not created or updated.</p>
 
-<p class="error-details">
-  A vendor must have a name and must have a numeric value for the number of
-  employees. A vendor can have 14 or 250 employees but not fourteen or two
-  hundred and fifty.
-</p>
+  <p class="error-details">
+    A vendor must have a name and must have a numeric value for the number of
+    employees. A vendor can have 14 or 250 employees but not fourteen or two
+    hundred and fifty.
+  </p>
+</div>
