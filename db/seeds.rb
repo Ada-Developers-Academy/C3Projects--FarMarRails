@@ -44,7 +44,7 @@ sales.each do |row|
   t = Sale.new
   t.id = row[0].to_i
   t.amount = row[1].to_i
-  t.purchase_time = DateTime.strptime(row[2], format='%Y-%m-%d %H:%M:%S %Z').to_datetime
+  t.purchase_time = DateTime.strptime(row[2], format='%Y-%m-%d %H:%M:%S').to_datetime
   t.vendor_id = row[3].to_i
   t.product_id = row[4].to_i
 
