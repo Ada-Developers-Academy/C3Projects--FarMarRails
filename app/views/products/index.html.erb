@@ -1,0 +1,32 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/vendors/dashboard" %>
+<% end %>
+
+<header>
+  <h1>All Products</h1>
+</header>
+
+<div class="products-wrapper">
+  <%= link_to "+ New Product", "/vendors/#{ @vendor.id }/products/new" %>
+
+  <section class="all-products">
+    <ul>
+      <% @products.each do |product| %>
+          <li>
+            <div>
+              <%= product.name %>
+            </div>
+
+            <div>
+              <%= link_to "Rename", "/vendors/#{ @vendor.id }/products/#{ product.id }/edit" %>
+            </div>
+
+            <div>
+              <%= link_to "Delete", "/vendors/#{ @vendor.id }/products/#{ product.id }",
+              method: :delete, data: { confirm: "Are you sure? This product and its data will be gone forever." }%>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </section>
+</div>

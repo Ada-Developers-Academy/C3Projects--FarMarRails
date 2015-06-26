@@ -1,0 +1,14 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/vendors/dashboard" %>
+  <%= render partial: "/vendors/sales" %>
+<% end %>
+
+<div class="error-wrapper">
+  <p class="error">Error: Sale not created.</p>
+
+  <p class="error-details">
+    A sale must have a numeric value for its amount. A sale could be for 14.50 or
+    25.82 but not for $14.50 or twenty five dollars and eighty-two cents. A sale
+    must also have a valid date!
+  </p>
+</div>

@@ -1,0 +1,56 @@
+<header>
+  <h1>Welcome, <%= @market.name %>!</h1>
+</header>
+
+<section class="market-details">
+  <%= link_to "Edit", "./edit", title: "Update the details of this market." %>
+  <h3 class="section-header">Market Details</h3>
+
+
+  <table class="details">
+    <tr>
+      <td class="right">ID</td>
+      <td><%= "#{ @market.id }" %></td>
+    </tr>
+    <tr>
+      <td class="right">Address</td>
+      <td><%= "#{ @market.address }" %></td>
+    </tr>
+    <tr>
+      <td class="right">City</td>
+      <td><%= "#{ @market.city }" %></td>
+    </tr>
+    <tr>
+      <td class="right">County</td>
+      <td><%= "#{ @market.county }" %></td>
+    </tr>
+    <tr>
+      <td class="right">State</td>
+      <td><%= "#{ @market.state }" %></td>
+    </tr>
+    <tr>
+      <td class="right">Zipcode</td>
+      <td><%= "#{ @market.zipcode }" %></td>
+    </tr>
+  </table>
+</section>
+
+<section class="market-vendors">
+  <%= link_to "+ New Vendor", "./vendors/new", title: "Create a new vendor for this market." %>
+  <h3 class="section-header">Vendors</h3>
+
+  <% @vendors.each do |vendor| %>
+      <%= link_to "Delete", "./vendors/#{ vendor.id }", title: "Delete this vendor.",
+          data: { confirm: "Are you sure? This is permanent." }, method: :delete %>
+
+      <%= link_to "Edit", "./vendors/#{ vendor.id }/edit", title: "Update the details of this vendor." %>
+
+
+      <ul class="market-location">
+        <li>
+          <div><%= "##{ vendor.id }" %></div>
+          <%= "#{ vendor.name }, Staff: #{ vendor.number_of_employees }" %>
+        </li>
+      </ul>
+  <% end %>
+</section>

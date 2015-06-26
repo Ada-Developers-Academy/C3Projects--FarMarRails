@@ -1,0 +1,11 @@
+<%= form_for @vendor, url: "./" do |f| %>
+  <%= f.hidden_field(:market_id, value: params[:market_id]) %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <br><br>
+  <%= f.label :number_of_employees %>
+  <%= f.text_field :number_of_employees, required: true %>
+  <br><br>
+  <%= f.submit submit %>
+<% end %>

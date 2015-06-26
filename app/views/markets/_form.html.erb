@@ -1,0 +1,22 @@
+<%= form_for @market, url: "./" do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <br><br>
+  <%= f.label :address %>
+  <%= f.text_field :address, required: true %>
+  <br><br>
+  <%= f.label :city %>
+  <%= f.text_field :city, required: true %>
+  <br><br>
+  <%= f.label :county %>
+  <%= f.text_field :county, required: true %>
+  <br><br>
+  <%= f.label :state %>
+  <%= f.text_field :state, required: true %>
+  <br><br>
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode, required: true %>
+  <br><br>
+
+  <%= f.submit submit %>
+<% end %>

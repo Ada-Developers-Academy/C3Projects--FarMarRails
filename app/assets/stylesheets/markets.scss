@@ -1,0 +1,99 @@
+// Place all the styles related to the markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.details {
+  text-align: left;
+  margin: 0 auto;
+}
+.details tr {
+  margin: 10px 0;
+}
+.details td:first-child {
+  text-align: right;
+  border-right: 1px solid #ccc;
+  padding-right: 3px;
+  color: #9a9a9a;
+}
+.details td:last-child {
+  padding-left: 10px;
+}
+
+.market-vendors a {
+  padding-left: 5px;
+}
+
+.market-vendors div {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  display: inline;
+  color: #9a9a9a;
+}
+.market-vendors ul {
+  list-style-type: none;
+  padding: 0;
+}
+.market-vendors li {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* EDIT FORM */
+.edit-form {
+  width: 50%;
+  background-color: lighten(#ccc, 10);
+  padding: 5px;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+.edit-form form {
+  width: 50%;
+  margin: 20px auto;
+}
+.edit-form label,
+.edit-form input {
+  margin: 0 0 5px 0;
+}
+.edit-form label {
+  float: left;
+  color: darken(#ccc, 20);
+}
+.edit-form input {
+  width: 100%;
+
+  &:last-child {
+    font-size: 20px;
+    width: 50%;
+  }
+}
+
+#login-form {
+  margin: auto;
+  width: 550px;
+}
+
+#login-form h1 {
+  background: #ccc;
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding: 0 0 0 0;
+}
+
+#login-form form {
+  background: #eee;
+  margin-top: 0px;
+}
+
+#login-form div {
+  padding: 10px;
+}
+
+#markets-columns {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
+#markets-columns ul {
+  margin: 0;
+}

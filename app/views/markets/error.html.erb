@@ -1,0 +1,11 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/markets/dashboard" %>
+<% end %>
+
+<div class="error-wrapper">
+  <p class="error">Error: Market not created or updated.</p>
+
+  <p class="error-details">
+    A market must have all attribute fields filled out.
+  </p>
+</div>

@@ -1,0 +1,11 @@
+<header>
+  <h1>All Markets</h1>
+</header>
+
+<div id="markets-columns">
+  <ul class="all-markets">
+    <% @markets.each do |market| %>
+      <li><%= link_to "#{ market.name }", "/markets/#{ market.id }", title: "Review #{ market.name }." %></li>
+    <% end %>
+  </ul>
+</div>

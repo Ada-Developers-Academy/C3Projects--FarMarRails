@@ -1,0 +1,12 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/vendors/dashboard" %>
+  <%= render partial: "/vendors/products" %>
+<% end %>
+
+<div class="error-wrapper">
+  <p class="error">Error: Product not created or updated.</p>
+
+  <p class="error-details">
+    A product must have a name.
+  </p>
+</div>

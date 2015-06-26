@@ -1,0 +1,9 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/markets/dashboard" %>
+<% end %>
+
+<h1>Add New Vendor</h1>
+
+<section class="edit-form">
+  <%= render partial: "form", locals: { submit: "Add Vendor" }%>
+</section>

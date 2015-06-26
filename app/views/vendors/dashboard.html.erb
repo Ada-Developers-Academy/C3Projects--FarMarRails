@@ -1,0 +1,57 @@
+<header>
+  <h1>Welcome, <%= @vendor.name %>!</h1>
+</header>
+
+<main>
+  <section class="vendor-money">
+    <div class="money">
+      <h3 class="section-header">Revenue</h3>
+
+      <div>
+        <h2> <%= @total_month_amount %> </h2>
+        <h4>This Month</h4>
+      </div>
+
+      <div>
+        <h2> <%= @total_amount %> </h2>
+        <h4>Total</h4>
+      </div>
+    </div>
+
+    <div class="sales">
+      <%= link_to "All Sales", "/vendors/#{@vendor.id}/sales" %>
+      <h3 class="section-header">Recent Sales</h3>
+
+      <ul>
+        <% @recent_sales.each do |sale| %>
+        <li>
+          <div>
+            #<%= sale.id %>
+          </div>
+          <div>
+            <%= sale.amount_formatted %>
+          </div>
+          <div>
+           <%= sale.date %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vendor-products">
+    <%= link_to "Manage", "/vendors/#{@vendor.id}/products" %>
+    <h3 class="section-header">Products</h3>
+
+    <div>
+      <ul>
+        <% @all_products.each do |product| %>
+        <li>
+          <%= product.name %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,27 @@
+<% content_for :breadcrumbs do %>
+  <%= render partial: "/vendors/dashboard" %>
+  <%= render partial: "/vendors/sales" %>
+<% end %>
+
+<header>
+  <h1>Add A Sale</h1>
+</header>
+
+<section class="edit-form">
+  <%= form_for @sale, url: "./" do |f| %>
+    <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
+
+    <%= f.label :amount, "Sale Amount (in dollars)", placeholder: "56.18" %>
+    <br>
+    <%= f.text_field :amount, size: "10", required: true, placeholder: "$0.00" %>
+    <br><br>
+    <%= f.label :purchase_time %>
+    <%= f.date_field :purchase_time %>
+    <br><br>
+    <%= f.label :product_id %>
+    <%= collection_select :sale, :product_id, @vendor.products, :id, :name %>
+
+    <%= f.submit "Create New Sale", data: {
+      confirm: "Does everything look right? You cannot edit a sale after creating it."
+    } %>
+<% end %>
