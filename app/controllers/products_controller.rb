@@ -1,17 +1,20 @@
 class ProductsController < ApplicationController
 
   def new
+    @page = "New Product"
     @product = Product.new
     @vendor_id = params[:vendor_id]
     @url = "/vendors/#{@vendor_id}/products"
   end
 
   def create
+    @page = "Create Product"
     @product = Product.create(create_params[:product])
     redirect_to "/vendors/#{@product.vendor_id}"
   end
 
   def edit
+    @page = "Edit Product"
     find_product
     @vendor_id = params[:vendor_id]
     @url = "/vendors/#{@vendor_id}/products/#{@product.id}"

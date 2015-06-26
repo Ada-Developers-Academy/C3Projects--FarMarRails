@@ -2,20 +2,24 @@ class MarketsController < ApplicationController
 
   def index
     @all_markets = Market.all
+    @page = "Market Portal"
   end
 
   def view
     find_market
     @market_vendors = Vendor.where(market_id: "#{@market.id}")
+    @page = "Show Market"
   end
 
   def show
     find_market
     @market_vendors = Vendor.where(market_id: "#{@market.id}")
+    @page = "Show Market"
   end
 
   def edit
     find_market
+    @page = "Edit Market"
   end
 
   def update
@@ -27,6 +31,7 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new
+    @page = "New Market"
   end
 
   def create

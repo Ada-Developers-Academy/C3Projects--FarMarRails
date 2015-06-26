@@ -2,20 +2,24 @@ class VendorsController < ApplicationController
 
   def index
     @all_vendors = Vendor.all
+    @page = "Vendor"
   end
 
   def new
     @vendor = Vendor.new
     @market_id = params[:market_id]
     @url = market_vendors_path
+    @page = "New Vendor"
   end
 
   def create
     @vendor = Vendor.create(create_params[:vendor])
     redirect_to "/markets/#{@vendor.market_id}"
+    @page = "Create Vendor"
   end
 
 	def show
+    @page = "Vendor"
     find_vendor
 		@market = Market.find("#{@vendor.market_id}")
     @current_month = Time.now.month
