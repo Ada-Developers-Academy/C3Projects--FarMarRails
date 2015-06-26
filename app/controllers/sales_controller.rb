@@ -1,7 +1,6 @@
 class SalesController < ApplicationController
   def new
-    @sale = Sale.new
-
+    @sale = Sale.new(vendor_id: params[:id], product_id: params[:product_id])
     render 'sales/new'
   end
 

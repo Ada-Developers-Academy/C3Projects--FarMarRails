@@ -7,6 +7,8 @@
   <%= f.label :vendor_id %>
   <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name %>
 
+  <%= f.hidden_field :id, :value => @product.id %>
+
   <%= f.submit %>
 
 <% end %>

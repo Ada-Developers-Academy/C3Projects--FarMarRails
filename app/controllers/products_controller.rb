@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product][:id])
     @product.update(create_product_params[:product])
 
     redirect_to controller: "vendors", action: "products", id: params[:product][:vendor_id]
@@ -29,6 +29,8 @@ class ProductsController < ApplicationController
 
   def destroy
     vendor_id = params[:id]
+    # @sales = Sale.where(product_id: params[:product_id])
+    # @sales.destroy_all
     Product.destroy(params[:product_id])
 
     redirect_to controller: "vendors", action: "products", id: vendor_id

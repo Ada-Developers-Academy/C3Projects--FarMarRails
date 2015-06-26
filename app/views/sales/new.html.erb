@@ -8,11 +8,8 @@
   <%= f.label :purchase_time %>
   <%= f.datetime_local_field :purchase_time %>
 
-  <%= f.label :vendor_id %>
-  <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name %>
-
-  <%= f.label :product_id %>
-  <%= f.collection_select :product_id, Product.order(:name), :id, :name %>
+  <%= f.hidden_field :vendor_id, :value => @sale.vendor_id   %>
+  <%= f.hidden_field :product_id, :value => @sale.product_id   %>
 
   <%= f.submit %>
 

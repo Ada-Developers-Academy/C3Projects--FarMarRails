@@ -26,13 +26,13 @@
         <%= @product.name %>
       </td>
       <td>
-        <%= link_to "Edit this product", edit_product_path %>
+        <%= link_to "Edit this product", edit_product_path(product_id: @product.id) %>
       </td>
       <td>
         <%= button_to "Delete", product_path(product_id: @product.id), method: :delete, data: { confirm: "Are you sure?"} %>
       </td>
       <td>
-        <%= link_to "Create a sale for this product", new_sale_path %>
+        <%= link_to "Create a sale for this product", new_sale_path(id: @product.vendor.id, product_id: @product.id) %>
       </td>
     </tr>
 </tbody>
