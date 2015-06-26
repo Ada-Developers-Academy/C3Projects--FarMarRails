@@ -10,8 +10,20 @@
 
   <div class="container">
     <header id= "top">
-      <% num = rand(1..8) %>
-      <%= image_tag("FarMarBanner1.jpg") %>
+      <% num = rand(0..7) %>
+
+      <% images = [image_tag("FarMarBanner1.jpg"),
+        image_tag("FarMarBanner2.jpg"),
+        image_tag("FarMarBanner3.jpg"),
+        image_tag("FarMarBanner4.jpg"),
+        image_tag("FarMarBanner5.jpg"),
+        image_tag("FarMarBanner6.jpg"),
+        image_tag("FarMarBanner7.jpg"),
+        image_tag("FarMarBanner8.jpg")]
+      %>
+      
+      <%= images[num] %>
+
     </header>
 
     <body>
