@@ -33,11 +33,11 @@ Rails.application.routes.draw do
       get 'sales', action: 'sales', as: 'sales'
       post 'sales', action: 'sales_this_month'
       get 'products', action: 'products', as: 'products'
-      get 'products/:id', action: 'show_product', as: 'product'
+      get 'products/:product_id', action: 'show_product', as: 'product'
     end
   end
 
-  resources :products, only: [:new, :create, :edit, :update] do
+  resources :products, only: [:new, :create, :edit, :update, :destroy] do
   end
 
   resources :sales, only: [:new, :create] do
@@ -45,7 +45,9 @@ Rails.application.routes.draw do
 
 
 
-
+# the resources are creating restful routes for all the controller that's described in the :___
+# the 'only:' part is describing what actions we want to have
+# the 'resources' part makes these for us and puts them as paths (namespaces)
 
     # EXAMPLE
     # collection do

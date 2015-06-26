@@ -11,6 +11,9 @@
     Edit
   </th>
   <th>
+    delete
+  </th>
+  <th>
     Create Sale
   </th>
 </tr>
@@ -24,6 +27,9 @@
       </td>
       <td>
         <%= link_to "Edit this product", edit_product_path %>
+      </td>
+      <td>
+        <%= button_to "Delete", product_path(product_id: @product.id), method: :delete, data: { confirm: "Are you sure?"} %>
       </td>
       <td>
         <%= link_to "Create a sale for this product", new_sale_path %>
