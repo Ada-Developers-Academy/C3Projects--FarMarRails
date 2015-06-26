@@ -14,17 +14,40 @@
  *= require_self
  */
 
+$lightgray:   #D3D3D3;
+$mediumgray:  #989898;
+$darkgray:    #585858;
+
 html {
   font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: white;
+}
+
+body {
+  width: 960px;
+  background-color: $lightgray;
+  margin: 100px auto;
+  padding: 0 0 25px 0;
 }
 
 nav {
-  background-color: lightgray;
+  background-color: $mediumgray;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover {
+  color: $darkgray;
 }
 
 nav a {
   display: inline-block;
-  padding: .5em;
+  padding: .5em 1em;
   text-decoration: none;
   color: black;
 }
@@ -51,7 +74,7 @@ ul ul a, .button_to {
   display: inline-block;
   color: gray;
   background-color: lightgray;
-  border: none;
+  border: 1px solid grey;
   text-align: center;
 
   background-color: transparent;
@@ -60,6 +83,46 @@ ul ul a, .button_to {
   display: inline-block;
 
   margin-left: 1em;
+}
+
+.button {
+  display: inline-block;
+  // margin: 20px  0 0;
+  padding: 5px;
+  background-color: lightgray;
+  border: 1px solid grey;
+}
+
+.log_in_button, #welcome_markets {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 20px 30px 0;
+  border: 1px solid white;
+  background-color: white;
+}
+
+#welcome_markets {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+ul {
+  display: block;
+  text-align: left;
+  width: 600px;
+  margin: 20px auto;
+}
+
+input,  {
+  display: block;
+  margin: 10px 0;
+}
+
+input[type="submit"] {
+  margin-top: 40px;
+  border: 1px solid black;
 }
 
 table {
