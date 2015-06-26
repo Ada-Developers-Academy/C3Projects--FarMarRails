@@ -1,4 +1,4 @@
-<%= link_to "Back to markets", markets_path %>
+<div class="link_back"><%= link_to "Back to markets", markets_path %></div>
 
 <p>Market name: <%=@market.name  %></p>
 <p>Address:
@@ -11,11 +11,11 @@
 
 
 <p>"<%= "#{@market.name}" %>" has these vendors: </p>
-  <% @vendors.each do |vendor| %>
-    <p>
-      <%= link_to "#{vendor.name}", market_vendor_path("#{@market.id}", "#{vendor.id}")%>
-    </p>
-  <% end %>
+    <ol>
+      <% @vendors.each do |vendor| %>
+        <li><%= link_to "#{vendor.name}", market_vendor_path("#{@market.id}", "#{vendor.id}")%></li>
+        <% end %>
+    </ol>
 </p>
 
 <p>

@@ -23,6 +23,9 @@ h3 {
   text-align: center;
 }
 
+.link_back a {
+  color: white;
+}
 .nav ul li {
    display: inline-block;
    text-decoration: none;
@@ -50,6 +53,7 @@ a:hover {
 
 a {
    text-decoration: none;
+   color: white;
 }
 
 .section {
@@ -86,15 +90,19 @@ a {
 
 
 .markets_list {
-  background-image: url("welcome.png");
+  background-color: black;
   opacity: 1.0;
   filter: alpha(opacity=100);
-
 }
 
-.specific_market_list {
+// .markets_list a {
+//    text-decoration: none;
+//    color: white
+// }
 
-}
+.markets_list a:hover {
+   color: #7994ed;
+ }
 
 .specific_market_pic img {
   max-width: 100%;

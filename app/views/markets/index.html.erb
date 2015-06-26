@@ -1,11 +1,21 @@
 <%= render partial: "header" %>
 
-<h1>Hello Market!</h1>
+<h1>Welcome to Market page!</h1>
 
 <h3>Market options:</h3>
-<%= link_to "Create a new market", new_market_path %>
-<% @markets.each do |market| %>
-  <p>
-   <%= link_to "#{market.name}", market_path("#{market.id}") %>
-  </p>
-<% end %>
+
+<div class = "nav">
+  <ul>
+    <li><%= link_to "Create a new market", new_market_path %></li>
+  </ul>
+</div>
+
+<div class = "markets_list">
+  <ol>
+   <% @markets.each do |market| %>
+    <li>
+      <%= link_to "#{market.name}", market_path("#{market.id}") %>
+    </li>
+    <% end %>
+  </ol>
+</div>
