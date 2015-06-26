@@ -1,4 +1,4 @@
-<h1>Sales for the month</h1>
+<%= render partial: "users/header", locals: {  title: "Sales for the Month", link_name: "Back to Vendor", link_path: vendor_path(@vendor.id), second_link: false } %>
 
 <table>
 
@@ -19,4 +19,3 @@
   <p>There were no sales this month.</p>
 <% end %>
 
-<%= link_to "Back to vendor", vendor_path(@vendor.id) %>
