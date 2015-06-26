@@ -1,8 +1,8 @@
 class VendorsController < ApplicationController
   def index
-  @header= "Select your Vendor Name"
-  @vendors = Vendor.order("lower(name) ASC").all
-  @path = "/vendors"
+    @header= "Select your Vendor Name"
+    @vendors = Vendor.order("lower(name) ASC").all
+    @path = "/vendors"
   end
 
   def show

@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
   root 'users#index'
+
   resources :vendors, only: [:index, :show] do
     member do
-      resources :sales
-      resources :products
+      resources :sales, only: [:index]
+    end
+    resources :products do
+      resources :sales, except: [:index]
     end
   end
 
@@ -12,7 +15,7 @@ Rails.application.routes.draw do
     collection do
       resources :vendors, only: [:show], action: "by_market", as: "by_market"
       resources :vendors, as: "by_market"
-  end
+    end
   end
 
   resources :users, only: [:index] do

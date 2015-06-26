@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<main>
+  <%= form_for @sale, :url => vendor_product_sales_path, :action => "create" do |f| %>
+    <fieldset>
+      <%= f.label :amount %>
+      <%= f.text_field :amount, value: @sale.amount, :required => true %>
+
+      <%= f.label :purchase_time, "Purchase Time" %>
+      <%= f.date_field :purchase_time, value: @sale.purchase_time %>
+
+      <%= f.label :vendor_id, "Vendor Id" %>
+      <%= f.text_field :vendor_id, value: @vendor.id  %>
+
+      <%= f.label :product_id, "Product Id" %>
+      <%= f.text_field :product_id, value: @product.id  %>
+
+    <section>
+      <%= f.submit "Create Sale" %>
+    </section>
+  <% end %>
+</main>

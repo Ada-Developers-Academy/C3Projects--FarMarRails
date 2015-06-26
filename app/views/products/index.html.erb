@@ -6,13 +6,15 @@
       <th>Name</th>
       <th>Edit</th>
       <th>Delete</th>
+      <th>Create Sale</th>
     </tr>
     <% @products.each do |product| %>
     <tr>
       <td><%= product.id %> </td>
       <td><%= product.name %> </td>
       <td> <%= link_to "Edit Product", edit_vendor_product_path(product.vendor_id, product.id) %> </td>
-      <td> <%= link_to "Delete Product", vendor_products_path, method: :delete, data: { confirm: "Are you sure?" } %> </td>
+      <td> <%= link_to "Delete Product", vendor_product_path(product.vendor_id, product.id), method: :delete, data: { confirm: "Are you sure?" } %> </td>
+      <td> <%= link_to "Create Sale", new_vendor_product_sale_path(product.vendor_id, product.id) %> </td>
     </tr>
     <% end %>
   </table>
