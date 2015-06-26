@@ -1,9 +1,3 @@
-  <header><h1>I'm a new vendor!</h1></header>
-
-<nav>
-  <ul>
-    <li><%= link_to "Back to all vendors", vendors_path %></li>
-  </ul>
-</nav>
+<%= render partial: "users/header", locals: {  title: "New Vendor", link_name: "Back to Vendors", link_path: vendors_path, second_link: false } %>
 
 <%= render partial: "vendor_form", locals: { url: "/markets/#{:market_id}/vendors" } %>

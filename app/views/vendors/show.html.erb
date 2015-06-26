@@ -1,11 +1,4 @@
-<header><h1>Vendor Details</h1></header>
-
-
-<nav>
-  <ul>
-    <li><%= link_to "Back to all vendors", vendors_path %></li>
-  </ul>
-</nav>
+<%= render partial: "users/header", locals: { title: "Vendor Details", link_name: "Back to Vendors", link_path: vendors_path, second_link: false } %>
 
 <table>
   <th>Name</th>

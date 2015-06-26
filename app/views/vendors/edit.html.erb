@@ -1,6 +1,3 @@
-<%= render partial: "users/header", locals: {  title: "Edit Vendor", link_name: "Back to Vendor", link_path: markets_path, link_name2: "I am a Vendor", link_path2: vendor_path(vendor.id), second_link: false } %>
-
-
-<header><h1>This is an edit form for vendor</h1></header>
+<%= render partial: "users/header", locals: {  title: "Edit Vendor", link_name: "Back to Vendor", link_path: markets_path, second_link: false } %>
 
 <%= render partial: "vendor_form", locals: { url: "/markets/#{:market_id}/vendors/#{:id}" } %>

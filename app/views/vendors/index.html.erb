@@ -1,10 +1,4 @@
-<header><h1>Index of Vendors </h1></header>
-
-<nav>
-  <ul>
-    <li><%= link_to "Back to main directory", root_path %></li>
-  </ul>
-</nav>
+<%= render partial: "users/header", locals: {  title: "Vendors", link_name: "Back to Main Directory", link_path: root_path, second_link: false } %>
 
 <table>
 
