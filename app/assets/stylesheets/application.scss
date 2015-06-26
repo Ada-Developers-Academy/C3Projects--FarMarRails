@@ -14,3 +14,53 @@
  *= require_self
  */
 
+html {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: lightgray;
+}
+
+nav a {
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+
+}
+
+h3 {
+
+}
+
+ul li {
+  color: black;
+  text-decoration: none;
+}
+
+ul ul, ul li, ul ul li {
+  display: inline-block;
+}
+
+ul ul a, .button_to {
+  display: inline-block;
+  color: gray;
+  background-color: lightgray;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th,td {
+  padding: .25em;
+}

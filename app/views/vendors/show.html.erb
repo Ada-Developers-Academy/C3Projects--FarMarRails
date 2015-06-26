@@ -8,12 +8,15 @@
 
 <ul>
   <% @vendor.products.each do |product| %>
-    <li><%= link_to product.name, vendor_product_path(@vendor, product) %></li>
-    <%= link_to "Edit this product", edit_vendor_product_path(@vendor, product) %>
-    <%= button_to "Delete this product", vendor_product_path(@vendor, product),
-        method: :delete, data: { confirm: "Are you sure you want to delete this product?" } %>
-    <%= link_to "Create a new sale for this product",
-        new_vendor_sale_path(@vendor, :product_id => product.id) %>
+    <li><%= link_to product.name, vendor_product_path(@vendor, product), class: "list_element" %>
+      <ul>
+        <li><%= link_to "Edit this product", edit_vendor_product_path(@vendor, product) %></li>
+        <li><%= button_to "Delete this product", vendor_product_path(@vendor, product),
+            method: :delete, data: { confirm: "Are you sure you want to delete this product?" } %></li>
+        <li><%= link_to "Create a new sale for this product",
+            new_vendor_sale_path(@vendor, :product_id => product.id) %></li>
+      </ul>
+    </li>
   <% end %>
 </ul>
 
