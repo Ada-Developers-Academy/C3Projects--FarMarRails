@@ -3,4 +3,9 @@
   <%= render partial: "/vendors/sales" %>
 <% end %>
 
-<h1>Error: Something was wrong with that form input.</h1>
+<p class="error">Error: Sale not created.</p>
+
+<p class="error-details">
+  A sale must have a numeric value for its amount. A sale could be for 14.50 or
+  25.82 but not for $14.50 or twenty five dollars and eighty-two cents.
+</p>
