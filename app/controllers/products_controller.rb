@@ -29,8 +29,8 @@ class ProductsController < ApplicationController
 
   def destroy
     vendor_id = params[:id]
-    # @sales = Sale.where(product_id: params[:product_id])
-    # @sales.destroy_all
+    @sales = Sale.where(product_id: params[:product_id])
+    @sales.destroy_all
     Product.destroy(params[:product_id])
 
     redirect_to controller: "vendors", action: "products", id: vendor_id
