@@ -1,0 +1,20 @@
+<body class="vendor-background">
+  <h1>Products for <%= @vendor.name %> Vendor</h1>
+  <%= button_to "Create Product", new_vendor_product_path, method: :get, class: "button" %>
+  <div class="text_box">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= button_to "Edit Product", edit_vendor_product_path(@vendor.id, product.id), method: :get, class: "button" %></td>
+        <td><%= button_to "Delete Product", vendor_product_path(@vendor.id, product.id), method: :delete, class: "button" %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</body>

@@ -1,0 +1,156 @@
+body {
+  font-family: 'Muli', sans-serif;
+  width: 960px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+a:link {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-background {
+  background-image: url(<%= asset_path "Light-Wood.jpg" %>);
+  background-size: 100%;
+}
+
+.market-background {
+  background-image: url(<%= asset_path "market_background.jpg" %>);
+  background-size: 100%;
+  margin-top: 10px;
+}
+
+.vendor-background {
+  background-image: url(<%= asset_path "vendor_background.jpg" %>);
+  background-size: 100%;
+  margin-top: 10px;
+}
+
+.buttons_inline .button_to {
+  display: inline-block;
+}
+
+.sort_markets {
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+  text-align: center;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.new_market {
+  display: inline-block;
+}
+
+.button, .inner_button {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: 'Muli', sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  background: #9ac6e3;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.inner_button {
+  color: #465c69;
+  font-weight: bold;
+  }
+
+.button:hover, .inner_button {
+  background: #72b6e0;
+  text-decoration: none;
+}
+
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+table td, th {
+  text-align: center;
+  padding: 10px 1%;
+}
+
+table td:nth-child(2), td:first-child {
+  width: 25%;
+}
+
+input, select {
+  display: block;
+  text-align: center;
+}
+
+div.text_box {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  padding-bottom: 200px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.7;
+  max-height: 500px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
+.home_box {
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.7;
+  width: 1000px;
+  text-align: center;
+}
+
+.market_image {
+  background-image: url(<%= asset_path "fruit.jpg" %>);
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 30px;
+  display: block;
+  height: 375px;
+  width: 425px;
+  display: inline-block;
+}
+
+.vendor_image {
+  background-image: url(<%= asset_path "wooden-crates.jpg" %>);
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 30px;
+  display: block;
+  height: 375px;
+  width: 425px;
+  display: inline-block;
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

@@ -1,0 +1,22 @@
+<body class="market-background">
+  <h1>Vendors for <%= @market.name %></h1>
+  <%= button_to "Add Another Vendor", new_market_vendor_path(@market.id), method: :get, class: "button" %>
+  <div class="text_box">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Number of Employees</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%=vendor.name%></td>
+        <td><%=vendor.num_of_employees%></td>
+        <td><%=button_to "Edit Vendor", edit_market_vendor_path(@market.id, vendor.id), method: :get, class: "inner_button" %>
+        <td><%=button_to "Delete Vendor", market_vendor_path(@market.id, vendor.id), method: :delete, data: {confirm: "Are you sure?"}, class: "inner_button" %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</body>
