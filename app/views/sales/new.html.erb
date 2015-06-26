@@ -21,8 +21,7 @@
     <%= f.label :product_id %>
     <%= collection_select :sale, :product_id, @vendor.products, :id, :name %>
 
-    <!-- time_field("task", "started_at", min: Time.now) -->
-    <br><br>
-    <%= f.submit "Create New Sale" %>
-  <% end %>
-</section>
+    <%= f.submit "Create New Sale", data: {
+      confirm: "Does everything look right? You cannot edit a sale after creating it."
+    } %>
+<% end %>
