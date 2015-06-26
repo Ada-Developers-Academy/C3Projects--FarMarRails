@@ -1,9 +1,17 @@
 class VendorsController < ApplicationController
 
   before_action :get_vendor, only: [:edit, :update, :destroy]
+  before_action :check_auth, only: [:edit, :update, :destroy]
 
   def get_vendor
     @vendor = Vendor.find(params[:id])
+  end
+
+  def check_auth
+    if session[:market_id] != @vendor.market_id
+      flash[:notice] = "Sorry, you are not authorized to make this change"
+      redirect_to market_path
+    end
   end
 
   def index
