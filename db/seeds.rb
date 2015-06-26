@@ -14,7 +14,7 @@ require 'csv'
 
 CSV.foreach("seed_csvs/markets.csv") do |row|
   Market.create(
-    id: row[0],
+    # id: row[0],
     name: row[1],
     street_address: row[2],
     city: row[3],
@@ -26,7 +26,7 @@ end
 
 CSV.foreach("seed_csvs/vendors.csv") do |row|
   Vendor.create(
-    id: row[0],
+    # id: row[0],
     name: row[1],
     no_of_employees: row[2],
     market_id: row[3]
@@ -35,7 +35,7 @@ end
 
 CSV.foreach("seed_csvs/products.csv") do |row|
   Product.create(
-    id: row[0],
+    # id: row[0],
     name: row[1],
     vendor_id: row[2]
   )
@@ -43,7 +43,7 @@ end
 
 CSV.foreach("seed_csvs/sales.csv") do |row|
   Sale.create(
-    id: row[0],
+    # id: row[0],
     amount: row[1],
     purchase_time: row[2],
     vendor_id: row[3],
