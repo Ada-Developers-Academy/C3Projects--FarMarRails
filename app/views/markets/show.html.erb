@@ -10,9 +10,11 @@
 
 <ul>
   <% @market.vendors.each do |vendor| %>
-    <li><%= link_to vendor.name, market_vendor_path(@market, vendor) %>
-      <%= link_to 'Edit', edit_market_vendor_path(@market, vendor), class: "inline_button" %>
-      <%= button_to 'Delete', market_vendor_path(@market, vendor), class: "inline_button", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } %>
-    </li>
+    <% unless vendor.archived %>
+      <li><%= link_to vendor.name, market_vendor_path(@market, vendor) %>
+        <%= link_to 'Edit', edit_market_vendor_path(@market, vendor), class: "inline_button" %>
+        <%= button_to 'Delete', market_vendor_path(@market, vendor), class: "inline_button", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
