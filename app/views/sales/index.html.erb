@@ -1,26 +1,25 @@
 <body class="vendor-background">
-  <h1>All Sales for <%= @vendor.name %></h1>
-  <div class="buttons_inline">
-    <%= button_to "Create a Sale", new_vendor_sale_path(params[:vendor_id]), method: :get, class: "button" %>
-    <%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get, class: "button" %>
-  </div>
-  <div class="text_box">
-    <table>
-      <tr>
-        <th>Amount</th>
-        <th>Time of Purchase</th>
-        <th>Product ID</th>
-      </tr>
-      <% total_sales = 0 %>
-      <% @sales.each do |sale| %>
-      <tr>
-        <td>$<%= cents_to_dollars(sale.amount) %></td>
-        <% total_sales += sale.amount %>
-        <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
-        <td><%= sale.product_id %></td>
-      </tr>
-      <% end %>
-    </table>
-  <p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
-  </div>
+<%= button_to "Create a Sale", new_vendor_sale_path(params[:vendor_id]), method: :get, class: "button" %>
+<div class="text_box">
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Time of Purchase</th>
+    <th>Product ID</th>
+  </tr>
+  <% total_sales = 0 %>
+  <% @sales.each do |sale| %>
+  <tr>
+    <td><%= number_to_currency(sale.amount/100.00) %></td>
+    <% total_sales += sale.amount %>
+    <% unless sale.purchase_time.nil? %>
+    <td><%= sale.purchase_time.strftime("%B, %d %Y") %></td>
+    <% end %>
+    <td><%= sale.product_id %></td>
+  </tr>
+  <% end %>
+</table>
+<p>Total sales: $<%= cents_to_dollars(total_sales) %></p>
+</div>
+<%= button_to "Sales of current month", sales_of_month_path(@vendor.id), method: :get, class: "button" %>
 </body>

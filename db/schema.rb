@@ -33,11 +33,11 @@ ActiveRecord::Schema.define(version: 20150623222552) do
 
   create_table "sales", force: :cascade do |t|
     t.integer  "amount"
-    t.datetime "purchase_time"
+    t.datetime "purchase_time", default: '2015-06-26 23:30:28'
     t.integer  "vendor_id"
     t.integer  "product_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "vendors", force: :cascade do |t|

@@ -1,3 +1,5 @@
+<%= @sale.errors.messages[:not_money] %>
+
 <body class="vendor-background">
   <h1>Create a New Sale</h1>
   <div class="text_box">
@@ -6,7 +8,7 @@
     <%= f.text_field :amount %>
 
     <%= f.label :purchase_time %>
-    <%= f.date_field :purchase_time %>
+    <%= f.date_field :purchase_time, default: Time.now %>
 
     <%= f.label :products %>
     <%= f.collection_select :product_id, @products, :id, :name %>

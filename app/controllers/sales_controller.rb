@@ -7,6 +7,7 @@ class SalesController < ApplicationController
   end
 
   def create
+    sale_params[:amount] = sale_params[:amount].to_f * 100
     @sale = Sale.create(sale_params)
     @sale.save
     redirect_to vendor_sales_path
@@ -23,7 +24,7 @@ class SalesController < ApplicationController
     @sales_collection = @vendor.sales.to_a
     @sales = Sale.sales_by_month(@sales_collection)
     render :sales_of_month
-    
+
   end
 
   private
@@ -32,9 +33,3 @@ class SalesController < ApplicationController
     params.require(:sale).permit(:amount, :purchase_time, :vendor_id, :product_id)
   end
 end
-
-
-
-
-
-
