@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
 
   def new
+    @vendor_id = params[:vendor_id]
     @product = Product.new
-    # do we need this line? (below)
-    @vendors = Vendor.all
 
     render :new
   end
