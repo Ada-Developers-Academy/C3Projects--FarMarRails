@@ -1,0 +1,17 @@
+<main class = "vendor_form">
+  <%= form_for @vendor do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @vendor.name, :required => true %>
+
+      <%= f.label :no_of_employees, "No. of Employees" %>
+      <%= f.text_field :no_of_employees, value: @vendor.no_of_employees  %>
+
+      <%= f.label :market_id, "Market Id" %>
+      <%= f.text_field :market_id, value: @vendor.market_id  %>
+
+    <section class="button">
+      <%= f.submit "#{@adj} Vendor" %>
+    </section>
+  <% end %>
+</main>

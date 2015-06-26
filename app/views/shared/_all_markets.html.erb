@@ -1,0 +1,11 @@
+
+  <table>
+    <tr>
+      <th>Market Name</th>
+    </tr>
+    <% @markets.each do |market| %>
+    <tr>
+        <td><%= link_to "#{market.name.titlecase}", "markets/#{market.id}" %> </td>
+    </tr>
+    <% end %>
+  </table>

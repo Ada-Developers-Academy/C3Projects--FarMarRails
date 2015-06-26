@@ -1,0 +1,10 @@
+  <table>
+    <tr>
+      <th>Vendor Name</th>
+    </tr>
+    <% @vendors.each do |vendor| %>
+    <tr>
+      <td><%= link_to "#{vendor.name.titlecase}", "#{@path}/#{vendor.id}" %> </td>
+    </tr>
+    <% end %>
+  </table>

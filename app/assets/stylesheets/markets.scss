@@ -1,0 +1,156 @@
+// Place all the styles related to the markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Main styling //
+
+html {
+  margin: 0 auto;
+  padding: 0;
+  background-image: image-url("restaurant.png");
+  background-repeat: repeat;
+  font-family: 'Oxygen', sans-serif;
+  color: #235140;
+  font-size: 18px;
+}
+
+header {
+  margin: 0 auto;
+  width: 960px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.footer_text {
+  margin: 0 auto;
+  width: 960px;
+  position: relative;
+}
+
+footer {
+ font-size: 1.4em;
+ font-weight: bold;
+ padding-top: 15px;
+ margin: 0 auto;
+ width: 100%;
+ position: relative;
+}
+
+h1 {
+  color: #235140;
+  font-size: 48px;
+  font-variant: small-caps;
+  margin: 0 auto;
+}
+
+main {
+  margin: 0 auto;
+  width: 960px;
+  background-color: rgba(234,223,217,0.4);
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.button input[type=submit] {
+  padding: 8px 15px;
+  font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+
+// Text Fields //
+
+textarea {
+ width: 200px;
+ height: 40px;
+ border: 1px solid #cccccc;
+ padding: 5px;
+ resize: none;
+}
+
+label {
+display: block;
+padding: 3px;
+}
+
+
+// Links //
+a {
+ color: #3e0620;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #f7dc70;
+}
+
+// Tables //
+
+table {
+text-align: left;
+vertical-align: middle;
+width: 600px;
+}
+
+.index_header th {
+  font-size: 1.3em;
+}
+
+th {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding-bottom: 3px;
+  width: 100px;
+}
+
+.details th {
+  width: 200px;
+}
+
+.all_markets th, .all_vendors th {
+  font-size: 1.3em;
+}
+
+.market_manager {
+  height: 13500px;
+}
+
+.all_markets {
+  width: 480px;
+  float: left;
+}
+
+.all_vendors {
+  width: 480px;
+  float:right;
+  height: 13500px;
+}
+
+td {
+  padding: 3px;
+}
+
+// moves over the check and delete boxes
+.icon {
+  text-align: center;
+}
+
+.details td {
+  width: 400px;
+}
+
+.market_form input[type=text] {
+  width: 30%;
+  height: 20px;
+}
+
+.vendor_form input[type=text] {
+  width: 30%;
+  height: 20px;
+}
+
+.login {
+  display: inline-block;
+  margin-right: 25px;
+}

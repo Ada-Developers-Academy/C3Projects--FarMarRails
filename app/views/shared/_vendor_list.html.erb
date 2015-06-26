@@ -1,0 +1,10 @@
+<table class= "vendor_list" >
+  <tr>
+    <th> Vendors </th>
+  </tr>
+    <% @vendor.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.name %> </td>
+  </tr>
+    <% end %>
+</table>

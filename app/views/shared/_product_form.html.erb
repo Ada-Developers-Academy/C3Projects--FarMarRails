@@ -1,0 +1,15 @@
+<main>
+  <!-- Restful route didn't work, because we were using the same form for 'edit' & 'add' -->
+  <%= form_for @product, url: "/vendors/#{@vendor.id}/products/#{@product.id}"  do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @product.name, :required => true %>
+
+      <%= f.label :vendor_id, "Vendor Id" %>
+      <%= f.text_field :vendor_id, value: @vendor.id %>
+
+    <section class="button">
+      <%= f.submit "#{@adj} Product" %>
+    </section>
+  <% end %>
+</main>

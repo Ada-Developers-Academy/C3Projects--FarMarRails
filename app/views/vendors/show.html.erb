@@ -1,0 +1,7 @@
+<%= render "shared/header" %>
+<main>
+  <%= render "shared/each_vendor" %>
+  <h3> <%= link_to "View Sales", sales_path %> </h3>
+  <h3> <%= link_to "View Products", vendor_products_path(@vendor.id) %> </h3>
+</main>
+<%= render "shared/footer" %>

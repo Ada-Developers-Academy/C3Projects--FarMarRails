@@ -1,0 +1,33 @@
+  <main class = "market_form">
+  <%= form_for @market do |f| %>
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, value: @market.name, :required => true %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, value: @market.address  %>
+
+      <%= f.label :city %>
+      <%= f.text_field :city, value: @market.city  %>
+
+      <%= f.label :county  %>
+      <%= f.text_field :county, value: @market.county %>
+      <!-- If the state is already there, it is a text box -->
+      <% if @adj == "Update" %>
+        <%= f.label :state %>
+        <%= f.text_field :state, value: @market.state  %>
+      <!-- If the state isn't there, it is a drop-down of all states from the market helper-->
+      <% else %>
+        <%= f.label :state %>
+        <%= f.select :state, options_for_select(us_states), {:include_blank => "Please select"}  %>
+
+      <% end %>
+
+      <%= f.label :zip  %>
+      <%= f.text_field :zip, value: @market.zip %>
+    </fieldset>
+    <section class="button">
+      <%= f.submit "#{@adj} Market" %>
+    </section>
+  <% end %>
+</main>

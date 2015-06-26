@@ -1,0 +1,30 @@
+<table class="details">
+  <tr>
+    <th>Id</th>
+    <td><%= @market.id %></td>
+  </tr>
+  <tr>
+    <th>Market Name</th>
+    <td><%= @market.name.titlecase %></td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= @market.address.titlecase %></td>
+  </tr>
+  <tr>
+    <th> City</th>
+        <td> <%= @market.city.titlecase %> </td>
+  </tr>
+  <tr>
+    <th> County</th>
+      <td> <%= @market.county.titlecase %> </td>
+  </tr>
+  <tr>
+    <th> State</th>
+        <td> <%= @market.state.titlecase %> </td>
+  </tr>
+  <tr>
+    <th> Zip Code</th>
+        <td> <%= @market.zip %> </td>
+  </tr>
+</table>
