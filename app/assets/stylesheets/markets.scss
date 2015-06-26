@@ -1,10 +1,6 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.all-markets {
-  margin-top: 40px;
-}
-
 .details {
   text-align: left;
   margin: 0 auto;
@@ -92,6 +88,12 @@
   padding: 10px;
 }
 
-#login-form .submit {
-  padding: 10px; // this won't work until background-url because ????? who knows
+#markets-columns {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
+#markets-columns ul {
+  margin: 0;
 }
