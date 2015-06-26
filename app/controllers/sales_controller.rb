@@ -12,8 +12,9 @@ class SalesController < ApplicationController
   end
 
   def show
-
   end
+
+
 
 
 ##################### PRIVATE METHODS #####################

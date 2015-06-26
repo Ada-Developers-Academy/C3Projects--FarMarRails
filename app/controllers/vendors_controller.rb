@@ -21,6 +21,7 @@ class VendorsController < ApplicationController
 		@vendor_products = Product.where(vendor_id: "#{@vendor.id}")
     @current_month = Time.now.month
     @product_sales = Sale.where(product_id: "product.id")
+    @vendor_sales = Sale.where(vendor_id: "#{@vendor.id}")
 	end
 
   def edit
