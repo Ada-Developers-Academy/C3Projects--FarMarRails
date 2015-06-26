@@ -40,6 +40,10 @@ class VendorsController < ApplicationController
     redirect_to market_vendors_path
   end
 
+  def vendor_search
+    @vendors = Vendor.search(params[:search])
+  end
+
   private
 
   def create_params

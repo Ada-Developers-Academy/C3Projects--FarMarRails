@@ -10,4 +10,9 @@ class Vendor < ActiveRecord::Base
     end
     total_sales
   end
+
+  def self.search(search)
+    where("name like ?", "%#{search}%")
+  end
+
 end

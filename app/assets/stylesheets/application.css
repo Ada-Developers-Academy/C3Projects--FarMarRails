@@ -24,7 +24,7 @@
    background-color: #000000;
    }
 
- body{
+ body {
    width: 960px;
    height: 400px;
    padding: 15px;
@@ -33,14 +33,14 @@
    color: #000000;
  }
 
-h1{
+h1 {
   font-size: 300%;
   text-align: center;
   font-family: 'Syncopate', sans-serif;
   color: #ffffff;
 }
 
-h2, legend{
+h2, legend {
   font-size: 300%;
   color: #ffffff;
 }
@@ -49,6 +49,11 @@ table {
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.7);
   margin: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
 }
 
 header {
@@ -61,7 +66,6 @@ footer{
   background-color: #000;
   height: 40px;
   text-align: center;
-
 }
 
 a, a:visited {
@@ -75,21 +79,32 @@ a, a:visited {
 
 #home_buttons {
   text-align: center;
-
 }
 
 
-
-
-.forms {
+.forms, .sale_form {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
+}
+
+ul{
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+.search{
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 150px;
+  margin-right: 100px;
 }
 
 input, textarea, select {
   display: block;
 }
 
+.datetime, select {
+  display: inline;
+}
 
 th{
   font-size: 150%;

@@ -10,11 +10,15 @@
     <%= f.label :amount %>
     <%= f.text_field :amount, required: :true %>
 
+    <br>
+
     <%= f.label :purchase_time %>
-    <%= f.datetime_select :purchase_time, required: :true %>
+    <%= f.datetime_select :purchase_time, class: "datetime", required: :true  %>
+    <br>
+    <br>
 
     <%= f.label "Select Product:" %>
-    <%= f.collection_select :product_id, @products, :id, :name, required: :true %>
+    <%= f.collection_select :product_id, @products, :id, :name, required: :true%>
 
 
     <%= f.hidden_field :vendor_id, :value => "#{@vendor[:id]}" %>

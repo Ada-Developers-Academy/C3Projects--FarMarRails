@@ -2,6 +2,11 @@
 
 <h1>Welcome to the Vendor Portal!</h1>
 
+<%= form_tag({ controller: "vendors", action: "vendor_search"}, method: "get", class: "search") do %>
+    <%= text_field_tag :search, params[:search], id: 'search_field', placeholder: 'Search Vendors' %>
+    <%= submit_tag "Search" %>
+<% end %>
+
 <table border = "0">
   <tr>
     <th>Vendor Name</th>

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
 
   resources :vendors, only: [:index] do
+      collection do
+        get '/search', action: 'vendor_search'
+      end
     resources :sales, except: [:update, :destroy, :edit, :show] do
       collection do
         get '/current_month', action: 'current_month_sales'

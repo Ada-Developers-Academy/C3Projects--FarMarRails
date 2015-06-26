@@ -4,17 +4,23 @@
 
 <table>
   <tr>
-    <th>Product Name</th>
+    <th>Name</th>
     <th>Sale Amount</th>
     <th>Purchase Date/Time</th>
   </tr>
 
-  <% @current_month.each do |sale| %>
+  <% if @current_month %>
+    <% @current_month.each do |sale| %>
+      <tr>
+          <td><%= sale.product.name %></td>
+          <td><%= number_to_currency(sale.amount / 100.00) %></td>
+          <td><%= sale.purchase_time %></td>
+          </td>
+      </tr>
+      <% end %>
+  <% else %>
     <tr>
-        <td><%= sale.product.name %></td>
-        <td><%= number_to_currency(sale.amount / 100.00) %></td>
-        <td><%= sale.purchase_time %></td>
-        </td>
+      <td><h3>You don't have any sales this month.</h3></td>
     </tr>
   <% end %>
 
@@ -22,5 +28,7 @@
     <td><h3>Total Sales in Current Month: <%= number_to_currency(Sale.current_month_total(@current_month) / 100.00) %></h3></td>
   </tr>
 </table>
+
+<%= link_to "Back to all sales", vendor_sales_path %>
 
 <%= render "shared/footer" %>
