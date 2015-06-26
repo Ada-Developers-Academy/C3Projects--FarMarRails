@@ -3,7 +3,7 @@
     /*font-family: 'Old Standard TT', serif; (weights: 400, 700)*/
 
 /*Colors:*/
-  /*Red color: #E5132F */
+  /*Red color: #900001 */
   /*Grey color: #EBEAEB */
   /*Dark Grey/Black-ish base color: #262626 */
   /*White: #FFFFFF*/
@@ -32,7 +32,7 @@
   }
 
   h2 {
-    color: #262626;
+    color: #900001;
   }
 
   footer {
@@ -50,7 +50,7 @@
   table {
     border-radius: 25px;
     border-color: #E5132F;
-    border: 1px solid black;
+    border: 1px solid #262626;
     padding: 35px;
     margin: 10px auto;
     width: 1000px;
