@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  # TODO: consider moving/nesting these
   get '/welcome/markets' => 'welcome#index_markets'
   get '/welcome/markets/:id' => 'welcome#show_market', as: 'show_market'
 
