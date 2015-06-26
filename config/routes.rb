@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # root.
   root "users#index"
 
   # grab login pages.
@@ -18,11 +17,6 @@ Rails.application.routes.draw do
   get "/markets/:id/dashboard" => "markets#dashboard"
   get "/vendors/:id/dashboard" => "vendors#dashboard"
 
-  # resource routes for market users.
-  resources :markets, except: [:destroy] do
-    resources :vendors, except: [:index, :show]
-  end
-
   # market user error messages. some of these might only be hit by scripting
   # attacks that don't use the form or by users with older browsers that don't
   # recognize the required attribute in form fields.
@@ -31,17 +25,24 @@ Rails.application.routes.draw do
   get "/markets/:market_id/vendors/new/error" => "vendors#error"
   get "/markets/:market_id/vendors/edit/error" => "vendors#error"
 
-  # resource routes for vendor users.
-  resources :vendors, only: [] do
-    resources :products, except: [:show]
-    resources :sales, only: [:index, :new, :create]
+  # resource routes for market users.
+  resources :markets, except: [:destroy] do
+    resources :vendors, except: [:index, :show]
   end
 
   # vendor user error messages. some of these might only be hit by scripting
   # attacks that don't use the form or by users with older browsers that don't
   # recognize the required attribute in form fields.
-  get "/vendors/:vendor_id/sales/current" => "sales#current_month"
   get "/vendors/:vendor_id/products/new/error" => "products#error"
   get "/vendors/:vendor_id/products/edit/error" => "products#error"
   get "/vendors/:vendor_id/sales/new/error" => "sales#error"
+
+  # vendor sales -- just for the current month.
+  get "/vendors/:vendor_id/sales/current" => "sales#current_month"
+
+  # resource routes for vendor users.
+  resources :vendors, only: [] do
+    resources :products, except: [:show]
+    resources :sales, only: [:index, :new, :create]
+  end
 end
