@@ -2,7 +2,7 @@
   <fieldset>
     <legend> Product Details </legend>
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => true %>
 
       <%= f.hidden_field :vendor_id, value: @vendor_id %>
 

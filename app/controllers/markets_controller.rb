@@ -48,5 +48,4 @@ class MarketsController < ApplicationController
     params.permit(market: [:id, :name, :address, :city, :county, :state, :zip])
   end
 
-
 end

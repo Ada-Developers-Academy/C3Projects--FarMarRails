@@ -1,13 +1,8 @@
-<h1> Market Detail for <%= @market.name %></h1>
+<h1><%= @market.name %></h1>
 
 <table>
-  <thead>
-    Details
-  </thead>
-
   <tr>
     <th> ID </th>
-    <th> Name </th>
     <th> Address </th>
     <th> City </th>
     <th> County </th>
@@ -18,7 +13,6 @@
 
   <tr>
     <td> <%= @market.id %> </td>
-    <td> <%= @market.name %></td>
     <td> <%= @market.address %> </td>
     <td> <%= @market.city %> </td>
     <td> <%= @market.county %> </td>
@@ -29,11 +23,14 @@
 
 </table>
 
-<ul>
-<% @market_vendors.each do |vendor| %>
-  <li>
-   <%= vendor.name %>
-  </li>
-</ul>
-
-<% end %>
+<h3>VENDORS</h3>
+<table>
+  <tr>
+    <th> Name </th>
+  </tr>
+  <% @market_vendors.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.name %> </td>
+  </tr>
+  <% end %>
+</table>
