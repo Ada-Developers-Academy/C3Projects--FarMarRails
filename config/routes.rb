@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     resources :vendors, except: [:index, :show]
   end
 
-  # market user error messages
+  # market user error messages. some of these might only be hit by scripting
+  # attacks that don't use the form or by users with older browsers that don't
+  # recognize the required attribute in form fields.
   get "/markets/new/error" => "markets#error"
   get "/markets/edit/error" => "markets#error"
   get "/markets/:market_id/vendors/new/error" => "vendors#error"
@@ -32,7 +34,9 @@ Rails.application.routes.draw do
     resources :sales, only: [:index, :new, :create]
   end
 
-  # vendor user error messages
+  # vendor user error messages. some of these might only be hit by scripting
+  # attacks that don't use the form or by users with older browsers that don't
+  # recognize the required attribute in form fields.
   get "/vendors/:vendor_id/sales/current" => "sales#current_month"
   get "/vendors/:vendor_id/products/new/error" => "products#error"
   get "/vendors/:vendor_id/products/edit/error" => "products#error"
