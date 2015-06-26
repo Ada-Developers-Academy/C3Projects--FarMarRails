@@ -16,7 +16,12 @@
            <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
          <% end %>
     </td>
-    <td> <%= sale.product.name %> </td>
+    <td> <% if sale.product == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.product.name %>
+         <% end %>
+    </td>
   </tr>
     <% end %>
 
@@ -44,7 +49,12 @@
            <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
          <% end %>
     </td>
-    <td> <%= sale.product.name %> </td>
+    <td> <% if sale.product == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.product.name %>
+         <% end %>
+    </td>
   </tr>
     <% end %>
 </table>
