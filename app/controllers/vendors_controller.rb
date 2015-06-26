@@ -81,7 +81,7 @@ class VendorsController < ApplicationController
     @sales = @vendor.sales.all
     @total_sales = 0
     @sales.each do |sale|
-      @total_sales += sale.amount.to_i
+      @total_sales += sale.amount.to_f/100
     end
     @date_today = Date.today.strftime("%Y-%m")
     @month_sales = 0
