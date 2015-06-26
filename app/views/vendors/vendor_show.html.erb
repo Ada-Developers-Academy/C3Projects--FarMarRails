@@ -1,5 +1,5 @@
 <p><%= link_to "<< return to market", "#{market_path(@vendor.market_id)}" %></p>
-<h1> <%=@vendor.name%> </h1>
+<h1> <%= @vendor.name %> </h1>
 
 <table>
   <thead>
@@ -28,7 +28,7 @@
         <%= @vendor.no_of_employees %>
       </td>
       <td>
-        <%= link_to "Edit", edit_market_vendor_path(@vendor.market_id, @vendor.id)%>
+        <%= link_to "Edit", edit_market_vendor_path(@vendor.market_id, @vendor.id) %>
       </td>
       <td>
         <%= link_to "Delete", market_vendor_path(@vendor.market_id, @vendor.id), :method => :delete %>
