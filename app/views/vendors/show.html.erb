@@ -28,28 +28,8 @@
 
 <%= link_to "New Transaction", new_vendor_sale_path(@vendor.id) %>
 
-
-
-<% vendor_total_amounts = [ ] %>
-<% vendor_monthly_amounts = [ ] %>
-
-<% @vendor_sales.each do |sale| %>
-
-  <% vendor_total_amounts.push(sale.amount) %>
-
-  <% if sale.purchase_time.month == @current_month %>
-    <% vendor_monthly_amounts.push(sale.amount) %>
-    <% else %>
-    <% vendor_monthly_amounts.push(0) %>
-  <% end %>
-
-<% end %>
-
-<% month_total = vendor_monthly_amounts.reduce(:+) %>
-<% grand_total = vendor_total_amounts.reduce(:+) %>
-
-<p> Current Month Sales: <%= link_to "#{number_to_currency(month_total)}", "/vendors/#{@vendor.id}/sales/#{@current_month}" %> </p>
-<p> Total Sales: <%= link_to "#{number_to_currency(grand_total)}", vendor_sales_path(@vendor.id) %> </p>
+<p> Current Month Sales: <%= link_to "#{number_to_currency(@month_total)}", "/vendors/#{@vendor.id}/sales/#{@current_month}" %> </p>
+<p> Total Sales: <%= link_to "#{number_to_currency(@grand_total)}", vendor_sales_path(@vendor.id) %> </p>
 
 <!-- -------------------------------------- -->
 
