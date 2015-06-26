@@ -37,7 +37,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:index, :new, :create] do
+  resources :products, only: [:new, :create, :edit, :update] do
+  end
+
+  resources :sales, only: [:new, :create] do
   end
 
 

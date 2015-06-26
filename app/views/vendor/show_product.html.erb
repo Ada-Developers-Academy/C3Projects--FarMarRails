@@ -11,9 +11,6 @@
     Edit
   </th>
   <th>
-    Delete
-  </th>
-  <th>
     Create Sale
   </th>
 </tr>
@@ -24,6 +21,12 @@
       </td>
       <td>
         <%= @product.name %>
+      </td>
+      <td>
+        <%= link_to "Edit this product", edit_product_path %>
+      </td>
+      <td>
+        <%= link_to "Create a sale for this product", new_sale_path %>
       </td>
     </tr>
 </tbody>
