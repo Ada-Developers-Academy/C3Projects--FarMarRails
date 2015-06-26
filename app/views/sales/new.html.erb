@@ -3,8 +3,6 @@
   <%= render partial: "/vendors/sales" %>
 <% end %>
 
-<!-- WIP As a vendor, I can create a Sale for one of my Products. -->
-
 <%= form_for @sale, url: "./" do |f| %>
   <%= f.hidden_field(:vendor_id, value: params[:vendor_id]) %>
 
@@ -17,7 +15,7 @@
   <%= f.label :product_id %>
   <%= collection_select :sale, :product_id, @vendor.products, :id, :name %>
 
-  <!-- time_field("task", "started_at", min: Time.now) -->
-
-  <%= f.submit "Create New Sale" %>
+  <%= f.submit "Create New Sale", data: {
+    confirm: "Does everything look right? You cannot edit a sale after creating it."
+  } %>
 <% end %>
