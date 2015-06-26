@@ -19,8 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params[:product])
-    @product.save
+    @product = Product.create(product_params[:product])
 
     redirect_to market_vendor_products_path
   end
@@ -35,9 +34,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @name = product_params[:product][:name]
-    @product.update(name: @name)
-    @product.save
+    @product.update(product_params[:product])
 
     redirect_to market_vendor_products_path
   end

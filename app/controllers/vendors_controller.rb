@@ -24,10 +24,9 @@ class VendorsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.new(vendor_params[:vendor])
-    @vendor.save
+    @vendor = Vendor.create(vendor_params[:vendor])
 
-    redirect_to market_path(@vendor.market_id)
+    redirect_to market_path(params[:market_id])
   end
 
   # Edit an existing vendor
@@ -39,12 +38,7 @@ class VendorsController < ApplicationController
 
   def update
     @vendor = Vendor.find(params[:id])
-    @name = vendor_params[:vendor][:name]
-    @no_of_employees = vendor_params[:vendor][:no_of_employees]
-
-    @vendor.update(name: @name)
-    @vendor.update(no_of_employees: @no_of_employees)
-    @vendor.save
+    @vendor.update(vendor_params[:vendor])
 
     redirect_to market_vendor_path
   end

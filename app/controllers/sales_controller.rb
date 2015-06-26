@@ -7,8 +7,8 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.new(sale_params[:sale])
-    @sale.save
+    @sale = Sale.create(sale_params[:sale])
+
     redirect_to "/vendor_portal/#{params[:vendor_id]}"
   end
 
