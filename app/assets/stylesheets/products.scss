@@ -1,3 +1,18 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.products-wrapper a {
+  float: right;
+  position: relative;
+  top: -20px;
+}
+
+.all-products ul {
+  list-style-type: none;
+  padding: 0;
+}
+.all-products li {
+  &:last-child {
+    float: right;
+  }
+}

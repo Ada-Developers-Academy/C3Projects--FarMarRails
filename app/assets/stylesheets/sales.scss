@@ -1,7 +1,7 @@
 // Place all the styles related to the sales controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.sales-wrapper {
+.sales-wrapper, .products-wrapper {
   width: 50%;
   margin: 0 auto;
 }
@@ -12,7 +12,7 @@
   top: -20px;
 }
 
-.all-sales {
+.all-sales, .all-products {
   width: 92%;
   border-radius: 3px;
   background-color: lighten(#ccc, 10);
