@@ -42,9 +42,8 @@ class VendorsController < ApplicationController
   end
 
   def products
-    # I don't think I need the variable @vendor here
-    @vendor = Vendor.find(params[:id])
     @products = Product.where(vendor_id: params[:id])
+
     render 'vendors/products'
   end
 
@@ -52,6 +51,7 @@ class VendorsController < ApplicationController
     # since I'm passing in product.id -> where does that go?
     # do I need to re-loook up in db or can I set @product a diff. way?
     @product = Product.find(params[:product_id])
+    
     render 'vendors/show_product'
   end
 
