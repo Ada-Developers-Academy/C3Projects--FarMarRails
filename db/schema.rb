@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623215917) do
+ActiveRecord::Schema.define(version: 20150626185340) do
 
   create_table "markets", force: :cascade do |t|
     t.string   "name"
@@ -20,15 +20,17 @@ ActiveRecord::Schema.define(version: 20150623215917) do
     t.string   "county"
     t.string   "state"
     t.string   "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "archived",   default: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "vendor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "archived",   default: false
   end
 
   create_table "sales", force: :cascade do |t|
@@ -36,16 +38,18 @@ ActiveRecord::Schema.define(version: 20150623215917) do
     t.datetime "purchase_time"
     t.integer  "vendor_id"
     t.integer  "product_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "archived",      default: false
   end
 
   create_table "vendors", force: :cascade do |t|
     t.string   "name"
     t.string   "num_employees"
     t.integer  "market_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "archived",      default: false
   end
 
 end
