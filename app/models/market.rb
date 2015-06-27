@@ -3,6 +3,6 @@ class Market < ActiveRecord::Base
 
 
   def self.search(query)
-    where("name LIKE ?", "%#{query}%")
+    where("name ILIKE ?", "%#{query}%")
   end
 end
