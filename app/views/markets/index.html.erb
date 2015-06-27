@@ -1,0 +1,11 @@
+<div class="market">
+  <h2>Markets</h2>
+
+  <ul class="index">
+    <% @markets.each do |market| %>
+    <li> <%= link_to "#{market.name}", market_path(market.id) %> </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create New Market", new_market_path %>
+</div>

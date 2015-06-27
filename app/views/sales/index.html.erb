@@ -1,0 +1,63 @@
+<h2> <%= "#{@vendor.name}"%> </h2>
+
+<h3>All Sales</h3>
+
+<table>
+  <th>Sale Amount</th>
+  <th>Purchase Date</th>
+  <th>Product</th>
+
+    <% @vendor_sales.each do |sale| %>
+  <tr>
+    <td> <%= number_to_currency(sale.amount/100.00) %> </td>
+    <td> <% if sale.purchase_time == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
+         <% end %>
+    </td>
+    <td> <% if sale.product == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.product.name %>
+         <% end %>
+    </td>
+  </tr>
+    <% end %>
+
+</table>
+
+<h4>Total Amount: <%= number_to_currency(@total_amount/100.00) %> </h4>
+
+<%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
+
+<h3>Sales for <%= Time.now.strftime("%B") %></h3>
+
+<table>
+  <th>Sale Amount</th>
+  <th>Purchase Date</th>
+  <th>Product</th>
+
+    <% @sales_current_month.each do |sale| %>
+  <tr>
+    <td> <%= number_to_currency(sale.amount/100.00) %> </td>
+    <td> <% if sale.purchase_time == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.purchase_time.strftime ("%m/%d/%Y") %>
+         <% end %>
+    </td>
+    <td> <% if sale.product == nil %>
+           <%= " " %>
+         <% else %>
+           <%= sale.product.name %>
+         <% end %>
+    </td>
+  </tr>
+    <% end %>
+</table>
+
+<h4>Total Amount for <%= Time.now.strftime("%B") %>:
+<%= number_to_currency(@total_current_month/100.00)%> </h4>
+
+<%= link_to "Back to #{@vendor.name}", vendor_path(@vendor.id) %>

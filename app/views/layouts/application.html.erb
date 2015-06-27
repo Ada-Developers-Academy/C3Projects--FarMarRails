@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Farmers Market</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='//fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+    <nav>
+      <%= link_to "Home", root_path %>
+      <%= link_to "All Markets", markets_path %>
+      <%= link_to "All Vendors", vendors_path %>
+    </nav>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>

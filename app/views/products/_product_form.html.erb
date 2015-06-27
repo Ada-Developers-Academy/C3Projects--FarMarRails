@@ -1,0 +1,13 @@
+<%= form_for @product, url: @url do |f| %>
+  <fieldset class="form">
+
+  <div class="form_field">
+    <%= f.label :name, 'Product Name' %>
+    <%= f.text_field :name %>
+  </div>
+
+    <%= f.hidden_field :vendor_id, :value => "#{@vendor.id}" %>
+
+  </fieldset>
+    <%= f.submit %>
+<% end %>
