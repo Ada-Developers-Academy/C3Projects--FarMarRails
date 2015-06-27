@@ -1,0 +1,60 @@
+<h1>Market </h1>
+
+
+<%= render partial: "shared/market_details", locals: {
+
+  details: {
+
+    "Market ID"   => @market.id,
+    "Market Name" => @market.name,
+    "Address"     => @market.street_address,
+    "City"        => @market.city,
+    "State"       => @market.state,
+    "Zip"         => @market.zip,
+    "County"      => @market.county
+
+  }
+} %>
+
+
+
+<h2>List of Vendors</h2>
+
+<table border "1">
+
+  <tr>
+    <th>
+      Vendor ID
+    </th>
+    <th>
+      Vendor Name
+    </th>
+    <th>
+      No. of Employees
+    </th>
+    <th>
+      Market ID
+    </th>
+
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    
+    <td>
+      <%= vendor.id %>
+    </td>
+    <td>
+      <%= vendor.name %>
+    </td>
+    <td>
+      <%= vendor.no_of_employees %>
+    </td>
+    <td>
+      <%= vendor.market_id %>
+    </td>
+   
+  </tr>
+  <% end %>
+</table>
+<br>

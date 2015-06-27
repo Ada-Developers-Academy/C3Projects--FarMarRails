@@ -1,0 +1,53 @@
+<table border "1">
+
+<tr>
+  <th>
+    Market ID
+  </th>
+  <th>
+    Market Name
+  </th>
+  <th>
+    Street Address
+  </th>
+  <th>
+    City
+  </th>
+  <th>
+    County
+  </th>
+  <th>
+    State
+  </th>
+  <th>
+    Zip
+  </th>
+</tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td>
+      <%= market.id %>
+    </td>
+    <td>
+      <%= link_to "#{market.name}", "/markets/#{market.id}#{user}" %>
+    </td>
+    <td>
+      <%= market.street_address %>
+    </td>
+    <td>
+      <%= market.city %>
+    </td>
+    <td>
+      <%= market.county %>
+    </td>
+    <td>
+      <%= market.state %>
+    </td>
+    <td>
+      <%= market.zip %>
+    </td>
+  </tr>
+  <% end %>
+
+</table>

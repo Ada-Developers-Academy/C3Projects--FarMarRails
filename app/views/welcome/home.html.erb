@@ -1,0 +1,9 @@
+<h2>Would you like to look at Markets? or Vendors?</h2>
+<br>
+<%= button_to "Markets", markets_path, method: :get %>
+<br>
+<%= button_to "Vendors", vendors_path, method: :get %>
+<br>
+
+
+<%= render partial: "shared/market_list", locals: {user: "/show_users"} %>

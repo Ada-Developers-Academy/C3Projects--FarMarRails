@@ -1,0 +1,126 @@
+<h1>Vendor Information</h1>
+
+<ul>
+  <li>
+    Vendor ID: <%= @vendor.id %>
+  </li>
+  <li>
+    Vendor Name: <%= @vendor.name %>
+  </li>
+  <li>
+    Number of Employees: <%= @vendor.no_of_employees %>
+  </li>
+  <li>
+    Market ID: <%= @vendor.market_id %>
+  </li>
+
+</ul>
+
+<h2>Product List</h2>
+
+<%= button_to "Add a Product to This Vendor", new_product_path, {method: :get, params: {:vendor_id => @vendor.id}} %>
+
+
+<table border "1">
+
+  <tr>
+    <th>
+      Product ID
+    </th>
+    <th>
+      Product Name
+    </th>
+
+    <th>
+      Edit?
+    </th>
+
+    <th>
+      Delete?
+    </th>
+    <th>
+      Sale?
+    </th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= product.id %>
+    </td>
+
+    <td>
+      <%= product.name %>
+    </td>
+
+    <td>
+      <%= button_to "Edit This Product", edit_product_path(product), method: :get %>
+    </td>
+    <td>
+      <%= button_to "Delete This Product", product_path(product), method: :delete, data: {confirm: "are you sure you want to delete this product?"}  %>
+    </td>
+    <td>
+      <%= button_to "Add a Sale", new_sale_path, {method: :get, params: {:vendor_id => @vendor.id, :product_id => product.id}} %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>
+
+
+
+<h2>Sale List</h2>
+
+<%= button_to "Display All Sales",vendor_path(@vendor.id), method: :get  %>
+<br>
+<%= button_to "Display This Month's Sales",  show_monthly_vendor_path(@vendor.id), method: :get  %>
+<br>
+
+<table border "1">
+
+  <tr>
+    <th>
+      Sale ID
+    </th>
+
+    <th>
+      Purchase Time
+    </th>
+
+    <th>
+      Product ID
+    </th>
+
+    <th>
+       Amount
+    </th>
+  </tr>
+
+<% @sales.each do |sale| %>
+  <tr>
+    <td>
+      <%= sale.id %>
+    </td>
+
+    <td>
+      <%= sale.purchase_time %>
+    </td>
+    <td>
+      <%= sale.product_id %>
+    </td>
+    <td>
+      <%= number_to_currency(sale.amount) %>
+    </td>
+
+  </tr>
+  <% end %>
+
+  <tr>
+    <td></td>
+    <td></td>
+<td>Total</td>
+<td> <%= number_to_currency(@total_sales) %> </td>
+
+  </tr>
+
+</table>
