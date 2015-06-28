@@ -38,6 +38,10 @@ class MarketsController < ApplicationController
     @vendors = @market.vendors
   end
 
+  def market_search
+    @markets = Market.search(params[:search])
+  end
+
   private
 
   def create_params

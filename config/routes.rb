@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :markets, except: [:destroy] do
     collection do
       get '/:market_id/vendors', action: 'vendors_in_market', as: 'vendors_in_market'
+      get '/search', action: 'market_search'
     end
 
     resources :vendors, except: [:show]
