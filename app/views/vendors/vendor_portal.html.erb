@@ -28,7 +28,7 @@
         <% @vendor.sales.each do |sale| %>
         <tr>
           <td>
-            <%= sale.amount.to_f/100 %>
+            <%= (sale.amount.to_f/100).round(2) %>
           </td>
         <td>
           <%= sale.purchase_time.strftime("%m/%d/%Y") %>
@@ -41,7 +41,7 @@
       </tbody>
     </table>
 
-    <h3>Monthly Sales for <%= Date.today.strftime("%B") %>: $<%= @month_sales %></h3>
+    <h3>Monthly Sales for <%= Date.today.strftime("%B") %>: $<%= @month_sales.round(2) %></h3>
     <table>
       <thead>
         <tr>
@@ -61,7 +61,7 @@
           <% if sale.purchase_time.to_date.strftime("%Y-%m") == @date_today %>
             <tr>
               <td>
-                <%= sale.amount.to_f/100 %>
+                <%= (sale.amount.to_f/100).round(2) %>
               </td>
               <td>
                 <%= sale.purchase_time.strftime("%m/%d/%Y") %>
