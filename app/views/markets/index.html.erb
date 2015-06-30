@@ -1,0 +1,24 @@
+<%= render 'shared/header' %>
+
+<%= form_tag({ controller: "markets", action: "market_search"}, method: "get", class: "search") do %>
+    <%= text_field_tag :search, params[:search], id: 'search_field', placeholder: 'Search Markets' %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+
+<table border = "0">
+  <tr>
+    <th>Market Name</th>
+    <th>Details</th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= button_to "View Market", market_path(market), method: :get, class: "button" %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<%= render "shared/footer" %>

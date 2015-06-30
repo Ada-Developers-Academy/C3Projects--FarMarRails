@@ -1,0 +1,20 @@
+<%= render 'shared/header' %>
+
+<h2><%= @market.name %></h2>
+
+<div class="market_info">
+<ul>
+  <li>Address: <%= @market.address %></li>
+  <li>City, State: <%= @market.city %>, <%= @market.state %></li>
+  <li>Zip: <%= @market.zip %></li>
+</ul>
+
+<h3>Vendors</h3>
+<ul>
+  <% @market.vendors.each do |vendor| %>
+    <li><%= vendor.name %></li>
+  <% end %>
+</ul>
+</div>
+
+<%= render "shared/footer" %>

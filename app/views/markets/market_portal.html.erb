@@ -1,0 +1,27 @@
+<%= render 'shared/header' %>
+
+<h1>Welcome to the Market Portal!</h1>
+<td><%= button_to "Create Market", new_market_path, method: :get, class: "button" %></td>
+
+<%= form_tag({ controller: "markets", action: "market_search"}, method: "get", class: "search") do %>
+    <%= text_field_tag :search, params[:search], id: 'search_field', placeholder: 'Search Markets' %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<table border = "0">
+  <tr>
+    <th>Market Name</th>
+    <th>Edit Market</th>
+    <th>Vendors</th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= button_to "Edit Market", edit_market_path(market), method: :get, class: "button" %></td>
+    <td><%= button_to "View Vendors", vendors_in_market_markets_path(market), method: :get, class: "button" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render "shared/footer" %>

@@ -1,0 +1,13 @@
+<%= render 'shared/header' %>
+
+<h2>Edit a product here!</h2>
+
+<fieldset>
+  <legend>Update product:</legend>
+  <% @url = "/vendors/#{@vendor[:id]}/products/#{@product[:id]}" %>
+
+  <%= render 'product_form' %>
+
+</fieldset>
+
+<%= render "shared/footer" %>

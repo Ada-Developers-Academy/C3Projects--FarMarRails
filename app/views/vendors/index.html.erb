@@ -1,0 +1,27 @@
+<%= render 'shared/header' %>
+
+<h1>Welcome to the Vendor Portal!</h1>
+
+<%= form_tag({ controller: "vendors", action: "vendor_search"}, method: "get", class: "search") do %>
+    <%= text_field_tag :search, params[:search], id: 'search_field', placeholder: 'Search Vendors' %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<table border = "0">
+  <tr>
+    <th>Vendor Name</th>
+    <th>Products</th>
+    <th>Sales</th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+    <td><%= button_to "View Products", vendor_products_path(vendor), method: :get, class: "button" %></td>
+    <td><%= button_to "View Sales", vendor_sales_path(vendor), method: :get, class: "button" %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= render "shared/footer" %>

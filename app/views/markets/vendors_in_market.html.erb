@@ -1,0 +1,26 @@
+<%= render 'shared/header' %>
+
+<h2><%= @market.name %>'s Vendors</h2>
+<td><%= button_to "Create a New Vendor", new_market_vendor_path, method: :get, class: "button" %></td>
+
+<div class="market_vendors">
+  <table>
+    <tr>
+      <th>Vendor Name</td>
+      <th>No. of Employees</td>
+    </tr>
+
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= vendor.num_employees %></td>
+        <td><%= button_to "Edit Vendor", edit_market_vendor_path(@market.id, vendor), method: :get, class: "button" %></td>
+        <td><%= button_to "Delete Vendor", "/markets/#{@market[:id]}/vendors/#{vendor[:id]}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" }, class: "button" %></td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+
+<%= render "shared/footer" %>
