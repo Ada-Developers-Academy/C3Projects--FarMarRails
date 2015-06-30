@@ -1,0 +1,93 @@
+/*Fonts*/
+    /*font-family: 'Roboto', sans-serif; (weights: 100, 300, 500)*/
+    /*font-family: 'Old Standard TT', serif; (weights: 400, 700)*/
+
+/*Colors:*/
+  /*Red color: #900001 */
+  /*Grey color: #EBEAEB */
+  /*Dark Grey/Black-ish base color: #262626 */
+  /*White: #FFFFFF*/
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-color: #F4F5E3;
+    font-weight: 300;
+  }
+
+  .container {
+    width: 1000px;
+    margin: 20px auto;
+  }
+
+  header {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  header img {
+    width: 100%;
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Old Standard TT', serif;
+  }
+
+  h2 {
+    color: #900001;
+    font-weight: 300;
+  }
+
+  h3 {
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+
+  }
+
+  .edit_delete {
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 0.5;
+    color: #262626;
+  }
+
+  .edit_delete:hover {
+    opacity: 1;
+    color: #262626;
+  }
+
+  p {
+    display: inline-block;
+    padding: 20px;
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+  footer {
+    background-color: #000;
+    color: #EBEAEB;
+  }
+
+  footer a {
+    text-decoration: none;
+    display: inline-block;
+    color: #EBEAEB;
+    margin: 30px;
+  }
+
+  table {
+    border-radius: 25px;
+    border-color: #E5132F;
+    border: 1px solid #262626;
+    padding: 35px;
+    margin: 10px auto;
+    width: 1000px;
+  }
+
+  th {
+    text-align: left;
+/*    font-weight: 500;
+*/  }
