@@ -1,0 +1,15 @@
+<%= form_for @vendor, url: @url do |f| %>
+  <fieldset>
+    <legend> Vendor Details </legend>
+      <%= f.label :name %>
+      <%= f.text_field :name, :required => true %>
+
+      <%= f.label :num_employees , "Number of Employees" %>
+      <%= f.text_field :num_employees %>
+
+      <%= f.hidden_field :market_id, value: @market_id %>
+
+  </fieldset>
+      <%= f.submit %>
+<% end %>
+

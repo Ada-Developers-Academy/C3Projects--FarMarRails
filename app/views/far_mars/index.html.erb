@@ -1,0 +1,23 @@
+<h1>FARMAR</h1>
+
+<h2> I am a... </h2>
+
+<%= link_to "Market", "/markets", class: "link home_buttons" %>
+<%= link_to "Vendor", "/vendors", class: "link home_buttons" %>
+<div class="clear"></div>
+
+<h3>MARKETS</h3>
+<table>
+  <th> ID </th>
+  <th> Name </th>
+  <th> </th>
+  <% @all_markets.each do |market| %>
+  <tr>
+    <td> <%= market.id  %></td>
+    <td> <%= market.name %></td>
+    <td> <%= link_to "Details", "/view_markets/#{market.id}", class: "edit_delete" %> </td>
+  </tr>
+
+  <% end %>
+
+</table>

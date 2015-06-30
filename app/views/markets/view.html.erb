@@ -1,0 +1,36 @@
+<h1><%= @market.name %></h1>
+
+<table>
+  <tr>
+    <th> ID </th>
+    <th> Address </th>
+    <th> City </th>
+    <th> County </th>
+    <th> State </th>
+    <th> Zip </th>
+    <th> Established </th>
+  </tr>
+
+  <tr>
+    <td> <%= @market.id %> </td>
+    <td> <%= @market.address %> </td>
+    <td> <%= @market.city %> </td>
+    <td> <%= @market.county %> </td>
+    <td> <%= @market.state %> </td>
+    <td> <%= @market.zip %> </td>
+    <td> <%= @market.created_at %> </td>
+  </tr>
+
+</table>
+
+<h3>VENDORS</h3>
+<table>
+  <tr>
+    <th> Name </th>
+  </tr>
+  <% @market_vendors.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.name %> </td>
+  </tr>
+  <% end %>
+</table>

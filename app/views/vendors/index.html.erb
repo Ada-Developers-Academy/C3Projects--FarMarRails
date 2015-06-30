@@ -1,0 +1,17 @@
+<h1>Welcome Vendor!</h1>
+<h2>Click on a vendor name to view a specific vendor</h2>
+
+<h3>VENDORS</h3>
+<table>
+  <th> ID </th>
+  <th> Name </th>
+  <th>  </th>
+  <% @all_vendors.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.id  %></td>
+    <td> <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}", class: "edit_delete" %></td>
+  </tr>
+
+  <% end %>
+
+</table>

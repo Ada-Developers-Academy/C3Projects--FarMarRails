@@ -1,0 +1,17 @@
+<%= form_for @sale, url: @url do |f| %>
+  <fieldset>
+    <legend>  New Sale </legend>
+      <%= f.label :product_id %>
+      <%= f.collection_select :product_id, Product.where(vendor_id: "#{@vendor_id}"), :id, :name %>
+
+      <%= f.label :amount %>
+      <%= f.text_field :amount, :required => true %>
+
+
+      <%= f.hidden_field :purchase_time, value: Time.now %>
+
+      <%= f.hidden_field :vendor_id, value: @vendor_id %>
+
+  </fieldset>
+      <%= f.submit %>
+<% end %>

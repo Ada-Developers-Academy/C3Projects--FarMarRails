@@ -1,0 +1,47 @@
+<h1><%= @vendor.name %></h1>
+
+<table>
+  <tr>
+    <th> ID </th>
+    <th> Number of Employees </th>
+    <th> Market Name </th>
+  </tr>
+
+  <tr>
+    <td> <%= @vendor.id %> </td>
+    <td> <%= @vendor.num_employees %> </td>
+    <td> <%= @market.name %> </td>
+  </tr>
+</table>
+
+<!-- #################################### -->
+
+<h2> Sales </h2>
+
+<%= link_to "+ New Transaction", new_vendor_sale_path(@vendor.id), class: "link" %>
+
+<div class="clear"></div>
+
+<p> <span>Current Month Sales:</span> <%= link_to "#{number_to_currency(@month_total)}", "/vendors/#{@vendor.id}/sales/#{@current_month}" %> </p>
+<p> <span>Total Sales:</span> <%= link_to "#{number_to_currency(@grand_total)}", vendor_sales_path(@vendor.id) %> </p>
+
+<!-- #################################### -->
+
+<h2>Products</h2>
+
+<%= link_to "+ New Product", new_vendor_product_path(@vendor.id), class: "link" %>
+<div class="clear"></div>
+<table class="products">
+  <tr>
+    <th> Name </th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @vendor_products.each do |product| %>
+  <tr>
+    <td> <%= product.name %> </td>
+    <td> <%= link_to "Edit", "/vendors/#{product.vendor_id}/products/#{product.id}/edit", class: "edit_delete" %></td>
+    <td> <%= link_to "X", "/vendors/#{product.vendor_id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"}, class: "edit_delete" %> </td>
+  </tr>
+  <% end %>
+</table>

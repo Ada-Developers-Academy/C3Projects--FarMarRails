@@ -1,0 +1,43 @@
+<h1><%= @market.name %></h1>
+
+<table>
+  <tr>
+    <th> ID </th>
+    <th> Address </th>
+    <th> City </th>
+    <th> County </th>
+    <th> State </th>
+    <th> Zip </th>
+    <th> Established </th>
+  </tr>
+
+  <tr>
+    <td> <%= @market.id %> </td>
+    <td> <%= @market.address %> </td>
+    <td> <%= @market.city %> </td>
+    <td> <%= @market.county %> </td>
+    <td> <%= @market.state %> </td>
+    <td> <%= @market.zip %> </td>
+    <td> <%= @market.created_at %> </td>
+  </tr>
+
+</table>
+
+<%= link_to "+ New Vendor", new_market_vendor_path(@market.id), class: "link" %>
+<div class="clear"></div>
+
+<h3>VENDORS</h3>
+<table>
+  <tr>
+    <th> Name </th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @market_vendors.each do |vendor| %>
+  <tr>
+    <td> <%= vendor.name %> </td>
+    <td> <%= link_to "Edit", "/markets/#{@market.id}/vendors/#{vendor.id}/edit", class: "edit_delete" %></td>
+    <td> <%= link_to "X", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{vendor.name}?"}, class: "edit_delete" %> </td>
+  </tr>
+  <% end %>
+</table>
