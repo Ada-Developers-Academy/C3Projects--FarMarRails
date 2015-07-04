@@ -5,6 +5,6 @@
   <%= f.date_field :purchase_time, class: "form_field", required: true, autofocus: true, placeholder: purchase_time_placeholder %>
   <%= f.label :product_id, "#{product_id_desc}" %>
   <%= f.collection_select :product_id, @vendor.products, :id, :name, include_blank: "" %></p>
-  <%= f.hidden_field :vendor_id %>
+  <%= f.hidden_field :vendor_id, value: params[:vendor_id] %>
   <%= f.submit submit_button, class: "submit_button" %>
 <% end %>
