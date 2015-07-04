@@ -8,7 +8,7 @@
   <%= f.label :county, "#{county_desc}" %>
   <%= f.text_field :county, class: "form_field", placeholder: county_placeholder %>
   <%= f.label :state, "#{state_desc}" %>
-  <%= f.select :state, us_states, include_blank: "Select a State", class: "form_field" %></p>
+  <%= f.select :state, us_states, include_blank: "--Select a State--", class: "form_field" %></p>
   <%= f.label :zip, "#{zip_desc}" %>
   <%= f.text_field :zip, class: "form_field", placeholder: zip_placeholder %>
   <%= f.submit submit_button, class: "submit_button" %>
