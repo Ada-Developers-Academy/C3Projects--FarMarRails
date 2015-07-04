@@ -24,8 +24,6 @@ class MarketsController < ApplicationController
   def show
     @market_id = params[:id]
     @market = Market.find(@market_id)
-
-    render :market_show
   end
 
   # Add a new market
@@ -40,10 +38,6 @@ class MarketsController < ApplicationController
   end
 
   # Update an existing market
-  def edit
-    render :edit
-  end
-
   def update
     @market.update(market_params[:market])
 

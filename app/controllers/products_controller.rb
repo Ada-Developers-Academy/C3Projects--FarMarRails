@@ -10,8 +10,6 @@ class ProductsController < ApplicationController
     @vendor_id = params[:vendor_id]
     @vendor = Vendor.find(@vendor_id)
     @products = @vendor.products
-
-    render :index
   end
 
   # Add a new product
@@ -29,8 +27,6 @@ class ProductsController < ApplicationController
   # Edit an existing product
   def edit
     @vendor  = Vendor.find(@product.vendor_id)
-
-    render :edit
   end
 
   def update
