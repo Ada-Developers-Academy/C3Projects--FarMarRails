@@ -28,10 +28,10 @@
         <%= @vendor.no_of_employees %>
       </td>
       <td>
-        <%= link_to "Edit", edit_market_vendor_path(@vendor.market_id, @vendor.id) %>
+        <%= link_to "Edit", edit_market_vendor_path %>
       </td>
       <td>
-        <%= link_to "Delete", market_vendor_path(@vendor.market_id, @vendor.id), :method => :delete %>
+        <%= link_to "Delete", market_vendor_path, :method => :delete %>
       </td>
     </tr>
   </tbody>

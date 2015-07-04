@@ -1,6 +1,5 @@
 <p><%= link_to "<< return to vendor", "#{market_vendor_path}" %></p>
 <section class="form">
-  <% market = Market.find(params[:market_id]) %>
   <fieldset class="edit_vendor_form">
     <legend>Edit a Vendor</legend>
     <%= render partial: "form", locals: { url: market_vendor_path,

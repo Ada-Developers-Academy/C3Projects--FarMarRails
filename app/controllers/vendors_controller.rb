@@ -1,52 +1,36 @@
 class VendorsController < ApplicationController
 
   before_action :get_vendor, only: [:edit, :update, :destroy]
-  before_action :check_auth, only: [:edit, :update, :destroy]
 
   def get_vendor
     @vendor = Vendor.find(params[:id])
-  end
-
-  def check_auth
-    if session[:market_id] != @vendor.market_id
-      flash[:notice] = "Sorry, you are not authorized to make this change"
-      redirect_to market_path
-    end
   end
 
   def index
     @market_id = params[:market_id]
     @market = Market.find(@market_id)
     @vendors = @market.vendors
-
-    render :index
   end
 
   def show
     @vendor_id = params[:id]
     @vendor = Vendor.find(@vendor_id)
-
-    render :vendor_show
   end
 
   # Add a new vendor
   def new
-    @vendor = Vendor.new(vendor_params[:vendor])
+    @vendor = Vendor.new
   end
 
   def create
-    @vendor = Vendor.create(vendor_params[:vendor])
+    @vendor = Vendor.create(vendor_params)
 
     redirect_to market_path(params[:market_id])
   end
 
   # Edit an existing vendor
-  def edit
-    render :edit
-  end
-
   def update
-    @vendor.update(vendor_params[:vendor])
+    @vendor.update(vendor_params)
 
     redirect_to market_vendor_path
   end
@@ -95,7 +79,7 @@ class VendorsController < ApplicationController
   private
 
   def vendor_params
-    params.permit(vendor: [:name, :no_of_employees, :market_id])
+    params.require(:vendor).permit(:name, :no_of_employees, :market_id)
   end
 
 end
