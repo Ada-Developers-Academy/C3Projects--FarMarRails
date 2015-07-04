@@ -7,7 +7,9 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.create(sale_params)
+    sp = sale_params
+    sp[:amount] = sp[:amount].to_f * 100.0
+    @sale = Sale.create(sp)
     @vendor = Vendor.find(params[:vendor_id])
 
     redirect_to "/vendor_portal/#{params[:vendor_id]}"
