@@ -12,7 +12,7 @@ class SalesController < ApplicationController
     @sale = Sale.create(sp)
     @vendor = Vendor.find(params[:vendor_id])
 
-    redirect_to "/vendor_portal/#{params[:vendor_id]}"
+    redirect_to vendor_portal_page_path(@vendor.id)
   end
 
   private
