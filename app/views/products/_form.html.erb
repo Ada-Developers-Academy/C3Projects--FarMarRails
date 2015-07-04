@@ -1,6 +1,6 @@
 <%= form_for item, url: url do |f| %>
   <%= f.label :name, "#{name_desc}" %>
   <%= f.text_field :name, class: "form_field", required: true, autofocus: true, placeholder: name_placeholder %>
-  <%= f.hidden_field :vendor_id %>
+  <%= f.hidden_field :vendor_id, value: params[:vendor_id] %>
   <%= f.submit submit_button, class: "submit_button" %>
 <% end %>

@@ -1,14 +1,13 @@
 <p><%= link_to "<< return to product", "#{market_vendor_products_path}" %></p>
 <section class="form">
-  <% market_id = @vendor.market_id %>
-  <% vendor_id = params[:vendor_id] %>
   <fieldset class="add_product_form">
     <legend>Add a Product</legend>
-    <%= render partial: "form", locals: { url: market_vendor_products_path(market_id, vendor_id),
+    <%= render partial: "form", locals: { url: market_vendor_products_path,
                                           item: @product,
                                           name_desc: "Product Name",
                                           name_placeholder: "Healthy Celery",
-                                          submit_button: "add product to #{@vendor.name}" }
+                                          submit_button: "add product" }
     %>
   </fieldset>
+  <%= params %>
 </section>

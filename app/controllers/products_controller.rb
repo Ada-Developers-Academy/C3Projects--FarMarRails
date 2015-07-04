@@ -14,12 +14,11 @@ class ProductsController < ApplicationController
 
   # Add a new product
   def new
-    @product = Product.new(product_params[:product])
-    @vendor  = Vendor.find(params[:vendor_id])
+    @product = Product.new
   end
 
   def create
-    @product = Product.create(product_params[:product])
+    @product = Product.create(product_params)
 
     redirect_to market_vendor_products_path
   end
@@ -30,7 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.update(product_params[:product])
+    @product.update(product_params)
 
     redirect_to market_vendor_products_path
   end
@@ -44,7 +43,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(product: [:name, :vendor_id])
+    params.require(:product).permit(:name, :vendor_id)
   end
 
 end
