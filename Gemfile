@@ -46,6 +46,9 @@ group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  # requires graphiz--`brew install graphiz`
+  gem 'rails-erd'
 end
 
 group :production do
