@@ -1,0 +1,38 @@
+<p><%= link_to "<< return to market", "#{market_path(@vendor.market_id)}" %></p>
+<h1> <%= @vendor.name %> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        Market
+      </th>
+      <th>
+        # of Employees
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%= @vendor.id %>
+      </td>
+      <td>
+        <%= (Market.find(@vendor.market_id)).name %>
+      </td>
+      <td>
+        <%= @vendor.no_of_employees %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_market_vendor_path %>
+      </td>
+      <td>
+        <%= link_to "Delete", market_vendor_path, :method => :delete %>
+      </td>
+    </tr>
+  </tbody>
+</table>

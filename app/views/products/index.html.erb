@@ -1,0 +1,29 @@
+<p><%= link_to "<< return to vendor portal", "#{vendor_portal_page_path(@vendor.id)}" %></p>
+<h1>Products sold by <%= @vendor.name %> </h1>
+<p>
+  <%= link_to "+ Add a Product", new_market_vendor_product_path %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td>
+      <%= product.name %></a>
+    </td>
+    <td>
+      <%= link_to "Edit", edit_market_vendor_product_path(@vendor.market_id, @vendor.id, product.id) %>
+    </td>
+    <td>
+      <%= link_to "Delete", market_vendor_product_path(@vendor.market_id, @vendor.id, product.id), :method => :delete %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>

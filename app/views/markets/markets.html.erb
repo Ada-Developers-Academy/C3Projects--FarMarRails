@@ -1,0 +1,48 @@
+<%= link_to "<< return to main page", "/" %>
+<h1>All Markets</h1>
+<%= form_tag({controller:'markets', action: 'search'}, method: "get") do %>
+<%= text_field_tag :search, params[:search], id: 'search_field', placeholder: "Search by Name" %>
+<%= submit_tag "Search" %>
+<% end %>
+<p>
+  <%= link_to "+ Add a Market", new_market_path %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name <%= link_to "&#8595".html_safe, "/markets_/name_sort" %>
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        City <%= link_to "&#8595".html_safe, "/markets_/city_sort" %>
+      </th>
+      <th>
+        State <%= link_to "&#8595".html_safe, "/markets_/state_sort" %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @markets.each do |market|%>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", market_path(market.id) %>
+      </td>
+      <td>
+        <%= market.address %>
+      </td>
+      <td>
+        <%= market.city %>
+      </td>
+      <td>
+        <%= market.state %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_market_path(market.id) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

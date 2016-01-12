@@ -1,0 +1,48 @@
+<%= link_to "<< return to markets", "/all_markets" %>
+<h1> <%= @market.name%></h1>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Address
+      </th>
+      <th>
+        City
+      </th>
+      <th>
+        County
+      </th>
+      <th>
+        State
+      </th>
+      <th>
+        Zip Code
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= @market.address %>
+      </td>
+      <td>
+        <%= @market.city %>
+      </td>
+      <td>
+        <%= @market.county %>
+      </td>
+      <td>
+        <%= @market.state %>
+      </td>
+      <td>
+        <%= @market.zip %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Vendors associated with <%= @market.name %></h2>
+<% @market.vendors.each do |vendor| %>
+<li>
+  <%= vendor.name %>
+</li>
+<% end %>

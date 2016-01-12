@@ -1,0 +1,12 @@
+<p><%= link_to "<< return to product", "#{market_vendor_products_path}" %></p>
+<section class="form">
+  <fieldset class="add_product_form">
+    <legend>Add a Product</legend>
+    <%= render partial: "form", locals: { url: market_vendor_products_path,
+                                          item: @product,
+                                          name_desc: "Product Name",
+                                          name_placeholder: "Healthy Celery",
+                                          submit_button: "add product" }
+    %>
+  </fieldset>
+</section>

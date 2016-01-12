@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<link href='//fonts.googleapis.com/css?family=Nixie+One|Poiret+One' rel='stylesheet' type='text/css'>
+<head>
+  <title>Farmers Markets Interactive</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>
+<footer>
+  <p class="home_link"><%= link_to "return to main page", "/" %></p>
+  Strawberry Fields Forever by Brenna Leker & Anita Wang © <%= Time.now.year %>
+</footer>

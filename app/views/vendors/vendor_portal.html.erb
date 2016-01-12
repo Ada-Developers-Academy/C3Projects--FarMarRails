@@ -1,0 +1,78 @@
+<section class="homepage">
+  <div>
+      <h1>Welcome back <%= @vendor.name %>!</h1>
+      <h3>I would like to...</h3>
+      <%= link_to "Add/Edit Products", market_vendor_products_path(@vendor.market_id, @vendor.id), class: "button_link" %>
+      <%= link_to "Add a Sale", new_market_vendor_sale_path(@vendor.market_id, @vendor.id), class: "button_link" %>
+  </div>
+
+
+  <div>
+    <h1>Sales Information</h1>
+    <h3>Total Sales: <%= number_to_currency(@total_sales) %></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Amount
+          </th>
+          <th>
+            Purchase Date
+          </th>
+          <th>
+            Product
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vendor.sales.each do |sale| %>
+        <tr>
+          <td>
+            <%= number_to_currency(sale.amount / 100.0) %>
+          </td>
+        <td>
+          <%= sale.purchase_time.strftime("%m/%d/%Y") %>
+        </td>
+        <td>
+          <%= (Product.find(sale.product_id)).name %>
+        </td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Monthly Sales for <%= Date.today.strftime("%B") %>: <%= number_to_currency(@month_sales) %></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Amount
+          </th>
+          <th>
+            Purchase Date
+          </th>
+          <th>
+            Product
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vendor.sales.each do |sale| %>
+          <% if sale.purchase_time.to_date.strftime("%Y-%m") == @date_today %>
+            <tr>
+              <td>
+                <%= number_to_currency(sale.amount / 100.0) %>
+              </td>
+              <td>
+                <%= sale.purchase_time.strftime("%m/%d/%Y") %>
+              </td>
+              <td>
+                <%= (Product.find(sale.product_id)).name %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

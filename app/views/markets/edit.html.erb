@@ -1,0 +1,20 @@
+<p><%= link_to "<< return to markets", "/markets" %></p>
+<section class="form">
+  <fieldset class="edit_market_form">
+  <legend>Edit a Market</legend>
+  <%= render partial: "form", locals: { item: @market,
+                                        name_desc: "Market Name",
+                                        name_placeholder: "",
+                                        address_desc: "Address",
+                                        address_placeholder: "",
+                                        city_desc: "City",
+                                        city_placeholder: "",
+                                        county_desc: "County",
+                                        county_placeholder: "",
+                                        state_desc: "State",
+                                        zip_desc: "Zip Code",
+                                        zip_placeholder: "",
+                                        submit_button: "save changes" }
+  %>
+  </fieldset>
+</section>

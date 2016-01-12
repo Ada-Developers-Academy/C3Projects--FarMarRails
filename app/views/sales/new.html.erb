@@ -1,0 +1,15 @@
+<p><%= link_to "<< return to vendor portal", "/vendor_portal/#{params[:vendor_id]}" %></p>
+<section class="form">
+  <fieldset class="add_sale_form">
+    <legend>Add a Sale</legend>
+    <%= render partial: "form", locals: { url: market_vendor_sales_path,
+                                          item: @sale,
+                                          amount_desc: "Sale Amount ($)",
+                                          amount_placeholder: "example: 28.37",
+                                          purchase_time_desc: "Sale Date",
+                                          purchase_time_placeholder: nil,
+                                          product_id_desc: "Product Name",
+                                          submit_button: "add sale" }
+    %>
+  </fieldset>
+</section>

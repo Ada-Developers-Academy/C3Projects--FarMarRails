@@ -1,0 +1,20 @@
+<p><%= link_to "<< return to markets", "/markets" %></p>
+<section class="form">
+  <fieldset class="add_market_form">
+  <legend>Add a Market</legend>
+  <%= render partial: "form", locals: { item: @market,
+                                        name_desc: "Market Name",
+                                        name_placeholder: "Bob's Farmer's Market",
+                                        address_desc: "Address",
+                                        address_placeholder: "23 Main Street",
+                                        city_desc: "City",
+                                        city_placeholder: "Dayton",
+                                        county_desc: "County",
+                                        county_placeholder: "Montgomery",
+                                        state_desc: "State",
+                                        zip_desc: "Zip Code",
+                                        zip_placeholder: "45459",
+                                        submit_button: "add market" }
+  %>
+  </fieldset>
+</section>

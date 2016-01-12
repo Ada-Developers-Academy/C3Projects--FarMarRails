@@ -1,0 +1,56 @@
+<%= link_to "<< return to main page", "/" %>
+<h1>All Markets</h1>
+<%= form_tag markets_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name <%= link_to "&#8595".html_safe, "/all_markets_/name_sort" %>
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        City <%= link_to "&#8595".html_safe, "/all_markets_/city_sort" %>
+      </th>
+      <th>
+        County
+      </th>
+      <th>
+        State <%= link_to "&#8595".html_safe, "/all_markets_/state_sort" %>
+      </th>
+      <th>
+        Zip Code
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @markets.each do |market|%>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", "/all_markets/#{market.id}" %>
+      </td>
+      <td>
+        <%= market.address %>
+      </td>
+      <td>
+        <%= market.city %>
+      </td>
+      <td>
+        <%= market.county %>
+      </td>
+      <td>
+        <%= market.state %>
+      </td>
+      <td>
+        <%= market.zip.to_s.length == 5 ? market.zip : "" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
