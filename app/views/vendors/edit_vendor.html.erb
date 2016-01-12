@@ -1,0 +1,17 @@
+<%= link_to "Back to vendor", market_vendor_path("#{@vendor.market_id}", "#{@vendor.id}") %>
+
+<%= form_for @vendor do |v| %>
+ <fieldset>
+   <legend>New task</legend>
+   <%= v.label :name %>
+   <%= v.text_field :name %>
+
+   <%= v.label :no_of_employees %>
+   <%= v.text_field :no_of_employees %>
+
+   <%= v.label :market_id %>
+   <%= v.text_field :market_id %>
+ </fieldset>
+
+ <%= v.submit 'Save changes' %>
+<% end %>

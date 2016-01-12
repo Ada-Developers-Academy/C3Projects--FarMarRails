@@ -1,0 +1,34 @@
+<%= link_to "Go back to markets", markets_path %>
+
+<h1>Add new market</h1>
+
+<div class= "form">
+  <%= form_for @market do |m| %>
+  <fieldset>
+    <legend>New task</legend>
+    <%= m.label :name %>
+    <%= m.text_field :name %>
+
+    <%= m.label :address %>
+    <%= m.text_field :address %>
+
+    <%= m.label :city %>
+    <%= m.text_field :city %>
+
+    <%= m.label :county %>
+    <%= m.text_field :county %>
+
+    <%= m.label :state %>
+    <%= m.text_field :state %>
+
+    <%= m.label :zip %>
+    <%= m.text_field :zip %>
+  </fieldset>
+  
+  <%= m.submit 'Add new market' %>
+ <% end %>
+</div>
+
+<div class="welcome_pic">
+  <%= image_tag "welcome.png" %>
+</div>

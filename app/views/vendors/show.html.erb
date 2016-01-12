@@ -1,0 +1,29 @@
+<% if params[:market_id] %>
+  <%= link_to "Back to market", market_path("#{@market.id}") %>
+<% else %>
+  <%= link_to "Back to vendor", vendors_path %>
+<% end %>
+
+<h1><%="#{@vendor.name}" %></h1>
+
+<% if params[:id] %>
+  <div class="nav_vendor">
+    <ul>
+      <li><%= link_to "Display all products for this vendor", vendor_products_path("#{@vendor.id}")%></li>
+      <li><%= link_to "Display all sales for this vendor", vendor_sales_path("#{@vendor.id}") %></li>
+      <li><%= link_to "Display sales for current month", "#{@vendor.id}/current_sales" %></li>
+    </ul>
+  </div>
+<% end %>
+
+<p>No of employees: <%=@vendor.no_of_employees %></p>
+<p>Market name: <%= @vendor.market.name  %></p>
+
+<% if params[:market_id] %>
+  <p><%= link_to "Delete vendor", market_vendor_path("#{@market.id}", "#{@vendor.id}"), method: 'delete' %></p>
+  <p><%= link_to "Edit vendor", edit_market_vendor_path("#{@market.id}", "#{@vendor.id}") %></p>
+<% end %>
+
+<div class = "specific_market_pic">
+  <%= image_tag "specific_market.png" %>
+</div>

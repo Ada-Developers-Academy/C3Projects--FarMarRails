@@ -1,0 +1,24 @@
+<%= render partial: "header" %>
+
+<div class = "specific_market_list">
+
+  <p class="market_name"><%=@market.name  %></p>
+
+  <p>Address:
+    <%=@market.address  %>,
+    <%=@market.city  %>,
+    <%=@market.county  %>,
+    <%=@market.state  %>.
+    <%=@market.zip  %></p>
+    <% vendors = @market.vendors %>
+
+    <ol>Vendors:
+      <% vendors.each do |v| %>
+        <li><%= v.name %></li>
+      <% end %>
+    </ol>
+</div>
+
+<div class = "specific_market_pic">
+  <%= image_tag "specific_market.png" %>
+</div>

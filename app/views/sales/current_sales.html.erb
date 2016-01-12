@@ -1,0 +1,20 @@
+<%= link_to "Back to vendor", vendor_path("#{params[:vendor_id]}") %>
+
+<p>Total sales: <%= "#{@current_sales}" %></p>
+
+<table>
+  <% @sales.each do |sale| %>
+    <% if (sale.purchase_time.nil? == false) && (sale.purchase_time.month == Time.new.month) %>
+      <tr>
+         <td>Sale amount: <%= sale.amount  %></td>
+        <td>Purchase time: <%= sale.purchase_time  %></td>
+        <td>Vendor ID: <%= sale.vendor_id %></td>
+        <td>Product: <%= sale.product.name  %></td>
+      </tr>
+    <% else %>
+      <tr>
+        <td>There are no sales for this month :(  </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,18 @@
+<%= link_to "Back to vendor", vendor_path("#{params[:vendor_id]}") %>
+
+<p>Total sales: <%= "#{@total_sales}" %></p>
+  <table>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td>Sale amount: <%= sale.amount  %></td>
+        <td>Purchase time: <%= sale.purchase_time  %></td>
+        <td>Vendor ID: <%= sale.vendor_id %></td>
+        <td>Product: <%= sale.product.name  %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<!-- If we are coming from vendor > product > sale -->
+<% if params[:product_id] %>
+  <%= button_to "+ Sale", new_vendor_product_sale_path("#{@vendor.id}", "#{@product.id}"), method: "get" %>
+<% end %>

@@ -1,0 +1,19 @@
+<%= link_to "Log out", root_path %>
+
+<h1>Welcome to Market page!</h1>
+
+<h3>Market options:</h3>
+
+<div class = "nav">
+  <ul>
+    <li><%= link_to "Create a new market", new_market_path %></li>
+  </ul>
+</div>
+
+<div class = "markets_list">
+  <ol>
+    <% @markets.each do |market| %>
+      <li><%= link_to "#{market.name}", market_path("#{market.id}") %></li>
+    <% end %>
+  </ol>
+</div>
