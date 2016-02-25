@@ -1,0 +1,9 @@
+<h1>Pick a Vendor</h1>
+
+<ul>
+  <% @vendors.each do |vendor| %>
+    <% unless vendor.archived %>
+      <li><%= link_to vendor.name, vendor %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,6 @@
+<%= link_to 'All Vendors', vendors_path %>
+
+<%= link_to 'Vendor', vendor_path(@vendor) if params[:vendor_id] %>
+<%= link_to 'Product', vendor_product_path(@vendor, @product) if params[:product_id] %>
+
+<%= link_to 'Logout', :root %>

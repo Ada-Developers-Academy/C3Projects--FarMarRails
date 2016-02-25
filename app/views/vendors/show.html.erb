@@ -1,0 +1,35 @@
+<h1>Vendor Details</h1>
+
+<%= render 'vendor_attributes' %>
+
+<h3>Products</h3>
+
+<%= link_to 'Create a new product for this vendor', new_vendor_product_path(@vendor),
+    class: "button" %>
+
+<ul>
+  <% @vendor.products.each do |product| %>
+    <% unless product.archived %>
+      <li>
+        <%= link_to product.name, vendor_product_path(@vendor, product),
+          class: "list_element" %>
+        <%= link_to "Edit", edit_vendor_product_path(@vendor, product),
+          class: "inline_button" %>
+        <%= button_to "Delete", vendor_product_path(@vendor, product),
+          class: "inline_button",
+          method: :delete,
+          data: { confirm: "Are you sure you want to delete this product?" } %>
+        <%= link_to "+ Sale", new_vendor_sale_path(@vendor, :product_id => product.id),
+          class: "inline_button" %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h3>All Sales</h3>
+
+<%= render 'shared/sales_table', { sales: @sales } %>
+
+<h3>Current Month's Sales</h3>
+
+<%= render 'shared/sales_table', { sales: @current_month_sales } %>

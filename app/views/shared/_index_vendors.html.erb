@@ -1,0 +1,7 @@
+<ul>
+  <% vendors.each do |vendor| %>
+    <% unless vendor.archived %>
+      <li><%= vendor.name %></li>
+    <% end %>
+  <% end %>
+</ul>

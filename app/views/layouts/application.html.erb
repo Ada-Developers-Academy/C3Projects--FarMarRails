@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Far Mar | Alice &amp; Ashley</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <nav>
+    <%= render "layouts/#{@nav}_nav" %>
+  </nav>
+</header>
+
+<%= yield %>
+
+</body>
+</html>

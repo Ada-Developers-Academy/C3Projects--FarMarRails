@@ -1,0 +1,21 @@
+<%= form_for @market do |f| %>
+  <%= f.label :name, "Market name:" %>
+  <%= f.text_field :name, required: :true %>
+
+  <%= f.label :address, "Street address:" %>
+  <%= f.text_field :address %>
+
+  <%= f.label :city, "City:" %>
+  <%= f.text_field :city %>
+
+  <%= f.label :county, "County:" %>
+  <%= f.text_field :county %>
+
+  <%= f.label :state, "State:" %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zip, "Zip:" %>
+  <%= f.text_field :zip %>
+
+  <%= f.submit class: "button" %>
+<% end %>

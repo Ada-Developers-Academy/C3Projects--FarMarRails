@@ -1,0 +1,24 @@
+landing page
+  + link to see all markets
+    - on all markets page
+      + link to create a market
+      + all market names are links to specific market pages, next to it a link to edit it
+        - on a market page
+          = list of attributes
+          + link to edit it
+          + link to create new vendor (automatically assigned to that market)
+          + list of vendors, all vendor names are links to a specific vendor page
+            ( - vendor pages included below )
+          + links to delete vendor next to vendor name
+          + links to edit vendor next to vendor name
+
+  + link to see all vendors
+    - on all vendors page
+      + link to see all products for that vendor
+        + list of products, each linking to product page
+          - on a product page
+            = display info
+            + edit links
+        + links to edit and and delete product next to product name
+      + link to create product
+      + link to create sale for a specific product

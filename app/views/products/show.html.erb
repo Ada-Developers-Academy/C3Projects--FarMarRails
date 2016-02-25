@@ -1,0 +1,22 @@
+<h1>Product Details</h1>
+
+<ul>
+  <li>Name: <%= @product.name %></li>
+  <li>Vendor: <%= @product.vendor.name %></li>
+</ul>
+
+<%= link_to "Edit this product", edit_vendor_product_path(@vendor, @product),
+  class: "button" %>
+
+<%= button_to "Delete this product", vendor_product_path(@vendor, @product),
+  class: "button",
+  method: :delete,
+  data: { confirm: "Are you sure you want to delete this product?" } %>
+
+<%= link_to "Create a new sale for this product",
+  new_vendor_sale_path(@vendor, :product_id => params[:id]),
+  class: "button" %>
+
+<h3>Sales</h3>
+
+<%= render 'shared/sales_table', {sales: @sales} %>

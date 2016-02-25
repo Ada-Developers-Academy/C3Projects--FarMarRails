@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$lightgray:   #D3D3D3;
+$mediumgray:  #989898;
+$darkgray:    #585858;
+
+html {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: white;
+}
+
+body {
+  width: 960px;
+  background-color: $lightgray;
+  margin: 100px auto;
+  padding: 0 0 25px 0;
+}
+
+nav {
+  background-color: $mediumgray;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover, nav a:hover {
+  color: $darkgray;
+}
+
+nav a {
+  display: inline-block;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.log_in_button, #welcome_markets_button, .button {
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid white;
+  background-color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.inline_button, input[type="submit"].inline_button {
+  display: inline-block;
+  border: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+form[class="button_to"] {
+  display: inline-block;
+  margin: 0;
+  width: auto;
+}
+
+.button:hover, input[type="submit"]:hover {
+  background-color: $darkgray;
+  color: white;
+  border-color: $darkgray;
+}
+
+#welcome_markets_button {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+ul {
+  display: block;
+  text-align: left;
+  width: 600px;
+  margin: 20px auto;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+input,  {
+  display: block;
+  margin: 10px auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th,td {
+  padding: 1em;
+}
+
+.financial {
+  text-align: right;
+}

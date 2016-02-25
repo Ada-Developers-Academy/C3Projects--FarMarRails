@@ -1,0 +1,9 @@
+<h1>Pick a Market</h1>
+
+<%= link_to "Create a new market", new_market_path, class: "button" %>
+
+<ul>
+  <% @markets.each do |market| %>
+    <li><%= link_to market.name, market %></li>
+  <% end %>
+</ul>
